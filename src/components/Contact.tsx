@@ -16,7 +16,10 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: ['marinocorporationofindia@gmail.com'],
+      details: [
+        { text: 'marinocoindia@gmail.com', email: 'marinocoindia@gmail.com' },
+        { text: 'marinocorporationofindia@gmail.com', email: 'marinocorporationofindia@gmail.com' }
+      ],
     },
     {
       icon: Clock,
@@ -50,9 +53,20 @@ const Contact = () => {
                     <item.icon className="w-6 h-6 text-accent" />
                   </div>
                   <h3 className="font-display text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                  {item.details.map((detail, i) => (
-                    <p key={i} className="text-muted-foreground text-sm">{detail}</p>
-                  ))}
+                  {item.details.map((detail, i) => {
+                    if (typeof detail === 'string') {
+                      return <p key={i} className="text-muted-foreground text-sm">{detail}</p>;
+                    }
+                    return (
+                      <a
+                        key={i}
+                        href={`mailto:${detail.email}`}
+                        className="text-muted-foreground text-sm hover:text-accent hover:underline block"
+                      >
+                        {detail.text}
+                      </a>
+                    );
+                  })}
                 </div>
               ))}
             </div>

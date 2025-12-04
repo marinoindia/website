@@ -29,7 +29,12 @@ const Footer = () => {
             </p>
             <div className="space-y-1 text-primary-foreground/70 text-sm">
               <p><strong>Address:</strong> 28, Orphangunj Road, Kidderpore, Kolkata - 700 023</p>
-              <p><strong>Email:</strong> marinocorporationofindia@gmail.com</p>
+              <p>
+                <strong>Email:</strong>{' '}
+                <a href="mailto:marinocoindia@gmail.com" className="hover:text-accent hover:underline">marinocoindia@gmail.com</a>
+                {' | '}
+                <a href="mailto:marinocorporationofindia@gmail.com" className="hover:text-accent hover:underline">marinocorporationofindia@gmail.com</a>
+              </p>
               <p><strong>Contact:</strong> P. K. Rout (Binny): 9831144669 | V. K. Rout (Bikku): 9831327279</p>
             </div>
           </div>

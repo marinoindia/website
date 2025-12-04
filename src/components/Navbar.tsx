@@ -25,10 +25,14 @@ const Navbar = () => {
               <Phone className="w-4 h-4" />
               <span>Call Us Today</span>
             </span>
-            <span className="flex items-center gap-2">
+            <a href="mailto:marinocoindia@gmail.com" className="flex items-center gap-2 hover:underline">
               <Mail className="w-4 h-4" />
-              <span>info@marinocorp.in</span>
-            </span>
+              <span>marinocoindia@gmail.com</span>
+            </a>
+            <a href="mailto:marinocorporationofindia@gmail.com" className="flex items-center gap-2 hover:underline">
+              <Mail className="w-4 h-4" />
+              <span>marinocorporationofindia@gmail.com</span>
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-primary-foreground/80">GST: 19ADMPR1740H1ZA</span>
