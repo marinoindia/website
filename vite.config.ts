@@ -5,7 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/website/",
+  // Use root as the base so the app works correctly at https://marinoindia.co.in/
+  // GitHub Pages with a custom domain serves from the root path.
+  base: "/",
   server: {
     host: "::",
     port: 8080,
