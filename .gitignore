@@ -22,8 +22,7 @@ google-maps-media/
 # Large GIF files
 src/assets/hero-industrial.gif
 public/media/*.gif
-# Large image files
-public/media/slings.jpg
+# Large image files (keep static images referenced in site)
 
 # Editor directories and files
 .vscode/*
