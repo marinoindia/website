@@ -54,8 +54,13 @@ const Media = () => {
   const [filter, setFilter] = useState<'all' | 'image' | 'gif'>('all');
 
   const filteredMedia = useMemo(() => {
-    if (filter === 'all') return allMedia;
-    return allMedia.filter(item => item.type === filter);
+    // Filter out GIFs since they're not uploaded (too large for GitHub)
+    const availableMedia = allMedia.filter(item => item.type === 'image');
+    
+    if (filter === 'all') return availableMedia;
+    if (filter === 'image') return availableMedia;
+    // If filter is 'gif', return empty array since GIFs aren't available
+    return [];
   }, [filter]);
 
   const openModal = (media: MediaItem) => {
@@ -127,7 +132,7 @@ const Media = () => {
               >
                 <div className="relative w-full h-full overflow-hidden bg-muted">
                   <img
-                    src={`/${media.path}`}
+                    src={`${import.meta.env.BASE_URL}${media.path}`}
                     alt={media.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
@@ -179,7 +184,7 @@ const Media = () => {
           <div className="max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
             <div className="relative w-full h-full flex items-center justify-center">
               <img
-                src={`/${selectedMedia.path}`}
+                src={`${import.meta.env.BASE_URL}${selectedMedia.path}`}
                 alt={selectedMedia.name}
                 className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
