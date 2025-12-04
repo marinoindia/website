@@ -20,15 +20,17 @@ const GitHubPagesRedirect = () => {
   useEffect(() => {
     // Handle GitHub Pages 404.html redirect pattern
     // When GitHub Pages serves 404.html, it adds a query parameter like ?/path
-    const query = new URLSearchParams(location.search);
-    const redirectPath = query.get('/');
+    const searchParams = new URLSearchParams(location.search);
+    const redirectPath = searchParams.get('/');
     
     if (redirectPath) {
       // Decode the path and navigate to it
-      const decodedPath = redirectPath.replace(/~and~/g, '&');
-      navigate(decodedPath, { replace: true });
+      const decodedPath = redirectPath.replace(/~and~/g, '&').replace(/~slash~/g, '/');
+      if (decodedPath && decodedPath !== location.pathname) {
+        navigate(decodedPath, { replace: true });
+      }
     }
-  }, [location.search, navigate]);
+  }, [location.search, location.pathname, navigate]);
 
   return null;
 };
