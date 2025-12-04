@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AnalyticsDashboard from "./pages/AnalyticsDashboard";
 import { Analytics } from "@/components/Analytics";
+import { GoatCounter } from "@/components/GoatCounter";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Analytics />
+          <GoatCounter />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
