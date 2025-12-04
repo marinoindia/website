@@ -8,10 +8,6 @@ type MediaItem = {
 
 // List of all media items (images only)
 const allMedia: MediaItem[] = [
-  { path: 'media/image_003.jpg', name: 'Product Image 3' },
-  { path: 'media/image_004.jpg', name: 'Product Image 4' },
-  { path: 'media/image_005.jpg', name: 'Product Image 5' },
-  { path: 'media/image_006.jpg', name: 'Product Image 6' },
   { path: 'media/image_007.jpg', name: 'Product Image 7' },
   { path: 'media/image_008.jpg', name: 'Product Image 8' },
   { path: 'media/image_009.jpg', name: 'Product Image 9' },
