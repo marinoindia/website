@@ -4,9 +4,8 @@ Convert videos to optimized GIFs using ffmpeg with palette generation
 for better quality and smaller file sizes.
 """
 
-import os
+import argparse
 import subprocess
-import glob
 from pathlib import Path
 
 def convert_video_to_gif(video_path, output_dir=None, max_width=800, fps=15, speed=3.0):
@@ -80,7 +79,33 @@ def convert_video_to_gif(video_path, output_dir=None, max_width=800, fps=15, spe
             palette_path.unlink()
         return False
 
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Convert videos in google-maps-media to optimized GIFs."
+    )
+    parser.add_argument(
+        "--max-width",
+        type=int,
+        default=800,
+        help="Maximum width of the output GIF (default: 800px)",
+    )
+    parser.add_argument(
+        "--fps",
+        type=int,
+        default=15,
+        help="Frames per second for the GIF (default: 15)",
+    )
+    parser.add_argument(
+        "--speed",
+        type=float,
+        default=3.0,
+        help="Playback speed multiplier (default: 3.0x)",
+    )
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
     # Directory containing videos
     media_dir = Path(__file__).parent / "google-maps-media"
     
@@ -101,7 +126,12 @@ def main():
     # Convert each video at 3x speed
     success_count = 0
     for video_file in sorted(video_files):
-        if convert_video_to_gif(video_file, max_width=800, fps=15, speed=3.0):
+        if convert_video_to_gif(
+            video_file,
+            max_width=args.max_width,
+            fps=args.fps,
+            speed=args.speed,
+        ):
             success_count += 1
     
     print(f"\nConversion complete: {success_count}/{len(video_files)} videos converted successfully")
