@@ -99,9 +99,11 @@ const Footer = () => {
               <ArrowUp className="w-5 h-5 text-accent-foreground" />
             </button>
           </div>
-          <p className="text-primary-foreground/60 text-sm text-center">
-            © {new Date().getFullYear()} Marino Corporation Of India. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-primary-foreground/60 text-sm text-center">
+              © {new Date().getFullYear()} Marino Corporation Of India. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
