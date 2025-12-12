@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import AnalyticsDashboard from "./pages/AnalyticsDashboard";
 import { Analytics } from "@/components/Analytics";
 import { GoatCounter } from "@/components/GoatCounter";
+import { VisitorCounter } from "@/components/VisitorCounter";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
           </Routes>
           <Analytics />
           <GoatCounter />
+          <VisitorCounter />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
