@@ -65,9 +65,13 @@ IMAGE_DOWNLOAD_GUIDE.md
 COPYRIGHT_PROTECTION.md
 
 # Working directories and temporary files
+# Ignore root-level folders, but allow public/ versions
 images/
 media/
 logo/
+# Allow public folder versions (needed for website)
+!public/images/
+!public/media/
 unnamed.jpg
 unnamed.*
 *.pdf
