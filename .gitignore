@@ -71,6 +71,10 @@ logo/
 unnamed.jpg
 unnamed.*
 *.pdf
+# Old client files (replaced with clients.png)
+clients.pdf
+Logo_clients.png
+image.png
 Screenshot*.png
 Screenshot*.jpg
 media_items.txt

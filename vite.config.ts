@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-import { copyFileSync } from "fs";
+import { copyFileSync, existsSync } from "fs";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -21,7 +21,14 @@ export default defineConfig(({ mode }) => ({
       name: "copy-404",
       closeBundle() {
         try {
-          copyFileSync(path.resolve(__dirname, "dist/index.html"), path.resolve(__dirname, "dist/404.html"));
+          const indexPath = path.resolve(__dirname, "dist/index.html");
+          const destPath = path.resolve(__dirname, "dist/404.html");
+          if (existsSync(indexPath)) {
+            copyFileSync(indexPath, destPath);
+            console.log("Successfully copied index.html to 404.html");
+          } else {
+            console.warn("index.html not found in dist, skipping 404.html copy");
+          }
         } catch (err) {
           console.warn("Failed to copy index.html to 404.html:", err);
         }
