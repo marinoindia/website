@@ -153,11 +153,34 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Open Sans', sans-serif;
+    /* Mobile optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Rajdhani', sans-serif;
     @apply font-bold tracking-tight;
+  }
+
+  /* Mobile touch optimizations */
+  a, button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
+  }
+
+  /* Improve mobile scrolling */
+  html {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Better mobile text rendering */
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
   }
 }
 
@@ -171,11 +194,21 @@
     background: var(--gradient-accent);
     @apply text-accent-foreground font-semibold px-6 py-3 rounded-md transition-all duration-300;
     box-shadow: var(--shadow-accent);
+    min-height: 44px; /* Minimum touch target size for mobile */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .btn-accent:hover {
     @apply scale-105;
     filter: brightness(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .btn-accent {
+      min-height: 48px; /* Larger touch target on mobile */
+    }
   }
 
   .card-industrial {
@@ -184,12 +217,62 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-bold mb-4;
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold mb-4;
     font-family: 'Rajdhani', sans-serif;
+    line-height: 1.2;
   }
 
-  .nav-link {
-    @apply relative text-foreground/80 hover:text-foreground transition-colors duration-300;
+  .nav-link,
+  a.nav-link,
+  .nav-link a,
+  a.nav-link,
+  nav a.nav-link,
+  nav .nav-link {
+    @apply relative transition-all duration-300;
+    color: hsl(0, 0%, 9%, 0.8) !important;
+    display: inline-block;
+    font-weight: 400;
+  }
+
+  .nav-link:hover,
+  a.nav-link:hover,
+  .nav-link:hover a,
+  nav a.nav-link:hover,
+  nav .nav-link:hover,
+  a.nav-link:focus:hover,
+  .nav-link:focus:hover {
+    color: hsl(0, 0%, 9%, 0.8) !important;
+    font-weight: 700 !important;
+  }
+
+  .nav-link:focus,
+  a.nav-link:focus,
+  nav a.nav-link:focus,
+  nav .nav-link:focus {
+    color: hsl(0, 0%, 9%, 0.8) !important;
+  }
+
+  .nav-link:visited,
+  a.nav-link:visited,
+  nav a.nav-link:visited,
+  nav .nav-link:visited {
+    color: hsl(0, 0%, 9%, 0.8) !important;
+  }
+
+  /* Override React Router Link styles */
+  nav a,
+  nav a:hover,
+  nav a:focus,
+  nav a:visited,
+  nav a:active {
+    color: hsl(0, 0%, 9%, 0.8) !important;
+  }
+
+  nav a.nav-link:hover,
+  nav a.nav-link:focus,
+  nav a.nav-link:active {
+    color: hsl(0, 0%, 9%, 0.8) !important;
+    font-weight: 700 !important;
   }
 
   .nav-link::after {
@@ -245,6 +328,26 @@
   .animate-scroll:hover {
     animation-play-state: paused;
   }
+}
+
+/* Force nav-link color to stay dark - highest priority */
+nav .nav-link,
+nav a.nav-link,
+nav a.nav-link:hover,
+nav a.nav-link:focus,
+nav a.nav-link:active,
+nav a.nav-link:visited,
+nav .nav-link:hover,
+nav .nav-link:focus,
+nav .nav-link:active,
+nav .nav-link:visited {
+  color: hsl(0, 0%, 9%, 0.8) !important;
+}
+
+nav .nav-link:hover,
+nav a.nav-link:hover {
+  color: hsl(0, 0%, 9%, 0.8) !important;
+  font-weight: 700 !important;
 }
 
 /* Hide catelyzeX feedback widget */

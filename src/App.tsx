@@ -8,9 +8,14 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AnalyticsDashboard from "./pages/AnalyticsDashboard";
+import ProductsPage from "./pages/ProductsPage";
+import MediaPage from "./pages/MediaPage";
+import ContactPage from "./pages/ContactPage";
+import ClientsPage from "./pages/ClientsPage";
 import { Analytics } from "@/components/Analytics";
 import { GoatCounter } from "@/components/GoatCounter";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import CopyrightProtection from "@/components/CopyrightProtection";
 
 const queryClient = new QueryClient();
 
@@ -45,9 +50,14 @@ const App = () => (
         <Sonner />
         {/* Use Vite's BASE_URL so routing matches the deployed base path */}
         <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <CopyrightProtection />
           <GitHubPagesRedirect />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/media" element={<MediaPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/clients" element={<ClientsPage />} />
             <Route path="/analytics" element={<AnalyticsDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

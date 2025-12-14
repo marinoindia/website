@@ -19,6 +19,7 @@ dist-ssr
 
 # Media working directories (not used in build)
 google-maps-media/
+utkal-engineers-website/
 
 # Large media files (not uploaded to reduce repo size)
 *.mp4
@@ -27,6 +28,8 @@ google-maps-media/
 # Large GIF files
 src/assets/hero-industrial.gif
 public/media/*.gif
+# Unused/replaced image files
+src/assets/hero-industrial.jpg
 # Large image files (keep static images referenced in site)
 
 # Editor directories and files
@@ -39,3 +42,42 @@ public/media/*.gif
 *.njsproj
 *.sln
 *.sw?
+
+# Python virtual environment
+venv/
+env/
+.venv/
+
+# Python files and cache (not needed to run website)
+__pycache__/
+*.py
+*.pyc
+*.pyo
+*.pyd
+requirements_ai.txt
+
+# Shell scripts (not needed to run website)
+*.sh
+
+# Development/documentation files (not needed to run website)
+AI_IMAGE_GENERATION_GUIDE.md
+IMAGE_DOWNLOAD_GUIDE.md
+COPYRIGHT_PROTECTION.md
+
+# Working directories and temporary files
+images/
+media/
+logo/
+unnamed.jpg
+unnamed.*
+*.pdf
+Screenshot*.png
+Screenshot*.jpg
+media_items.txt
+media_items_categorized.txt
+product_images_mapping.json
+
+# Package manager lock files (keep package-lock.json, ignore others)
+bun.lockb
+yarn.lock
+pnpm-lock.yaml

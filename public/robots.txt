@@ -1,3 +1,4 @@
+# Allow legitimate search engines
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +11,41 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Block common scrapers and bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Allow other legitimate bots but with rate limiting
 User-agent: *
 Allow: /
+Crawl-delay: 2

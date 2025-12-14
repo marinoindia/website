@@ -1,84 +1,129 @@
 import { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logoImage from '@/assets/logo/logo_marino.jpeg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About Us' },
-    { href: '#products', label: 'Products' },
-    { href: '#why-us', label: 'Why Choose Us' },
-    { href: '#media', label: 'Media' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/', label: 'Home' },
+    { href: '/#about', label: 'About Us' },
+    { href: '/products', label: 'Products' },
+    { href: '/#why-us', label: 'Why Choose Us' },
+    { href: '/clients', label: 'Clients' },
+    { href: '/media', label: 'Media' },
+    { href: '/contact', label: 'Contact' },
   ];
+
+  const handleHashLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setIsOpen(false);
+    // If clicking a hash link from a different page, navigate first
+    if (href.includes('#')) {
+      const [path, hash] = href.split('#');
+      if (location.pathname !== path) {
+        e.preventDefault();
+        navigate(href);
+        // Scroll after navigation
+        setTimeout(() => {
+          const element = document.querySelector(`#${hash}`);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }
+    }
+  };
 
   return (
     <>
       {/* Top bar */}
-      <div className="bg-primary text-primary-foreground py-2 hidden md:block">
-        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span>Call Us Today</span>
-            </span>
-            <a href="mailto:marinocoindia@gmail.com" className="flex items-center gap-2 hover:underline">
-              <Mail className="w-4 h-4" />
-              <span>marinocoindia@gmail.com</span>
-            </a>
-            <a href="mailto:marinocorporationofindia@gmail.com" className="flex items-center gap-2 hover:underline">
-              <Mail className="w-4 h-4" />
-              <span>marinocorporationofindia@gmail.com</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-primary-foreground/80">GST: 19ADMPR1740H1ZA</span>
+      <div className="bg-primary text-primary-foreground py-1.5 sm:py-2">
+        <div className="container mx-auto px-2 sm:px-4">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-between items-start sm:items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs md:text-sm">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-6">
+              <a href="tel:9831144669" className="flex items-center gap-1.5 sm:gap-2 hover:underline whitespace-nowrap">
+                <Phone className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                <span>Call Us Today</span>
+              </a>
+              <a href="mailto:marinocoindia@gmail.com" className="flex items-center gap-1.5 sm:gap-2 hover:underline whitespace-nowrap">
+                <Mail className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                <span className="hidden lg:inline">marinocoindia@gmail.com</span>
+                <span className="lg:hidden">Email</span>
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-primary-foreground/80 text-[10px] sm:text-xs md:text-sm whitespace-nowrap">GST: 19ADMPR1740H1ZA</span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main navbar */}
       <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3">
               <img 
                 src={logoImage} 
                 alt="Marino Corporation of India Logo" 
-                className="w-12 h-12 object-contain"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
               />
-              <div className="hidden sm:block px-4 py-2 bg-[#0d3d1f]/60 backdrop-blur-sm rounded-lg border border-gray-200/40 shadow-sm">
-                <span className="text-[#FFEB3B] font-bold text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap font-sans">
+              <div className="hidden sm:block px-2 sm:px-4 py-1 sm:py-2 bg-[#0d3d1f]/60 backdrop-blur-sm rounded-lg border border-gray-200/40 shadow-sm">
+                <span className="text-[#FFEB3B] font-bold text-[10px] sm:text-xs md:text-sm uppercase tracking-wider whitespace-nowrap font-sans">
                   MARINO CORPORATION OF INDIA
                 </span>
               </div>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="nav-link text-sm font-medium"
-                >
-                  {link.label}
-                </a>
-              ))}
+            <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+              {navLinks.map((link) => {
+                // Use Link for routes, anchor for hash links
+                if (link.href.startsWith('/') && !link.href.includes('#')) {
+                  return (
+                    <Link
+                      key={link.href}
+                      to={link.href}
+                      className="nav-link text-sm font-normal"
+                      style={{ 
+                        color: 'hsl(0, 0%, 9%, 0.8)',
+                        textDecoration: 'none'
+                      } as React.CSSProperties}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                }
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleHashLinkClick(e, link.href)}
+                    className="nav-link text-sm font-normal"
+                    style={{ 
+                      color: 'hsl(0, 0%, 9%, 0.8)',
+                      textDecoration: 'none'
+                    } as React.CSSProperties}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </div>
 
             {/* CTA Button */}
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-2 lg:gap-4">
               <a
                 href="https://wa.me/919831144669?text=Hello%2C%20I%20am%20interested%20in%20your%20products"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button className="btn-accent">
+                <Button className="btn-accent text-xs lg:text-sm px-3 lg:px-6 py-2 lg:py-3">
                   Get Quote
                 </Button>
               </a>
@@ -97,16 +142,38 @@ const Navbar = () => {
           {isOpen && (
             <div className="lg:hidden py-4 border-t border-border animate-fade-in">
               <div className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-foreground hover:text-accent transition-colors py-2 font-medium"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  if (link.href.startsWith('/') && !link.href.includes('#')) {
+                    return (
+                      <Link
+                        key={link.href}
+                        to={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="nav-link text-sm font-normal py-2"
+                        style={{ 
+                          color: 'hsl(0, 0%, 9%, 0.8)',
+                          textDecoration: 'none'
+                        } as React.CSSProperties}
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  }
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={(e) => handleHashLinkClick(e, link.href)}
+                      className="nav-link text-sm font-normal py-2"
+                      style={{ 
+                        color: 'hsl(0, 0%, 9%, 0.8)',
+                        textDecoration: 'none'
+                      } as React.CSSProperties}
+                    >
+                      {link.label}
+                    </a>
+                  );
+                })}
                 <a
                   href="https://wa.me/919831144669?text=Hello%2C%20I%20am%20interested%20in%20your%20products"
                   target="_blank"

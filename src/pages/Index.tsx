@@ -1,16 +1,30 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import ClientTicker from '@/components/ClientTicker';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Products from '@/components/Products';
 import WhyChooseUs from '@/components/WhyChooseUs';
-import Media from '@/components/Media';
-import Contact from '@/components/Contact';
+import MediaPreview from '@/components/MediaPreview';
+import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Index = () => {
+  const location = useLocation();
+
+  // Handle smooth scrolling for hash links
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <>
       <Helmet>
@@ -24,15 +38,13 @@ const Index = () => {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <ClientTicker />
         <Navbar />
         <main>
           <Hero />
           <About />
-          <Products />
           <WhyChooseUs />
-          <Media />
-          <Contact />
+          <MediaPreview />
+          <MapSection />
         </main>
         <Footer />
         <WhatsAppButton />

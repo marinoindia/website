@@ -1,100 +1,69 @@
-import { ArrowRight, Shield, Award, Clock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-industrial.jpg';
+import { useState, useEffect } from 'react';
+import { Check } from 'lucide-react';
+import heroImage from '@/assets/Gemini_Generated_Image_wjl2i7wjl2i7wjl2.png';
 
 const Hero = () => {
+  const products = [
+    'Chains',
+    'Slings and wire rope',
+    'Shackles',
+  ];
+
+  const images = [
+    heroImage,
+    '/media/Gemini_Generated_Image_x7tnu4x7tnu4x7tn.png',
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Industrial chains and marine hardware"
-          className="w-full h-full object-cover opacity-40"
-        />
-        {/* Dark overlay for transparency */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            <span className="text-accent text-sm font-medium">40 Years of Industry Experience</span>
-          </div>
-
-          {/* Main heading */}
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            Marino Corporation
-            <span className="block text-accent">Of India</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-primary-foreground/80 mb-8 max-w-2xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Leading manufacturer and supplier of industrial chains, marine equipment, pulley blocks, and lifting hardware in Kolkata, West Bengal.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <a
-              href="https://wa.me/919831144669?text=Hello%2C%20I%20am%20interested%20in%20your%20products"
-              target="_blank"
-              rel="noopener noreferrer"
+    <section id="home" className="relative h-[50vh] sm:h-[60vh] overflow-hidden">
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div
+          className="flex h-full transition-transform duration-1000 ease-in-out"
+          style={{
+            width: `${images.length * 100}%`,
+            transform: `translateX(-${(currentIndex * 100) / images.length}%)`,
+          }}
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="h-full flex-shrink-0"
+              style={{ width: `${100 / images.length}%` }}
             >
-              <Button size="lg" className="btn-accent text-lg px-8 py-6 gap-2">
-                Contact on WhatsApp
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </a>
-            <a href="#products">
-              <Button
-                size="lg"
-                className="text-lg px-8 py-6 bg-[hsl(25_95%_53%)] hover:bg-[hsl(25_90%_45%)] text-white border-0"
-              >
-                View Products
-              </Button>
-            </a>
-          </div>
-
-          {/* Trust indicators */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="flex items-center gap-3 text-primary-foreground/90">
-              <div className="w-12 h-12 rounded-lg bg-primary-foreground/10 flex items-center justify-center">
-                <Shield className="w-6 h-6 text-accent" />
-              </div>
-              <div>
-                <p className="font-semibold">GST Verified</p>
-                <p className="text-sm text-primary-foreground/60">Registered Business</p>
-              </div>
+              <img
+                src={image}
+                alt={`Industrial chains and marine hardware ${index + 1}`}
+                className="w-full h-full object-cover opacity-85"
+              />
             </div>
-            <div className="flex items-center gap-3 text-primary-foreground/90">
-              <div className="w-12 h-12 rounded-lg bg-primary-foreground/10 flex items-center justify-center">
-                <Award className="w-6 h-6 text-accent" />
-              </div>
-              <div>
-                <p className="font-semibold">Quality Assured</p>
-                <p className="text-sm text-primary-foreground/60">Premium Products</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 text-primary-foreground/90">
-              <div className="w-12 h-12 rounded-lg bg-primary-foreground/10 flex items-center justify-center">
-                <Clock className="w-6 h-6 text-accent" />
-              </div>
-              <div>
-                <p className="font-semibold">40 Years</p>
-                <p className="text-sm text-primary-foreground/60">Industry Experience</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
+        {/* Light overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/25 via-black/15 to-black/30" />
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-3 bg-accent rounded-full" />
+      {/* Products List Superimposed on Image */}
+      <div className="relative z-10 h-full flex items-end justify-end p-6 sm:p-8 md:p-12">
+        <div className="space-y-3">
+          {products.map((product, index) => (
+            <div key={index} className="flex items-center gap-3">
+              <div className="w-6 h-6 bg-[#FFEB3B] rounded-full flex items-center justify-center flex-shrink-0">
+                <Check className="w-4 h-4 text-black" />
+              </div>
+              <span className="font-semibold text-white text-base sm:text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{product}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
