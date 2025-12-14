@@ -6,9 +6,9 @@ import { copyFileSync, existsSync } from "fs";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use /website/ as base for GitHub Pages URL (marinoindia.github.io/website/)
-  // Custom domain (marinoindia.co.in) will also work with proper DNS configuration
-  base: "/website/",
+  // Use root as base for custom domain (marinoindia.co.in)
+  // GitHub Pages with custom domain serves from root path
+  base: "/",
   server: {
     host: "::",
     port: 8080,
