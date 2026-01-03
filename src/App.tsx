@@ -12,6 +12,7 @@ import ProductsPage from "./pages/ProductsPage";
 import MediaPage from "./pages/MediaPage";
 import ContactPage from "./pages/ContactPage";
 import ClientsPage from "./pages/ClientsPage";
+import OurPeoplePage from "./pages/OurPeoplePage";
 import { Analytics } from "@/components/Analytics";
 import { GoatCounter } from "@/components/GoatCounter";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/media" element={<MediaPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/clients" element={<ClientsPage />} />
+            <Route path="/our-people" element={<OurPeoplePage />} />
             <Route path="/analytics" element={<AnalyticsDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

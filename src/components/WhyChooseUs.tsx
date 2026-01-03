@@ -35,32 +35,28 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="why-us" className="py-12 sm:py-16 md:py-20 bg-steel-gradient text-primary-foreground">
+    <section id="why-us" className="py-2 sm:py-3 md:py-4 bg-steel-gradient text-primary-foreground">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16">
-          <span className="text-accent font-semibold text-xs sm:text-sm uppercase tracking-wider">Why Choose Us</span>
-          <h2 className="section-title text-primary-foreground mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-            Your Trusted
-            <span className="text-accent"> Industrial Partner</span>
-          </h2>
-          <p className="text-primary-foreground/70 text-sm sm:text-base md:text-lg mt-3 sm:mt-4 px-2">
+        <div className="text-center max-w-3xl mx-auto mb-2 sm:mb-3 md:mb-4">
+          <span className="text-accent font-semibold text-[10px] sm:text-xs uppercase tracking-wider">Why Choose Us</span>
+          <p className="text-primary-foreground/70 text-xs sm:text-sm mt-2 sm:mt-3 px-2">
             We are committed to delivering excellence in every product and service we provide.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-1.5 sm:gap-2 md:gap-3">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-4 sm:p-5 md:p-6 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 transition-all duration-300 group"
+              className="p-1 sm:p-1.5 md:p-2 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 transition-all duration-300 group"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/20 rounded-lg flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent transition-colors duration-300">
-                <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-0.5 sm:mb-1 group-hover:bg-accent transition-colors duration-300">
+                <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
               </div>
-              <h3 className="font-display text-lg sm:text-xl font-bold text-primary-foreground mb-2">{feature.title}</h3>
-              <p className="text-primary-foreground/70 text-sm sm:text-base leading-relaxed">{feature.description}</p>
+              <h3 className="font-display text-sm sm:text-base font-bold text-primary-foreground mb-0.5">{feature.title}</h3>
+              <p className="text-primary-foreground/70 text-xs sm:text-sm leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

@@ -8,12 +8,12 @@ const ClientsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Our Clients - Marino Corporation Of India | Trusted by Leading Organizations</title>
+        <title>Our Clients - India Best Wire Rope, Sling and Chain Supplier | Kolkata/Calcutta</title>
         <meta
           name="description"
-          content="Marino Corporation Of India proudly serves prestigious clients across various sectors. Trusted by India's leading organizations."
+          content="Marino Corporation Of India - India's best wire rope, sling and chain supplier in Kolkata/Calcutta, proudly serves prestigious clients across various sectors. Trusted by India's leading organizations."
         />
-        <meta name="keywords" content="marino clients, industrial clients, marine equipment clients" />
+        <meta name="keywords" content="India best wire rope sling and chain supplier clients, wire rope supplier Kolkata clients, wire rope supplier Calcutta clients, marino clients, industrial clients, marine equipment clients" />
         <link rel="canonical" href="https://marinoindia.co.in/clients" />
       </Helmet>
 
@@ -25,9 +25,9 @@ const ClientsPage = () => {
             <div className="container mx-auto px-4">
               <div className="text-center max-w-3xl mx-auto mb-12">
                 <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Clients</span>
-                <h1 className="section-title text-foreground mt-2">
+                <h1 className="section-title text-[#0d3d26] mt-2">
                   Trusted by
-                  <span className="text-gradient"> Leading Organizations</span>
+                  <span className="text-[#0d3d26]"> Leading Organizations</span>
                 </h1>
                 <p className="text-muted-foreground text-lg mt-4">
                   We are proud to serve some of India's most prestigious organizations across various sectors including defense, space research, steel, and port operations.
@@ -67,8 +67,8 @@ const ClientsPage = () => {
           <section className="py-16 bg-muted/50">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center">
-                <h2 className="section-title text-foreground mb-4">
-                  Join Our <span className="text-gradient">Prestigious Client List</span>
+                <h2 className="section-title text-[#0d3d26] mb-4">
+                  Join Our <span className="text-[#0d3d26]">Prestigious Client List</span>
                 </h2>
                 <p className="text-muted-foreground text-lg mb-8">
                   Experience the quality and reliability that has made us a trusted partner to India's leading organizations.

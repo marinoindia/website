@@ -200,9 +200,9 @@ const Products = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16">
           <span className="text-accent font-semibold text-sm sm:text-base uppercase tracking-wider">Our Products</span>
-          <h2 className="section-title text-foreground mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+          <h2 className="section-title text-[#0d3d26] mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             Industrial Solutions
-            <span className="text-gradient"> You Can Trust</span>
+            <span className="text-[#0d3d26]"> You Can Trust</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg md:text-xl mt-3 sm:mt-4 px-2">
             We offer a comprehensive range of industrial chains, slings, marine equipment, lifting hardware, and safety equipment to meet your business needs.

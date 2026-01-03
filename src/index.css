@@ -19,7 +19,7 @@
     --popover: 0 0% 89%;
     --popover-foreground: 0 0% 9%;
 
-    /* Navy steel blue primary */
+    /* Dark green primary */
     --primary: 161 93% 30%;
     --primary-foreground: 151 80% 95%;
 
@@ -46,21 +46,21 @@
     /* Custom colors */
     --steel: 215 30% 35%;
     --steel-light: 215 20% 75%;
-    --steel-dark: 215 40% 18%;
+    --steel-dark: 140 60% 12%;
     --safety-orange: 25 95% 53%;
     --safety-orange-dark: 25 90% 45%;
     --marine-blue: 210 70% 30%;
     --success: 145 60% 40%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(215 40% 18% / 0.95) 0%, hsl(215 60% 25% / 0.9) 100%);
-    --gradient-steel: linear-gradient(180deg, hsl(215 30% 35%) 0%, hsl(215 40% 18%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(140 60% 12% / 0.95) 0%, hsl(140 60% 15% / 0.9) 100%);
+    --gradient-steel: linear-gradient(180deg, hsl(140 55% 18%) 0%, hsl(140 60% 12%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(25 90% 45%) 100%);
 
     /* Shadows */
-    --shadow-steel: 0 10px 40px -10px hsl(215 60% 25% / 0.3);
+    --shadow-steel: 0 10px 40px -10px hsl(140 60% 12% / 0.3);
     --shadow-accent: 0 10px 30px -10px hsl(25 95% 53% / 0.4);
-    --shadow-card: 0 4px 20px -4px hsl(220 30% 15% / 0.1);
+    --shadow-card: 0 4px 20px -4px hsl(140 50% 10% / 0.1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 9%;
@@ -186,8 +186,7 @@
 
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-accent);
+    @apply text-[#0d3d26];
   }
 
   .btn-accent {

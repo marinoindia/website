@@ -49,3 +49,6 @@ Disallow: /
 User-agent: *
 Allow: /
 Crawl-delay: 2
+
+# Sitemap location
+Sitemap: https://marinoindia.co.in/sitemap.xml

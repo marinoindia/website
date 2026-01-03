@@ -6,30 +6,30 @@ const MapSection = () => {
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyName)}`;
 
   return (
-    <section id="location" className="py-6 sm:py-8 md:py-10 bg-background">
+    <section id="location" className="py-2 sm:py-3 md:py-4 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-4 sm:mb-6">
+        <div className="text-center max-w-2xl mx-auto mb-1.5 sm:mb-2">
           <span className="text-accent font-semibold text-xs uppercase tracking-wider">Location</span>
-          <h2 className="section-title text-foreground mt-1 text-lg sm:text-xl md:text-2xl">
-            Find <span className="text-gradient">Us</span>
+          <h2 className="section-title text-[#0d3d26] mt-1 text-lg sm:text-xl md:text-2xl">
+            Find <span className="text-[#0d3d26]">Us</span>
           </h2>
         </div>
 
         {/* Map and Address */}
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 items-start max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-1.5 sm:gap-2 items-start max-w-5xl mx-auto">
           {/* Address Card */}
-          <div className="card-industrial p-4 sm:p-5">
-            <div className="flex items-start gap-3 mb-4">
+          <div className="card-industrial p-1.5 sm:p-2">
+            <div className="flex items-start gap-2 mb-1.5">
               <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-accent/10 rounded-lg flex items-center justify-center">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
               </div>
               <div>
-                <h3 className="font-display text-base sm:text-lg font-bold text-foreground mb-2">Our Location</h3>
+                <h3 className="font-display text-base sm:text-lg font-bold text-foreground mb-1">Our Location</h3>
                 <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                   {companyName}
                 </p>
-                <p className="text-muted-foreground/80 text-xs sm:text-sm mt-1">
+                <p className="text-muted-foreground/80 text-xs sm:text-sm mt-0.5">
                   {fullAddress}
                 </p>
               </div>

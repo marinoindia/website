@@ -34,9 +34,9 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">Contact Us</span>
-          <h2 className="section-title text-foreground mt-2">
+          <h2 className="section-title text-[#0d3d26] mt-2">
             Let's Start a
-            <span className="text-gradient"> Conversation</span>
+            <span className="text-[#0d3d26]"> Conversation</span>
           </h2>
           <p className="text-muted-foreground text-lg mt-4">
             Get in touch with us for inquiries, quotes, or any assistance you need.
@@ -143,8 +143,8 @@ const Contact = () => {
         <div className="mt-16">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Location</span>
-            <h2 className="section-title text-foreground mt-2">
-              Find <span className="text-gradient">Us</span>
+            <h2 className="section-title text-[#0d3d26] mt-2">
+              Find <span className="text-[#0d3d26]">Us</span>
             </h2>
             <p className="text-muted-foreground text-lg mt-4">
               Visit us at our location in Kolkata, West Bengal

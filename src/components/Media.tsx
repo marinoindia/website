@@ -157,8 +157,8 @@ const Media = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">Gallery</span>
-          <h2 className="section-title text-foreground mt-2">
-            Our <span className="text-gradient">Media</span>
+          <h2 className="section-title text-[#0d3d26] mt-2">
+            Our <span className="text-[#0d3d26]">Media</span>
           </h2>
           <p className="text-muted-foreground text-lg mt-4">
             Explore our products, facilities, and operations through our photo gallery.
