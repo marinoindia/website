@@ -11,6 +11,9 @@ interface EnquiryFormProps {
   onOpenChange: (open: boolean) => void;
 }
 
+// WhatsApp Configuration
+const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '919831144669';
+
 const EnquiryForm = ({ open, onOpenChange }: EnquiryFormProps) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -18,6 +21,7 @@ const EnquiryForm = ({ open, onOpenChange }: EnquiryFormProps) => {
     phone: '',
     email: '',
     enquiry: '',
+    attachment: null as File | null,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -29,86 +33,65 @@ const EnquiryForm = ({ open, onOpenChange }: EnquiryFormProps) => {
     }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setFormData((prev) => ({
+      ...prev,
+      attachment: file,
+    }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Use Formspree or custom API endpoint
-      // Formspree is free and works without backend setup
-      // Sign up at https://formspree.io/ and get your form endpoint
-      const formEndpoint = import.meta.env.VITE_FORM_ENDPOINT || 'https://formspree.io/f/YOUR_FORM_ID';
+      // Format the message with all form data
+      const message = `*New Enquiry from Website*
+
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Email:* ${formData.email}
+
+*Enquiry:*
+${formData.enquiry}
+
+${formData.attachment ? `*Attachment:* ${formData.attachment.name} (${(formData.attachment.size / 1024).toFixed(2)} KB)` : ''}
+
+---
+_This message was sent from the Marino Corporation website enquiry form._`;
+
+      // Encode the message for URL
+      const encodedMessage = encodeURIComponent(message);
       
-      // Send email to business
-      const businessResponse = await fetch(formEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          enquiry: formData.enquiry,
-          _subject: 'Enquiry from Website - Marino Corporation',
-          _to: 'marinocoindia@gmail.com,marinocorporationofindia@gmail.com',
-          _replyto: formData.email,
-          _cc: formData.email, // Send copy to sender
-        }),
-      });
-
-      if (businessResponse.ok) {
-        // Show success message
-        toast({
-          title: "Enquiry Submitted Successfully!",
-          description: "Your enquiry has been sent and a confirmation copy has been sent to your email address.",
-          duration: 5000,
-        });
-
-        // Reset form and close dialog
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          enquiry: '',
-        });
-        setIsSubmitting(false);
-        onOpenChange(false);
-      } else {
-        const errorData = await businessResponse.json();
-        throw new Error(errorData.error || 'Form submission failed');
-      }
-    } catch (error) {
-      console.error('Email sending failed:', error);
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
       
-      // Fallback: Use mailto to open email client with CC to sender
-      const emailAddresses = [
-        'marinocoindia@gmail.com',
-        'marinocorporationofindia@gmail.com'
-      ];
-      const subject = encodeURIComponent('Enquiry from Website - Marino Corporation');
-      const body = encodeURIComponent(
-        `Hello,\n\nI am interested in your products.\n\n` +
-        `Name: ${formData.name}\n` +
-        `Phone: ${formData.phone}\n` +
-        `Email: ${formData.email}\n\n` +
-        `Enquiry:\n${formData.enquiry}\n\n` +
-        `Thank you.`
-      );
-      // Include CC to sender for confirmation copy
-      const cc = encodeURIComponent(formData.email);
-      const mailtoUrl = `mailto:${emailAddresses.join(',')}?subject=${subject}&body=${body}&cc=${cc}`;
-      window.location.href = mailtoUrl;
-
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      
       toast({
-        title: "Opening Email Client",
-        description: "Your email client will open. Please send the email manually. You are CC'd so you'll receive a copy.",
+        title: "Opening WhatsApp",
+        description: "Your enquiry details have been prepared. WhatsApp will open in a new tab.",
         duration: 5000,
       });
-
+      
+      // Reset form
+      setFormData({ name: '', phone: '', email: '', enquiry: '', attachment: null });
       setIsSubmitting(false);
       onOpenChange(false);
+      
+    } catch (error) {
+      console.error('Error opening WhatsApp:', error);
+      
+      toast({
+        title: "Error",
+        description: "Failed to open WhatsApp. Please try again or contact us directly.",
+        variant: "destructive",
+        duration: 5000,
+      });
+      
+      setIsSubmitting(false);
     }
   };
 
@@ -118,7 +101,7 @@ const EnquiryForm = ({ open, onOpenChange }: EnquiryFormProps) => {
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">Enquiry Form</DialogTitle>
           <DialogDescription>
-            Fill in your details and we'll get back to you soon.
+            Fill in your details and we'll open WhatsApp with your enquiry ready to send.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
@@ -172,6 +155,23 @@ const EnquiryForm = ({ open, onOpenChange }: EnquiryFormProps) => {
               placeholder="Tell us about your requirements..."
               rows={4}
             />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="attachment">Attachment (Optional)</Label>
+            <Input
+              id="attachment"
+              name="attachment"
+              type="file"
+              onChange={handleFileChange}
+              accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.xls,.xlsx"
+              className="cursor-pointer"
+            />
+            {formData.attachment && (
+              <p className="text-sm text-muted-foreground">
+                Selected: {formData.attachment.name} ({(formData.attachment.size / 1024).toFixed(2)} KB)
+              </p>
+            )}
           </div>
 
           <div className="flex gap-3 pt-2">
