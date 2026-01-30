@@ -23,6 +23,7 @@ const Products = () => {
       items: ['Wire Rope Slings with Thimble', 'Wire Rope Slings with Eye Hooks', 'Chain Slings', 'Quad Master Link Chain Slings'],
       image: '/images/slings.jpeg',
       category: 'must-have',
+      cataloguePdf: '/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf',
       specifications: {
         'Wire Rope': 'Usha Martin specialized wire rope',
         'Manufacturing': 'Mechanical hand-made (not pressed)',
@@ -157,6 +158,7 @@ const Products = () => {
       items: ['Galvanized Steel Wire Rope Clips', 'Wire Rope Clips', 'Crosby Wire Rope Pulley Bearings'],
       image: '/images/wire_rope_hardware.jpeg',
       category: 'recommended',
+      cataloguePdf: '/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf',
       specifications: {
         'Wire Rope Compatibility': 'Usha Martin specialized wire rope',
         'Size Range': '6mm - 32mm wire rope diameter',
@@ -305,20 +307,31 @@ const Products = () => {
                     Get Quote
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
-                  <a
-                    href={`/brochures/${product.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 text-muted-foreground hover:text-accent font-medium text-sm sm:text-base transition-colors duration-300 touch-manipulation border border-border hover:border-accent/50 rounded-md px-3 py-1.5"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      // Placeholder: In the future, this will link to actual brochure PDFs
-                      alert(`Brochure for ${product.title} will be available soon. Please contact us via WhatsApp for product details.`);
-                    }}
-                  >
-                    <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                    Download Brochure
-                  </a>
+                  {product.cataloguePdf ? (
+                    <a
+                      href={product.cataloguePdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 text-muted-foreground hover:text-accent font-medium text-sm sm:text-base transition-colors duration-300 touch-manipulation border border-border hover:border-accent/50 rounded-md px-3 py-1.5"
+                    >
+                      <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                      Download Catalogue
+                    </a>
+                  ) : (
+                    <a
+                      href={`/brochures/${product.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 text-muted-foreground hover:text-accent font-medium text-sm sm:text-base transition-colors duration-300 touch-manipulation border border-border hover:border-accent/50 rounded-md px-3 py-1.5"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        alert(`Brochure for ${product.title} will be available soon. Please contact us via WhatsApp for product details.`);
+                      }}
+                    >
+                      <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                      Download Brochure
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

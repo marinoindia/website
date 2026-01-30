@@ -14,8 +14,10 @@ const Navbar = () => {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/#about', label: 'About Us' },
+    { href: '/#certifications', label: 'Certifications' },
     { href: '/products', label: 'Products' },
     { href: '/#why-us', label: 'Why Choose Us' },
+    { href: '/#faq', label: 'FAQ' },
     { href: '/our-people', label: 'Our People' },
     { href: '/clients', label: 'Clients' },
     { href: '/media', label: 'Media' },

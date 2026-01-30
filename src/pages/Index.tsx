@@ -4,7 +4,9 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Certifications from '@/components/Certifications';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import FAQ, { faqItems } from '@/components/FAQ';
 import MediaPreview from '@/components/MediaPreview';
 import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
@@ -96,48 +98,14 @@ const Index = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Who is the best wire rope, sling and chain supplier in India?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Marino Corporation Of India is India's best wire rope, sling and chain supplier, based in Kolkata/Calcutta, West Bengal. With over 40 years of experience, we provide high-quality industrial chains, marine equipment, wire rope slings, and lifting solutions across India."
-                }
+            "mainEntity": faqItems.map((item) => ({
+              "@type": "Question",
+              "name": item.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer,
               },
-              {
-                "@type": "Question",
-                "name": "Where can I find the best wire rope supplier in Kolkata or Calcutta?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Marino Corporation Of India is the best wire rope supplier in Kolkata/Calcutta, West Bengal. We offer a comprehensive range of wire rope products, slings, and chains for industrial and marine applications. Contact us at +919831144669 or visit our website for quotes."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What products does Marino Corporation offer?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We offer wire rope, rope slings, chain & chain slings, shackles, hooks, turn buckles, pulley blocks, marine equipment, lifting hardware, and all kinds of safety and lifting tackles. We are India's best supplier for these industrial products."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How long has Marino Corporation been in business?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Marino Corporation Of India has been serving customers for over 40 years, establishing ourselves as India's best wire rope, sling and chain supplier with a proven track record of quality and reliability."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you deliver wire rope, slings, and chains across India?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, as India's best wire rope, sling and chain supplier, we deliver our products across India with reliable logistics and timely dispatch. We serve customers from Kolkata/Calcutta to all major cities in India."
-                }
-              }
-            ]
+            })),
           })}
         </script>
         <script type="application/ld+json">
@@ -161,8 +129,10 @@ const Index = () => {
         <main>
           <Hero />
           <About />
+          <Certifications />
           <MediaPreview />
           <WhyChooseUs />
+          <FAQ />
           <MapSection />
         </main>
         <Footer />
