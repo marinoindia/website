@@ -68,7 +68,9 @@ COPYRIGHT_PROTECTION.md
 # Ignore root-level folders, but allow public/ versions
 images/
 media/
-logo/
+# Ignore logo/* but allow Certifications & Accreditations (logo/accredition/)
+logo/*
+!logo/accredition/
 # Allow public folder versions (needed for website)
 !public/images/
 !public/media/
