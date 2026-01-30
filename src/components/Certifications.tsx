@@ -1,18 +1,21 @@
 import { Badge } from '@/components/ui/badge';
+import msmeImg from '@/assets/logo/accreditation/msme.png';
+import iecImg from '@/assets/logo/accreditation/IEC.png';
+import is2266Img from '@/assets/logo/accreditation/IS2266.png';
 
 const certifications = [
   {
-    src: '/logo/accreditation/msme.png',
+    src: msmeImg,
     alt: 'MSME',
     label: 'MSME Accredited Company',
   },
   {
-    src: '/logo/accreditation/IEC.png',
+    src: iecImg,
     alt: 'IEC',
     label: 'Export Import License (IEC)',
   },
   {
-    src: '/logo/accreditation/IS2266.png',
+    src: is2266Img,
     alt: 'IS 2266',
     label: 'IS 2266 Conformity',
   },
