@@ -15,6 +15,17 @@ const OurPeoplePage = () => {
         />
         <meta name="keywords" content="Marino Corporation team, Pradeep Kumar Rout, Vikram Keshari Rout, Govardhan Rout, India best wire rope supplier team, Kolkata industrial supplier" />
         <link rel="canonical" href="https://marinoindia.co.in/our-people" />
+        <meta property="og:title" content="Our People - Marino Corporation Of India" />
+        <meta property="og:description" content="Meet the team behind India's best wire rope, sling and chain supplier. 40+ years of combined experience in Kolkata." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://marinoindia.co.in/our-people" />
+        <meta property="og:image" content="https://marinoindia.co.in/logo/logo_marino.jpeg" />
+        <meta property="og:site_name" content="Marino Corporation Of India" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our People - Marino Corporation Of India" />
+        <meta name="twitter:description" content="Meet the dedicated team behind Marino Corporation Of India, serving customers across India since 1985." />
+        <meta name="twitter:image" content="https://marinoindia.co.in/logo/logo_marino.jpeg" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -64,10 +75,11 @@ const OurPeoplePage = () => {
                   {/* Pradeep Kumar Rout (Binny) - Founder/Proprietor */}
                   <div className="card-industrial p-6 sm:p-8 text-center">
                     <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6 bg-accent/10 rounded-full flex items-center justify-center border-2 border-accent/30 overflow-hidden">
-                      <img 
-                        src="/media/pradeep-kumar-rout.png" 
-                        alt="Pradeep Kumar Rout (Binny)" 
+                      <img
+                        src="/media/pradeep-kumar-rout.png"
+                        alt="Pradeep Kumar Rout (Binny)"
                         className="w-full h-full object-cover rounded-full"
+                        loading="lazy"
                       />
                     </div>
                     <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground mb-2">

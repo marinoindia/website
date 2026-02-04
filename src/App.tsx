@@ -13,6 +13,10 @@ import MediaPage from "./pages/MediaPage";
 import ContactPage from "./pages/ContactPage";
 import ClientsPage from "./pages/ClientsPage";
 import OurPeoplePage from "./pages/OurPeoplePage";
+import PremadeSlingsPage from "./pages/PremadeSlingsPage";
+import BlogPage from "./pages/BlogPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
+import ProductVariantPage from "./pages/ProductVariantPage";
 import { Analytics } from "@/components/Analytics";
 import { GoatCounter } from "@/components/GoatCounter";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
@@ -60,6 +64,16 @@ const App = () => (
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/clients" element={<ClientsPage />} />
             <Route path="/our-people" element={<OurPeoplePage />} />
+            <Route path="/premade-slings" element={<PremadeSlingsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/product/:productId" element={<ProductDetailPage />} />
+            <Route path="/variant/:variantId" element={<ProductVariantPage />} />
+            <Route path="/products/wire-rope-slings" element={<ProductDetailPage />} />
+            <Route path="/products/chain-slings" element={<ProductDetailPage />} />
+            <Route path="/products/shackles" element={<ProductDetailPage />} />
+            <Route path="/products/hooks" element={<ProductDetailPage />} />
+            <Route path="/products/pulleys-blocks" element={<ProductDetailPage />} />
+            <Route path="/products/wire-rope-accessories" element={<ProductDetailPage />} />
             <Route path="/analytics" element={<AnalyticsDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

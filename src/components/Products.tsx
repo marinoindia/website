@@ -1,357 +1,314 @@
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, ChevronRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import { Badge } from '@/components/ui/badge';
 
 const Products = () => {
   const products = [
-    // MUST-HAVE CATEGORIES
     {
       title: 'Chains',
-      description: 'High-strength anchor chains and chain sling rigging for industrial and marine applications.',
+      slug: 'industrial-chains',
+      description: 'High-strength alloy steel chains for heavy lifting, anchoring, and load securing. Available in various grades including G80 and G100 for industrial and marine applications. Hot-dip galvanized for corrosion resistance.',
       items: ['Anchor Chain', 'Quad Master Link with Flats', 'Chain Sling Rigging', 'Lashing Chain', 'Long Link Chain', 'Stud Link Chain'],
       image: '/images/chains.jpeg',
-      category: 'must-have',
-      specifications: {
-        'Size Range': '10mm - 50mm diameter',
-        'Length': '1m - 100m (custom lengths available)',
-        'Working Load': '0.5T - 50T',
-        'Link Dimensions': '50mm x 50mm - 200mm x 200mm (for master links)',
-      },
+      category: 'essential',
+      specs: ['10mm - 50mm diameter', '0.5T - 50T Working Load'],
     },
     {
       title: 'Slings',
-      description: 'Premium steel wire rope slings and chain slings with thimbles and eye hooks for heavy lifting operations. Manufactured using Usha Martin specialized wire rope with mechanical hand-made construction (not pressed) for superior strength and durability.',
+      slug: 'wire-rope-slings',
+      description: 'Premium wire rope and chain slings manufactured using Usha Martin specialized wire rope with mechanical hand-made splicing. Superior strength, flexibility, and durability for critical lifting operations. Test certified.',
       items: ['Wire Rope Slings with Thimble', 'Wire Rope Slings with Eye Hooks', 'Chain Slings', 'Quad Master Link Chain Slings'],
-      image: '/images/slings.jpeg',
-      category: 'must-have',
+      image: '/images/premade_slings_hero.png',
+      category: 'essential',
       cataloguePdf: '/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf',
-      specifications: {
-        'Wire Rope': 'Usha Martin specialized wire rope',
-        'Manufacturing': 'Mechanical hand-made (not pressed)',
-        'Size Range': '6mm - 32mm wire rope diameter',
-        'Length': '0.5m - 10m (custom lengths available)',
-        'Working Load': '0.5T - 30T',
-        'Chain Diameter': '8mm - 32mm (for chain slings)',
-        'Quality': 'Superior strength and durability',
-      },
+      specs: ['6mm - 32mm diameter', '0.5T - 30T Working Load'],
     },
-    // RECOMMENDED CATEGORIES
     {
       title: 'Hooks',
-      description: 'Industrial-grade hooks for lifting, hoisting, and material handling applications.',
+      description: 'Forged alloy steel hooks for lifting and material handling. Features include safety latches, swivel mechanisms, and various eye configurations. Heat-treated for maximum strength. Compliant with ASME B30.10 standards.',
       items: ['Grab Hooks', 'Heavy Duty D Hooks', 'Eye Hoist Hooks', 'Container Hooks', 'C-Hooks'],
       image: '/images/hooks.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Size Range': '10mm - 80mm opening',
-        'Overall Dimensions': '50mm x 30mm - 300mm x 150mm',
-        'Working Load': '0.5T - 20T',
-      },
+      specs: ['10mm - 80mm opening', '0.5T - 20T Working Load'],
     },
     {
       title: 'Shackles',
-      description: 'High-strength shackles for connecting chains, ropes, and lifting equipment.',
+      description: 'High-tensile steel shackles for connecting lifting equipment, chains, and ropes. Available in screw pin and bolt type configurations. Load rated and batch tested. Suitable for overhead lifting and marine applications.',
       items: ['D Shackles', 'Anchor Shackles', 'Kenter Shackles (G3 K3)', '90mm G3 K3 Kenter Shackle'],
       image: '/images/shackles.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Pin Diameter': '6mm - 90mm',
-        'Overall Dimensions': '30mm x 20mm - 300mm x 180mm',
-        'Working Load': '0.5T - 25T',
-      },
+      specs: ['6mm - 90mm Pin', '0.5T - 25T Working Load'],
     },
     {
       title: 'Lifting Lugs & Pins',
-      description: 'Precision-engineered lifting pins, lugs, and swivels for safe and efficient lifting operations.',
+      description: 'Precision-engineered lifting points including weld-on lugs, swivel hoist rings, and towing eyes. Designed for permanent and temporary attachment to structures and equipment. Proof tested and certified.',
       items: ['Lifting Pins', 'Lifting Lugs', 'Eye and Eye Lifting Swivels', 'Lifting Swivels'],
       image: '/images/lifting_pins.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Pin Size Range': '10mm - 50mm diameter',
-        'Lug Dimensions': '50mm x 30mm x 20mm - 200mm x 100mm x 50mm',
-        'Eye Diameter': '12mm - 40mm (for swivels)',
-        'Working Load': '0.5T - 15T',
-      },
+      specs: ['10mm - 50mm diameter', '0.5T - 15T Working Load'],
     },
     {
       title: 'Pulleys & Blocks',
-      description: 'Heavy-duty pulleys and blocks for crane operations and material handling systems. Compatible with Usha Martin wire rope for optimal performance.',
+      description: 'Heavy-duty snatch blocks and wire rope pulleys for crane operations, marine trawling, and industrial rigging. Features hardened steel sheaves, bronze bushings, and grease fittings for smooth operation under load.',
       items: ['Manila Rope Pulleys', 'Crosby Wire Rope Pulley Bearings', 'Marine Trawl Blocks', 'Industrial Pulley Blocks', 'Crane Pulley Chains'],
       image: '/images/pulley.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Wire Rope Compatibility': 'Usha Martin specialized wire rope compatible',
-        'Sheave Diameter': '100mm - 800mm',
-        'Rope Capacity': '6mm - 50mm diameter',
-        'Working Load': '0.5T - 30T',
-        'Bearing Type': 'Heavy-duty bearings for smooth operation',
-      },
+      specs: ['100mm - 800mm Sheave', '0.5T - 30T Working Load'],
     },
     {
-      title: 'Ropes & Mooring Equipment',
-      description: 'High-quality ropes and mooring equipment for marine and industrial applications. Available with Usha Martin wire rope options for enhanced strength and durability.',
+      title: 'Ropes & Mooring',
+      description: 'High-performance synthetic ropes including polypropylene, polyester, and nylon varieties. UV stabilized, abrasion resistant, and available in 3-strand, 8-strand, and 12-strand configurations for marine and industrial use.',
       items: ['Mooring Ropes', 'PP P8 Strand Mooring Ropes', 'Yellow Polypropylene Rope', 'Seafoam Lobster Rope Mats', 'Rope Ladders'],
       image: '/images/ropes.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Wire Rope Option': 'Usha Martin specialized wire rope available',
-        'Size Range': '6mm - 80mm diameter',
-        'Length': '5m - 500m (custom lengths available)',
-        'Breaking Load': '0.5T - 150T',
-        'Rope Mat Size': '1m x 1m - 3m x 3m',
-        'Material': 'Polypropylene, Polyester, Steel wire rope',
-      },
+      specs: ['6mm - 80mm diameter', '0.5T - 150T Breaking Load'],
     },
     {
-      title: 'Anchors & Marine Equipment',
-      description: 'Complete range of ship anchors, anchor bolts, and marine safety equipment.',
-      items: ['Ship Anchors', 'D-Shaped Steel Anchors (78mm)', 'Anchor Bolts', 'Fender Tyre Nets', 'Anti-Collision Tugboat Marine Rubber Nets'],
+      title: 'Anchors & Marine',
+      description: 'Complete range of stockless anchors, anchor bolts, and marine fender systems. Includes stockless Hall anchors, delta flipper anchors, and custom anchor chains. Certified for commercial shipping and offshore platforms.',
+      items: ['Ship Anchors', 'D-Shaped Steel Anchors', 'Anchor Bolts', 'Fender Tyre Nets', 'Anti-Collision Marine Rubber Nets'],
       image: '/images/anchors.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Weight Range': '5kg - 5000kg',
-        'Dimensions': '0.5m x 0.3m - 3m x 2m',
-        'Anchor Bolt Size': 'M12 - M64 (12mm - 64mm)',
-        'Holding Power': '2T - 200T',
-      },
+      specs: ['5kg - 5000kg Weight', 'M12 - M64 Anchor Bolts'],
     },
     {
       title: 'Lashing Equipment',
-      description: 'Turnbuckles, lashing buckles, and ratchet belts for securing cargo and containers.',
+      description: 'Container securing and cargo lashing systems including ratchet tensioners, twist locks, and bridge fittings. Conforms to ISO and CSC standards for safe container transportation by road, rail, and sea.',
       items: ['Turnbuckles', 'Forged One-Way Lashing Buckles', 'Orange Polyester Ratchet Lashing Belts', 'Lashing Buckles'],
       image: '/images/lashing.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Size Range': 'M8 - M30 (8mm - 30mm thread)',
-        'Width': '20mm - 75mm (for belts)',
-        'Length': '150mm - 500mm (for turnbuckles), 2m - 15m (for belts)',
-        'Working Load': '0.5T - 10T',
-      },
+      specs: ['M8 - M30 thread', '0.5T - 10T Working Load'],
     },
     {
-      title: 'Container Hardware & Fittings',
-      description: 'Bridge fitting clamps and hardware for shipping container applications.',
+      title: 'Container Hardware',
+      description: 'Specialized fittings for shipping containers including bridge clamps, stacking cones, and door gear. Manufactured from high-strength steel with corrosion-resistant coatings for extended service life in marine environments.',
       items: ['Shipping Container Bridge Fitting Clamps', 'Bridge Fitting Clamps', 'Container Fittings'],
       image: '/images/container_hardware.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Size Range': '40mm - 150mm width',
-        'Overall Dimensions': '80mm x 40mm x 25mm - 300mm x 150mm x 80mm',
-        'Material': 'Galvanized steel or stainless steel',
-      },
+      specs: ['40mm - 150mm width', 'Galvanized steel'],
     },
     {
-      title: 'Jacks & Lifting Equipment',
-      description: 'Steel screw jacks, timber jacks, and lifting beams for various lifting applications.',
+      title: 'Jacks & Lifting',
+      description: 'Mechanical screw jacks and hydraulic lifting equipment for machinery maintenance, construction, and heavy equipment positioning. Available in single and multi-screw configurations with synchronized lifting capability.',
       items: ['Steel Screw Jacks', 'Mild Steel Jack Screws', 'Wooden Timber Jacks', 'Mini Lifting Beams', 'Lifting Beams'],
       image: '/images/jacks_lifting.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Capacity': '0.5T - 50T',
-        'Height Range': '100mm - 1500mm (collapsed to extended)',
-        'Base Dimensions': '100mm x 100mm - 400mm x 400mm',
-        'Beam Length': '500mm - 3000mm',
-      },
+      specs: ['0.5T - 50T Capacity', '100mm - 1500mm Height'],
     },
     {
       title: 'Wire Rope Hardware',
-      description: 'Premium galvanized wire rope clips and hardware for securing and connecting wire ropes. Compatible with Usha Martin specialized wire rope for optimal performance.',
+      description: 'Complete range of wire rope fittings including wire rope clips, thimbles, sockets, and ferrules. Compatible with 6x19, 6x36, and 8x19 construction wire ropes. Galvanized finish for outdoor applications.',
       items: ['Galvanized Steel Wire Rope Clips', 'Wire Rope Clips', 'Crosby Wire Rope Pulley Bearings'],
       image: '/images/wire_rope_hardware.jpeg',
-      category: 'recommended',
       cataloguePdf: '/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf',
-      specifications: {
-        'Wire Rope Compatibility': 'Usha Martin specialized wire rope',
-        'Size Range': '6mm - 32mm wire rope diameter',
-        'Overall Dimensions': '30mm x 20mm - 150mm x 80mm',
-        'Sheave Diameter': '150mm - 600mm (for pulleys)',
-        'Working Load': '1T - 20T',
-        'Material': 'Galvanized steel for corrosion resistance',
-      },
+      specs: ['6mm - 32mm diameter', '1T - 20T Working Load'],
     },
     {
-      title: 'Safety Equipment & PPE',
-      description: 'Safety nets, life jackets, safety shoes, and personal protective equipment.',
+      title: 'Safety Equipment',
+      description: 'Industrial safety gear including fall protection nets, life jackets, and personal protective equipment. Safety nets manufactured to EN 1263 standards. Life jackets with 150N and 275N buoyancy ratings available.',
       items: ['Polyester Machine-Made Safety Nets', 'Life Jackets', 'Safety Shoes', 'Rope Ladders', 'Safety Nets'],
       image: '/images/safety_equipment_ppe.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Safety Net Size': '2m x 2m - 10m x 10m',
-        'Life Jacket Sizes': 'XS, S, M, L, XL, XXL',
-        'Buoyancy': '150N - 275N',
-        'Shoe Sizes': 'EU 36 - 48, US 5 - 14',
-        'Rope Ladder Length': '2m - 20m',
-      },
+      specs: ['2m x 2m - 10m x 10m Nets', 'XS - XXL Life Jackets'],
     },
     {
       title: 'Timber Equipment',
-      description: 'Specialized wooden timber jacks for timber handling and lifting operations.',
+      description: 'Traditional wooden timber jacks and cribbing blocks for construction, mining, and heavy equipment support. Hardwood construction with steel reinforced bases. Environmentally friendly alternative for temporary support.',
       items: ['Wooden Timber Jacks', 'Timber Handling Equipment'],
       image: '/images/timber.jpeg',
-      category: 'recommended',
-      specifications: {
-        'Capacity': '0.5T - 10T',
-        'Height Range': '100mm - 1000mm (collapsed to extended)',
-        'Base Dimensions': '100mm x 100mm - 300mm x 300mm',
-      },
+      specs: ['0.5T - 10T Capacity', '100mm - 1000mm Height'],
     },
   ];
 
-  return (
-    <section id="products" className="py-12 sm:py-16 md:py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16">
-          <span className="text-accent font-semibold text-sm sm:text-base uppercase tracking-wider">Our Products</span>
-          <h2 className="section-title text-[#0d3d26] mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-            Industrial Solutions
-            <span className="text-[#0d3d26]"> You Can Trust</span>
-          </h2>
-          <p className="text-muted-foreground text-base sm:text-lg md:text-xl mt-3 sm:mt-4 px-2">
-            We offer a comprehensive range of industrial chains, slings, marine equipment, lifting hardware, and safety equipment to meet your business needs.
-          </p>
-        </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
 
-        {/* Quality Highlight Section */}
-        <div className="max-w-4xl mx-auto mb-8 sm:mb-12 bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 md:p-8">
-          <div className="flex items-start gap-3 sm:gap-4">
-            <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-accent/20 rounded-full flex items-center justify-center">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-2">Premium Quality & Manufacturing Excellence</h3>
-              <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">•</span>
-                  <span><strong className="text-foreground">Usha Martin Specialized Wire Rope:</strong> All our wire rope slings and wire rope hardware are manufactured using premium Usha Martin specialized wire rope, ensuring superior quality, strength, and reliability for critical lifting operations.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">•</span>
-                  <span><strong className="text-foreground">Mechanical Hand-Made Construction:</strong> Our slings are manufactured using mechanical hand-made techniques (not pressed), providing enhanced durability, better load distribution, and superior performance compared to pressed alternatives.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">•</span>
-                  <span><strong className="text-foreground">Quality Assurance:</strong> All products undergo rigorous quality testing and meet international safety standards for industrial and marine applications.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-0.5">•</span>
-                  <span><strong className="text-foreground">Custom Solutions:</strong> We provide custom lengths, configurations, and specifications tailored to your specific requirements.</span>
-                </li>
-              </ul>
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1],
+      },
+    },
+  };
+
+  return (
+    <section id="products" className="section-padding bg-slate-50/50">
+      <div className="container-modern">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center mb-16"
+        >
+          <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium border-emerald-200 text-emerald-700 bg-emerald-50/50">
+            Our Products
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
+            Industrial Solutions{' '}
+            <span className="text-gradient">You Can Trust</span>
+          </h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Comprehensive range of industrial chains, slings, marine equipment, and lifting hardware to meet your business needs.
+          </p>
+        </motion.div>
+
+        {/* Quality highlight */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="max-w-4xl mx-auto mb-16"
+        >
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center">
+                <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">Premium Quality & Manufacturing Excellence</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  All wire rope products manufactured using <span className="font-medium text-slate-900">Usha Martin specialized wire rope</span> with 
+                  <span className="font-medium text-slate-900"> mechanical hand-made construction</span> (not pressed) for superior strength and durability.
+                  Rigorous quality testing meets international safety standards.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Products Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
           {products.map((product, index) => (
-            <div
+            <motion.div
               key={index}
-              className="card-industrial overflow-hidden group hover:border-accent/50 transition-all duration-300"
+              variants={itemVariants}
+              className="group"
             >
-              {/* Product Image */}
-              <div className="relative h-40 sm:h-48 overflow-hidden bg-muted">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              {/* Content */}
-              <div className="p-4 sm:p-6">
-                <div className="flex items-start gap-2 mb-2 flex-wrap">
-                  <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground">{product.title}</h3>
-                  {product.category === 'must-have' && (
-                    <span className="px-2 py-0.5 bg-accent/20 text-accent text-xs sm:text-sm font-semibold rounded-full border border-accent/30 whitespace-nowrap">
+              <div className="card-modern h-full flex flex-col">
+                {/* Image */}
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  
+                  {/* Category badge */}
+                  {product.category === 'essential' && (
+                    <Badge className="absolute top-3 left-3 bg-emerald-500 text-white border-0 shadow-lg text-xs">
                       Essential
-                    </span>
+                    </Badge>
                   )}
-                </div>
-                <p className="text-muted-foreground text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">{product.description}</p>
-
-                {/* Items */}
-                <ul className="space-y-1.5 sm:space-y-2 mb-4">
-                  {product.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm sm:text-base text-foreground">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0 mt-1.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Specifications */}
-                {product.specifications && (
-                  <div className="mb-4 sm:mb-6 pt-3 border-t border-border/50">
-                    <h4 className="text-base sm:text-lg font-semibold text-foreground mb-2">Specifications:</h4>
-                    <ul className="space-y-1.5">
-                      {Object.entries(product.specifications).map(([key, value], i) => (
-                        <li key={i} className="text-sm sm:text-base text-muted-foreground">
-                          <span className="font-medium text-foreground">{key}:</span> {value}
-                        </li>
+                  
+                  {/* Quick specs overlay */}
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <div className="flex flex-wrap gap-1.5">
+                      {product.specs?.map((spec, i) => (
+                        <span key={i} className="text-[10px] text-white bg-black/50 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                          {spec}
+                        </span>
                       ))}
-                    </ul>
+                    </div>
                   </div>
-                )}
+                </div>
 
-                {/* CTA */}
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                  <a
-                    href={`https://wa.me/919831144669?text=Hello%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(product.title.toLowerCase())}%20products`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 text-accent font-semibold text-sm sm:text-base group-hover:gap-3 transition-all duration-300 touch-manipulation"
-                  >
-                    Get Quote
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </a>
-                  {product.cataloguePdf ? (
+                {/* Content */}
+                <div className="p-4 flex flex-col flex-grow">
+                  <h3 className="text-lg font-semibold text-slate-900 mb-1.5 group-hover:text-emerald-700 transition-colors">
+                    {product.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-3 flex-grow line-clamp-3">
+                    {product.description}
+                  </p>
+
+                  {/* Items list */}
+                  <ul className="space-y-1 mb-3">
+                    {product.items.slice(0, 2).map((item, i) => (
+                      <li key={i} className="flex items-center gap-1.5 text-xs text-slate-600">
+                        <ChevronRight className="w-3 h-3 text-emerald-500 flex-shrink-0" />
+                        <span className="truncate">{item}</span>
+                      </li>
+                    ))}
+                    {product.items.length > 2 && (
+                      <li className="text-[10px] text-slate-400 pl-4">
+                        +{product.items.length - 2} more items
+                      </li>
+                    )}
+                  </ul>
+
+                  {/* Actions */}
+                  <div className="flex flex-col gap-1.5 pt-3 border-t border-slate-100">
+                    {product.slug && (
+                      <Link
+                        to={`/product/${product.slug}`}
+                        className="inline-flex items-center justify-center gap-1.5 text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors"
+                      >
+                        View Details
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </Link>
+                    )}
                     <a
-                      href={product.cataloguePdf}
+                      href={`https://wa.me/919831144669?text=Hello%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(product.title)}%20products`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 text-muted-foreground hover:text-accent font-medium text-sm sm:text-base transition-colors duration-300 touch-manipulation border border-border hover:border-accent/50 rounded-md px-3 py-1.5"
+                      className="inline-flex items-center justify-center gap-1.5 text-sm font-medium text-emerald-700 hover:text-emerald-800 transition-colors"
                     >
-                      <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                      Download Catalogue
+                      Get Quote
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                     </a>
-                  ) : (
-                    <a
-                      href={`/brochures/${product.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 text-muted-foreground hover:text-accent font-medium text-sm sm:text-base transition-colors duration-300 touch-manipulation border border-border hover:border-accent/50 rounded-md px-3 py-1.5"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        alert(`Brochure for ${product.title} will be available soon. Please contact us via WhatsApp for product details.`);
-                      }}
-                    >
-                      <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                      Download Brochure
-                    </a>
-                  )}
+                    {product.cataloguePdf && (
+                      <a
+                        href={product.cataloguePdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-1.5 text-[10px] text-slate-500 hover:text-slate-700 transition-colors border border-slate-200 rounded-lg py-1.5 hover:bg-slate-50"
+                      >
+                        <Download className="w-3 h-3" />
+                        Download Catalogue
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-8 sm:mt-12">
+        {/* View all CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mt-12"
+        >
           <a
             href="https://wa.me/919831144669?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block"
           >
-            <Button size="lg" className="btn-accent gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+            <Button size="lg" className="btn-primary">
               Request Full Product Catalog
-              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              <ArrowRight className="w-5 h-5" />
             </Button>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { Shield, Truck, Clock, ThumbsUp, Wrench, HeartHandshake } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const WhyChooseUs = () => {
   const features = [
@@ -34,32 +35,69 @@ const WhyChooseUs = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <section id="why-us" className="py-2 sm:py-3 md:py-4 bg-steel-gradient text-primary-foreground">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section id="why-us" className="py-16 sm:py-20 md:py-24 bg-slate-900 text-white">
+      <div className="container-modern">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-2 sm:mb-3 md:mb-4">
-          <span className="text-accent font-semibold text-[10px] sm:text-xs uppercase tracking-wider">Why Choose Us</span>
-          <p className="text-primary-foreground/70 text-xs sm:text-sm mt-2 sm:mt-3 px-2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
+          <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-4">
+            Excellence in Every Product
+          </h2>
+          <p className="text-slate-300 text-lg leading-relaxed">
             We are committed to delivering excellence in every product and service we provide.
           </p>
-        </div>
+        </motion.div>
 
         {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-1.5 sm:gap-2 md:gap-3">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
-              className="p-1 sm:p-1.5 md:p-2 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10 hover:border-accent/50 transition-all duration-300 group"
+              variants={itemVariants}
+              className="p-6 rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:border-emerald-500/50 hover:bg-slate-800 transition-all duration-300 group"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-0.5 sm:mb-1 group-hover:bg-accent transition-colors duration-300">
-                <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
+              <div className="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-500 transition-colors duration-300">
+                <feature.icon className="w-7 h-7 text-emerald-400 group-hover:text-white transition-colors duration-300" />
               </div>
-              <h3 className="font-display text-sm sm:text-base font-bold text-primary-foreground mb-0.5">{feature.title}</h3>
-              <p className="text-primary-foreground/70 text-xs sm:text-sm leading-relaxed">{feature.description}</p>
-            </div>
+              <h3 className="font-semibold text-xl text-white mb-2">{feature.title}</h3>
+              <p className="text-slate-400 leading-relaxed">{feature.description}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

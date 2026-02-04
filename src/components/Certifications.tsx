@@ -62,6 +62,7 @@ const Certifications = () => {
                       src={item.src}
                       alt={item.alt}
                       className="h-12 sm:h-14 md:h-16 w-auto object-contain mb-2"
+                      loading="lazy"
                     />
                     <span className="text-muted-foreground text-xs sm:text-sm font-medium">
                       {item.label}

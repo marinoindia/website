@@ -30,12 +30,12 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>India Best Wire Rope, Sling and Chain Supplier | Kolkata/Calcutta | Marino Corporation</title>
+        <title>India's Best Wire Rope, Sling & Chain Supplier | Marino Corporation | All India Delivery</title>
         <meta
           name="description"
-          content="Marino Corporation Of India - India's best wire rope, sling and chain supplier in Kolkata/Calcutta, West Bengal. Leading manufacturer of industrial chains, marine equipment, wire rope slings. 40 years experience. Get quotes on WhatsApp."
+          content="Marino Corporation Of India - India's best wire rope, sling and chain supplier. Leading manufacturer of industrial chains, marine equipment, wire rope slings. Pan India delivery. 40+ years experience. ISO certified. Get quotes on WhatsApp."
         />
-        <meta name="keywords" content="India best wire rope sling and chain supplier, best wire rope supplier India, best sling supplier Kolkata, best chain supplier Calcutta, wire rope supplier Kolkata, wire rope supplier Calcutta, sling supplier India, chain supplier India, industrial chains, pulley blocks, marine equipment, wire rope slings, lifting chains, ship anchors, Kolkata, Calcutta, West Bengal, India" />
+        <meta name="keywords" content="wire rope supplier India, sling supplier India, chain supplier India, best wire rope manufacturer India, industrial chains supplier, wire rope slings India, lifting chains supplier, marine equipment India, pulley blocks India, wire rope Delhi, wire rope Mumbai, wire rope Bangalore, wire rope Chennai, wire rope Hyderabad, wire rope Pune, wire rope Ahmedabad, wire rope Kolkata, industrial lifting equipment, ISO certified wire rope, Usha Martin wire rope distributor" />
         <link rel="canonical" href="https://marinoindia.co.in" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -47,8 +47,10 @@ const Index = () => {
             "telephone": "+919831144669",
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "28, Orphangunj Road, Kidderpore",
               "addressLocality": "Kolkata",
               "addressRegion": "West Bengal",
+              "postalCode": "700023",
               "addressCountry": "IN"
             },
             "geo": {
@@ -59,12 +61,47 @@ const Index = () => {
             "priceRange": "$$",
             "image": "https://marinoindia.co.in/logo/logo_marino.jpeg",
             "sameAs": [
-              "https://marinoindia.co.in"
+              "https://marinoindia.co.in",
+              "https://www.google.com/maps?cid=13184844193591808410"
             ],
-            "areaServed": {
-              "@type": "Country",
-              "name": "India"
-            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "India"
+              },
+              {
+                "@type": "City",
+                "name": "Delhi"
+              },
+              {
+                "@type": "City",
+                "name": "Mumbai"
+              },
+              {
+                "@type": "City",
+                "name": "Bangalore"
+              },
+              {
+                "@type": "City",
+                "name": "Chennai"
+              },
+              {
+                "@type": "City",
+                "name": "Hyderabad"
+              },
+              {
+                "@type": "City",
+                "name": "Pune"
+              },
+              {
+                "@type": "City",
+                "name": "Ahmedabad"
+              },
+              {
+                "@type": "City",
+                "name": "Kolkata"
+              }
+            ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": "Industrial Chains, Wire Rope, Slings, and Marine Equipment",
@@ -73,21 +110,35 @@ const Index = () => {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Product",
-                    "name": "Wire Rope"
+                    "name": "Wire Rope Slings & Chain Slings"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Product",
-                    "name": "Slings"
+                    "name": "Industrial Chains & Shackles"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Product",
-                    "name": "Chains"
+                    "name": "Marine Equipment & Anchors"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Product",
+                    "name": "Lifting Hardware & Pulleys"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Product",
+                    "name": "Safety Equipment & PPE"
                   }
                 }
               ]

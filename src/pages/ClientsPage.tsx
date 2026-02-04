@@ -15,6 +15,17 @@ const ClientsPage = () => {
         />
         <meta name="keywords" content="India best wire rope sling and chain supplier clients, wire rope supplier Kolkata clients, wire rope supplier Calcutta clients, marino clients, industrial clients, marine equipment clients" />
         <link rel="canonical" href="https://marinoindia.co.in/clients" />
+        <meta property="og:title" content="Our Clients - Marino Corporation Of India" />
+        <meta property="og:description" content="Marino Corporation Of India proudly serves prestigious clients across defense, space research, steel, and port operations sectors across India." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://marinoindia.co.in/clients" />
+        <meta property="og:image" content="https://marinoindia.co.in/logo/logo_marino.jpeg" />
+        <meta property="og:site_name" content="Marino Corporation Of India" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Clients - Marino Corporation Of India" />
+        <meta name="twitter:description" content="Trusted by India's leading organizations in defense, space research, steel, and port operations." />
+        <meta name="twitter:image" content="https://marinoindia.co.in/logo/logo_marino.jpeg" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -52,10 +63,11 @@ const ClientsPage = () => {
                   </div>
                   
                   <div className="flex items-center justify-center py-8">
-                    <img 
-                      src="/clients.png" 
+                    <img
+                      src="/clients.png"
                       alt="Our Valued Clients"
                       className="w-full max-w-4xl h-auto object-contain rounded-lg shadow-lg"
+                      loading="lazy"
                     />
                   </div>
                 </div>

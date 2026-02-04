@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://marinoindia.co.in/</loc>
-    <lastmod>2025-01-02</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,119 @@
   <!-- Products Page -->
   <url>
     <loc>https://marinoindia.co.in/products</loc>
-    <lastmod>2025-01-02</lastmod>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Main Product Category Pages -->
+  <url>
+    <loc>https://marinoindia.co.in/product/wire-rope-slings</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/product/chain-slings</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/product/shackles</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/product/hooks</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/product/pulleys-blocks</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/product/wire-rope-accessories</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Wire Rope Sling Variants -->
+  <url>
+    <loc>https://marinoindia.co.in/variant/single-leg-wire-rope-sling</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/variant/2-leg-wire-rope-sling</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/variant/3-leg-wire-rope-sling</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/variant/4-leg-wire-rope-sling</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Chain Sling Variants -->
+  <url>
+    <loc>https://marinoindia.co.in/variant/single-leg-chain-sling</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/variant/2-leg-chain-sling</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/variant/3-leg-chain-sling</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/variant/4-leg-chain-sling</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Shackle Variants -->
+  <url>
+    <loc>https://marinoindia.co.in/variant/d-shackle</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/variant/bow-shackle</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Premade Slings Page -->
+  <url>
+    <loc>https://marinoindia.co.in/premade-slings</loc>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -23,7 +135,7 @@
   <!-- Media/Gallery Page -->
   <url>
     <loc>https://marinoindia.co.in/media</loc>
-    <lastmod>2025-01-02</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -31,25 +143,25 @@
   <!-- Clients Page -->
   <url>
     <loc>https://marinoindia.co.in/clients</loc>
-    <lastmod>2025-01-02</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  
-  <!-- Contact Page -->
-  <url>
-    <loc>https://marinoindia.co.in/contact</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   
   <!-- Our People Page -->
   <url>
     <loc>https://marinoindia.co.in/our-people</loc>
-    <lastmod>2025-01-02</lastmod>
+    <lastmod>2025-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://marinoindia.co.in/contact</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   
 </urlset>
