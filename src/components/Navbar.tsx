@@ -493,37 +493,22 @@ const Navbar = () => {
                       <ChevronRight className="h-4 w-4 text-muted-foreground" />
                     </Link>
 
-                    {/* Products Section with Nested Submenu */}
+                    {/* Products Section - Top Level Only */}
                     <div className="border-t border-border mt-2 pt-2">
                       <p className="px-6 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                         Products
                       </p>
                       
                       {productMenu.map((category) => (
-                        <div key={category.label} className="border-b border-border/50 last:border-0">
-                          <Link
-                            to={category.path}
-                            onClick={() => setIsOpen(false)}
-                            className="flex items-center justify-between px-6 py-3 text-sm font-medium text-foreground hover:bg-accent/10"
-                          >
-                            <span>{category.label}</span>
-                            <ChevronRight className="h-4 w-4 text-muted-foreground" />
-                          </Link>
-                          {/* Sub-categories */}
-                          <div className="bg-slate-50/50">
-                            {category.children.slice(0, 4).map((child) => (
-                              <Link
-                                key={child.path}
-                                to={child.path}
-                                onClick={() => setIsOpen(false)}
-                                className="flex items-center justify-between px-8 py-2 text-xs text-muted-foreground hover:bg-accent/10 hover:text-foreground"
-                              >
-                                <span>{child.label}</span>
-                                <ChevronRight className="h-3 w-3 text-slate-400" />
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
+                        <Link
+                          key={category.label}
+                          to={category.path}
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center justify-between px-6 py-3 text-sm font-medium text-foreground hover:bg-accent/10 border-b border-border/50 last:border-0"
+                        >
+                          <span>{category.label}</span>
+                          <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                        </Link>
                       ))}
                     </div>
 
