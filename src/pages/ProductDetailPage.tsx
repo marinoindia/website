@@ -228,6 +228,10 @@ const productDatabase: Record<string, {
       'Tree rigging and arboriculture'
     ],
     image: '/images/shackles.jpeg',
+    gallery: [
+      '/images/shackles.jpeg',
+      '/images/steelwirerope/galvanised-shackles_1.jpg'
+    ],
     category: 'Rigging Hardware',
     faqs: [
       {
@@ -278,6 +282,10 @@ const productDatabase: Record<string, {
       'Manufacturing material handling'
     ],
     image: '/images/hooks.jpeg',
+    gallery: [
+      '/images/hooks.jpeg',
+      '/images/steelwirerope/galvanised-hooks_1.jpg'
+    ],
     category: 'Rigging Hardware',
     faqs: [
       {
@@ -371,6 +379,9 @@ const productDatabase: Record<string, {
       'Structural cable systems'
     ],
     image: '/images/wire_rope_hardware.jpeg',
+    gallery: [
+      '/images/steelwirerope/galvanised-wire-rope-grips_1.jpg'
+    ],
     category: 'Rigging Hardware',
     faqs: [
       {
@@ -379,6 +390,109 @@ const productDatabase: Record<string, {
       }
     ],
     relatedProducts: ['wire-rope-slings', 'shackles', 'hooks']
+  },
+
+  'turnbuckles': {
+    name: 'Turnbuckles',
+    title: 'Galvanised Turnbuckles | Eye, Jaw, Hook Types | DIN1480 | India Supplier',
+    description: 'High-quality galvanised turnbuckles for tensioning and rigging applications. Available in Eye & Eye, Jaw & Jaw, Hook & Eye configurations. DIN1480 and commercial grades.',
+    longDescription: 'Turnbuckles are essential rigging hardware used for tensioning wire ropes, guy wires, and for length adjustment in lifting systems. Our galvanised turnbuckles are manufactured from drop-forged high tensile steel (SAE 1035 or 1045) with hot dipped galvanised finish for superior corrosion resistance. Available in tested and commercial grades.',
+    features: [
+      'Drop forged high tensile steel SAE 1035 or 1045',
+      'Hot dipped galvanised finish',
+      'MBL equals 5 x WWL (tested grade)',
+      'Available in Eye & Eye, Jaw & Jaw, Hook & Eye',
+      'DIN1480 and Commercial grades available',
+      'Meets ASTM F1145-92 standards',
+      'Sizes from M6 to M24',
+      'Suitable for wire rope and chain applications'
+    ],
+    specifications: {
+      'Material': 'High tensile steel SAE 1035/1045',
+      'Finish': 'Hot dipped galvanised',
+      'Size Range': 'M6 - M24',
+      'Types': 'Eye & Eye, Jaw & Jaw, Hook & Eye, Hook & Hook',
+      'Grades': 'Tested (ASTM F1145-92), Commercial (DIN1480)',
+      'Safety Factor': '5:1 (MBL = 5 x WWL)',
+      'Standard': 'ASTM F1145-92, DIN1480'
+    },
+    applications: [
+      'Wire rope tensioning',
+      'Guy wire adjustment',
+      'Lifting system length adjustment',
+      'Marine rigging',
+      'Construction bracing',
+      'Structural cable systems',
+      'Agricultural fencing',
+      'Shade sail installations'
+    ],
+    image: '/images/steelwirerope/galvanised-turnbuckles_1.jpg',
+    gallery: [
+      '/images/steelwirerope/galvanised-turnbuckles_1.jpg'
+    ],
+    category: 'Rigging Hardware',
+    faqs: [
+      {
+        q: 'What is the difference between tested and commercial turnbuckles?',
+        a: 'Tested turnbuckles are load rated with a Minimum Breaking Load (MBL) of 5 times the Working Load Limit (WWL) and meet ASTM F1145-92 standards. Commercial turnbuckles are suitable for general applications where load rating is not critical.'
+      },
+      {
+        q: 'Which turnbuckle configuration should I use?',
+        a: 'Eye & Eye: For permanent installations with shackles. Jaw & Jaw: For connecting to eye bolts or shackles without rotating. Hook & Eye: Quick connection on one end, permanent on other. Hook & Hook: For temporary quick connections.'
+      }
+    ],
+    relatedProducts: ['wire-rope-accessories', 'wire-rope-slings', 'shackles']
+  },
+
+  'thimbles': {
+    name: 'Wire Rope Thimbles',
+    title: 'Galvanised Wire Rope Thimbles | Heavy Duty | Standard | India Supplier',
+    description: 'Galvanised wire rope thimbles for protecting rope eyes from crushing and abrasion. Available in standard and heavy duty types. Mild steel construction with electro-galvanised finish.',
+    longDescription: 'Wire rope thimbles are essential fittings used to protect the eye of a wire rope sling from crushing and abrasion when connected to hooks, shackles, or other hardware. Our thimbles are manufactured from mild steel with electro-galvanised finish for corrosion resistance. Available in standard and heavy duty types to match different wire rope sizes.',
+    features: [
+      'Mild steel construction',
+      'Electro-galvanised finish',
+      'Standard and Heavy Duty types',
+      'Prevents rope eye crushing',
+      'Extends rope service life',
+      'Matches wire rope construction',
+      'Cost-effective protection',
+      'Easy to install'
+    ],
+    specifications: {
+      'Material': 'Mild Steel',
+      'Finish': 'Electro-galvanised',
+      'Types': 'Standard, Heavy Duty (G414)',
+      'Wire Rope Size': '6mm - 32mm',
+      'Standard': 'EN 13411-1, US Type',
+      'Packaging': 'Bulk or individual'
+    },
+    applications: [
+      'Wire rope sling eyes',
+      'Winch line terminations',
+      'Crane rope connections',
+      'Marine rigging',
+      'Lifting equipment',
+      'General rigging',
+      'Agricultural applications',
+      'Construction sites'
+    ],
+    image: '/images/steelwirerope/galvanised-thimbles_1.jpg',
+    gallery: [
+      '/images/steelwirerope/galvanised-thimbles_1.jpg'
+    ],
+    category: 'Rigging Hardware',
+    faqs: [
+      {
+        q: 'Why do I need thimbles for wire rope eyes?',
+        a: 'Thimbles prevent the wire rope from being crushed at the eye when under load, which would weaken the rope and reduce its service life. They distribute the load evenly around the eye.'
+      },
+      {
+        q: 'What is the difference between standard and heavy duty thimbles?',
+        a: 'Standard thimbles are suitable for most general applications. Heavy duty (G414) thimbles have a larger radius and thicker material, providing better protection for high-load applications or larger wire ropes.'
+      }
+    ],
+    relatedProducts: ['wire-rope-accessories', 'wire-rope-slings', 'wire-rope-grips']
   }
 };
 
