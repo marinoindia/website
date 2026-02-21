@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowUp, MapPin, Mail, Phone, Linkedin, Instagram } from 'lucide-react';
-import logoImage from '@/assets/logo/logo_marino.jpeg';
+import logoImage from '@/assets/logo/logo_updated.png';
 
 const Footer = () => {
   const scrollToTop = () => {

@@ -78,7 +78,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <a
-                  href="/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf"
+                  href="/catalogue/Marino_Wire_Rope_Sling_Catalog_2.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

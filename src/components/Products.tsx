@@ -22,7 +22,7 @@ const Products = () => {
       items: ['Wire Rope Slings with Thimble', 'Wire Rope Slings with Eye Hooks', 'Chain Slings', 'Quad Master Link Chain Slings'],
       image: '/images/premade_slings_hero.png',
       category: 'essential',
-      cataloguePdf: '/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf',
+      cataloguePdf: '/catalogue/Marino_Wire_Rope_Sling_Catalog_2.pdf',
       specs: ['6mm - 32mm diameter', '0.5T - 30T Working Load'],
     },
     {
@@ -93,7 +93,7 @@ const Products = () => {
       description: 'Complete range of wire rope fittings including wire rope clips, thimbles, sockets, and ferrules. Compatible with 6x19, 6x36, and 8x19 construction wire ropes. Galvanized finish for outdoor applications.',
       items: ['Galvanized Steel Wire Rope Clips', 'Wire Rope Clips', 'Crosby Wire Rope Pulley Bearings'],
       image: '/images/wire_rope_hardware.jpeg',
-      cataloguePdf: '/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf',
+      cataloguePdf: '/catalogue/Marino_Wire_Rope_Sling_Catalog_2.pdf',
       specs: ['6mm - 32mm diameter', '1T - 20T Working Load'],
     },
     {

@@ -580,7 +580,7 @@ const ProductDetailPage = () => {
                         Get Quote on WhatsApp
                       </Button>
                     </a>
-                    <Link to="/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf" target="_blank">
+                    <Link to="/catalogue/Marino_Wire_Rope_Sling_Catalog_2.pdf" target="_blank">
                       <Button size="lg" variant="outline" className="btn-secondary gap-2">
                         <Download className="w-5 h-5" />
                         Download Catalogue
@@ -627,8 +627,39 @@ const ProductDetailPage = () => {
             </div>
           </section>
 
+          {/* Product Gallery */}
+          {productId === 'wire-rope-slings' && (
+            <section className="py-16 bg-slate-50">
+              <div className="container-modern">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8">Product Gallery</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {[
+                    { src: '/images/slings_new/sling_bundle_coiled.jpeg', alt: 'Wire rope slings bundle coiled' },
+                    { src: '/images/slings_new/sling_4leg_masterlink.jpeg', alt: '4-leg wire rope sling with master link' },
+                    { src: '/images/slings_new/sling_multiple_fittings.jpeg', alt: 'Multiple wire rope slings with end fittings' },
+                    { src: '/images/slings_new/wire_rope_reel.jpeg', alt: 'Large wire rope reel' },
+                    { src: '/images/slings_new/sling_2leg_red_masterlink.jpeg', alt: '2-leg wire rope sling with red master link' },
+                    { src: '/images/slings_new/sling_heavy_duty_fittings.jpeg', alt: 'Heavy duty wire rope slings with large fittings' },
+                    { src: '/images/slings_new/sling_workshop_assembly.jpg', alt: 'Workers assembling large multi-leg sling' },
+                    { src: '/images/slings_new/wire_rope_closeup.jpeg', alt: 'Close-up of wire rope construction' },
+                  ].map((img, i) => (
+                    <div key={i} className="relative group overflow-hidden rounded-xl aspect-square bg-white border border-slate-200">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Specifications */}
-          <section className="py-16 bg-slate-50">
+          <section className="py-16 bg-white">
             <div className="container-modern">
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8">Technical Specifications</h2>
               <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">

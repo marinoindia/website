@@ -19,7 +19,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import logoImage from '@/assets/logo/logo_marino.jpeg';
+import logoImage from '@/assets/logo/logo_updated.png';
 import EnquiryForm from '@/components/EnquiryForm';
 import SaleBanner from '@/components/SaleBanner';
 
@@ -482,26 +482,72 @@ const Navbar = () => {
                     </SheetTitle>
                   </SheetHeader>
                   
-                  <div className="py-4">
+                  <div className="py-4 pb-24">
                     {/* Main Navigation */}
-                    {[
-                      { to: '/', label: 'Home' },
-                      { to: '/premade-slings', label: 'Premade Slings' },
-                      { to: '/our-people', label: 'Our People' },
-                      { to: '/clients', label: 'Clients' },
-                      { to: '/media', label: 'Media' },
-                      { to: '/contact', label: 'Contact' },
-                    ].map((link) => (
-                      <Link
-                        key={link.to}
-                        to={link.to}
-                        onClick={() => setIsOpen(false)}
-                        className="flex items-center justify-between px-6 py-3 text-sm font-medium hover:bg-accent/10"
-                      >
-                        {link.label}
-                        <ChevronRight className="h-4 w-4 text-muted-foreground" />
-                      </Link>
-                    ))}
+                    <Link
+                      to="/"
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center justify-between px-6 py-3 text-sm font-medium hover:bg-accent/10"
+                    >
+                      Home
+                      <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                    </Link>
+
+                    {/* Products Section with Nested Submenu */}
+                    <div className="border-t border-border mt-2 pt-2">
+                      <p className="px-6 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                        Products
+                      </p>
+                      
+                      {productMenu.map((category) => (
+                        <div key={category.label} className="border-b border-border/50 last:border-0">
+                          <Link
+                            to={category.path}
+                            onClick={() => setIsOpen(false)}
+                            className="flex items-center justify-between px-6 py-3 text-sm font-medium text-foreground hover:bg-accent/10"
+                          >
+                            <span>{category.label}</span>
+                            <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                          </Link>
+                          {/* Sub-categories */}
+                          <div className="bg-slate-50/50">
+                            {category.children.slice(0, 4).map((child) => (
+                              <Link
+                                key={child.path}
+                                to={child.path}
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center justify-between px-8 py-2 text-xs text-muted-foreground hover:bg-accent/10 hover:text-foreground"
+                              >
+                                <span>{child.label}</span>
+                                <ChevronRight className="h-3 w-3 text-slate-400" />
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Other Pages */}
+                    <div className="border-t border-border mt-2 pt-2">
+                      {[
+                        { to: '/premade-slings', label: 'Premade Slings' },
+                        { to: '/our-people', label: 'Our People' },
+                        { to: '/clients', label: 'Clients' },
+                        { to: '/media', label: 'Media' },
+                        { to: '/blog', label: 'Blog' },
+                        { to: '/contact', label: 'Contact' },
+                      ].map((link) => (
+                        <Link
+                          key={link.to}
+                          to={link.to}
+                          onClick={() => setIsOpen(false)}
+                          className="flex items-center justify-between px-6 py-3 text-sm font-medium hover:bg-accent/10"
+                        >
+                          {link.label}
+                          <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                   
                   <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-border bg-background">

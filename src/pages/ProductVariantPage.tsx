@@ -661,7 +661,7 @@ const ProductVariantPage = () => {
                         Get Quote on WhatsApp
                       </Button>
                     </a>
-                    <Link to="/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf" target="_blank">
+                    <Link to="/catalogue/Marino_Wire_Rope_Sling_Catalog_2.pdf" target="_blank">
                       <Button size="lg" variant="outline" className="btn-secondary gap-2">
                         <Download className="w-5 h-5" />
                         Download Specs
