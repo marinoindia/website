@@ -40,6 +40,14 @@ const Products = () => {
       specs: ['6mm - 90mm Pin', '0.5T - 25T Working Load'],
     },
     {
+      title: 'Turnbuckles',
+      slug: 'turnbuckles',
+      description: 'Complete range of galvanised and stainless steel turnbuckles for tensioning and rigging. Eye & Eye, Jaw & Jaw, Hook & Eye configurations. DIN1480 commercial and ASTM F1145 tested grades available.',
+      items: ['Eye & Eye Turnbuckles', 'Jaw & Jaw Turnbuckles', 'Hook & Eye Turnbuckles', 'Stainless Steel Turnbuckles', 'Fork & Fork Turnbuckles'],
+      image: '/images/Turn_buckles.png',
+      specs: ['M6 - M24 Size', 'Tested & Commercial Grades'],
+    },
+    {
       title: 'Lifting Lugs & Pins',
       description: 'Precision-engineered lifting points including weld-on lugs, swivel hoist rings, and towing eyes. Designed for permanent and temporary attachment to structures and equipment. Proof tested and certified.',
       items: ['Lifting Pins', 'Lifting Lugs', 'Eye and Eye Lifting Swivels', 'Lifting Swivels'],
