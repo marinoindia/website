@@ -1390,8 +1390,8 @@ const ProductDetailPage = () => {
             </section>
           )}
 
-          {/* Specifications - Hidden for Hooks */}
-          {productId !== 'hooks' && (
+          {/* Specifications - Hidden for Hooks and Wire Rope Slings */}
+          {productId !== 'hooks' && productId !== 'wire-rope-slings' && (
             <section className="py-16 bg-white">
               <div className="container-modern">
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8">Technical Specifications</h2>
@@ -1594,6 +1594,16 @@ const ProductDetailPage = () => {
                     Working Load Limits (WLL) in tonnes for <strong>Steel Core (6×19, 6×36 & 8×36)</strong> wire rope slings. 
                     Values shown are for Direct attachment (choke hitch for endless). Meets EN 13414-1 standard.
                   </p>
+                </div>
+
+                {/* Popular Wire Rope Slings Image */}
+                <div className="mb-8">
+                  <img
+                    src="/images/popular_wire_rope_slings.png"
+                    alt="Popular Wire Rope Slings - Working Load Limits Chart"
+                    className="w-full max-w-4xl mx-auto rounded-xl shadow-md border border-slate-200"
+                    loading="lazy"
+                  />
                 </div>
 
                 {/* Tab Navigation */}
