@@ -1286,38 +1286,42 @@ const ProductDetailPage = () => {
           {productId === 'hooks' && (
             <section className="py-16 bg-slate-50">
               <div className="container-modern">
+                {/* Banner Image */}
+                <div className="mb-8">
+                  <img
+                    src="/images/hook_types/Banner-Galv-Hooks.jpg"
+                    alt="Galvanised Hooks Banner"
+                    className="w-full h-auto rounded-xl shadow-md"
+                    loading="lazy"
+                  />
+                </div>
+                
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Hooks</h2>
                 <p className="text-slate-600 mb-8 max-w-3xl">
                   Browse our comprehensive range of Grade 8 lifting hooks. Each type is designed for specific applications and connection methods. Click any product to view dimensions and weights.
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                
+                {/* 3-Column Grid matching reference site */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {hookProductData.map((hook) => (
                     <div
                       key={hook.id}
-                      className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col group hover:shadow-md hover:border-emerald-300 transition-all duration-200 cursor-pointer"
+                      className="bg-slate-700 rounded-lg shadow-md overflow-hidden flex flex-col group hover:shadow-lg hover:scale-[1.02] transition-all duration-200 cursor-pointer"
                       onClick={() => setExpandedHook(expandedHook === hook.id ? null : hook.id)}
                     >
-                      <div className="relative aspect-square bg-white">
+                      {/* Dark Blue Header Bar */}
+                      <div className="bg-slate-600 px-4 py-3 border-b border-slate-500">
+                        <h3 className="font-semibold text-white text-center text-sm leading-tight">{hook.name}</h3>
+                      </div>
+                      {/* Product Image on Dark Background */}
+                      <div className="relative aspect-[4/3] bg-slate-700 p-4 flex items-center justify-center">
                         <img
                           src={hook.image}
                           alt={hook.name}
-                          className="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-105"
+                          className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
                           loading="lazy"
                           onError={(e) => { e.currentTarget.src = '/images/hooks.jpeg'; }}
                         />
-                        {hook.standard && (
-                          <div className="absolute top-2 right-2">
-                            <span className="bg-emerald-600 text-white text-xs font-medium px-2 py-0.5 rounded-full">{hook.standard}</span>
-                          </div>
-                        )}
-                      </div>
-                      <div className="p-3 flex flex-col flex-1 border-t border-slate-100">
-                        <h3 className="font-semibold text-slate-900 text-sm mb-1 leading-tight">{hook.name}</h3>
-                        <p className="text-slate-500 text-xs leading-relaxed flex-1">{hook.description}</p>
-                        <div className="mt-2 flex items-center gap-1 text-xs text-emerald-600 font-medium">
-                          View Dimensions
-                          {expandedHook === hook.id ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
-                        </div>
                       </div>
                     </div>
                   ))}
