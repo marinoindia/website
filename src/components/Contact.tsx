@@ -228,18 +228,19 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100"
           >
-            <div className="w-full h-[400px] sm:h-[500px]">
+            <div className="w-full h-[400px] sm:h-[500px] relative">
               <iframe
                 src="https://www.google.com/maps?q=22.5401909,88.3319733&hl=en&z=17&output=embed"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'none' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full"
                 title="Marino Corporation Of India Location"
               />
+              <div className="absolute inset-0 pointer-events-none" />
             </div>
             <div className="p-6 bg-slate-50">
               <div className="flex items-center gap-3 mb-4">
@@ -257,6 +258,54 @@ const Contact = () => {
               >
                 <Navigation className="w-4 h-4" />
                 Get Directions
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Warehouse/Godown Location */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 mt-8"
+          >
+            <div className="p-4 bg-slate-100 border-b border-slate-200">
+              <h3 className="font-semibold text-slate-900 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-emerald-600" />
+                Warehouse / Godown
+              </h3>
+            </div>
+            <div className="w-full h-[400px] sm:h-[500px] relative">
+              <iframe
+                src="https://www.google.com/maps?q=30A+Orphangunge+Rd,+Orpan+Gang+Market,+Alipore,+Kolkata+700023&hl=en&z=17&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, pointerEvents: 'none' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+                title="Marino India Warehouse Location"
+              />
+              <div className="absolute inset-0 pointer-events-none" />
+            </div>
+            <div className="p-6 bg-slate-50">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-slate-900">30A, Orphangunge Road, Orpan Gang Market</p>
+                  <p className="text-slate-500 text-sm">Alipore, Kolkata - 700 023, West Bengal, India</p>
+                </div>
+              </div>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=30A+Orphangunge+Rd,+Orpan+Gang+Market,+Alipore,+Kolkata+700023"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors w-full justify-center"
+              >
+                <Navigation className="w-4 h-4" />
+                Get Directions to Warehouse
               </a>
             </div>
           </motion.div>
