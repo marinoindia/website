@@ -389,17 +389,7 @@ const productDatabase: Record<string, {
       'Hot dip galvanized or ungalvanized finish',
       'Working load limits from 0.5T to 30T'
     ],
-    specifications: {
-      'Diameter Range': '6mm - 32mm',
-      'Working Load Limit': '0.5T - 30T',
-      'Construction': '6x19, 6x36, 8x19',
-      'Core Type': 'Fiber Core (FC) / IWRC',
-      'Grade': '1770, 1960 MPa',
-      'End Fittings': 'Thimble, Eye Hook, Master Link, Shackle',
-      'Finish': 'Ungalvanized / Hot Dip Galvanized',
-      'Standard': 'IS 2266, BS EN 13414-1',
-      'Safety Factor': '5:1'
-    },
+
     applications: [
       'Construction and infrastructure projects',
       'Port and shipping cargo handling',
