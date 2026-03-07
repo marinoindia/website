@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Phone, Download, Mail, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Phone, Download, Mail, MapPin, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Navbar from '@/components/Navbar';
@@ -935,10 +935,111 @@ const productDatabase: Record<string, {
   }
 };
 
+// Wire Rope Sling Capacity Data (Steel Core 6x19, 6x36 & 8x36)
+const slingCapacityData = {
+  oneLeg: [
+    { diameter: 8, wll: 0.75 },
+    { diameter: 9, wll: 0.95 },
+    { diameter: 10, wll: 1.15 },
+    { diameter: 11, wll: 1.40 },
+    { diameter: 12, wll: 1.70 },
+    { diameter: 13, wll: 2.00 },
+    { diameter: 14, wll: 2.25 },
+    { diameter: 16, wll: 3.00 },
+    { diameter: 18, wll: 3.70 },
+    { diameter: 20, wll: 4.60 },
+    { diameter: 22, wll: 5.65 },
+    { diameter: 24, wll: 6.70 },
+    { diameter: 26, wll: 7.80 },
+    { diameter: 28, wll: 8.40 },
+    { diameter: 32, wll: 11.8 },
+    { diameter: 36, wll: 15.0 },
+    { diameter: 40, wll: 18.5 },
+    { diameter: 44, wll: 22.5 },
+    { diameter: 48, wll: 26.0 },
+    { diameter: 52, wll: 31.5 },
+    { diameter: 56, wll: 36.0 },
+    { diameter: 60, wll: 42.0 },
+  ],
+  twoLeg: [
+    { diameter: 8, wll_0_45: 1.05, wll_45_60: 0.75 },
+    { diameter: 9, wll_0_45: 1.30, wll_45_60: 0.95 },
+    { diameter: 10, wll_0_45: 1.60, wll_45_60: 1.15 },
+    { diameter: 11, wll_0_45: 2.00, wll_45_60: 1.40 },
+    { diameter: 12, wll_0_45: 2.30, wll_45_60: 1.70 },
+    { diameter: 13, wll_0_45: 2.80, wll_45_60: 2.00 },
+    { diameter: 14, wll_0_45: 3.15, wll_45_60: 2.25 },
+    { diameter: 16, wll_0_45: 4.20, wll_45_60: 3.00 },
+    { diameter: 18, wll_0_45: 5.20, wll_45_60: 3.70 },
+    { diameter: 20, wll_0_45: 6.50, wll_45_60: 4.60 },
+    { diameter: 22, wll_0_45: 7.80, wll_45_60: 5.65 },
+    { diameter: 24, wll_0_45: 9.40, wll_45_60: 6.70 },
+    { diameter: 26, wll_0_45: 11.0, wll_45_60: 7.80 },
+    { diameter: 28, wll_0_45: 12.5, wll_45_60: 9.00 },
+    { diameter: 32, wll_0_45: 16.5, wll_45_60: 11.8 },
+    { diameter: 36, wll_0_45: 21.0, wll_45_60: 15.0 },
+    { diameter: 40, wll_0_45: 26.0, wll_45_60: 18.5 },
+    { diameter: 44, wll_0_45: 31.5, wll_45_60: 22.5 },
+    { diameter: 48, wll_0_45: 37.0, wll_45_60: 26.0 },
+    { diameter: 52, wll_0_45: 44.0, wll_45_60: 31.5 },
+    { diameter: 56, wll_0_45: 50.0, wll_45_60: 36.0 },
+    { diameter: 60, wll_0_45: 58.0, wll_45_60: 42.0 },
+  ],
+  threeFourLeg: [
+    { diameter: 8, wll_0_45: 1.55, wll_45_60: 1.10 },
+    { diameter: 9, wll_0_45: 2.00, wll_45_60: 1.40 },
+    { diameter: 10, wll_0_45: 2.40, wll_45_60: 1.70 },
+    { diameter: 11, wll_0_45: 3.00, wll_45_60: 2.12 },
+    { diameter: 12, wll_0_45: 3.55, wll_45_60: 2.50 },
+    { diameter: 13, wll_0_45: 4.15, wll_45_60: 3.00 },
+    { diameter: 14, wll_0_45: 4.80, wll_45_60: 3.40 },
+    { diameter: 16, wll_0_45: 6.30, wll_45_60: 4.50 },
+    { diameter: 18, wll_0_45: 7.80, wll_45_60: 5.65 },
+    { diameter: 20, wll_0_45: 9.80, wll_45_60: 6.90 },
+    { diameter: 22, wll_0_45: 11.8, wll_45_60: 8.40 },
+    { diameter: 24, wll_0_45: 14.0, wll_45_60: 10.00 },
+    { diameter: 26, wll_0_45: 16.5, wll_45_60: 11.5 },
+    { diameter: 28, wll_0_45: 19.0, wll_45_60: 13.5 },
+    { diameter: 32, wll_0_45: 25.0, wll_45_60: 17.5 },
+    { diameter: 36, wll_0_45: 31.5, wll_45_60: 22.5 },
+    { diameter: 40, wll_0_45: 39.0, wll_45_60: 28.0 },
+    { diameter: 44, wll_0_45: 47.0, wll_45_60: 33.5 },
+    { diameter: 48, wll_0_45: 55.0, wll_45_60: 40.0 },
+    { diameter: 52, wll_0_45: 66.0, wll_45_60: 47.0 },
+    { diameter: 56, wll_0_45: 76.0, wll_45_60: 54.0 },
+    { diameter: 60, wll_0_45: 88.0, wll_45_60: 63.0 },
+  ],
+  endless: [
+    { diameter: 8, wll: 1.20 },
+    { diameter: 9, wll: 1.50 },
+    { diameter: 10, wll: 1.85 },
+    { diameter: 11, wll: 2.25 },
+    { diameter: 12, wll: 2.70 },
+    { diameter: 13, wll: 3.15 },
+    { diameter: 14, wll: 3.70 },
+    { diameter: 16, wll: 4.80 },
+    { diameter: 18, wll: 6.00 },
+    { diameter: 20, wll: 7.35 },
+    { diameter: 22, wll: 9.00 },
+    { diameter: 24, wll: 10.6 },
+    { diameter: 26, wll: 12.5 },
+    { diameter: 28, wll: 14.5 },
+    { diameter: 32, wll: 19.0 },
+    { diameter: 36, wll: 23.5 },
+    { diameter: 40, wll: 30.0 },
+    { diameter: 44, wll: 36.0 },
+    { diameter: 48, wll: 42.0 },
+    { diameter: 52, wll: 50.0 },
+    { diameter: 56, wll: 58.0 },
+    { diameter: 60, wll: 67.0 },
+  ],
+};
+
 const ProductDetailPage = () => {
   const { productId } = useParams<{ productId: string }>();
   const product = productId ? productDatabase[productId] : null;
   const [expandedHook, setExpandedHook] = useState<string | null>(null);
+  const [activeSlingTab, setActiveSlingTab] = useState<'one' | 'two' | 'three' | 'endless'>('one');
 
   if (!product) {
     return (
@@ -1476,6 +1577,219 @@ const ProductDetailPage = () => {
                     At a 60° included angle between sling legs, the capacity is reduced by 50%. 
                     Never use horizontal angles less than 30°. Formula: Effective WLL = WLL × sin(θ÷2)
                   </p>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Wire Rope Sling Working Load Limit Tables - Steel Core 6x19, 6x36 & 8x36 */}
+          {productId === 'wire-rope-slings' && (
+            <section className="py-16 bg-slate-50">
+              <div className="container-modern">
+                <div className="mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                    Wire Rope Sling Working Load Limits
+                  </h2>
+                  <p className="text-slate-600">
+                    Working Load Limits (WLL) in tonnes for <strong>Steel Core (6×19, 6×36 & 8×36)</strong> wire rope slings. 
+                    Values shown are for Direct attachment (choke hitch for endless). Meets EN 13414-1 standard.
+                  </p>
+                </div>
+
+                {/* Tab Navigation */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {[
+                    { id: 'one', label: 'One Leg Sling', icon: '1' },
+                    { id: 'two', label: 'Two Leg Sling', icon: '2' },
+                    { id: 'three', label: 'Three & Four Leg', icon: '3/4' },
+                    { id: 'endless', label: 'Endless Sling', icon: '∞' },
+                  ].map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveSlingTab(tab.id as typeof activeSlingTab)}
+                      className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all ${
+                        activeSlingTab === tab.id
+                          ? 'bg-emerald-600 text-white shadow-md'
+                          : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                      }`}
+                    >
+                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${
+                        activeSlingTab === tab.id ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-600'
+                      }`}>
+                        {tab.icon}
+                      </span>
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* One Leg Sling Table */}
+                {activeSlingTab === 'one' && (
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="px-6 py-4 bg-slate-100 border-b border-slate-200">
+                      <h3 className="text-lg font-bold text-slate-900">One Leg Sling (Direct)</h3>
+                      <p className="text-sm text-slate-600">Angle to Vertical: 0° | Leg Factor (K<sub>L</sub>): 1.0</p>
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-slate-50">
+                          <tr>
+                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b">Rope Diameter</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b">Working Load Limit (Tonnes)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {slingCapacityData.oneLeg.map((row, i) => (
+                            <tr key={row.diameter} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.diameter} mm</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll.toFixed(2)}</td>
+                            </tr>
+                          ))}
+                          <tr className="bg-emerald-50">
+                            <td className="px-4 py-3 font-medium text-slate-900 border-b">Leg Factor <em>K</em><sub><em>L</em></sub></td>
+                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.0</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* Two Leg Sling Table */}
+                {activeSlingTab === 'two' && (
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="px-6 py-4 bg-slate-100 border-b border-slate-200">
+                      <h3 className="text-lg font-bold text-slate-900">Two Leg Sling (Direct)</h3>
+                      <p className="text-sm text-slate-600">Working Load Limits vary by angle to vertical</p>
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-slate-50">
+                          <tr>
+                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b" rowSpan={2}>Rope Diameter</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>Working Load Limits (Tonnes)</th>
+                          </tr>
+                          <tr>
+                            <th className="px-4 py-2 text-center text-xs font-semibold text-slate-600 border-b bg-slate-100">Angle to Vertical<br/>0° - 45°</th>
+                            <th className="px-4 py-2 text-center text-xs font-semibold text-slate-600 border-b bg-slate-100">Angle to Vertical<br/>45° - 60°</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {slingCapacityData.twoLeg.map((row, i) => (
+                            <tr key={row.diameter} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.diameter} mm</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll_0_45.toFixed(2)}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll_45_60.toFixed(2)}</td>
+                            </tr>
+                          ))}
+                          <tr className="bg-emerald-50">
+                            <td className="px-4 py-3 font-medium text-slate-900 border-b">Leg Factor <em>K</em><sub><em>L</em></sub></td>
+                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.4</td>
+                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.0</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* Three & Four Leg Sling Table */}
+                {activeSlingTab === 'three' && (
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="px-6 py-4 bg-slate-100 border-b border-slate-200">
+                      <h3 className="text-lg font-bold text-slate-900">Three & Four Leg Sling (Direct)</h3>
+                      <p className="text-sm text-slate-600">Working Load Limits vary by angle to vertical. Note: 3 & 4 leg slings have same WLL ratings.</p>
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-slate-50">
+                          <tr>
+                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b" rowSpan={2}>Rope Diameter</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>Working Load Limits (Tonnes)</th>
+                          </tr>
+                          <tr>
+                            <th className="px-4 py-2 text-center text-xs font-semibold text-slate-600 border-b bg-slate-100">Angle to Vertical<br/>0° - 45°</th>
+                            <th className="px-4 py-2 text-center text-xs font-semibold text-slate-600 border-b bg-slate-100">Angle to Vertical<br/>45° - 60°</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {slingCapacityData.threeFourLeg.map((row, i) => (
+                            <tr key={row.diameter} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.diameter} mm</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll_0_45.toFixed(2)}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll_45_60.toFixed(2)}</td>
+                            </tr>
+                          ))}
+                          <tr className="bg-emerald-50">
+                            <td className="px-4 py-3 font-medium text-slate-900 border-b">Leg Factor <em>K</em><sub><em>L</em></sub></td>
+                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">2.1</td>
+                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.5</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* Endless Sling Table */}
+                {activeSlingTab === 'endless' && (
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="px-6 py-4 bg-slate-100 border-b border-slate-200">
+                      <h3 className="text-lg font-bold text-slate-900">Endless Sling (Choke Hitch)</h3>
+                      <p className="text-sm text-slate-600">Angle to Vertical: 0° | Leg Factor (K<sub>L</sub>): 1.6</p>
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-slate-50">
+                          <tr>
+                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b">Rope Diameter</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b">Working Load Limit (Tonnes)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {slingCapacityData.endless.map((row, i) => (
+                            <tr key={row.diameter} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.diameter} mm</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll.toFixed(2)}</td>
+                            </tr>
+                          ))}
+                          <tr className="bg-emerald-50">
+                            <td className="px-4 py-3 font-medium text-slate-900 border-b">Leg Factor <em>K</em><sub><em>L</em></sub></td>
+                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.6</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* Leg Factor Explanation */}
+                <div className="mt-8 grid md:grid-cols-2 gap-6">
+                  <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                    <h4 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
+                      <Info className="w-5 h-5" />
+                      Leg Factor (K<sub>L</sub>) Explained
+                    </h4>
+                    <p className="text-blue-800 text-sm mb-3">
+                      The Leg Factor is a multiplier used to calculate the total sling capacity based on the number of legs and their angle.
+                    </p>
+                    <ul className="text-blue-700 text-sm space-y-1">
+                      <li>• <strong>1.0</strong> = Single leg (direct)</li>
+                      <li>• <strong>1.4</strong> = Two legs at 0°-45° angle</li>
+                      <li>• <strong>2.1</strong> = Three legs at 0°-45° angle</li>
+                      <li>• <strong>1.6</strong> = Endless/choke hitch</li>
+                    </ul>
+                  </div>
+                  <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
+                    <h4 className="font-bold text-amber-900 mb-3">⚠️ Important Safety Notes</h4>
+                    <ul className="text-amber-800 text-sm space-y-2">
+                      <li>• Never exceed the Working Load Limit</li>
+                      <li>• Capacity decreases as sling angle increases</li>
+                      <li>• For 3-leg slings, if one leg is not loaded, use 2-leg WLL</li>
+                      <li>• For 4-leg slings, typically only 2 legs carry the load</li>
+                      <li>• Always inspect slings before use</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </section>
