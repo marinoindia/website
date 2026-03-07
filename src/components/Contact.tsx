@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
@@ -242,13 +242,22 @@ const Contact = () => {
               />
             </div>
             <div className="p-6 bg-slate-50">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mb-4">
                 <MapPin className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-slate-900">28, Orphangunj Road, Kidderpore</p>
                   <p className="text-slate-500 text-sm">Kolkata - 700 023, West Bengal, India</p>
                 </div>
               </div>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=28+Orphangunj+Road,+Kidderpore,+Kolkata+700023"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors w-full justify-center"
+              >
+                <Navigation className="w-4 h-4" />
+                Get Directions
+              </a>
             </div>
           </motion.div>
         </div>
