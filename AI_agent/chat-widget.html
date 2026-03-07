@@ -1,0 +1,384 @@
+<!-- Marino India AI Chat Widget -->
+<!-- Add this code before the closing </body> tag in your index.html -->
+
+<div id="chat-widget-container">
+  <!-- Chat Window -->
+  <div id="chat-window" style="display: none;">
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">🤖</div>
+        <div>
+          <div class="chat-title">Marino Assistant</div>
+          <div class="chat-subtitle">Ask about our products</div>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()">×</button>
+    </div>
+
+    <!-- Messages Area -->
+    <div id="chat-messages">
+      <div class="bot-message">
+        👋 Hi! I'm your Marino assistant. I can help you find:
+        <br>• Wire Ropes & Slings
+        <br>• Chain & Lifting Equipment
+        <br>• Shackles & Hooks
+        <br><br>What are you looking for?
+      </div>
+    </div>
+
+    <!-- Quick Replies -->
+    <div class="quick-replies">
+      <button onclick="sendQuick('Wire Rope')">Wire Rope</button>
+      <button onclick="sendQuick('Chain Slings')">Chain Slings</button>
+      <button onclick="sendQuick('Shackles')">Shackles</button>
+      <button onclick="sendQuick('Get Quote')">Get Quote</button>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-input-area">
+      <div class="chat-input-wrapper">
+        <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendMessage()">
+        <button onclick="sendMessage()">➤</button>
+      </div>
+      <a href="https://wa.me/919831144669" target="_blank" class="whatsapp-link">💬 Chat on WhatsApp instead</a>
+    </div>
+  </div>
+
+  <!-- Toggle Button -->
+  <button id="chat-toggle" onclick="toggleChat()">💬</button>
+</div>
+
+<style>
+/* Chat Widget Styles */
+#chat-widget-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+#chat-window {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-header {
+  background: #166534;
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.chat-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.chat-subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.chat-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.chat-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+#chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f9fafb;
+}
+
+.bot-message, .user-message {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bot-message {
+  background: #e5e7eb;
+  color: #1f2937;
+  border-radius: 16px 16px 16px 4px;
+  align-self: flex-start;
+}
+
+.user-message {
+  background: #166534;
+  color: white;
+  border-radius: 16px 16px 4px 16px;
+  align-self: flex-end;
+}
+
+.typing-indicator {
+  background: #e5e7eb;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  color: #6b7280;
+  align-self: flex-start;
+}
+
+.quick-replies {
+  padding: 12px 16px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.quick-replies::-webkit-scrollbar {
+  display: none;
+}
+
+.quick-replies button {
+  padding: 8px 16px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.quick-replies button:hover {
+  background: #166534;
+  color: white;
+  border-color: #166534;
+}
+
+.chat-input-area {
+  padding: 12px 16px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 24px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#chat-input:focus {
+  border-color: #166534;
+}
+
+.chat-input-wrapper button {
+  background: #166534;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.chat-input-wrapper button:hover {
+  background: #14532d;
+}
+
+.whatsapp-link {
+  display: block;
+  text-align: center;
+  color: #166534;
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.whatsapp-link:hover {
+  text-decoration: underline;
+}
+
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background: #166534;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#chat-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  #chat-window {
+    width: calc(100% - 40px);
+    height: calc(100% - 100px);
+    bottom: 80px;
+  }
+}
+</style>
+
+<script>
+// Chat Widget JavaScript
+const WORKER_URL = 'https://marino-ai-agent.marinocoindia.workers.dev';
+let chatHistory = [];
+let isOpen = false;
+
+function toggleChat() {
+  const window = document.getElementById('chat-window');
+  const toggle = document.getElementById('chat-toggle');
+  isOpen = !isOpen;
+  
+  if (isOpen) {
+    window.style.display = 'flex';
+    toggle.style.display = 'none';
+    document.getElementById('chat-input')?.focus();
+  } else {
+    window.style.display = 'none';
+    toggle.style.display = 'block';
+  }
+}
+
+function sendQuick(text) {
+  document.getElementById('chat-input').value = text;
+  sendMessage();
+}
+
+function addMessage(text, isUser) {
+  const container = document.getElementById('chat-messages');
+  const msg = document.createElement('div');
+  msg.className = isUser ? 'user-message' : 'bot-message';
+  msg.textContent = text;
+  container.appendChild(msg);
+  container.scrollTop = container.scrollHeight;
+}
+
+function showTyping() {
+  const container = document.getElementById('chat-messages');
+  const typing = document.createElement('div');
+  typing.id = 'typing-indicator';
+  typing.className = 'typing-indicator';
+  typing.textContent = 'Typing...';
+  container.appendChild(typing);
+  container.scrollTop = container.scrollHeight;
+}
+
+function hideTyping() {
+  document.getElementById('typing-indicator')?.remove();
+}
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const message = input.value.trim();
+  if (!message) return;
+  
+  addMessage(message, true);
+  input.value = '';
+  showTyping();
+  
+  try {
+    const response = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        message,
+        history: chatHistory
+      })
+    });
+    
+    const data = await response.json();
+    hideTyping();
+    addMessage(data.reply, false);
+    
+    // Update history (keep last 4 exchanges)
+    chatHistory.push({ role: 'user', content: message });
+    chatHistory.push({ role: 'assistant', content: data.reply });
+    if (chatHistory.length > 8) chatHistory = chatHistory.slice(-8);
+    
+  } catch (error) {
+    hideTyping();
+    addMessage("Sorry, I'm having trouble connecting. Please call us at +91-9831144669 or try our WhatsApp.", false);
+  }
+}
+</script>
