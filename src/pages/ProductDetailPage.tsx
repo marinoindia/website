@@ -1965,14 +1965,26 @@ const ProductDetailPage = () => {
                     Weight for Stud Link Anchor Chains
                   </h3>
                   
+                  {/* Grade Legend */}
+                  <div className="mb-4 p-3 bg-slate-50 rounded-lg border border-slate-200">
+                    <p className="text-xs text-slate-600 font-medium mb-2">Grade Legend (5 values per cell):</p>
+                    <div className="flex flex-wrap gap-3 text-xs">
+                      <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded">1st: U1 (Grade 1)</span>
+                      <span className="px-2 py-1 bg-emerald-100 text-emerald-800 rounded">2nd: U2 (Grade 2)</span>
+                      <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded">3rd: U3 (Grade 3)</span>
+                      <span className="px-2 py-1 bg-amber-100 text-amber-800 rounded">4th: ORQ/ORM</span>
+                      <span className="px-2 py-1 bg-rose-100 text-rose-800 rounded">5th: R3/R4</span>
+                    </div>
+                  </div>
+                  
                   <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-6">
                     <div className="overflow-x-auto">
-                      <table className="w-full text-sm">
+                      <table className="w-full text-xs">
                         <thead className="bg-emerald-700">
                           <tr>
                             <th rowSpan={2} className="px-2 py-3 text-center font-semibold text-white border-r border-emerald-600">Diam<br/>(mm)</th>
                             <th colSpan={2} className="px-2 py-2 text-center font-semibold text-white border-r border-emerald-600">Chain Weights</th>
-                            <th colSpan={5} className="px-2 py-2 text-center font-semibold text-white border-r border-emerald-600">Component Weights (Kgs)</th>
+                            <th colSpan={7} className="px-2 py-2 text-center font-semibold text-white">Component Weights (Kgs)</th>
                           </tr>
                           <tr className="bg-emerald-800">
                             <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Kgs/mtr</th>
@@ -1982,41 +1994,80 @@ const ProductDetailPage = () => {
                             <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">End<br/>Link</th>
                             <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Kenter<br/>Shackle</th>
                             <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Anchor<br/>Shackle</th>
+                            <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Swivel</th>
+                            <th className="px-2 py-2 text-center font-medium text-emerald-100">Swivel<br/>Shackle</th>
                           </tr>
                         </thead>
                         <tbody>
                           {[
-                            { dia: '12.5', w1: '3.5-8.1', w2: '96-223', cl: '0.17-0.60', el: '0.23-0.88', endl: '0.23-0.89', ks: '0.39-1.0', as: '1.1-2.5' },
-                            { dia: '14-19', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '20.5', w1: '10.0-18.3', w2: '275-503', cl: '0.75-1.9', el: '1.10-2.8', endl: '1.13-2.9', ks: '1.35-3.3', as: '3.3-8.0' },
-                            { dia: '22-28', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '30', w1: '21.0-33.7', w2: '578-927', cl: '2.4-4.7', el: '3.2-6.1', endl: '3.3-6.8', ks: '3.9-7.8', as: '9.5-20.0' },
-                            { dia: '32-38', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '40', w1: '37.1-52.8', w2: '1020-1452', cl: '5.5-9.8', el: '7.1-13.1', endl: '8.0-15.0', ks: '9.1-16.0', as: '23.0-37' },
-                            { dia: '42-48', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '50', w1: '57-77', w2: '1568-2118', cl: '11-17', el: '15-23', endl: '17-25', ks: '18-28', as: '41-65' },
-                            { dia: '52-58', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '60', w1: '83-107', w2: '2283-2943', cl: '19-27', el: '25-37', endl: '27-42', ks: '28-44', as: '70-101' },
-                            { dia: '62-68', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '70', w1: '114-154', w2: '3135-4235', cl: '30-46', el: '40-61', endl: '45-70', ks: '44-74', as: '108-171' },
-                            { dia: '73-81', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '84', w1: '166-211', w2: '4565-5803', cl: '52-75', el: '68-98', endl: '78-112', ks: '84-115', as: '193-290' },
-                            { dia: '87-95', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '97', w1: '220-287', w2: '6050-7893', cl: '80-120', el: '102-160', endl: '120-175', ks: '135-200', as: '305-445' },
-                            { dia: '100-111', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '114', w1: '304-400', w2: '8360-11000', cl: '130-205', el: '173-260', endl: '193-305', ks: '225-370', as: '475-675' },
-                            { dia: '117-132', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
-                            { dia: '137', w1: '436-570', w2: '11990-15675', cl: '230-345', el: '285-455', endl: '330-510', ks: '390-605', as: '750-1340' },
+                            { dia: '12.5', w1: '3.5 / 4.4 / 5.8 / 7.0 / 8.1', w2: '96 / 121 / 160 / 193 / 223', cl: '0.17 / 0.24 / 0.36 / 0.47 / 0.60', el: '0.23 / 0.32 / 0.50 / 0.74 / 0.88', endl: '0.23 / 0.36 / 0.51 / 0.68 / 0.89', ks: '0.39 / 0.51 / 0.62 / 0.82 / 1.00', ast: '1.1 / 1.3 / 1.6 / 2.0 / 2.5', sw: '0.9 / 1.3 / 1.7 / 2.1 / 2.5', ss: '– / – / – / – / 9.0' },
+                            { dia: '14', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '16', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '17.5', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '19', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '20.5', w1: '10.0 / 11.1 / 13.3 / 15.7 / 18.3', w2: '275 / 305 / 366 / 432 / 503', cl: '0.75 / 0.93 / 1.21 / 1.55 / 1.9', el: '1.10 / 1.25 / 1.70 / 2.15 / 2.8', endl: '1.13 / 1.28 / 1.77 / 2.20 / 2.9', ks: '1.35 / 1.6 / 2.0 / 2.7 / 3.3', ast: '3.3 / 4.0 / 5.0 / 6.0 / 8.0', sw: '3.1 / 3.5 / 5.0 / 6.0 / 7.5', ss: '11.3 / 13.9 / 18.1 / 23.9 / 29.6' },
+                            { dia: '22', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '24', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '26', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '28', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '30', w1: '21.0 / 23.9 / 27.0 / 30.2 / 33.7', w2: '578 / 657 / 743 / 831 / 927', cl: '2.4 / 2.9 / 3.4 / 4.0 / 4.7', el: '3.2 / 3.9 / 4.7 / 5.5 / 6.1', endl: '3.3 / 4.0 / 5.0 / 5.9 / 6.8', ks: '3.9 / 4.6 / 5.8 / 6.6 / 7.8', ast: '9.5 / 12.0 / 14.0 / 17.0 / 20.0', sw: '9.0 / 11.0 / 13.5 / 16.0 / 19.0', ss: '35.4 / 44.6 / 53.7 / 62.9 / 71.9' },
+                            { dia: '32', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '34', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '36', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '38', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '40', w1: '37.1 / 40.5 / 44.3 / 48.5 / 52.8', w2: '1020 / 1114 / 1218 / 1334 / 1452', cl: '5.5 / 6.4 / 7.4 / 8.5 / 9.8', el: '7.1 / 8.4 / 10.0 / 11.5 / 13.1', endl: '8.0 / 9.6 / 11.2 / 13.0 / 15.0', ks: '9.1 / 10.5 / 12.2 / 14.0 / 16.0', ast: '23.0 / 26.0 / 29.0 / 33 / 37', sw: '23.0 / 27.0 / 32.0 / 37.0 / 44.0', ss: '85.9 / 100.0 / 114.0 / 128.0 / 147.5' },
+                            { dia: '42', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '44', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '46', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '48', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '50', w1: '57 / 62 / 66 / 71 / 77', w2: '1568 / 1705 / 1815 / 1953 / 2118', cl: '11 / 13 / 14 / 16 / 17', el: '15 / 17 / 19 / 21 / 23', endl: '17 / 20 / 22 / 23 / 25', ks: '18 / 20 / 20 / 24 / 28', ast: '41 / 45 / 50 / 54 / 65', sw: '57 / 57 / 67 / 67 / 80', ss: '167.0 / 186.5 / 206.0 / 232.5 / 259.0' },
+                            { dia: '52', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '54', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '56', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '58', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '60', w1: '83 / 88 / 94 / 100 / 107', w2: '2283 / 2420 / 2585 / 2750 / 2943', cl: '19 / 21 / 23 / 25 / 27', el: '25 / 28 / 31 / 34 / 37', endl: '27 / 30 / 34 / 38 / 42', ks: '28 / 33 / 38 / 38 / 44', ast: '70 / 76 / 82 / 94 / 101', sw: '95 / 95 / 112 / 130 / 130', ss: '285.5 / 312.0 / 345.0 / 378.7 / 412.0' },
+                            { dia: '62', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '64', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '66', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '68', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '70', w1: '114 / 124 / 135 / 142 / 154', w2: '3135 / 3410 / 3713 / 3905 / 4235', cl: '30 / 34 / 39 / 42 / 46', el: '40 / 45 / 50 / 55 / 61', endl: '45 / 52 / 59 / 63 / 70', ks: '44 / 51 / 58 / 65 / 74', ast: '108 / 124 / 141 / 150 / 171', sw: '152 / 172 / 194 / 194 / 220', ss: '451.2 / 510.0 / 575.0 / 623.4 / 696.0' },
+                            { dia: '73', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '76', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '78', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '81', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '84', w1: '166 / 178 / 189 / 199 / 211', w2: '4565 / 4895 / 5198 / 5473 / 5803', cl: '52 / 58 / 64 / 68 / 75', el: '68 / 75 / 82 / 88 / 98', endl: '78 / 86 / 95 / 100 / 112', ks: '84 / 94 / 105 / 105 / 115', ast: '193 / 218 / 243 / 256 / 290', sw: '242 / 270 / 300 / 325 / 350', ss: '776.0 / 867.5 / 959.0 / 1020.0 / 1123.0' },
+                            { dia: '87', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '90', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '92', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '95', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '97', w1: '220 / 234 / 243 / 266 / 287', w2: '6050 / 6435 / 6683 / 7315 / 7893', cl: '80 / 88 / 93 / 109 / 120', el: '102 / 112 / 120 / 140 / 160', endl: '120 / 130 / 138 / 158 / 175', ks: '135 / 150 / 150 / 175 / 200', ast: '305 / 335 / 350 / 410 / 445', sw: '350 / 385 / 420 / 495 / 535', ss: '1196.0 / 1310.0 / 1397.3 / 1615.5 / 1792.0' },
+                            { dia: '100', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '102', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '107', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '111', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '114', w1: '304 / 317 / 345 / 375 / 400', w2: '8360 / 8718 / 9488 / 10313 / 11000', cl: '130 / 142 / 160 / 182 / 205', el: '173 / 185 / 210 / 235 / 260', endl: '193 / 210 / 235 / 260 / 305', ks: '225 / 225 / 267 / 315 / 370', ast: '475 / 505 / 550 / 600 / 675', sw: '570 / 610 / 650 / 720 / 760', ss: '1959.1 / 2126.1 / 2404.6 / 2683.0 / 3095.4' },
+                            { dia: '117', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '122', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '127', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '132', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '137', w1: '436 / 467 / 489 / 535 / 570', w2: '11990 / 12843 / 13723 / 14713 / 15675', cl: '230 / 255 / 280 / 310 / 345', el: '285 / 325 / 395 / 410 / 455', endl: '330 / 375 / 410 / 460 / 510', ks: '390 / 450 / 505 / 545 / 605', ast: '750 / 900 / 1055 / 1200 / 1340', sw: '900 / 1100 / 1200 / 1400 / 1550', ss: '3507.9 / 3920.3 / 4332.7 / 4745.1 / 5157.6' },
+                            { dia: '142', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '147', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '152', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '157', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
+                            { dia: '162', w1: '–', w2: '–', cl: '–', el: '–', endl: '–', ks: '–', ast: '–', sw: '–', ss: '–' },
                           ].map((row, i) => (
                             <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                              <td className="px-2 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.dia}</td>
-                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.w1}</td>
-                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.w2}</td>
-                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.cl}</td>
-                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.el}</td>
-                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.endl}</td>
-                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.ks}</td>
-                              <td className="px-2 py-2 text-center text-slate-700">{row.as}</td>
+                              <td className="px-2 py-2 text-center font-semibold text-slate-900 border-r border-slate-200 whitespace-nowrap">{row.dia}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200 whitespace-nowrap">{row.w1}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200 whitespace-nowrap">{row.w2}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200 whitespace-nowrap">{row.cl}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200 whitespace-nowrap">{row.el}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200 whitespace-nowrap">{row.endl}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200 whitespace-nowrap">{row.ks}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200 whitespace-nowrap">{row.ast}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200 whitespace-nowrap">{row.sw}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 whitespace-nowrap">{row.ss}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -2026,7 +2077,7 @@ const ProductDetailPage = () => {
 
                   {/* PDF Download */}
                   <a
-                    href="/catalogue/weight-for-stud-link-anchor-chains.pdf"
+                    href="/catalogue/chains/weight-for-stud-link-anchor-chains.pdf"
                     target="_blank"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors"
                   >
