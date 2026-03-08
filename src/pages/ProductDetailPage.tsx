@@ -2195,6 +2195,31 @@ const ProductDetailPage = () => {
                     Download Studless/Studlink Weight Table (PDF)
                   </a>
                 </div>
+
+                {/* Chain Types Gallery */}
+                <div className="mt-16">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Chain Types & Accessories</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    {[
+                      { img: '/catalogue/chains/types/studlink-chain-featured.png', label: 'Stud Link Chain' },
+                      { img: '/catalogue/chains/types/studless-chain-featured.png', label: 'Studless Chain' },
+                      { img: '/catalogue/chains/types/chain-with-swivel-end_featured.png', label: 'Chain with Swivel End' },
+                      { img: '/catalogue/chains/types/3-link-adaptor_featured.png', label: '3-Link Adaptor' },
+                      { img: '/catalogue/chains/types/5-link-adaptor-standard_featured.png', label: '5-Link Adaptor (Standard)' },
+                      { img: '/catalogue/chains/types/5-link-adaptor-special-endlink_featured.png', label: '5-Link Adaptor (Special Endlink)' },
+                      { img: '/catalogue/chains/types/chain-tail-studless-gr3_featured.png', label: 'Chain Tail Studless GR3' },
+                      { img: '/catalogue/chains/types/studless-adaptor_featured.png', label: 'Studless Adaptor' },
+                      { img: '/catalogue/chains/types/weak_link_feature.png', label: 'Weak Link' },
+                    ].map((item, i) => (
+                      <div key={i} className="bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+                        <div className="w-full aspect-square bg-slate-50 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
+                          <img src={item.img} alt={item.label} className="w-full h-full object-contain p-2" />
+                        </div>
+                        <span className="text-sm font-medium text-slate-800">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </section>
           )}
