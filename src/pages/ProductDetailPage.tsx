@@ -1203,6 +1203,17 @@ const ProductDetailPage = () => {
 
                 {/* Content */}
                 <div>
+                  {/* Hooks Banner Image */}
+                  {productId === 'hooks' && (
+                    <div className="mb-6">
+                      <img
+                        src="/catalogue/Hooks/hooks.png"
+                        alt="Hooks"
+                        className="w-full h-auto rounded-xl shadow-md"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                   <Badge className="mb-4 bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
                     {product.category}
                   </Badge>
