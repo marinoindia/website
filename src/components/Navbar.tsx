@@ -165,10 +165,10 @@ const Navbar = () => {
       ]
     },
     {
-      label: 'Wire Rope Accessories',
+      label: 'Wire Rope Grips',
       path: '/product/wire-rope-accessories',
       children: [
-        { label: 'All Accessories', path: '/product/wire-rope-accessories' },
+        { label: 'All Grips', path: '/product/wire-rope-accessories' },
         { label: 'Wire Rope Clips', path: '/product/wire-rope-accessories' },
         { label: 'Thimbles', path: '/product/thimbles' },
         { label: 'Sockets', path: '/product/wire-rope-accessories' },
@@ -319,7 +319,7 @@ const Navbar = () => {
                     <Link to="/product/thimbles" className="cursor-pointer">Thimbles</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/product/wire-rope-accessories" className="cursor-pointer">Wire Rope Accessories</Link>
+                    <Link to="/product/wire-rope-accessories" className="cursor-pointer">Wire Rope Grips</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/product/turnbuckles" className="cursor-pointer">Turnbuckles</Link>
@@ -383,8 +383,8 @@ const Navbar = () => {
                     <span className="sr-only">Open menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[350px] sm:w-[400px] p-0 overflow-y-auto">
-                  <SheetHeader className="p-6 border-b border-border bg-primary/5">
+                <SheetContent side="right" className="w-[350px] sm:w-[400px] p-0 flex flex-col">
+                  <SheetHeader className="p-6 border-b border-border bg-primary/5 flex-shrink-0">
                     <SheetTitle className="flex items-center gap-3">
                       <img 
                         src={logoImage} 
@@ -398,7 +398,7 @@ const Navbar = () => {
                     </SheetTitle>
                   </SheetHeader>
                   
-                  <div className="py-4">
+                  <div className="flex-1 overflow-y-auto py-4 pb-20">
                     {/* Main Nav Links */}
                     <div className="px-4 mb-4">
                       <Link
@@ -453,7 +453,7 @@ const Navbar = () => {
                     </div>
                   </div>
                   
-                  <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-border bg-background">
+                  <div className="flex-shrink-0 p-6 border-t border-border bg-background">
                     <Button 
                       className="w-full btn-accent gap-2"
                       onClick={() => {
@@ -491,8 +491,8 @@ const Navbar = () => {
                     <span className="sr-only">Toggle menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[350px] sm:w-[400px] p-0 overflow-y-auto">
-                  <SheetHeader className="p-6 border-b border-border bg-primary/5">
+                <SheetContent side="right" className="w-[350px] sm:w-[400px] p-0 flex flex-col">
+                  <SheetHeader className="p-6 border-b border-border bg-primary/5 flex-shrink-0">
                     <SheetTitle className="flex items-center gap-3">
                       <img 
                         src={logoImage} 
@@ -506,7 +506,7 @@ const Navbar = () => {
                     </SheetTitle>
                   </SheetHeader>
                   
-                  <div className="py-4 pb-24">
+                  <div className="flex-1 overflow-y-auto py-4 pb-4">
                     {/* Main Navigation */}
                     <Link
                       to="/"
@@ -559,7 +559,7 @@ const Navbar = () => {
                     </div>
                   </div>
                   
-                  <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-border bg-background">
+                  <div className="flex-shrink-0 p-6 border-t border-border bg-background">
                     <Button 
                       className="w-full btn-accent gap-2"
                       onClick={() => {

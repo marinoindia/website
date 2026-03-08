@@ -740,24 +740,24 @@ const productDatabase: Record<string, {
   },
 
   'wire-rope-accessories': {
-    name: 'Wire Rope Accessories',
-    title: 'Wire Rope Clips, Thimbles & Fittings | Galvanized | India Supplier',
-    description: 'Complete range of wire rope accessories including clips, thimbles, sockets, and ferrules. Galvanized and stainless steel options. For 6mm to 32mm wire ropes. All India delivery.',
-    longDescription: 'Wire rope accessories are essential for creating eyes, terminations, and connections in wire rope assemblies. We supply wire rope clips (bulldog grips), thimbles, wedge sockets, and ferrules in various sizes and materials. All accessories are manufactured to international standards for safety and reliability.',
+    name: 'Wire Rope Grips',
+    title: 'Wire Rope Grips & Clips | Galvanized | India Supplier',
+    description: 'Complete range of wire rope grips and clips for secure wire rope terminations. Galvanized and stainless steel options. For 1/4" to 3" wire ropes. All India delivery.',
+    longDescription: 'Wire rope grips (also known as bulldog grips or wire rope clips) are essential for creating secure eyes and terminations in wire rope assemblies. We supply high-quality wire rope grips with color-coded saddles, drop-forged construction, and precise threading for reliable performance. Available in various sizes and materials to meet international safety standards.',
     features: [
       'Drop-forged wire rope clips (bulldog grips)',
-      'Heavy-duty thimbles in various sizes',
+      'Wire rope grips with color-coded saddles',
       'Wedge sockets for permanent terminations',
       'Ferrules for swage fittings',
       'Galvanized and SS 304 options',
       'Match wire rope construction types',
-      ' individually marked with size',
+      'Individually marked with size',
       'Compliant with EN 13411-5'
     ],
     specifications: {
-      'Wire Rope Size': '6mm - 32mm',
+      'Wire Rope Size': '1/4" - 3" (6mm - 76mm)',
       'Clip Types': 'DIN 741, US Type, JIS Type',
-      'Thimble Types': 'Standard, Heavy, G414',
+      'Grip Sizes': '17 sizes available',
       'Material': 'Malleable Iron, Carbon Steel, SS 304',
       'Finish': 'Galvanized, Self Color, SS',
       'Standard': 'EN 13411-5, ASME B30.26'
@@ -772,18 +772,27 @@ const productDatabase: Record<string, {
       'Guy wire assemblies',
       'Structural cable systems'
     ],
-    image: '/images/wire_rope_hardware.jpeg',
+    image: '/images/wire_rope_grip/grip.png',
     gallery: [
-      '/images/steelwirerope/galvanised-wire-rope-grips_1.jpg'
+      '/images/wire_rope_grip/grip.png',
+      '/images/wire_rope_grip/dimensions.png'
     ],
     category: 'Rigging Hardware',
     faqs: [
       {
         q: 'How many wire rope clips do I need?',
         a: 'General rule: 3 clips for ropes up to 16mm, 4 clips for 19-22mm, 5 clips for 25-32mm. Always follow manufacturer specifications for your specific application.'
+      },
+      {
+        q: 'What is the difference between wire rope clips and wire rope grips?',
+        a: 'Wire rope clips (also called bulldog grips) are used to secure the ends of wire ropes. Wire rope grips are similar but often have color-coded saddles for easier identification and may have different designs for specific applications.'
+      },
+      {
+        q: 'How do I install wire rope clips correctly?',
+        a: 'Always place the saddle of the clip on the live (long) end of the rope, not on the dead (short) end. The U-bolt goes over the dead end. Torque nuts to manufacturer specifications and re-torque after initial load.'
       }
     ],
-    relatedProducts: ['wire-rope-slings', 'shackles', 'hooks']
+    relatedProducts: ['wire-rope-slings', 'shackles', 'thimbles']
   },
 
   'turnbuckles': {
@@ -2313,42 +2322,23 @@ const ProductDetailPage = () => {
                   We stock both Commercial and Heavy Duty galvanised thimbles. Select the appropriate type based on your wire rope diameter and load requirements.
                 </p>
 
-                {/* Thimble Types Overview */}
-                <div className="grid md:grid-cols-2 gap-6 mb-12">
-                  <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-                    <div className="flex items-center gap-4 mb-4">
-                      <img src="/images/thimbles/commercial.png" alt="Commercial Thimbles" className="w-24 h-24 object-contain" />
-                      <div>
-                        <h3 className="text-lg font-bold text-slate-900">Commercial Thimbles</h3>
-                        <p className="text-sm text-slate-600">Standard duty for general applications</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-slate-600">
-                      Galvanised commercial thimbles suitable for standard wire rope applications. 
-                      Available in sizes from 1/4" to 2" rope diameter.
-                    </p>
-                  </div>
-                  <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-                    <div className="flex items-center gap-4 mb-4">
-                      <img src="/images/thimbles/heavy-duty.png" alt="Heavy Duty Thimbles" className="w-24 h-24 object-contain" />
-                      <div>
-                        <h3 className="text-lg font-bold text-slate-900">Heavy Duty Thimbles</h3>
-                        <p className="text-sm text-slate-600">Reinforced for high-load applications</p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-slate-600">
-                      Heavy duty thimbles with thicker material for demanding applications.
-                      Available in sizes from 6mm to 32mm rope diameter.
-                    </p>
-                  </div>
-                </div>
-
                 {/* Commercial Thimbles Table */}
                 <div className="mb-12">
                   <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
                     <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">1</span>
                     Galvanised Commercial Thimbles — Dimensions
                   </h3>
+                  
+                  {/* Commercial Thimbles Images */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-white rounded-xl border border-slate-200 p-4">
+                      <img src="/images/thimbles/commercial.png" alt="Commercial Thimble - View 1" className="w-full h-48 object-contain" />
+                    </div>
+                    <div className="bg-white rounded-xl border border-slate-200 p-4">
+                      <img src="/images/thimbles/commercial-alt.png" alt="Commercial Thimble - View 2" className="w-full h-48 object-contain" />
+                    </div>
+                  </div>
+                  
                   <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm">
@@ -2407,6 +2397,17 @@ const ProductDetailPage = () => {
                     <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">2</span>
                     Galvanised Heavy Duty Thimbles — Dimensions
                   </h3>
+                  
+                  {/* Heavy Duty Thimbles Images */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-white rounded-xl border border-slate-200 p-4">
+                      <img src="/images/thimbles/heavy-duty.png" alt="Heavy Duty Thimble - View 1" className="w-full h-48 object-contain" />
+                    </div>
+                    <div className="bg-white rounded-xl border border-slate-200 p-4">
+                      <img src="/images/thimbles/heavy-duty-alt.png" alt="Heavy Duty Thimble - View 2" className="w-full h-48 object-contain" />
+                    </div>
+                  </div>
+                  
                   <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm">
@@ -2473,6 +2474,357 @@ const ProductDetailPage = () => {
                     </p>
                     <p className="text-blue-700 text-xs">
                       Ideal for heavy lifting, marine applications, mining equipment, and situations where additional protection is required.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Shackles Tables - Only for Shackles */}
+          {productId === 'shackles' && (
+            <section className="py-16 bg-slate-50">
+              <div className="container-modern">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Shackle Types & Working Load Limits</h2>
+                <p className="text-slate-600 mb-8 max-w-3xl">
+                  We stock both High Strength Forged Shackles and Hot Dip Galvanized Shackles. 
+                  Available in Anchor Type (Bow) and Chain Type (D) configurations.
+                </p>
+
+                {/* High Strength Forged Shackles */}
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">1</span>
+                    High Strength, Forged, Hot Dipped Galvanized Shackles
+                  </h3>
+                  
+                  {/* Anchor Type */}
+                  <div className="mb-8">
+                    <h4 className="text-lg font-semibold text-slate-800 mb-3">Anchor Type (Bow) Shackles</h4>
+                    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead className="bg-emerald-700">
+                            <tr>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Bail Size (in)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Bail (mm)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Pin Size (in)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Pin (mm)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">WLL (kN)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">WLL (lb)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white">WLL (kg)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {[
+                              { bailIn: '5/16', bailMm: 8, pinIn: '3/8', pinMm: 10, wllKn: 11, wllLb: 2500, wllKg: 1135 },
+                              { bailIn: '3/8', bailMm: 10, pinIn: '7/16', pinMm: 11, wllKn: 18, wllLb: 4000, wllKg: 1816 },
+                              { bailIn: '7/16', bailMm: 11, pinIn: '1/2', pinMm: 13, wllKn: 24, wllLb: 5200, wllKg: 2361 },
+                              { bailIn: '1/2', bailMm: 13, pinIn: '5/8', pinMm: 16, wllKn: 30, wllLb: 6600, wllKg: 2996 },
+                              { bailIn: '5/8', bailMm: 16, pinIn: '3/4', pinMm: 19, wllKn: 45, wllLb: 10000, wllKg: 4540 },
+                              { bailIn: '3/4', bailMm: 19, pinIn: '7/8', pinMm: 22, wllKn: 64, wllLb: 14000, wllKg: 6356 },
+                              { bailIn: '7/8', bailMm: 22, pinIn: '1', pinMm: 25, wllKn: 86, wllLb: 19000, wllKg: 8626 },
+                              { bailIn: '1', bailMm: 25, pinIn: '1 1/8', pinMm: 29, wllKn: 114, wllLb: 25000, wllKg: 11350 },
+                              { bailIn: '1 1/8', bailMm: 29, pinIn: '1 1/4', pinMm: 32, wllKn: 136, wllLb: 30000, wllKg: 13620 },
+                              { bailIn: '1 1/4', bailMm: 32, pinIn: '1 3/8', pinMm: 35, wllKn: 163, wllLb: 36000, wllKg: 16344 },
+                              { bailIn: '1 3/8', bailMm: 35, pinIn: '1 1/2', pinMm: 38, wllKn: 191, wllLb: 42000, wllKg: 19068 },
+                            ].map((row, i) => (
+                              <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                                <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.bailIn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.bailMm}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.pinIn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.pinMm}</td>
+                                <td className="px-3 py-2 text-center text-emerald-700 font-medium border-r border-slate-200">{row.wllKn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.wllLb.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-center text-slate-700">{row.wllKg.toLocaleString()}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Chain Type */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-slate-800 mb-3">Chain Type (D) Shackles</h4>
+                    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead className="bg-emerald-700">
+                            <tr>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Bail Size (in)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Bail (mm)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Pin Size (in)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Pin (mm)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">WLL (kN)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">WLL (lb)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white">WLL (kg)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {[
+                              { bailIn: '5/16', bailMm: 8, pinIn: '3/8', pinMm: 10, wllKn: 11, wllLb: 2500, wllKg: 1135 },
+                              { bailIn: '3/8', bailMm: 10, pinIn: '7/16', pinMm: 11, wllKn: 18, wllLb: 4000, wllKg: 1816 },
+                              { bailIn: '7/16', bailMm: 11, pinIn: '1/2', pinMm: 13, wllKn: 24, wllLb: 5200, wllKg: 2361 },
+                              { bailIn: '1/2', bailMm: 13, pinIn: '5/8', pinMm: 16, wllKn: 30, wllLb: 6600, wllKg: 2996 },
+                              { bailIn: '5/8', bailMm: 16, pinIn: '3/4', pinMm: 19, wllKn: 45, wllLb: 10000, wllKg: 4540 },
+                              { bailIn: '3/4', bailMm: 19, pinIn: '7/8', pinMm: 22, wllKn: 64, wllLb: 14000, wllKg: 6356 },
+                              { bailIn: '7/8', bailMm: 22, pinIn: '1', pinMm: 25, wllKn: 86, wllLb: 19000, wllKg: 8626 },
+                              { bailIn: '1', bailMm: 25, pinIn: '1 1/8', pinMm: 29, wllKn: 114, wllLb: 25000, wllKg: 11350 },
+                              { bailIn: '1 1/8', bailMm: 29, pinIn: '1 1/4', pinMm: 32, wllKn: 136, wllLb: 30000, wllKg: 13620 },
+                              { bailIn: '1 1/4', bailMm: 32, pinIn: '1 3/8', pinMm: 35, wllKn: 163, wllLb: 36000, wllKg: 16344 },
+                              { bailIn: '1 3/8', bailMm: 35, pinIn: '1 1/2', pinMm: 38, wllKn: 191, wllLb: 42000, wllKg: 19068 },
+                            ].map((row, i) => (
+                              <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                                <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.bailIn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.bailMm}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.pinIn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.pinMm}</td>
+                                <td className="px-3 py-2 text-center text-emerald-700 font-medium border-r border-slate-200">{row.wllKn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.wllLb.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-center text-slate-700">{row.wllKg.toLocaleString()}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hot Dip Galvanized Shackles */}
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm">2</span>
+                    Hot Dip Galvanized Shackles
+                  </h3>
+                  
+                  {/* Anchor Type */}
+                  <div className="mb-8">
+                    <h4 className="text-lg font-semibold text-slate-800 mb-3">Anchor Type (Bow) Shackles</h4>
+                    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead className="bg-blue-700">
+                            <tr>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">Bail Size (in)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">Bail (mm)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">Pin Size (in)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">Pin (mm)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">WLL (kN)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">WLL (lb)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white">WLL (kg)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {[
+                              { bailIn: '1/4', bailMm: 6, pinIn: '5/16', pinMm: 8, wllKn: 5, wllLb: 1100, wllKg: 500 },
+                              { bailIn: '5/16', bailMm: 8, pinIn: '3/8', pinMm: 10, wllKn: 7.5, wllLb: 1650, wllKg: 750 },
+                              { bailIn: '3/8', bailMm: 10, pinIn: '7/16', pinMm: 11, wllKn: 10, wllLb: 2200, wllKg: 1000 },
+                              { bailIn: '7/16', bailMm: 11, pinIn: '1/2', pinMm: 13, wllKn: 15, wllLb: 3300, wllKg: 1500 },
+                              { bailIn: '1/2', bailMm: 13, pinIn: '5/8', pinMm: 16, wllKn: 20, wllLb: 4400, wllKg: 2000 },
+                              { bailIn: '5/8', bailMm: 16, pinIn: '3/4', pinMm: 19, wllKn: 32.5, wllLb: 7150, wllKg: 3250 },
+                              { bailIn: '3/4', bailMm: 19, pinIn: '7/8', pinMm: 22, wllKn: 47.5, wllLb: 10450, wllKg: 4750 },
+                              { bailIn: '7/8', bailMm: 22, pinIn: '1', pinMm: 25, wllKn: 65, wllLb: 14300, wllKg: 6500 },
+                              { bailIn: '1', bailMm: 25, pinIn: '1 1/8', pinMm: 29, wllKn: 85, wllLb: 18700, wllKg: 8500 },
+                              { bailIn: '1 1/8', bailMm: 29, pinIn: '1 1/4', pinMm: 32, wllKn: 95, wllLb: 20900, wllKg: 9500 },
+                              { bailIn: '1 1/4', bailMm: 32, pinIn: '1 3/8', pinMm: 35, wllKn: 120, wllLb: 26400, wllKg: 12000 },
+                              { bailIn: '1 3/8', bailMm: 35, pinIn: '1 1/2', pinMm: 38, wllKn: 135, wllLb: 29700, wllKg: 13500 },
+                            ].map((row, i) => (
+                              <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                                <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.bailIn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.bailMm}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.pinIn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.pinMm}</td>
+                                <td className="px-3 py-2 text-center text-blue-700 font-medium border-r border-slate-200">{row.wllKn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.wllLb.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-center text-slate-700">{row.wllKg.toLocaleString()}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Chain Type */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-slate-800 mb-3">Chain Type (D) Shackles</h4>
+                    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead className="bg-blue-700">
+                            <tr>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">Bail Size (in)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">Bail (mm)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">Pin Size (in)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">Pin (mm)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">WLL (kN)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white border-r border-blue-600">WLL (lb)</th>
+                              <th className="px-3 py-3 text-center font-semibold text-white">WLL (kg)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {[
+                              { bailIn: '1/4', bailMm: 6, pinIn: '5/16', pinMm: 8, wllKn: 5, wllLb: 1100, wllKg: 500 },
+                              { bailIn: '5/16', bailMm: 8, pinIn: '3/8', pinMm: 10, wllKn: 7.5, wllLb: 1650, wllKg: 750 },
+                              { bailIn: '3/8', bailMm: 10, pinIn: '7/16', pinMm: 11, wllKn: 10, wllLb: 2200, wllKg: 1000 },
+                              { bailIn: '7/16', bailMm: 11, pinIn: '1/2', pinMm: 13, wllKn: 15, wllLb: 3300, wllKg: 1500 },
+                              { bailIn: '1/2', bailMm: 13, pinIn: '5/8', pinMm: 16, wllKn: 20, wllLb: 4400, wllKg: 2000 },
+                              { bailIn: '5/8', bailMm: 16, pinIn: '3/4', pinMm: 19, wllKn: 32.5, wllLb: 7150, wllKg: 3250 },
+                              { bailIn: '3/4', bailMm: 19, pinIn: '7/8', pinMm: 22, wllKn: 47.5, wllLb: 10450, wllKg: 4750 },
+                              { bailIn: '7/8', bailMm: 22, pinIn: '1', pinMm: 25, wllKn: 65, wllLb: 14300, wllKg: 6500 },
+                              { bailIn: '1', bailMm: 25, pinIn: '1 1/8', pinMm: 29, wllKn: 85, wllLb: 18700, wllKg: 8500 },
+                              { bailIn: '1 1/8', bailMm: 29, pinIn: '1 1/4', pinMm: 32, wllKn: 95, wllLb: 20900, wllKg: 9500 },
+                              { bailIn: '1 1/4', bailMm: 32, pinIn: '1 3/8', pinMm: 35, wllKn: 120, wllLb: 26400, wllKg: 12000 },
+                              { bailIn: '1 3/8', bailMm: 35, pinIn: '1 1/2', pinMm: 38, wllKn: 135, wllLb: 29700, wllKg: 13500 },
+                            ].map((row, i) => (
+                              <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                                <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.bailIn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.bailMm}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.pinIn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.pinMm}</td>
+                                <td className="px-3 py-2 text-center text-blue-700 font-medium border-r border-slate-200">{row.wllKn}</td>
+                                <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.wllLb.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-center text-slate-700">{row.wllKg.toLocaleString()}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Shackle Type Guide */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                    <h4 className="font-bold text-emerald-900 mb-3">High Strength Forged Shackles</h4>
+                    <p className="text-emerald-800 text-sm mb-2">
+                      For heavy-duty lifting and critical applications.
+                    </p>
+                    <p className="text-emerald-700 text-xs">
+                      Drop-forged construction with higher Working Load Limits. Suitable for industrial lifting, marine, and construction applications.
+                    </p>
+                  </div>
+                  <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                    <h4 className="font-bold text-blue-900 mb-3">Hot Dip Galvanized Shackles</h4>
+                    <p className="text-blue-800 text-sm mb-2">
+                      For general purpose and corrosion resistance.
+                    </p>
+                    <p className="text-blue-700 text-xs">
+                      Zinc-coated for outdoor and marine environments. Ideal for general rigging, fencing, and non-critical applications.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Wire Rope Grips Tables - Only for Wire Rope Grips */}
+          {productId === 'wire-rope-accessories' && (
+            <section className="py-16 bg-slate-50">
+              <div className="container-modern">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Wire Rope Grips & Clips</h2>
+                <p className="text-slate-600 mb-8 max-w-3xl">
+                  Heavy-duty wire rope grips with color-coded saddles for secure wire rope terminations. 
+                  Available in 17 sizes from 1/4" to 3" diameter.
+                </p>
+
+                {/* Wire Rope Grip Images */}
+                <div className="grid md:grid-cols-2 gap-6 mb-12">
+                  <div className="bg-white rounded-xl border border-slate-200 p-6">
+                    <img src="/images/wire_rope_grip/grip.png" alt="Wire Rope Grip" className="w-full h-64 object-contain" />
+                  </div>
+                  <div className="bg-white rounded-xl border border-slate-200 p-6">
+                    <img src="/images/wire_rope_grip/dimensions.png" alt="Wire Rope Grip Dimensions" className="w-full h-64 object-contain" />
+                  </div>
+                </div>
+
+                {/* Wire Rope Grips Dimensions Table */}
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">1</span>
+                    Wire Rope Grips — Dimensions and Weights
+                  </h3>
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-emerald-700">
+                          <tr>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Dia. (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">A (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">B (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">C (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">D (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">F (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">H (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">L (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white">Weight (kg/100)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { dia: '1/4', a: 8, b: 34, c: 19, d: 13, f: 37, h: 30, l: 17, w: 8 },
+                            { dia: '5/16', a: 10, b: 45, c: 22, d: 19, f: 43, h: 33, l: 18, w: 14 },
+                            { dia: '3/8', a: 11, b: 49, c: 26, d: 19, f: 49, h: 42, l: 25, w: 19 },
+                            { dia: '1/2', a: 13, b: 61, c: 30, d: 26, f: 58, h: 48, l: 27, w: 34 },
+                            { dia: '5/8', a: 16, b: 74, c: 33, d: 32, f: 64, h: 52, l: 33, w: 45 },
+                            { dia: '3/4', a: 14, b: 86, c: 38, d: 37, f: 72, h: 57, l: 37, w: 68 },
+                            { dia: '7/8', a: 19, b: 98, c: 45, d: 40, f: 80, h: 62, l: 40, w: 108 },
+                            { dia: '1', a: 19, b: 108, c: 48, d: 46, f: 88, h: 67, l: 44, w: 113 },
+                            { dia: '1 1/8', a: 19, b: 117, c: 51, d: 51, f: 91, h: 72, l: 48, w: 140 },
+                            { dia: '1 1/4', a: 22, b: 130, c: 59, d: 54, f: 105, h: 79, l: 56, w: 207 },
+                            { dia: '1 3/8', a: 22, b: 140, c: 60, d: 59, f: 108, h: 79, l: 58, w: 234 },
+                            { dia: '1 1/2', a: 22, b: 147, c: 66, d: 60, f: 112, h: 86, l: 64, w: 266 },
+                            { dia: '1 3/4', a: 29, b: 175, c: 78, d: 74, f: 134, h: 97, l: 78, w: 441 },
+                            { dia: '2', a: 32, b: 195, c: 86, d: 78, f: 152, h: 113, l: 87, w: 603 },
+                            { dia: '2 1/4', a: 32, b: 208, c: 98, d: 81, f: 162, h: 116, l: 100, w: 707 },
+                            { dia: '2 1/2', a: 32, b: 227, c: 105, d: 87, f: 168, h: 119, l: 113, w: 806 },
+                            { dia: '2 3/4', a: 32, b: 243, c: 112, d: 91, f: 174, h: 127, l: 124, w: 1000 },
+                            { dia: '3', a: 38, b: 271, c: 121, d: 104, f: 194, h: 135, l: 136, w: 1440 },
+                          ].map((row, i) => (
+                            <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                              <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.dia}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.a}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.b}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.c}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.d}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.f}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.h}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.l}</td>
+                              <td className="px-3 py-2 text-center text-slate-700">{row.w}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="px-4 py-3 bg-slate-50 text-xs text-slate-500">
+                      <strong>Column Key:</strong> A = Saddle width | B = Overall length | C = Saddle height | 
+                      D = Bolt spacing | F = Overall width | H = Bolt length | L = Thread length | Weight = kg per 100 pieces
+                    </div>
+                  </div>
+                </div>
+
+                {/* Installation Guide */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                    <h4 className="font-bold text-emerald-900 mb-3">Correct Installation</h4>
+                    <p className="text-emerald-800 text-sm mb-2">
+                      Place the saddle on the live (long) end of the rope.
+                    </p>
+                    <p className="text-emerald-700 text-xs">
+                      The U-bolt goes over the dead (short) end. Always torque nuts to specification and re-torque after initial load.
+                    </p>
+                  </div>
+                  <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
+                    <h4 className="font-bold text-amber-900 mb-3">Number of Clips Required</h4>
+                    <p className="text-amber-800 text-sm mb-2">
+                      Use 3 clips for ropes up to 16mm, 4 for 19-22mm, 5 for 25-32mm.
+                    </p>
+                    <p className="text-amber-700 text-xs">
+                      Space clips at 6x rope diameter. Always follow manufacturer specifications for your specific application.
                     </p>
                   </div>
                 </div>

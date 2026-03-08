@@ -70,10 +70,10 @@ const productCategories = [
     color: 'bg-purple-50 text-purple-700 border-purple-200',
   },
   {
-    label: 'Wire Rope Accessories',
+    label: 'Wire Rope Grips',
     path: '/product/wire-rope-accessories',
     icon: Wrench,
-    description: 'Clips, Thimbles & Sockets',
+    description: 'Wire Rope Clips & Grips',
     color: 'bg-cyan-50 text-cyan-700 border-cyan-200',
   },
   {
