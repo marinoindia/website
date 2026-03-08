@@ -1190,19 +1190,21 @@ const ProductDetailPage = () => {
           {/* Hero Section */}
           <section className="py-12 bg-white">
             <div className="container-modern">
-              <div className="grid lg:grid-cols-2 gap-12 items-start">
-                {/* Image */}
-                <div className="bg-slate-50 rounded-2xl p-8 flex items-center justify-center border border-slate-100">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="max-h-80 w-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
+              <div className={`grid gap-12 items-start ${productId === 'hooks' ? 'grid-cols-1' : 'lg:grid-cols-2'}`}>
+                {/* Image - Hidden for Hooks */}
+                {productId !== 'hooks' && (
+                  <div className="bg-slate-50 rounded-2xl p-8 flex items-center justify-center border border-slate-100">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="max-h-80 w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
 
                 {/* Content */}
-                <div>
+                <div className={productId === 'hooks' ? 'max-w-4xl mx-auto' : ''}>
                   {/* Hooks Banner Image */}
                   {productId === 'hooks' && (
                     <div className="mb-6">
