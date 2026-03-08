@@ -311,7 +311,7 @@ const Navbar = () => {
                     <Link to="/product/wire-rope-accessories" className="cursor-pointer">Wire Rope Accessories</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/product/turnbuckles" className="cursor-pointer font-semibold text-emerald-600">Turnbuckles</Link>
+                    <Link to="/product/turnbuckles" className="cursor-pointer">Turnbuckles</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/products" className="cursor-pointer">Lifting Lugs & Pins</Link>
