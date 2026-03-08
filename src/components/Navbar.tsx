@@ -99,6 +99,15 @@ const Navbar = () => {
       ]
     },
     {
+      label: 'Thimbles',
+      path: '/product/thimbles',
+      children: [
+        { label: 'All Thimbles', path: '/product/thimbles' },
+        { label: 'Commercial Thimbles', path: '/product/thimbles' },
+        { label: 'Heavy Duty Thimbles', path: '/product/thimbles' },
+      ]
+    },
+    {
       label: 'Lifting Lugs & Pins',
       path: '/products',
       children: [
@@ -305,6 +314,9 @@ const Navbar = () => {
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/product/pulleys-blocks" className="cursor-pointer">Pulleys & Blocks</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/product/thimbles" className="cursor-pointer">Thimbles</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link to="/product/wire-rope-accessories" className="cursor-pointer">Wire Rope Accessories</Link>

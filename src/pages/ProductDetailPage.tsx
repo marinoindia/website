@@ -2360,27 +2360,26 @@ const ProductDetailPage = () => {
                             <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">L (mm)</th>
                             <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">C (mm)</th>
                             <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">S (mm)</th>
-                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Weight (kg/100)</th>
-                            <th className="px-3 py-3 text-center font-semibold text-white">Part Code</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white">Weight (kg/100)</th>
                           </tr>
                         </thead>
                         <tbody>
                           {[
-                            { rope: '1/4', a: 7, b: 45, l: 26, c: 18, s: 4, w: 4.1, code: 'THI060GB' },
-                            { rope: '5/16', a: 8, b: 54, l: 33, c: 22, s: 4, w: 6.5, code: 'THI080GB' },
-                            { rope: '3/8', a: 10, b: 64, l: 38, c: 25, s: 4.8, w: 9.5, code: 'THI100GB' },
-                            { rope: '1/2', a: 14, b: 80, l: 44, c: 32, s: 5.6, w: 13, code: 'THI120GB' },
-                            { rope: '5/8', a: 16, b: 98, l: 59, c: 41, s: 7.9, w: 30, code: 'THI160GB' },
-                            { rope: '3/4', a: 21, b: 124, l: 73, c: 51, s: 9.5, w: 51.5, code: 'THI190GB' },
-                            { rope: '7/8', a: 22, b: 133, l: 83, c: 57, s: 9.5, w: 69, code: 'THI220GB' },
-                            { rope: '1', a: 27, b: 162, l: 108, c: 70, s: 10.3, w: 99.5, code: 'THI260GB' },
-                            { rope: '1 1/8', a: 29, b: 178, l: 111, c: 76, s: 12.7, w: 129, code: 'THI280GB' },
-                            { rope: '1 1/4', a: 33, b: 197, l: 133, c: 95, s: 12.7, w: 145, code: 'THI310GB' },
-                            { rope: '1 3/8', a: 38, b: 229, l: 152, c: 105, s: 15.9, w: 238, code: 'THI350GB' },
-                            { rope: '1 1/2', a: 41, b: 254, l: 165, c: 114, s: 17.5, w: 340, code: 'THI370GB' },
-                            { rope: '1 5/8', a: 43, b: 254, l: 165, c: 114, s: 17.5, w: 499, code: 'THI410GB' },
-                            { rope: '1 3/4', a: 51, b: 286, l: 178, c: 127, s: 25.4, w: 532, code: 'THI440GB' },
-                            { rope: '2', a: 64, b: 330, l: 203, c: 140, s: 28.6, w: 695, code: 'THI500GB' },
+                            { rope: '1/4', a: 7, b: 45, l: 26, c: 18, s: 4, w: 4.1 },
+                            { rope: '5/16', a: 8, b: 54, l: 33, c: 22, s: 4, w: 6.5 },
+                            { rope: '3/8', a: 10, b: 64, l: 38, c: 25, s: 4.8, w: 9.5 },
+                            { rope: '1/2', a: 14, b: 80, l: 44, c: 32, s: 5.6, w: 13 },
+                            { rope: '5/8', a: 16, b: 98, l: 59, c: 41, s: 7.9, w: 30 },
+                            { rope: '3/4', a: 21, b: 124, l: 73, c: 51, s: 9.5, w: 51.5 },
+                            { rope: '7/8', a: 22, b: 133, l: 83, c: 57, s: 9.5, w: 69 },
+                            { rope: '1', a: 27, b: 162, l: 108, c: 70, s: 10.3, w: 99.5 },
+                            { rope: '1 1/8', a: 29, b: 178, l: 111, c: 76, s: 12.7, w: 129 },
+                            { rope: '1 1/4', a: 33, b: 197, l: 133, c: 95, s: 12.7, w: 145 },
+                            { rope: '1 3/8', a: 38, b: 229, l: 152, c: 105, s: 15.9, w: 238 },
+                            { rope: '1 1/2', a: 41, b: 254, l: 165, c: 114, s: 17.5, w: 340 },
+                            { rope: '1 5/8', a: 43, b: 254, l: 165, c: 114, s: 17.5, w: 499 },
+                            { rope: '1 3/4', a: 51, b: 286, l: 178, c: 127, s: 25.4, w: 532 },
+                            { rope: '2', a: 64, b: 330, l: 203, c: 140, s: 28.6, w: 695 },
                           ].map((row, i) => (
                             <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
                               <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.rope}</td>
@@ -2389,8 +2388,7 @@ const ProductDetailPage = () => {
                               <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.l}</td>
                               <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.c}</td>
                               <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.s}</td>
-                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.w}</td>
-                              <td className="px-3 py-2 text-center text-emerald-700 font-medium">{row.code}</td>
+                              <td className="px-3 py-2 text-center text-slate-700">{row.w}</td>
                             </tr>
                           ))}
                         </tbody>
