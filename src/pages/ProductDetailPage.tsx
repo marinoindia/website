@@ -655,7 +655,7 @@ const productDatabase: Record<string, {
       { name: 'Carbine Hooks with Safety Nut', description: 'Carbine hook with threaded safety nut', capacity: '0.5T - 3T' },
       { name: 'Shank Hooks for Swaging', description: 'Hook with shank for swaging onto wire rope', capacity: '0.5T - 8T' }
     ],
-    image: '/images/hooks.jpeg',
+    image: '/images/Hooks.jpeg',
     gallery: [
       '/images/hooks.jpeg',
       '/images/steelwirerope/galvanised-hooks_1.jpg'
