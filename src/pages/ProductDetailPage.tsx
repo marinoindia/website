@@ -1282,49 +1282,17 @@ const ProductDetailPage = () => {
             </div>
           </section>
 
-          {/* Hook Product Types - Card Grid */}
+          {/* Hook Product Types - Single Image */}
           {productId === 'hooks' && (
             <section className="py-16 bg-slate-50">
               <div className="container-modern">
-                {/* Banner Image */}
-                <div className="mb-8">
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
                   <img
-                    src="/images/hook_types/Banner-Galv-Hooks.jpg"
-                    alt="Galvanised Hooks Banner"
-                    className="w-full h-auto rounded-xl shadow-md"
+                    src="/catalogue/Hooks/hooks.png"
+                    alt="Hooks"
+                    className="w-full h-auto rounded-xl"
                     loading="lazy"
                   />
-                </div>
-                
-                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Hooks</h2>
-                <p className="text-slate-600 mb-8 max-w-3xl">
-                  Browse our comprehensive range of Grade 8 lifting hooks. Each type is designed for specific applications and connection methods. Click any product to view dimensions and weights.
-                </p>
-                
-                {/* 3-Column Grid matching reference site */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {hookProductData.map((hook) => (
-                    <div
-                      key={hook.id}
-                      className="bg-slate-700 rounded-lg shadow-md overflow-hidden flex flex-col group hover:shadow-lg hover:scale-[1.02] transition-all duration-200 cursor-pointer"
-                      onClick={() => setExpandedHook(expandedHook === hook.id ? null : hook.id)}
-                    >
-                      {/* Dark Blue Header Bar */}
-                      <div className="bg-slate-600 px-4 py-3 border-b border-slate-500">
-                        <h3 className="font-semibold text-white text-center text-sm leading-tight">{hook.name}</h3>
-                      </div>
-                      {/* Product Image on Dark Background */}
-                      <div className="relative aspect-[4/3] bg-slate-700 p-4 flex items-center justify-center">
-                        <img
-                          src={hook.image}
-                          alt={hook.name}
-                          className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                          loading="lazy"
-                          onError={(e) => { e.currentTarget.src = '/images/hooks.jpeg'; }}
-                        />
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
             </section>
