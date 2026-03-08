@@ -1809,6 +1809,235 @@ const ProductDetailPage = () => {
             </section>
           )}
 
+          {/* Stud Link Anchor Cables Table - Only for Industrial Chains */}
+          {productId === 'industrial-chains' && (
+            <section className="py-16 bg-white">
+              <div className="container-modern">
+                <div className="mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                    Strength for Stud Link Anchor Cables
+                  </h2>
+                  <p className="text-slate-600 mb-6">
+                    Technical specifications for stud link anchor chains. Proof Load and Break Load values in kN for different chain grades.
+                  </p>
+                  
+                  {/* PDF Download Button */}
+                  <a
+                    href="/catalogue/Strength-for-stud-link-anchor-cables.pdf"
+                    target="_blank"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors"
+                  >
+                    <Download className="w-5 h-5" />
+                    Download Full Table (PDF)
+                  </a>
+                </div>
+
+                {/* Stud Link Anchor Cables Table */}
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-emerald-700">
+                        <tr>
+                          <th rowSpan={2} className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Chain Diameter</th>
+                          <th colSpan={2} className="px-3 py-2 text-center font-semibold text-white border-r border-emerald-600">Grade 1</th>
+                          <th colSpan={2} className="px-3 py-2 text-center font-semibold text-white border-r border-emerald-600">Grade 2</th>
+                          <th colSpan={2} className="px-3 py-2 text-center font-semibold text-white">Grade 3</th>
+                        </tr>
+                        <tr className="bg-emerald-800">
+                          <th className="px-3 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Proof Load<br/>(kN)</th>
+                          <th className="px-3 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Break Load<br/>(kN)</th>
+                          <th className="px-3 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Proof Load<br/>(kN)</th>
+                          <th className="px-3 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Break Load<br/>(kN)</th>
+                          <th className="px-3 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Proof Load<br/>(kN)</th>
+                          <th className="px-3 py-2 text-center font-medium text-emerald-100">Break Load<br/>(kN)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { dia: '1/2"', mm: '12.5', g1p: '46', g1b: '66', g2p: '66', g2b: '92', g3p: '-', g3b: '-' },
+                          { dia: '9/16"', mm: '14', g1p: '58', g1b: '82', g2p: '82', g2b: '116', g3p: '-', g3b: '-' },
+                          { dia: '5/8"', mm: '16', g1p: '76', g1b: '107', g2p: '107', g2b: '150', g3p: '-', g3b: '-' },
+                          { dia: '11/16"', mm: '17.5', g1p: '89', g1b: '127', g2p: '127', g2b: '179', g3p: '-', g3b: '-' },
+                          { dia: '3/4"', mm: '19', g1p: '105', g1b: '150', g2p: '150', g2b: '211', g3p: '-', g3b: '-' },
+                          { dia: '13/16"', mm: '20.5', g1p: '123', g1b: '175', g2p: '175', g2b: '244', g3p: '244', g3b: '349' },
+                          { dia: '7/8"', mm: '22', g1p: '140', g1b: '200', g2p: '200', g2b: '280', g3p: '280', g3b: '401' },
+                          { dia: '15/16"', mm: '24', g1p: '167', g1b: '237', g2p: '237', g2b: '332', g3p: '332', g3b: '476' },
+                          { dia: '1"', mm: '26', g1p: '194', g1b: '278', g2p: '278', g2b: '389', g3p: '389', g3b: '556' },
+                          { dia: '1 1/8"', mm: '28', g1p: '225', g1b: '321', g2p: '321', g2b: '449', g3p: '449', g3b: '642' },
+                          { dia: '1 3/16"', mm: '30', g1p: '257', g1b: '368', g2p: '368', g2b: '514', g3p: '514', g3b: '735' },
+                          { dia: '1 1/4"', mm: '32', g1p: '291', g1b: '417', g2p: '417', g2b: '583', g3p: '583', g3b: '833' },
+                          { dia: '1 5/16"', mm: '34', g1p: '328', g1b: '468', g2p: '468', g2b: '655', g3p: '655', g3b: '937' },
+                          { dia: '1 3/8"', mm: '35', g1p: '366', g1b: '523', g2p: '523', g2b: '732', g3p: '732', g3b: '1050' },
+                          { dia: '1 7/16"', mm: '38', g1p: '406', g1b: '581', g2p: '581', g2b: '812', g3p: '812', g3b: '1160' },
+                          { dia: '1 1/2"', mm: '40', g1p: '454', g1b: '647', g2p: '647', g2b: '908', g3p: '908', g3b: '1290' },
+                          { dia: '1 5/8"', mm: '42', g1p: '497', g1b: '711', g2p: '711', g2b: '994', g3p: '994', g3b: '1420' },
+                          { dia: '1 3/4"', mm: '44', g1p: '560', g1b: '800', g2p: '800', g2b: '1120', g3p: '1120', g3b: '1600' },
+                          { dia: '1 13/16"', mm: '46', g1p: '603', g1b: '861', g2p: '861', g2b: '1204', g3p: '1204', g3b: '1720' },
+                          { dia: '1 7/8"', mm: '48', g1p: '664', g1b: '949', g2p: '949', g2b: '1328', g3p: '1328', g3b: '1900' },
+                          { dia: '2"', mm: '50', g1p: '732', g1b: '1045', g2p: '1045', g2b: '1464', g3p: '1464', g3b: '2090' },
+                        ].map((row, i) => (
+                          <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                            <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">
+                              {row.dia}<br/><span className="text-xs text-slate-500">{row.mm}mm</span>
+                            </td>
+                            <td className="px-3 py-2 text-center text-emerald-700 border-r border-slate-200">{row.g1p}</td>
+                            <td className="px-3 py-2 text-center text-red-600 border-r border-slate-200">{row.g1b}</td>
+                            <td className="px-3 py-2 text-center text-emerald-700 border-r border-slate-200">{row.g2p}</td>
+                            <td className="px-3 py-2 text-center text-red-600 border-r border-slate-200">{row.g2b}</td>
+                            <td className="px-3 py-2 text-center text-emerald-700 border-r border-slate-200">{row.g3p}</td>
+                            <td className="px-3 py-2 text-center text-red-600">{row.g3b}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 text-amber-800 text-sm">
+                    <strong>Note:</strong> The measurements in tables may vary between different models. Sotra Anchor & Chain AS can not be held responsible for any deviate between tables and delivered equipment.
+                  </div>
+                </div>
+
+                {/* Studless Chain Tables */}
+                <div className="mt-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">2</span>
+                    Studless Chain Specifications
+                  </h3>
+                  
+                  {/* Table 1 - Main Studless Chain Data */}
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-emerald-700">
+                          <tr>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Inside Pitch</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Weight per mtr</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Breakload Grade 2</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Breakload Grade 3</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white">Length</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { pitch: '45 × 18 mm', weight: '3.5 Kgs', bl2: '98 kN', bl3: '-', length: '50 mtr Ta' },
+                            { pitch: '99 × 32 mm', weight: '4.5 Kgs', bl2: '132.5 kN', bl3: '-', length: '50 mtr Ta' },
+                            { pitch: '119 × 34 mm', weight: '6.3 Kgs', bl2: '187 kN', bl3: '184.8 kN', length: '100 mtr Ta' },
+                            { pitch: '127 × 34 mm', weight: '8.6 Kgs', bl2: '290 kN', bl3: '260.6 kN', length: '100 mtr Ta' },
+                            { pitch: '96 × 36 mm', weight: '11.5 Kgs', bl2: '298.9 kN', bl3: '349.4 kN', length: '100 mtr Ta' },
+                            { pitch: '104 × 39 mm', weight: '14 Kgs', bl2: '350.8 kN', bl3: '415.8 kN', length: '100 mtr Ta' },
+                            { pitch: '112 × 42 mm', weight: '16 Kgs', bl2: '405.9 kN', bl3: '488 kN', length: '50/55 mtr Ta' },
+                            { pitch: '120 × 45 mm', weight: '18.5 Kgs', bl2: '467.5 kN', bl3: '566 kN', length: '50/55 mtr Ta' },
+                            { pitch: '60 × 20 mm', weight: '1.75 Kgs', bl2: '91.2 kN', bl3: '649.8 kN', length: '100 mtr' },
+                            { pitch: '81 × 22 mm', weight: '2.9 Kgs', bl2: '184.95 kN', bl3: '-', length: '50 mtr' },
+                            { pitch: '100 × 26 mm', weight: '4.3 Kgs', bl2: '279.98 kN', bl3: '-', length: '50 mtr' },
+                            { pitch: '100 × 28 mm', weight: '6.5 Kgs', bl2: '395.01 kN', bl3: '-', length: '50 mtr' },
+                            { pitch: '120 × 32 mm', weight: '8.5 Kgs', bl2: '529.95 kN', bl3: '-', length: '50 mtr' },
+                            { pitch: '140 × 41 mm', weight: '11.2 Kgs', bl2: '684.99 kN', bl3: '-', length: '50 mtr' },
+                          ].map((row, i) => (
+                            <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                              <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.pitch}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.weight}</td>
+                              <td className="px-3 py-2 text-center text-red-600 border-r border-slate-200">{row.bl2}</td>
+                              <td className="px-3 py-2 text-center text-red-600 border-r border-slate-200">{row.bl3}</td>
+                              <td className="px-3 py-2 text-center text-slate-700">{row.length}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* PDF Download */}
+                  <a
+                    href="/catalogue/studless-chain.pdf"
+                    target="_blank"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors"
+                  >
+                    <Download className="w-5 h-5" />
+                    Download Studless Chain Table (PDF)
+                  </a>
+                </div>
+
+                {/* Weight for Stud Link Anchor Chains */}
+                <div className="mt-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">3</span>
+                    Weight for Stud Link Anchor Chains
+                  </h3>
+                  
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-6">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-emerald-700">
+                          <tr>
+                            <th rowSpan={2} className="px-2 py-3 text-center font-semibold text-white border-r border-emerald-600">Diam<br/>(mm)</th>
+                            <th colSpan={2} className="px-2 py-2 text-center font-semibold text-white border-r border-emerald-600">Chain Weights</th>
+                            <th colSpan={5} className="px-2 py-2 text-center font-semibold text-white border-r border-emerald-600">Component Weights (Kgs)</th>
+                          </tr>
+                          <tr className="bg-emerald-800">
+                            <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Kgs/mtr</th>
+                            <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Kgs/27.5m</th>
+                            <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Common<br/>Link</th>
+                            <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Enlarged<br/>Link</th>
+                            <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">End<br/>Link</th>
+                            <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Kenter<br/>Shackle</th>
+                            <th className="px-2 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">Anchor<br/>Shackle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { dia: '12.5', w1: '3.5-8.1', w2: '96-223', cl: '0.17-0.60', el: '0.23-0.88', endl: '0.23-0.89', ks: '0.39-1.0', as: '1.1-2.5' },
+                            { dia: '14-19', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '20.5', w1: '10.0-18.3', w2: '275-503', cl: '0.75-1.9', el: '1.10-2.8', endl: '1.13-2.9', ks: '1.35-3.3', as: '3.3-8.0' },
+                            { dia: '22-28', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '30', w1: '21.0-33.7', w2: '578-927', cl: '2.4-4.7', el: '3.2-6.1', endl: '3.3-6.8', ks: '3.9-7.8', as: '9.5-20.0' },
+                            { dia: '32-38', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '40', w1: '37.1-52.8', w2: '1020-1452', cl: '5.5-9.8', el: '7.1-13.1', endl: '8.0-15.0', ks: '9.1-16.0', as: '23.0-37' },
+                            { dia: '42-48', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '50', w1: '57-77', w2: '1568-2118', cl: '11-17', el: '15-23', endl: '17-25', ks: '18-28', as: '41-65' },
+                            { dia: '52-58', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '60', w1: '83-107', w2: '2283-2943', cl: '19-27', el: '25-37', endl: '27-42', ks: '28-44', as: '70-101' },
+                            { dia: '62-68', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '70', w1: '114-154', w2: '3135-4235', cl: '30-46', el: '40-61', endl: '45-70', ks: '44-74', as: '108-171' },
+                            { dia: '73-81', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '84', w1: '166-211', w2: '4565-5803', cl: '52-75', el: '68-98', endl: '78-112', ks: '84-115', as: '193-290' },
+                            { dia: '87-95', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '97', w1: '220-287', w2: '6050-7893', cl: '80-120', el: '102-160', endl: '120-175', ks: '135-200', as: '305-445' },
+                            { dia: '100-111', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '114', w1: '304-400', w2: '8360-11000', cl: '130-205', el: '173-260', endl: '193-305', ks: '225-370', as: '475-675' },
+                            { dia: '117-132', w1: '-', w2: '-', cl: '-', el: '-', endl: '-', ks: '-', as: '-' },
+                            { dia: '137', w1: '436-570', w2: '11990-15675', cl: '230-345', el: '285-455', endl: '330-510', ks: '390-605', as: '750-1340' },
+                          ].map((row, i) => (
+                            <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                              <td className="px-2 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.dia}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.w1}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.w2}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.cl}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.el}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.endl}</td>
+                              <td className="px-2 py-2 text-center text-slate-700 border-r border-slate-200">{row.ks}</td>
+                              <td className="px-2 py-2 text-center text-slate-700">{row.as}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* PDF Download */}
+                  <a
+                    href="/catalogue/weight-for-stud-link-anchor-chains.pdf"
+                    target="_blank"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors"
+                  >
+                    <Download className="w-5 h-5" />
+                    Download Weight Table (PDF)
+                  </a>
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Turnbuckle Types Table - Only for Turnbuckles */}
           {productId === 'turnbuckles' && (
             <section className="py-16 bg-slate-50">
