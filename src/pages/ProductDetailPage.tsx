@@ -1394,8 +1394,8 @@ const ProductDetailPage = () => {
             </section>
           )}
 
-          {/* Specifications - Hidden for Hooks and Wire Rope Slings */}
-          {productId !== 'hooks' && productId !== 'wire-rope-slings' && (
+          {/* Specifications - Hidden for Hooks, Wire Rope Slings and Industrial Chains */}
+          {productId !== 'hooks' && productId !== 'wire-rope-slings' && productId !== 'industrial-chains' && (
             <section className="py-16 bg-white">
               <div className="container-modern">
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8">Technical Specifications</h2>
