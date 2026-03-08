@@ -2085,6 +2085,116 @@ const ProductDetailPage = () => {
                     Download Weight Table (PDF)
                   </a>
                 </div>
+
+                {/* Weight for Stud Link and Studless Chain */}
+                <div className="mt-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">4</span>
+                    Weight for Stud Link and Studless Chain
+                  </h3>
+                  
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-6">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-emerald-700">
+                          <tr>
+                            <th rowSpan={2} className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Ø Dia.<br/>(mm)</th>
+                            <th colSpan={2} className="px-3 py-2 text-center font-semibold text-white border-r border-emerald-600">Stud Link Chain</th>
+                            <th colSpan={2} className="px-3 py-2 text-center font-semibold text-white">Studless Chain</th>
+                          </tr>
+                          <tr className="bg-emerald-800">
+                            <th className="px-3 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">kg/m</th>
+                            <th className="px-3 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">kg per link</th>
+                            <th className="px-3 py-2 text-center font-medium text-emerald-100 border-r border-emerald-600">kg/m</th>
+                            <th className="px-3 py-2 text-center font-medium text-emerald-100">kg per link</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { dia: '19', studKgM: '8', studKgLink: '0.7', studlessKgM: '7', studlessKgLink: '0.6' },
+                            { dia: '20.5', studKgM: '9', studKgLink: '0.8', studlessKgM: '8', studlessKgLink: '0.7' },
+                            { dia: '22', studKgM: '11', studKgLink: '1', studlessKgM: '10', studlessKgLink: '1' },
+                            { dia: '24', studKgM: '13', studKgLink: '1', studlessKgM: '12', studlessKgLink: '1' },
+                            { dia: '26', studKgM: '15', studKgLink: '2', studlessKgM: '14', studlessKgLink: '2' },
+                            { dia: '28', studKgM: '17', studKgLink: '2', studlessKgM: '16', studlessKgLink: '2' },
+                            { dia: '30', studKgM: '20', studKgLink: '3', studlessKgM: '18', studlessKgLink: '2' },
+                            { dia: '32', studKgM: '22', studKgLink: '3', studlessKgM: '20', studlessKgLink: '3' },
+                            { dia: '34', studKgM: '25', studKgLink: '4', studlessKgM: '23', studlessKgLink: '3' },
+                            { dia: '36', studKgM: '28', studKgLink: '4', studlessKgM: '26', studlessKgLink: '4' },
+                            { dia: '38', studKgM: '32', studKgLink: '5', studlessKgM: '29', studlessKgLink: '5' },
+                            { dia: '40', studKgM: '35', studKgLink: '6', studlessKgM: '32', studlessKgLink: '6' },
+                            { dia: '42', studKgM: '39', studKgLink: '7', studlessKgM: '35', studlessKgLink: '7' },
+                            { dia: '44', studKgM: '42', studKgLink: '8', studlessKgM: '39', studlessKgLink: '8' },
+                            { dia: '46', studKgM: '46', studKgLink: '9', studlessKgM: '42', studlessKgLink: '9' },
+                            { dia: '48', studKgM: '50', studKgLink: '11', studlessKgM: '46', studlessKgLink: '10' },
+                            { dia: '50', studKgM: '55', studKgLink: '12', studlessKgM: '50', studlessKgLink: '11' },
+                            { dia: '52', studKgM: '59', studKgLink: '14', studlessKgM: '54', studlessKgLink: '12' },
+                            { dia: '54', studKgM: '64', studKgLink: '15', studlessKgM: '58', studlessKgLink: '14' },
+                            { dia: '56', studKgM: '69', studKgLink: '17', studlessKgM: '63', studlessKgLink: '15' },
+                            { dia: '58', studKgM: '74', studKgLink: '19', studlessKgM: '67', studlessKgLink: '17' },
+                            { dia: '60', studKgM: '79', studKgLink: '21', studlessKgM: '72', studlessKgLink: '19' },
+                            { dia: '62', studKgM: '84', studKgLink: '23', studlessKgM: '77', studlessKgLink: '21' },
+                            { dia: '64', studKgM: '90', studKgLink: '25', studlessKgM: '82', studlessKgLink: '23' },
+                            { dia: '66', studKgM: '95', studKgLink: '28', studlessKgM: '87', studlessKgLink: '25' },
+                            { dia: '68', studKgM: '101', studKgLink: '30', studlessKgM: '92', studlessKgLink: '28' },
+                            { dia: '70', studKgM: '107', studKgLink: '33', studlessKgM: '98', studlessKgLink: '30' },
+                            { dia: '73', studKgM: '117', studKgLink: '37', studlessKgM: '107', studlessKgLink: '34' },
+                            { dia: '76', studKgM: '126', studKgLink: '42', studlessKgM: '116', studlessKgLink: '39' },
+                            { dia: '78', studKgM: '133', studKgLink: '46', studlessKgM: '122', studlessKgLink: '42' },
+                            { dia: '81', studKgM: '144', studKgLink: '51', studlessKgM: '131', studlessKgLink: '47' },
+                            { dia: '84', studKgM: '155', studKgLink: '57', studlessKgM: '141', studlessKgLink: '52' },
+                            { dia: '87', studKgM: '166', studKgLink: '63', studlessKgM: '151', studlessKgLink: '58' },
+                            { dia: '90', studKgM: '177', studKgLink: '70', studlessKgM: '162', studlessKgLink: '64' },
+                            { dia: '92', studKgM: '185', studKgLink: '75', studlessKgM: '169', studlessKgLink: '69' },
+                            { dia: '95', studKgM: '198', studKgLink: '83', studlessKgM: '181', studlessKgLink: '76' },
+                            { dia: '97', studKgM: '206', studKgLink: '88', studlessKgM: '188', studlessKgLink: '80' },
+                            { dia: '102', studKgM: '228', studKgLink: '102', studlessKgM: '208', studlessKgLink: '93' },
+                            { dia: '105', studKgM: '241', studKgLink: '112', studlessKgM: '221', studlessKgLink: '102' },
+                            { dia: '107', studKgM: '251', studKgLink: '118', studlessKgM: '229', studlessKgLink: '108' },
+                            { dia: '111', studKgM: '270', studKgLink: '132', studlessKgM: '246', studlessKgLink: '120' },
+                            { dia: '114', studKgM: '285', studKgLink: '143', studlessKgM: '260', studlessKgLink: '130' },
+                            { dia: '117', studKgM: '300', studKgLink: '154', studlessKgM: '274', studlessKgLink: '141' },
+                            { dia: '120', studKgM: '315', studKgLink: '167', studlessKgM: '288', studlessKgLink: '152' },
+                            { dia: '122', studKgM: '326', studKgLink: '175', studlessKgM: '298', studlessKgLink: '160' },
+                            { dia: '124', studKgM: '337', studKgLink: '184', studlessKgM: '308', studlessKgLink: '168' },
+                            { dia: '127', studKgM: '353', studKgLink: '197', studlessKgM: '323', studlessKgLink: '180' },
+                            { dia: '130', studKgM: '370', studKgLink: '212', studlessKgM: '338', studlessKgLink: '194' },
+                            { dia: '132', studKgM: '382', studKgLink: '222', studlessKgM: '348', studlessKgLink: '203' },
+                            { dia: '137', studKgM: '411', studKgLink: '248', studlessKgM: '375', studlessKgLink: '226' },
+                            { dia: '142', studKgM: '442', studKgLink: '276', studlessKgM: '403', studlessKgLink: '252' },
+                            { dia: '147', studKgM: '473', studKgLink: '306', studlessKgM: '432', studlessKgLink: '280' },
+                            { dia: '152', studKgM: '506', studKgLink: '338', studlessKgM: '462', studlessKgLink: '309' },
+                            { dia: '157', studKgM: '540', studKgLink: '373', studlessKgM: '493', studlessKgLink: '341' },
+                            { dia: '162', studKgM: '575', studKgLink: '410', studlessKgM: '525', studlessKgLink: '374' },
+                            { dia: '165', studKgM: '596', studKgLink: '433', studlessKgM: '545', studlessKgLink: '396' },
+                            { dia: '168', studKgM: '618', studKgLink: '457', studlessKgM: '564', studlessKgLink: '418' },
+                            { dia: '171', studKgM: '640', studKgLink: '482', studlessKgM: '585', studlessKgLink: '440' },
+                            { dia: '175', studKgM: '671', studKgLink: '516', studlessKgM: '613', studlessKgLink: '472' },
+                            { dia: '178', studKgM: '694', studKgLink: '543', studlessKgM: '634', studlessKgLink: '497' },
+                          ].map((row, i) => (
+                            <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                              <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.dia}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.studKgM}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.studKgLink}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.studlessKgM}</td>
+                              <td className="px-3 py-2 text-center text-slate-700">{row.studlessKgLink}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* PDF Download */}
+                  <a
+                    href="/catalogue/chains/weight-studless-and-studlink.pdf"
+                    target="_blank"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors"
+                  >
+                    <Download className="w-5 h-5" />
+                    Download Studless/Studlink Weight Table (PDF)
+                  </a>
+                </div>
               </div>
             </section>
           )}
