@@ -1297,7 +1297,7 @@ const ProductDetailPage = () => {
           {productId === 'hooks' && (
             <section className="py-16 bg-slate-50">
               <div className="container-modern">
-                {/* Hook Types for SEO -->
+                {/* Hook Types for SEO */}
                 <div className="mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
                   <h3 className="text-xl font-bold text-slate-900 mb-4">Hook Types Available</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-sm text-slate-700">
