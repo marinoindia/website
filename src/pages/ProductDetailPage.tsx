@@ -931,7 +931,7 @@ const productDatabase: Record<string, {
         a: 'Standard thimbles are suitable for most general applications. Heavy duty (G414) thimbles have a larger radius and thicker material, providing better protection for high-load applications or larger wire ropes.'
       }
     ],
-    relatedProducts: ['wire-rope-accessories', 'wire-rope-slings', 'wire-rope-grips']
+    relatedProducts: ['wire-rope-accessories', 'wire-rope-slings', 'turnbuckles']
   }
 };
 
