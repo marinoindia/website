@@ -1,32 +1,39 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const ProductsCarousel = () => {
   const products = [
     {
       name: 'Brand Stock',
       image: '/images/Brand_stock.png',
+      link: '/products',
     },
     {
       name: 'Chain Link',
       image: '/images/Chain_link.png',
+      link: '/product/industrial-chains',
     },
     {
       name: 'Chain Sling',
       image: '/images/Chain_sling.png',
+      link: '/product/wire-rope-slings',
     },
     {
       name: 'Hooks',
       image: '/images/Hookes.png',
+      link: '/product/hooks',
     },
     {
       name: 'Safety and PPE',
       image: '/images/Safety and PPE.png',
+      link: '/products',
     },
     {
       name: 'Shackles',
       image: '/images/Shackles.png',
+      link: '/product/shackles',
     },
   ];
 
@@ -83,21 +90,26 @@ const ProductsCarousel = () => {
                   className="w-full flex-shrink-0"
                   style={{ width: '100%' }}
                 >
-                  <div className="card-industrial overflow-hidden group relative w-full">
-                    <div className="relative w-full overflow-hidden bg-muted flex items-center justify-center py-4 sm:py-6">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-[85%] sm:w-[75%] md:w-[65%] h-auto object-contain transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
+                  <Link to={product.link} className="block">
+                    <div className="card-industrial overflow-hidden group relative w-full cursor-pointer">
+                      <div className="relative w-full overflow-hidden bg-muted flex items-center justify-center py-4 sm:py-6">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-[85%] sm:w-[75%] md:w-[65%] h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="text-center p-4 sm:p-6">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground group-hover:text-emerald-600 transition-colors">
+                          {product.name}
+                        </h3>
+                        <span className="inline-flex items-center gap-1 text-sm text-emerald-600 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                          View Products <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </div>
                     </div>
-                    <div className="text-center p-4 sm:p-6">
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
-                        {product.name}
-                      </h3>
-                    </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>

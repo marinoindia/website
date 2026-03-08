@@ -1,6 +1,7 @@
-import { ArrowRight, Download, Phone } from 'lucide-react';
+import { ArrowRight, Download, Phone, Link2, Cable } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -50,6 +51,26 @@ const Hero = () => {
             <p className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-4 max-w-xl">
               India's leading supplier of industrial lifting equipment, marine hardware, and safety gear. Quality certified products with pan India delivery from Kolkata.
             </p>
+
+            {/* Popular Products Links */}
+            <div className="flex flex-wrap gap-3 mb-4">
+              <span className="text-sm text-slate-500 flex items-center">Popular:</span>
+              <Link 
+                to="/product/wire-rope-slings" 
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-medium rounded-lg transition-colors border border-blue-200"
+              >
+                <Cable className="w-4 h-4" />
+                Wire Rope Slings
+              </Link>
+              <Link 
+                to="/product/industrial-chains" 
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-sm font-medium rounded-lg transition-colors border border-emerald-200"
+              >
+                <Link2 className="w-4 h-4" />
+                Chains
+              </Link>
+            </div>
+
             <p className="text-sm text-slate-500 mb-8">
               <span className="font-medium text-slate-700">Delivering to:</span> Delhi • Mumbai • Bangalore • Chennai • Hyderabad • Pune • Ahmedabad • Kolkata & more
             </p>
