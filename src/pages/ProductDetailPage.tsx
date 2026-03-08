@@ -885,24 +885,24 @@ const productDatabase: Record<string, {
 
   'thimbles': {
     name: 'Wire Rope Thimbles',
-    title: 'Galvanised Wire Rope Thimbles | Heavy Duty | Standard | India Supplier',
-    description: 'Galvanised wire rope thimbles for protecting rope eyes from crushing and abrasion. Available in standard and heavy duty types. Mild steel construction with electro-galvanised finish.',
-    longDescription: 'Wire rope thimbles are essential fittings used to protect the eye of a wire rope sling from crushing and abrasion when connected to hooks, shackles, or other hardware. Our thimbles are manufactured from mild steel with electro-galvanised finish for corrosion resistance. Available in standard and heavy duty types to match different wire rope sizes.',
+    title: 'Galvanised Wire Rope Thimbles | Commercial & Heavy Duty | India Supplier',
+    description: 'Galvanised wire rope thimbles for protecting rope eyes from crushing and abrasion. Available in commercial and heavy duty types. Mild steel construction with electro-galvanised finish.',
+    longDescription: 'Wire rope thimbles are essential fittings used to protect the eye of a wire rope sling from crushing and abrasion when connected to hooks, shackles, or other hardware. Our thimbles are manufactured from mild steel with electro-galvanised finish for corrosion resistance. Available in Commercial and Heavy Duty types to match different wire rope sizes and load requirements.',
     features: [
       'Mild steel construction',
-      'Electro-galvanised finish',
-      'Standard and Heavy Duty types',
-      'Prevents rope eye crushing',
-      'Extends rope service life',
-      'Matches wire rope construction',
-      'Cost-effective protection',
-      'Easy to install'
+      'Electro-galvanised finish for corrosion resistance',
+      'Commercial and Heavy Duty types available',
+      'Prevents rope eye crushing and abrasion',
+      'Extends wire rope service life',
+      'Matches various wire rope constructions',
+      'Cost-effective protection solution',
+      'Easy to install and replace'
     ],
     specifications: {
       'Material': 'Mild Steel',
       'Finish': 'Electro-galvanised',
-      'Types': 'Standard, Heavy Duty (G414)',
-      'Wire Rope Size': '6mm - 32mm',
+      'Types': 'Commercial (Standard), Heavy Duty',
+      'Wire Rope Size': '6mm - 50mm',
       'Standard': 'EN 13411-1, US Type',
       'Packaging': 'Bulk or individual'
     },
@@ -916,19 +916,32 @@ const productDatabase: Record<string, {
       'Agricultural applications',
       'Construction sites'
     ],
-    image: '/images/steelwirerope/galvanised-thimbles_1.jpg',
+    thimbleTypes: [
+      { name: 'Commercial Thimbles', description: 'Standard duty thimbles for general applications', sizeRange: '1/4" to 2" rope diameter' },
+      { name: 'Heavy Duty Thimbles', description: 'Reinforced thimbles for high-load applications', sizeRange: '6mm to 32mm rope diameter' },
+    ],
+    image: '/images/thimbles/commercial.png',
     gallery: [
-      '/images/steelwirerope/galvanised-thimbles_1.jpg'
+      '/images/thimbles/commercial.png',
+      '/images/thimbles/heavy-duty.png'
     ],
     category: 'Rigging Hardware',
     faqs: [
       {
         q: 'Why do I need thimbles for wire rope eyes?',
-        a: 'Thimbles prevent the wire rope from being crushed at the eye when under load, which would weaken the rope and reduce its service life. They distribute the load evenly around the eye.'
+        a: 'Thimbles prevent the wire rope from being crushed at the eye when under load, which would weaken the rope and reduce its service life. They distribute the load evenly around the eye and prevent chafing against connecting hardware.'
       },
       {
-        q: 'What is the difference between standard and heavy duty thimbles?',
-        a: 'Standard thimbles are suitable for most general applications. Heavy duty (G414) thimbles have a larger radius and thicker material, providing better protection for high-load applications or larger wire ropes.'
+        q: 'What is the difference between commercial and heavy duty thimbles?',
+        a: 'Commercial thimbles are suitable for most general applications with standard loads. Heavy duty thimbles have thicker material and larger dimensions, providing better protection for high-load applications or harsh environments.'
+      },
+      {
+        q: 'How do I select the right thimble size?',
+        a: 'Select a thimble that matches your wire rope diameter. The thimble groove should fit the rope snugly without pinching or leaving excessive gaps. Check the dimensions table for the correct fit.'
+      },
+      {
+        q: 'Can thimbles be reused?',
+        a: 'Thimbles can be reused if they show no signs of wear, deformation, or corrosion. Inspect thimbles regularly and replace if the groove shows significant wear or if the material thickness has reduced.'
       }
     ],
     relatedProducts: ['wire-rope-accessories', 'wire-rope-slings', 'turnbuckles']
@@ -2284,6 +2297,184 @@ const ProductDetailPage = () => {
                     </p>
                     <p className="text-amber-700 text-xs">
                       SS316 construction. Superior corrosion resistance for harsh conditions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Thimbles Tables - Only for Thimbles */}
+          {productId === 'thimbles' && (
+            <section className="py-16 bg-slate-50">
+              <div className="container-modern">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Thimble Types & Dimensions</h2>
+                <p className="text-slate-600 mb-8 max-w-3xl">
+                  We stock both Commercial and Heavy Duty galvanised thimbles. Select the appropriate type based on your wire rope diameter and load requirements.
+                </p>
+
+                {/* Thimble Types Overview */}
+                <div className="grid md:grid-cols-2 gap-6 mb-12">
+                  <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                    <div className="flex items-center gap-4 mb-4">
+                      <img src="/images/thimbles/commercial.png" alt="Commercial Thimbles" className="w-24 h-24 object-contain" />
+                      <div>
+                        <h3 className="text-lg font-bold text-slate-900">Commercial Thimbles</h3>
+                        <p className="text-sm text-slate-600">Standard duty for general applications</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-slate-600">
+                      Galvanised commercial thimbles suitable for standard wire rope applications. 
+                      Available in sizes from 1/4" to 2" rope diameter.
+                    </p>
+                  </div>
+                  <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                    <div className="flex items-center gap-4 mb-4">
+                      <img src="/images/thimbles/heavy-duty.png" alt="Heavy Duty Thimbles" className="w-24 h-24 object-contain" />
+                      <div>
+                        <h3 className="text-lg font-bold text-slate-900">Heavy Duty Thimbles</h3>
+                        <p className="text-sm text-slate-600">Reinforced for high-load applications</p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-slate-600">
+                      Heavy duty thimbles with thicker material for demanding applications.
+                      Available in sizes from 6mm to 32mm rope diameter.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Commercial Thimbles Table */}
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">1</span>
+                    Galvanised Commercial Thimbles — Dimensions
+                  </h3>
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-emerald-700">
+                          <tr>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Rope Dia (in)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">A (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">B (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">L (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">C (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">S (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Weight (kg/100)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white">Part Code</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { rope: '1/4', a: 7, b: 45, l: 26, c: 18, s: 4, w: 4.1, code: 'THI060GB' },
+                            { rope: '5/16', a: 8, b: 54, l: 33, c: 22, s: 4, w: 6.5, code: 'THI080GB' },
+                            { rope: '3/8', a: 10, b: 64, l: 38, c: 25, s: 4.8, w: 9.5, code: 'THI100GB' },
+                            { rope: '1/2', a: 14, b: 80, l: 44, c: 32, s: 5.6, w: 13, code: 'THI120GB' },
+                            { rope: '5/8', a: 16, b: 98, l: 59, c: 41, s: 7.9, w: 30, code: 'THI160GB' },
+                            { rope: '3/4', a: 21, b: 124, l: 73, c: 51, s: 9.5, w: 51.5, code: 'THI190GB' },
+                            { rope: '7/8', a: 22, b: 133, l: 83, c: 57, s: 9.5, w: 69, code: 'THI220GB' },
+                            { rope: '1', a: 27, b: 162, l: 108, c: 70, s: 10.3, w: 99.5, code: 'THI260GB' },
+                            { rope: '1 1/8', a: 29, b: 178, l: 111, c: 76, s: 12.7, w: 129, code: 'THI280GB' },
+                            { rope: '1 1/4', a: 33, b: 197, l: 133, c: 95, s: 12.7, w: 145, code: 'THI310GB' },
+                            { rope: '1 3/8', a: 38, b: 229, l: 152, c: 105, s: 15.9, w: 238, code: 'THI350GB' },
+                            { rope: '1 1/2', a: 41, b: 254, l: 165, c: 114, s: 17.5, w: 340, code: 'THI370GB' },
+                            { rope: '1 5/8', a: 43, b: 254, l: 165, c: 114, s: 17.5, w: 499, code: 'THI410GB' },
+                            { rope: '1 3/4', a: 51, b: 286, l: 178, c: 127, s: 25.4, w: 532, code: 'THI440GB' },
+                            { rope: '2', a: 64, b: 330, l: 203, c: 140, s: 28.6, w: 695, code: 'THI500GB' },
+                          ].map((row, i) => (
+                            <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                              <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.rope}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.a}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.b}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.l}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.c}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.s}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.w}</td>
+                              <td className="px-3 py-2 text-center text-emerald-700 font-medium">{row.code}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="px-4 py-3 bg-slate-50 text-xs text-slate-500">
+                      <strong>Column Key:</strong> A = Groove diameter | B = Overall width | L = Overall length | 
+                      C = Inside length | S = Material thickness | Weight = kg per 100 pieces
+                    </div>
+                  </div>
+                </div>
+
+                {/* Heavy Duty Thimbles Table */}
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">2</span>
+                    Galvanised Heavy Duty Thimbles — Dimensions
+                  </h3>
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-emerald-700">
+                          <tr>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">Wire Rope (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">A (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">B (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">C (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">D (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">E (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white border-r border-emerald-600">F (mm)</th>
+                            <th className="px-3 py-3 text-center font-semibold text-white">Weight (kg/100)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { rope: 6, a: 7, b: 38, c: 22, d: 17, e: 8, f: 3, w: 4 },
+                            { rope: 8, a: 9, b: 46, c: 28, d: 20, e: 10, f: 3, w: 6 },
+                            { rope: 10, a: 11, b: 55, c: 32, d: 23, e: 12, f: 4, w: 10 },
+                            { rope: 12, a: 14, b: 64, c: 36, d: 26, e: 15, f: 5, w: 14 },
+                            { rope: 16, a: 18, b: 80, c: 44, d: 32, e: 19, f: 6, w: 27 },
+                            { rope: 20, a: 22, b: 95, c: 54, d: 38, e: 23, f: 8, w: 46 },
+                            { rope: 24, a: 26, b: 112, c: 63, d: 44, e: 27, f: 10, w: 74 },
+                            { rope: 28, a: 30, b: 130, c: 72, d: 50, e: 31, f: 12, w: 112 },
+                            { rope: 32, a: 34, b: 150, c: 82, d: 58, e: 36, f: 14, w: 160 },
+                          ].map((row, i) => (
+                            <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                              <td className="px-3 py-2 text-center font-semibold text-slate-900 border-r border-slate-200">{row.rope}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.a}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.b}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.c}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.d}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.e}</td>
+                              <td className="px-3 py-2 text-center text-slate-700 border-r border-slate-200">{row.f}</td>
+                              <td className="px-3 py-2 text-center text-slate-700">{row.w}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="px-4 py-3 bg-slate-50 text-xs text-slate-500">
+                      <strong>Column Key:</strong> A = Groove diameter | B = Overall length | C = Inside length | 
+                      D = Internal width | E = Eye opening | F = Material thickness | Weight = kg per 100 pieces
+                    </div>
+                  </div>
+                </div>
+
+                {/* Thimble Selection Guide */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                    <h4 className="font-bold text-emerald-900 mb-3">Commercial Thimbles</h4>
+                    <p className="text-emerald-800 text-sm mb-2">
+                      For general purpose wire rope applications.
+                    </p>
+                    <p className="text-emerald-700 text-xs">
+                      Suitable for standard lifting slings, winch lines, and general rigging where loads are within normal working limits.
+                    </p>
+                  </div>
+                  <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                    <h4 className="font-bold text-blue-900 mb-3">Heavy Duty Thimbles</h4>
+                    <p className="text-blue-800 text-sm mb-2">
+                      For demanding applications and larger wire ropes.
+                    </p>
+                    <p className="text-blue-700 text-xs">
+                      Ideal for heavy lifting, marine applications, mining equipment, and situations where additional protection is required.
                     </p>
                   </div>
                 </div>

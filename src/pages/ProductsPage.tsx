@@ -18,7 +18,8 @@ import {
   Ship,
   Shield,
   TreePine,
-  Wrench
+  Wrench,
+  Circle
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -74,6 +75,13 @@ const productCategories = [
     icon: Wrench,
     description: 'Clips, Thimbles & Sockets',
     color: 'bg-cyan-50 text-cyan-700 border-cyan-200',
+  },
+  {
+    label: 'Thimbles',
+    path: '/product/thimbles',
+    icon: Circle,
+    description: 'Commercial & Heavy Duty Thimbles',
+    color: 'bg-rose-50 text-rose-700 border-rose-200',
   },
   {
     label: 'Ropes & Mooring',

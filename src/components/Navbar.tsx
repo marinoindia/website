@@ -68,6 +68,16 @@ const Navbar = () => {
       ]
     },
     {
+      label: 'Turnbuckles',
+      path: '/product/turnbuckles',
+      children: [
+        { label: 'All Turnbuckles', path: '/product/turnbuckles' },
+        { label: 'Eye & Eye', path: '/product/turnbuckles' },
+        { label: 'Jaw & Jaw', path: '/product/turnbuckles' },
+        { label: 'Hook & Eye', path: '/product/turnbuckles' },
+      ]
+    },
+    {
       label: 'Hooks',
       path: '/product/hooks',
       children: [
@@ -123,7 +133,6 @@ const Navbar = () => {
       children: [
         { label: 'All Lashing', path: '/products' },
         { label: 'Ratchet Lashing', path: '/products' },
-        { label: 'Turnbuckles', path: '/products' },
         { label: 'Lashing Buckles', path: '/products' },
       ]
     },
@@ -154,16 +163,6 @@ const Navbar = () => {
         { label: 'Wire Rope Clips', path: '/product/wire-rope-accessories' },
         { label: 'Thimbles', path: '/product/thimbles' },
         { label: 'Sockets', path: '/product/wire-rope-accessories' },
-      ]
-    },
-    {
-      label: 'Turnbuckles',
-      path: '/product/turnbuckles',
-      children: [
-        { label: 'All Turnbuckles', path: '/product/turnbuckles' },
-        { label: 'Eye & Eye', path: '/product/turnbuckles' },
-        { label: 'Jaw & Jaw', path: '/product/turnbuckles' },
-        { label: 'Hook & Eye', path: '/product/turnbuckles' },
       ]
     },
     {
