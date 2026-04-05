@@ -12,6 +12,7 @@ Bail Size (in)	Bail Size (mm)	Pin Size (in)	Pin Size (mm)	WLL (kN)	WLL (lb)	WLL 
 1 1/8	29	1 1/4	32	95	20900	9500
 1 1/4	32	1 3/8	35	120	26400	12000
 1 1/4	32	1 3/8	35	135	29700	13500
+
 Chain Type Shackles
 Bail Size (in)	Bail Size (mm)	Pin Size (in)	Pin Size (mm)	WLL (kN)	WLL (lb)	WLL (kg)
 1/4	6	5/16	8	5	1100	500
