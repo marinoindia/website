@@ -77,6 +77,7 @@ logo/*
 unnamed.jpg
 unnamed.*
 *.pdf
+!public/catalogue/Marino_Wire_Rope_Sling_Catalog_2-compressed.pdf
 # Old client files (replaced with clients.png)
 clients.pdf
 Logo_clients.png
