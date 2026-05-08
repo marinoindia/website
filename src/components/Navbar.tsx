@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Phone, Mail, ChevronRight, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone, Mail, ChevronRight, ChevronDown, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -249,8 +249,28 @@ const Navbar = () => {
                 <span className="lg:hidden">Email</span>
               </a>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <span className="text-primary-foreground/80 text-[10px] sm:text-xs md:text-sm whitespace-nowrap break-all sm:break-normal">GST: 19ADMPR1740H1ZA</span>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://www.linkedin.com/company/marino-corporation-of-india"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:text-white text-primary-foreground/80 transition-colors"
+                >
+                  <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/marino_corporation_of_india/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="hover:text-white text-primary-foreground/80 transition-colors"
+                >
+                  <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
