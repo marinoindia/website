@@ -3,15 +3,12 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { 
-  ArrowRight, 
-  ExternalLink, 
-  ChevronRight,
+import {
+  ArrowRight,
   Settings2,
   Link2,
   Anchor,
   Cable,
-  Boxes,
   Layers,
   Construction,
   Package,
@@ -301,7 +298,7 @@ const ProductsPage = () => {
                     </Button>
                   </a>
                   <a href="/catalogue/Marino_Wire_Rope_Sling_Catalog_2.pdf" target="_blank" rel="noopener noreferrer">
-                    <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                    <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-emerald-900">
                       Download Catalogue
                     </Button>
                   </a>
@@ -310,125 +307,49 @@ const ProductsPage = () => {
             </div>
           </section>
 
-          {/* Main Content with Sidebar */}
+          {/* Main Content - Unified Product Grid */}
           <section className="py-16 bg-slate-50">
             <div className="container-modern">
-              <div className="grid lg:grid-cols-4 gap-8">
-                {/* Left Sidebar - Product Categories */}
-                <div className="lg:col-span-1">
-                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sticky top-24">
-                    <h2 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                      <Boxes className="w-5 h-5 text-emerald-600" />
-                      Product Categories
-                    </h2>
-                    <nav className="space-y-2">
-                      {productCategories.map((category) => {
-                        const Icon = category.icon;
-                        return (
-                          <Link
-                            key={category.label}
-                            to={category.path}
-                            className={`flex items-center gap-3 p-3 rounded-xl transition-all group ${
-                              category.featured 
-                                ? 'bg-amber-50 border-2 border-amber-200 hover:border-amber-300' 
-                                : 'hover:bg-slate-50 border border-transparent hover:border-slate-200'
-                            }`}
-                          >
-                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${category.color}`}>
-                              <Icon className="w-5 h-5" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center gap-1">
-                                <span className="font-medium text-slate-900 text-sm group-hover:text-emerald-700 transition-colors">
-                                  {category.label}
-                                </span>
-                                {category.featured && (
-                                  <Badge className="bg-amber-500 text-white text-[10px] px-1.5 py-0 ml-1">
-                                    Popular
-                                  </Badge>
-                                )}
-                              </div>
-                              <p className="text-xs text-slate-500 truncate">
-                                {category.description}
-                              </p>
-                            </div>
-                            <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 transition-colors" />
-                          </Link>
-                        );
-                      })}
-                    </nav>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {productCategories.map((category) => {
+                  const Icon = category.icon;
+                  return (
+                    <Link
+                      key={category.label}
+                      to={category.path}
+                      className="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-emerald-300 transition-all"
+                    >
+                      <div className={`h-32 ${category.color} flex items-center justify-center`}>
+                        <Icon className="w-16 h-16 opacity-50" />
+                      </div>
+                      <div className="p-5">
+                        <h3 className="font-bold text-slate-900 mb-1 group-hover:text-emerald-700 transition-colors">
+                          {category.label}
+                        </h3>
+                        <p className="text-sm text-slate-600 mb-3">
+                          {category.description}
+                        </p>
+                        <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 group-hover:text-emerald-700">
+                          View Products
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
 
-                    {/* Quick Contact */}
-                    <div className="mt-6 pt-6 border-t border-slate-200">
-                      <p className="text-sm text-slate-600 mb-3">
-                        Need help finding the right product?
-                      </p>
-                      <a
-                        href="tel:9831144669"
-                        className="flex items-center justify-center gap-2 w-full py-2.5 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700 transition-colors"
-                      >
-                        Call 9831144669
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Content - Product Grid */}
-                <div className="lg:col-span-3">
-                  {/* Products Grid */}
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {productCategories.filter(cat => cat.path.startsWith('/product/')).map((category) => {
-                      const Icon = category.icon;
-                      return (
-                        <Link
-                          key={category.label}
-                          to={category.path}
-                          className="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-emerald-300 transition-all"
-                        >
-                          <div className={`h-32 ${category.color} flex items-center justify-center`}>
-                            <Icon className="w-16 h-16 opacity-50" />
-                          </div>
-                          <div className="p-5">
-                            <h3 className="font-bold text-slate-900 mb-1 group-hover:text-emerald-700 transition-colors">
-                              {category.label}
-                            </h3>
-                            <p className="text-sm text-slate-600 mb-3">
-                              {category.description}
-                            </p>
-                            <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 group-hover:text-emerald-700">
-                              View Products
-                              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                            </span>
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
-
-                  {/* Additional Categories */}
-                  <div className="mt-8">
-                    <h3 className="text-lg font-bold text-slate-900 mb-4">More Products</h3>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                      {productCategories.filter(cat => !cat.path.startsWith('/product/')).map((category) => {
-                        const Icon = category.icon;
-                        return (
-                          <Link
-                            key={category.label}
-                            to={category.path}
-                            className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all group"
-                          >
-                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${category.color}`}>
-                              <Icon className="w-5 h-5" />
-                            </div>
-                            <span className="font-medium text-slate-900 group-hover:text-emerald-700 transition-colors">
-                              {category.label}
-                            </span>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
+              {/* Quick Contact */}
+              <div className="mt-12 max-w-md mx-auto text-center">
+                <p className="text-sm text-slate-600 mb-3">
+                  Need help finding the right product?
+                </p>
+                <a
+                  href="tel:9831144669"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700 transition-colors"
+                >
+                  Call 9831144669
+                </a>
               </div>
             </div>
           </section>
