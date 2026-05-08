@@ -155,7 +155,7 @@ const Footer = () => {
             {/* Social & Scroll */}
             <div className="flex items-center gap-4">
               <a
-                href="https://www.linkedin.com/company/marino-corporation-of-india"
+                href="https://www.linkedin.com/company/marino-corporation-of-india/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors"
