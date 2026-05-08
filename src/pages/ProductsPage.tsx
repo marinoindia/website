@@ -46,7 +46,6 @@ const productCategories = [
     icon: Settings2,
     description: 'Eye, Jaw & Hook Types',
     color: 'bg-amber-50 text-amber-700 border-amber-200',
-    featured: true,
   },
   {
     label: 'Shackles',
@@ -376,35 +375,6 @@ const ProductsPage = () => {
 
                 {/* Right Content - Product Grid */}
                 <div className="lg:col-span-3">
-                  {/* Featured: Turnbuckles */}
-                  <div className="mb-8">
-                    <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-6 border-2 border-amber-200">
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                        <div className="w-16 h-16 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <Settings2 className="w-8 h-8 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <Badge className="bg-amber-500 text-white">Featured</Badge>
-                            <span className="text-sm text-amber-700">New Arrival</span>
-                          </div>
-                          <h3 className="text-xl font-bold text-slate-900 mb-1">Turnbuckles</h3>
-                          <p className="text-slate-600 text-sm">
-                            Complete range of galvanised and stainless steel turnbuckles. 
-                            Eye & Eye, Jaw & Jaw, Hook & Eye configurations available.
-                          </p>
-                        </div>
-                        <Link
-                          to="/product/turnbuckles"
-                          className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 text-white rounded-lg font-medium hover:bg-amber-600 transition-colors whitespace-nowrap"
-                        >
-                          View Turnbuckles
-                          <ExternalLink className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-
                   {/* Products Grid */}
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {productCategories.filter(cat => cat.path.startsWith('/product/')).map((category) => {
