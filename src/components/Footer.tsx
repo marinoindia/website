@@ -79,7 +79,6 @@ const Footer = () => {
                 { to: '/#about', label: 'About Us' },
                 { to: '/#certifications', label: 'Certifications' },
                 { to: '/products', label: 'Products' },
-                { to: '/premade-slings', label: 'Premade Slings' },
                 { to: '/#why-us', label: 'Why Choose Us' },
                 { to: '/our-people', label: 'Our People' },
                 { to: '/clients', label: 'Clients' },

@@ -21,7 +21,6 @@ import {
 } from '@/components/ui/dropdown-menu';
 import logoImage from '@/assets/logo/logo_updated.png';
 import EnquiryForm from '@/components/EnquiryForm';
-import SaleBanner from '@/components/SaleBanner';
 
 const Navbar = () => {
   const [isEnquiryFormOpen, setIsEnquiryFormOpen] = useState(false);
@@ -198,13 +197,11 @@ const Navbar = () => {
     { href: '/', label: 'Home' },
     { href: '/#about', label: 'About Us' },
     { href: '/products', label: 'All Products', isProducts: true },
-    { href: '/premade-slings', label: 'Premade Slings' },
     { href: '/#why-us', label: 'Why Choose Us' },
     { href: '/#faq', label: 'FAQ' },
     { href: '/our-people', label: 'Our People' },
     { href: '/clients', label: 'Clients' },
     { href: '/media', label: 'Media' },
-    { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -231,9 +228,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Sale Banner - Fixed at top */}
-      <SaleBanner />
-      
       {/* Top bar */}
       <div className="bg-primary text-primary-foreground py-1.5 sm:py-2">
         <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
@@ -312,13 +306,8 @@ const Navbar = () => {
                       All Products
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/premade-slings" className="cursor-pointer font-semibold text-emerald-600">
-                      Premade Slings (Ready Stock)
-                    </Link>
-                  </DropdownMenuItem>
                   <DropdownMenuSeparator className="my-2" />
-                  
+
                   {/* Simple list of categories without submenus */}
                   <DropdownMenuItem asChild>
                     <Link to="/product/wire-rope-slings" className="cursor-pointer">Slings</Link>
@@ -381,10 +370,6 @@ const Navbar = () => {
 
               <Link to="/media" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent transition-colors px-3 py-2">
                 Media
-              </Link>
-
-              <Link to="/blog" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent transition-colors px-3 py-2">
-                Blog
               </Link>
 
               <Link to="/contact" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent transition-colors px-3 py-2">
@@ -454,7 +439,6 @@ const Navbar = () => {
                     {/* Other Pages */}
                     <div className="border-t border-border mt-4 pt-4">
                       {[
-                        { to: '/premade-slings', label: 'Premade Slings' },
                         { to: '/our-people', label: 'Our People' },
                         { to: '/clients', label: 'Clients' },
                         { to: '/media', label: 'Media' },
@@ -559,11 +543,9 @@ const Navbar = () => {
                     {/* Other Pages */}
                     <div className="border-t border-border mt-2 pt-2">
                       {[
-                        { to: '/premade-slings', label: 'Premade Slings' },
                         { to: '/our-people', label: 'Our People' },
                         { to: '/clients', label: 'Clients' },
                         { to: '/media', label: 'Media' },
-                        { to: '/blog', label: 'Blog' },
                         { to: '/contact', label: 'Contact' },
                       ].map((link) => (
                         <Link
