@@ -244,7 +244,7 @@ const Navbar = () => {
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-primary-foreground/80 text-[10px] sm:text-xs md:text-sm whitespace-nowrap break-all sm:break-normal">GST: 19ADMPR1740H1ZA</span>
+              <span className="hidden md:inline text-primary-foreground/80 text-xs md:text-sm whitespace-nowrap">GST: 19ADMPR1740H1ZA</span>
               <div className="flex items-center gap-2">
                 <a
                   href="https://www.linkedin.com/company/marino-corporation-of-india"

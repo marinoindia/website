@@ -4,11 +4,9 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Certifications from '@/components/Certifications';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import FAQ, { faqItems } from '@/components/FAQ';
 import MediaPreview from '@/components/MediaPreview';
-import MapSection from '@/components/MapSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
@@ -180,11 +178,9 @@ const Index = () => {
         <main>
           <Hero />
           <About />
-          <Certifications />
           <MediaPreview />
           <WhyChooseUs />
           <FAQ />
-          <MapSection />
         </main>
         <Footer />
         <WhatsAppButton />

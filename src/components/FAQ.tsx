@@ -55,26 +55,26 @@ export const faqItems: { question: string; answer: string }[] = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-2 sm:py-3 md:py-4 bg-background">
+    <section id="faq" className="py-5 sm:py-6 md:py-8 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-2 sm:mb-3">
-          <h2 className="section-title text-[#0d3d26] text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+        <div className="text-center max-w-xl mx-auto mb-4">
+          <h2 className="text-base sm:text-lg lg:text-xl font-bold text-[#0d3d26]">
             Frequently Asked
             <span className="text-[#0d3d26]"> Questions</span>
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base md:text-lg mt-1">
+          <p className="text-muted-foreground text-xs sm:text-sm mt-1">
             Common questions about wire ropes, slings, and chains.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
-            {faqItems.map((item, index) => (
+            {faqItems.slice(0, 5).map((item, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left text-[#0d3d26] font-semibold">
+                <AccordionTrigger className="text-left text-[#0d3d26] font-semibold text-sm py-3">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground text-xs leading-snug">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
