@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Phone, Mail, ChevronRight, ChevronDown, Linkedin, Instagram } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -233,14 +233,26 @@ const Navbar = () => {
         <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
           <div className="flex flex-col sm:flex-row flex-wrap justify-between items-start sm:items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs md:text-sm">
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-6">
-              <a href="tel:9831144669" className="flex items-center gap-1.5 sm:gap-2 hover:underline whitespace-nowrap">
-                <Phone className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                <span>Call Us Today</span>
+              <span className="whitespace-nowrap">
+                Phone:{' '}
+                <a href="tel:9831144669" className="hover:underline">
+                  9831144669
+                </a>
+              </span>
+              <a href="tel:8100052948" className="hover:underline whitespace-nowrap hidden sm:inline">
+                81000 52948
               </a>
-              <a href="mailto:marinocoindia@gmail.com" className="flex items-center gap-1.5 sm:gap-2 hover:underline whitespace-nowrap">
-                <Mail className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-                <span className="hidden lg:inline">marinocoindia@gmail.com</span>
-                <span className="lg:hidden">Email</span>
+              <a href="tel:9831327279" className="hover:underline whitespace-nowrap hidden md:inline">
+                9831327279
+              </a>
+              <span className="whitespace-nowrap">
+                Email:{' '}
+                <a href="mailto:marinocoindia@gmail.com" className="hover:underline">
+                  marinocoindia@gmail.com
+                </a>
+              </span>
+              <a href="mailto:marinocorporationofindia@gmail.com" className="hover:underline whitespace-nowrap hidden md:inline">
+                marinocorporationofindia@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-3">
