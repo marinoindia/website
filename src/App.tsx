@@ -53,6 +53,19 @@ const ProductsSlugRedirect = () => {
   return <Navigate to={`/product/${slug}`} replace />;
 };
 
+// Scroll to top of page on route change. Skipped when the URL has a hash
+// fragment so in-page anchor links (e.g. /#about, /#why-us) still scroll
+// to the target element instead of being yanked back to the top.
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+    }
+  }, [pathname, hash]);
+  return null;
+};
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
@@ -62,6 +75,7 @@ const App = () => (
         {/* Use Vite's BASE_URL so routing matches the deployed base path */}
         <BrowserRouter basename={import.meta.env.BASE_URL}>
           <GitHubPagesRedirect />
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<ProductsPage />} />
