@@ -107,35 +107,35 @@ const Index = () => {
                 {
                   "@type": "Offer",
                   "itemOffered": {
-                    "@type": "Product",
+                    "@type": "Service",
                     "name": "Wire Rope Slings & Chain Slings"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
-                    "@type": "Product",
+                    "@type": "Service",
                     "name": "Industrial Chains & Shackles"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
-                    "@type": "Product",
+                    "@type": "Service",
                     "name": "Marine Equipment & Anchors"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
-                    "@type": "Product",
+                    "@type": "Service",
                     "name": "Lifting Hardware & Pulleys"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
-                    "@type": "Product",
+                    "@type": "Service",
                     "name": "Safety Equipment & PPE"
                   }
                 }
