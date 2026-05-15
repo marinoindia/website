@@ -1124,11 +1124,6 @@ const ProductDetailPage = () => {
                 }
               }
             },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "127"
-            },
             "manufacturer": {
               "@type": "Organization",
               "name": "Marino Corporation Of India"

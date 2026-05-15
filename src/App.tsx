@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, useNavigate, Navigate, useParams } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { useEffect } from "react";
 import Index from "./pages/Index";
@@ -15,10 +15,11 @@ import ClientsPage from "./pages/ClientsPage";
 import OurPeoplePage from "./pages/OurPeoplePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductVariantPage from "./pages/ProductVariantPage";
+import CityPage from "./pages/CityPage";
+import PremadeSlingsPage from "./pages/PremadeSlingsPage";
 import { Analytics } from "@/components/Analytics";
 import { GoatCounter } from "@/components/GoatCounter";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
-import CopyrightProtection from "@/components/CopyrightProtection";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,13 @@ const GitHubPagesRedirect = () => {
   return null;
 };
 
+// Redirect /products/:slug → /product/:slug (canonical pattern).
+// Keeps inbound links from llms.txt, sitemaps and external sites working.
+const ProductsSlugRedirect = () => {
+  const { slug } = useParams<{ slug: string }>();
+  return <Navigate to={`/product/${slug}`} replace />;
+};
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
@@ -53,7 +61,6 @@ const App = () => (
         <Sonner />
         {/* Use Vite's BASE_URL so routing matches the deployed base path */}
         <BrowserRouter basename={import.meta.env.BASE_URL}>
-          <CopyrightProtection />
           <GitHubPagesRedirect />
           <Routes>
             <Route path="/" element={<Index />} />
@@ -64,14 +71,9 @@ const App = () => (
             <Route path="/our-people" element={<OurPeoplePage />} />
             <Route path="/product/:productId" element={<ProductDetailPage />} />
             <Route path="/variant/:variantId" element={<ProductVariantPage />} />
-            <Route path="/products/wire-rope-slings" element={<ProductDetailPage />} />
-            <Route path="/products/chain-slings" element={<ProductDetailPage />} />
-            <Route path="/products/shackles" element={<ProductDetailPage />} />
-            <Route path="/products/hooks" element={<ProductDetailPage />} />
-            <Route path="/products/turnbuckles" element={<ProductDetailPage />} />
-            <Route path="/products/pulleys-blocks" element={<ProductDetailPage />} />
-            <Route path="/products/wire-rope-accessories" element={<ProductDetailPage />} />
-            <Route path="/products/thimbles" element={<ProductDetailPage />} />
+            <Route path="/products/:slug" element={<ProductsSlugRedirect />} />
+            <Route path="/premade-slings" element={<PremadeSlingsPage />} />
+            <Route path="/suppliers/:city" element={<CityPage />} />
             <Route path="/analytics" element={<AnalyticsDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

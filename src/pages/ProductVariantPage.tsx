@@ -588,7 +588,7 @@ const ProductVariantPage = () => {
       <Helmet>
         <title>{variant.title}</title>
         <meta name="description" content={variant.description} />
-        <link rel="canonical" href={`https://marinoindia.co.in/product/${variantId}`} />
+        <link rel="canonical" href={`https://marinoindia.co.in/variant/${variantId}`} />
         
         {/* Product Schema */}
         <script type="application/ld+json">
@@ -601,7 +601,7 @@ const ProductVariantPage = () => {
             "brand": { "@type": "Brand", "name": "Marino Corporation" },
             "offers": {
               "@type": "Offer",
-              "url": `https://marinoindia.co.in/product/${variantId}`,
+              "url": `https://marinoindia.co.in/variant/${variantId}`,
               "priceCurrency": "INR",
               "availability": "https://schema.org/InStock",
               "seller": { "@type": "Organization", "name": "Marino Corporation Of India" }

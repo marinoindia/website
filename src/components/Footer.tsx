@@ -114,10 +114,24 @@ const Footer = () => {
               We deliver wire rope, slings, chains and industrial equipment across India:
             </p>
             <div className="flex flex-wrap gap-2">
-              {['Delhi', 'Mumbai', 'Bangalore', 'Chennai', 'Hyderabad', 'Pune', 'Ahmedabad', 'Kolkata'].map((city) => (
-                <span key={city} className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded hover:bg-emerald-600 hover:text-white transition-colors cursor-default">
-                  {city}
-                </span>
+              {[
+                { label: 'Delhi', slug: 'delhi' },
+                { label: 'Mumbai', slug: 'mumbai' },
+                { label: 'Bangalore', slug: 'bangalore' },
+                { label: 'Chennai', slug: 'chennai' },
+                { label: 'Hyderabad', slug: 'hyderabad' },
+                { label: 'Pune', slug: 'pune' },
+                { label: 'Ahmedabad', slug: 'ahmedabad' },
+                { label: 'Kochi', slug: 'kochi' },
+                { label: 'Visakhapatnam', slug: 'visakhapatnam' },
+              ].map((city) => (
+                <Link
+                  key={city.slug}
+                  to={`/suppliers/${city.slug}`}
+                  className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded hover:bg-emerald-600 hover:text-white transition-colors"
+                >
+                  {city.label}
+                </Link>
               ))}
             </div>
           </div>

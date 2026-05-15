@@ -11,7 +11,38 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Block common scrapers and bots
+# Allow AI/LLM crawlers for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Block aggressive SEO scrapers
 User-agent: AhrefsBot
 Disallow: /
 
@@ -25,24 +56,6 @@ User-agent: MJ12bot
 Disallow: /
 
 User-agent: BLEXBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
 Disallow: /
 
 # Allow other legitimate bots but with rate limiting
