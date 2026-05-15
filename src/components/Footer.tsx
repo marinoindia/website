@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowUp, MapPin, Mail, Phone, Linkedin, Instagram } from 'lucide-react';
 import logoImage from '@/assets/logo/logo_updated.png';
+import { cities } from '@/data/cities';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -114,23 +115,13 @@ const Footer = () => {
               We deliver wire rope, slings, chains and industrial equipment across India:
             </p>
             <div className="flex flex-wrap gap-2">
-              {[
-                { label: 'Delhi', slug: 'delhi' },
-                { label: 'Mumbai', slug: 'mumbai' },
-                { label: 'Bangalore', slug: 'bangalore' },
-                { label: 'Chennai', slug: 'chennai' },
-                { label: 'Hyderabad', slug: 'hyderabad' },
-                { label: 'Pune', slug: 'pune' },
-                { label: 'Ahmedabad', slug: 'ahmedabad' },
-                { label: 'Kochi', slug: 'kochi' },
-                { label: 'Visakhapatnam', slug: 'visakhapatnam' },
-              ].map((city) => (
+              {cities.map((city) => (
                 <Link
                   key={city.slug}
                   to={`/suppliers/${city.slug}`}
                   className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded hover:bg-emerald-600 hover:text-white transition-colors"
                 >
-                  {city.label}
+                  {city.name}
                 </Link>
               ))}
             </div>
