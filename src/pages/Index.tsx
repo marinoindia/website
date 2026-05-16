@@ -31,7 +31,7 @@ const Index = () => {
         <title>India's Best Wire Rope, Sling & Chain Supplier | Marino Corporation | All India Delivery</title>
         <meta
           name="description"
-          content="Marino Corporation Of India - India's best wire rope, sling and chain supplier. Leading manufacturer of industrial chains, marine equipment, wire rope slings. Pan India delivery. 40+ years experience. ISO certified. Get quotes on WhatsApp."
+          content="Marino Corporation - India's wire rope, sling & chain supplier since 1985. ISO-certified lifting & marine equipment, pan-India delivery from Kolkata."
         />
         <meta name="keywords" content="wire rope supplier India, sling supplier India, chain supplier India, best wire rope manufacturer India, industrial chains supplier, wire rope slings India, lifting chains supplier, marine equipment India, pulley blocks India, wire rope Delhi, wire rope Mumbai, wire rope Bangalore, wire rope Chennai, wire rope Hyderabad, wire rope Pune, wire rope Ahmedabad, wire rope Kolkata, industrial lifting equipment, ISO certified wire rope, Usha Martin wire rope distributor" />
         <link rel="canonical" href="https://marinoindia.co.in" />
