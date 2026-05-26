@@ -78,6 +78,11 @@ unnamed.jpg
 unnamed.*
 *.pdf
 !public/catalogue/Marino_Wire_Rope_Sling_Catalog_2-compressed.pdf
+!public/catalogue/Marino_Wire_Rope_Sling_Catalog.pdf
+!public/catalogue/Marino_Wire_Rope_Sling_Catalog_2.pdf
+!public/catalogue/Strength-for-stud-link-anchor-cables.pdf
+!public/catalogue/studless-chain.pdf
+!public/catalogue/weight-for-stud-link-anchor-chains.pdf
 # Old client files (replaced with clients.png)
 clients.pdf
 Logo_clients.png

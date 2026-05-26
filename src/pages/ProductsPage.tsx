@@ -297,7 +297,7 @@ const ProductsPage = () => {
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
                   </a>
-                  <a href="/catalogue/Marino_Wire_Rope_Sling_Catalog_2.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href="/catalogue/Marino_Wire_Rope_Sling_Catalog_2-compressed.pdf" target="_blank" rel="noopener noreferrer">
                     <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-emerald-900">
                       Download Catalogue
                     </Button>

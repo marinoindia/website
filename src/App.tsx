@@ -66,6 +66,16 @@ const ScrollToTop = () => {
   return null;
 };
 
+// Strip trailing slashes (except for root "/") so URLs match the canonical
+// no-slash form and GSC stops flagging the slash variants as "alternate page".
+const TrailingSlashRedirect = () => {
+  const { pathname, search, hash } = useLocation();
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    return <Navigate to={pathname.replace(/\/+$/, "") + search + hash} replace />;
+  }
+  return null;
+};
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
@@ -75,6 +85,7 @@ const App = () => (
         {/* Use Vite's BASE_URL so routing matches the deployed base path */}
         <BrowserRouter basename={import.meta.env.BASE_URL}>
           <GitHubPagesRedirect />
+          <TrailingSlashRedirect />
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
