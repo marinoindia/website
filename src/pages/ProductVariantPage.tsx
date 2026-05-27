@@ -588,7 +588,7 @@ const ProductVariantPage = () => {
       <Helmet>
         <title>{variant.title}</title>
         <meta name="description" content={variant.description} />
-        <link rel="canonical" href={`https://marinoindia.co.in/variant/${variantId}`} />
+        <link rel="canonical" href={`https://marinoindia.co.in/variant/${variantId}/`} />
         
         {/* Product Schema */}
         <script type="application/ld+json">

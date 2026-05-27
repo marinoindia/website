@@ -14,7 +14,7 @@ const ContactPage = () => {
           content="Contact India's best wire rope, sling and chain supplier - Marino Corporation Of India. Located in Kolkata/Calcutta, West Bengal. Call, email, or chat on WhatsApp for quotes."
         />
         <meta name="keywords" content="contact India best wire rope sling and chain supplier, contact wire rope supplier Kolkata, contact wire rope supplier Calcutta, contact sling supplier India, contact chain supplier India, contact marino corporation, Kolkata industrial chains contact, marine equipment supplier contact, WhatsApp quote" />
-        <link rel="canonical" href="https://marinoindia.co.in/contact" />
+        <link rel="canonical" href="https://marinoindia.co.in/contact/" />
         <meta property="og:title" content="Contact Us - Marino Corporation Of India" />
         <meta property="og:description" content="Contact India's best wire rope, sling and chain supplier. Located in Kolkata, West Bengal. Call, email, or chat on WhatsApp for quotes." />
         <meta property="og:type" content="website" />

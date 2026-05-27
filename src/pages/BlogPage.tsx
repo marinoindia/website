@@ -135,7 +135,7 @@ const BlogPage = () => {
           content="Complete wire rope resource: sling selection, OSHA inspection standards, 6×19 vs 6×36 construction, 1770 vs 1960 MPa grades, capacity calculations, and maintenance guides from India's leading wire rope supplier."
         />
         <meta name="keywords" content="wire rope sling guide, wire rope inspection OSHA, 6x19 vs 6x36 wire rope, 1770 vs 1960 MPa, wire rope capacity calculation, FC vs IWRC core, wire rope clips installation, sling angle formula, wire rope maintenance, Usha Martin wire rope" />
-        <link rel="canonical" href="https://marinoindia.co.in/blog" />
+        <link rel="canonical" href="https://marinoindia.co.in/blog/" />
         <meta property="og:title" content="Wire Rope Blog - Technical Guides & Resources | Marino" />
         <meta property="og:description" content="Expert wire rope guides: sling selection, OSHA inspection, construction types, grades, and capacity calculations from India's trusted supplier." />
         <meta property="og:type" content="website" />

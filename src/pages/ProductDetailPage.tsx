@@ -1092,7 +1092,7 @@ const ProductDetailPage = () => {
       <Helmet>
         <title>{product.title}</title>
         <meta name="description" content={product.description} />
-        <link rel="canonical" href={`https://marinoindia.co.in/product/${productId}`} />
+        <link rel="canonical" href={`https://marinoindia.co.in/product/${productId}/`} />
         
         {/* Product Schema */}
         <script type="application/ld+json">

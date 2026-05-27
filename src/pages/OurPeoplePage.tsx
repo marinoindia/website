@@ -14,7 +14,7 @@ const OurPeoplePage = () => {
           content="Meet the team of Marino Corporation Of India - Pradeep Kumar Rout (Binny), Vikram Keshari Rout (Bikku), and Govardhan Rout. India's best wire rope, sling and chain supplier in Kolkata/Calcutta."
         />
         <meta name="keywords" content="Marino Corporation team, Pradeep Kumar Rout, Vikram Keshari Rout, Govardhan Rout, India best wire rope supplier team, Kolkata industrial supplier" />
-        <link rel="canonical" href="https://marinoindia.co.in/our-people" />
+        <link rel="canonical" href="https://marinoindia.co.in/our-people/" />
         <meta property="og:title" content="Our People - Marino Corporation Of India" />
         <meta property="og:description" content="Meet the team behind India's best wire rope, sling and chain supplier. 40+ years of combined experience in Kolkata." />
         <meta property="og:type" content="website" />

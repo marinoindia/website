@@ -291,7 +291,7 @@ const PremadeSlingsPage = () => {
           content="Buy wire rope slings online at best prices. 6mm to 24mm diameter, single leg & multi-leg slings from ₹450. IS 2266 compliant, Usha Martin wire, test certified. All India delivery from Kolkata."
         />
         <meta name="keywords" content="wire rope sling price list India, wire rope slings price, 6mm wire rope sling price, 10mm wire rope sling price, 12mm wire rope sling price, buy wire rope slings online, wire rope sling manufacturers India, wire rope sling supplier Kolkata, wire rope slings Delhi Mumbai Bangalore Chennai, IS 2266 wire rope sling" />
-        <link rel="canonical" href="https://marinoindia.co.in/premade-slings" />
+        <link rel="canonical" href="https://marinoindia.co.in/premade-slings/" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

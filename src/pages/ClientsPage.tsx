@@ -14,7 +14,7 @@ const ClientsPage = () => {
           content="Marino Corporation Of India - India's best wire rope, sling and chain supplier in Kolkata/Calcutta, proudly serves prestigious clients across various sectors. Trusted by India's leading organizations."
         />
         <meta name="keywords" content="India best wire rope sling and chain supplier clients, wire rope supplier Kolkata clients, wire rope supplier Calcutta clients, marino clients, industrial clients, marine equipment clients" />
-        <link rel="canonical" href="https://marinoindia.co.in/clients" />
+        <link rel="canonical" href="https://marinoindia.co.in/clients/" />
         <meta property="og:title" content="Our Clients - Marino Corporation Of India" />
         <meta property="og:description" content="Marino Corporation Of India proudly serves prestigious clients across defense, space research, steel, and port operations sectors across India." />
         <meta property="og:type" content="website" />

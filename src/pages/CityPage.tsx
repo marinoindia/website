@@ -14,7 +14,7 @@ const CityPage = () => {
 
   if (!city) return <Navigate to="/" replace />;
 
-  const canonical = `https://marinoindia.co.in/suppliers/${city.slug}`;
+  const canonical = `https://marinoindia.co.in/suppliers/${city.slug}/`;
   const title = `Wire Rope & Sling Supplier in ${city.name} | Marino Corporation`;
   const description = `Marino Corporation supplies wire rope, slings, chains and lifting hardware to ${city.name}. ${city.industryContext}. ISO certified, 40+ years experience, delivery in ${city.leadTime} from Kolkata.`;
 

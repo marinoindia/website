@@ -14,7 +14,7 @@ const MediaPage = () => {
           content="Explore our product gallery showcasing wire rope, slings, chains, industrial chains, marine equipment, pulley blocks, and our manufacturing facilities in Kolkata/Calcutta."
         />
         <meta name="keywords" content="India best wire rope sling and chain supplier gallery, wire rope supplier Kolkata photos, wire rope supplier Calcutta images, marino corporation gallery, industrial chains photos, marine equipment images, Kolkata manufacturer photos" />
-        <link rel="canonical" href="https://marinoindia.co.in/media" />
+        <link rel="canonical" href="https://marinoindia.co.in/media/" />
         <meta property="og:title" content="Media Gallery - Marino Corporation Of India" />
         <meta property="og:description" content="Explore our product gallery showcasing wire rope, slings, chains, industrial chains, marine equipment, pulley blocks, and our manufacturing facilities in Kolkata." />
         <meta property="og:type" content="website" />

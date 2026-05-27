@@ -193,7 +193,7 @@ const ProductsPage = () => {
           content="Browse India's best range of wire rope, slings, chains, industrial chains, pulley blocks, marine equipment, and lifting hardware. Pan India delivery from Kolkata. Get quotes on WhatsApp."
         />
         <meta name="keywords" content="wire rope supplier India, sling supplier India, chain supplier India, industrial chains supplier, wire rope slings manufacturer, lifting chains supplier, marine equipment India, pulley blocks supplier, container hooks India, wire rope Delhi, wire rope Mumbai, wire rope Bangalore, industrial lifting equipment, turnbuckles India" />
-        <link rel="canonical" href="https://marinoindia.co.in/products" />
+        <link rel="canonical" href="https://marinoindia.co.in/products/" />
         
         {/* Product Schema Markup */}
         <script type="application/ld+json">
