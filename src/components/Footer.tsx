@@ -186,8 +186,26 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Legal / Policy Links */}
+          <div className="mt-8 pt-6 border-t border-slate-800">
+            <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs">
+              {[
+                { to: '/privacy-policy', label: 'Privacy Policy' },
+                { to: '/terms', label: 'Terms & Conditions' },
+                { to: '/refund-policy', label: 'Replacement, Refund & Warranty' },
+                { to: '/shipping-policy', label: 'Shipping & Delivery' },
+              ].map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className="text-slate-400 hover:text-emerald-400 transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Copyright */}
-          <div className="mt-8 pt-6 border-t border-slate-800 text-center">
+          <div className="mt-6 pt-6 border-t border-slate-800 text-center">
             <p className="text-slate-500 text-xs">
               © {new Date().getFullYear()} Marino Corporation Of India. All rights reserved.
             </p>

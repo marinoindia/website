@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronRight, ChevronDown, Linkedin, Instagram } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown, Linkedin, Instagram, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -20,10 +20,8 @@ import {
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import logoImage from '@/assets/logo/logo_updated.png';
-import EnquiryForm from '@/components/EnquiryForm';
 
 const Navbar = () => {
-  const [isEnquiryFormOpen, setIsEnquiryFormOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -470,15 +468,14 @@ const Navbar = () => {
                   </div>
                   
                   <div className="flex-shrink-0 p-6 border-t border-border bg-background">
-                    <Button 
-                      className="w-full btn-accent gap-2"
-                      onClick={() => {
-                        setIsOpen(false);
-                        setIsEnquiryFormOpen(true);
-                      }}
+                    <Link
+                      to="/webshop"
+                      onClick={() => setIsOpen(false)}
+                      className="btn-accent w-full gap-2 inline-flex items-center justify-center"
                     >
-                      Enquiry Form
-                    </Button>
+                      <ShoppingCart className="w-4 h-4" />
+                      Shop Online
+                    </Link>
                   </div>
                 </SheetContent>
               </Sheet>
@@ -486,12 +483,13 @@ const Navbar = () => {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-2 lg:gap-4 flex-shrink-0">
-              <Button 
-                className="btn-accent text-xs lg:text-sm px-3 lg:px-6 py-2 lg:py-3 whitespace-nowrap"
-                onClick={() => setIsEnquiryFormOpen(true)}
+              <Link
+                to="/webshop"
+                className="btn-accent inline-flex items-center gap-2 text-xs lg:text-sm px-3 lg:px-6 py-2 lg:py-3 whitespace-nowrap"
               >
-                Enquiry Form
-              </Button>
+                <ShoppingCart className="w-4 h-4" />
+                Shop Online
+              </Link>
             </div>
 
             {/* Mobile: Simple hamburger */}
@@ -574,15 +572,14 @@ const Navbar = () => {
                   </div>
                   
                   <div className="flex-shrink-0 p-6 border-t border-border bg-background">
-                    <Button 
-                      className="w-full btn-accent gap-2"
-                      onClick={() => {
-                        setIsOpen(false);
-                        setIsEnquiryFormOpen(true);
-                      }}
+                    <Link
+                      to="/webshop"
+                      onClick={() => setIsOpen(false)}
+                      className="btn-accent w-full gap-2 inline-flex items-center justify-center"
                     >
-                      Enquiry Form
-                    </Button>
+                      <ShoppingCart className="w-4 h-4" />
+                      Shop Online
+                    </Link>
                   </div>
                 </SheetContent>
               </Sheet>
@@ -590,7 +587,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <EnquiryForm open={isEnquiryFormOpen} onOpenChange={setIsEnquiryFormOpen} />
     </>
   );
 };

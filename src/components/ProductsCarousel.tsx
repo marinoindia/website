@@ -18,7 +18,7 @@ const ProductsCarousel = () => {
     {
       name: 'Chain Sling',
       image: '/images/Chain_sling.png',
-      link: '/product/wire-rope-slings',
+      link: '/product/industrial-chains',
     },
     {
       name: 'Hooks',
@@ -38,15 +38,18 @@ const ProductsCarousel = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-advance carousel
+  // Auto-advance carousel — paused while the user is hovering/focusing it so
+  // the floating product can be clicked without sliding away.
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
     }, 4000); // Change slide every 4 seconds
 
     return () => clearInterval(interval);
-  }, [products.length]);
+  }, [products.length, isPaused]);
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + products.length) % products.length);
@@ -75,7 +78,13 @@ const ProductsCarousel = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative w-full mx-auto">
+        <div
+          className="relative w-full mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocusCapture={() => setIsPaused(true)}
+          onBlurCapture={() => setIsPaused(false)}
+        >
           {/* Carousel Container */}
           <div className="relative overflow-hidden rounded-lg w-full">
             <div
@@ -84,13 +93,16 @@ const ProductsCarousel = () => {
                 transform: `translateX(-${currentIndex * 100}%)`,
               }}
             >
-              {products.map((product, index) => (
+              {products.map((product, index) => {
+                const isActive = index === currentIndex;
+                return (
                 <div
                   key={index}
-                  className="w-full flex-shrink-0"
+                  className={`w-full flex-shrink-0 ${isActive ? '' : 'pointer-events-none'}`}
                   style={{ width: '100%' }}
+                  aria-hidden={!isActive}
                 >
-                  <Link to={product.link} className="block">
+                  <Link to={product.link} className="block" tabIndex={isActive ? 0 : -1}>
                     <div className="card-industrial overflow-hidden group relative w-full cursor-pointer">
                       <div className="relative w-full overflow-hidden bg-muted flex items-center justify-center py-4 sm:py-6">
                         <img
@@ -111,7 +123,8 @@ const ProductsCarousel = () => {
                     </div>
                   </Link>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

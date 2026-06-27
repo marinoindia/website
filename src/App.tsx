@@ -17,6 +17,12 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductVariantPage from "./pages/ProductVariantPage";
 import CityPage from "./pages/CityPage";
 import PremadeSlingsPage from "./pages/PremadeSlingsPage";
+import WebshopPage from "./pages/WebshopPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsPage from "./pages/TermsPage";
+import RefundPolicyPage from "./pages/RefundPolicyPage";
+import ShippingPolicyPage from "./pages/ShippingPolicyPage";
+import { CartProvider } from "@/contexts/CartContext";
 import { Analytics } from "@/components/Analytics";
 import { GoatCounter } from "@/components/GoatCounter";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
@@ -84,12 +90,14 @@ const App = () => (
         <Sonner />
         {/* Use Vite's BASE_URL so routing matches the deployed base path */}
         <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <CartProvider>
           <GitHubPagesRedirect />
           <TrailingSlashRedirect />
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<ProductsPage />} />
+            <Route path="/webshop" element={<WebshopPage />} />
             <Route path="/media" element={<MediaPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/clients" element={<ClientsPage />} />
@@ -98,6 +106,10 @@ const App = () => (
             <Route path="/variant/:variantId" element={<ProductVariantPage />} />
             <Route path="/products/:slug" element={<ProductsSlugRedirect />} />
             <Route path="/premade-slings" element={<PremadeSlingsPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/refund-policy" element={<RefundPolicyPage />} />
+            <Route path="/shipping-policy" element={<ShippingPolicyPage />} />
             <Route path="/suppliers/:city" element={<CityPage />} />
             <Route path="/analytics" element={<AnalyticsDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
@@ -106,6 +118,7 @@ const App = () => (
           <Analytics />
           <GoatCounter />
           <GoogleAnalytics />
+          </CartProvider>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

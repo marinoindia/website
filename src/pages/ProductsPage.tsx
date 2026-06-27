@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import ItemSearch from '@/components/ItemSearch';
 import {
   ArrowRight,
   Settings2,
@@ -307,9 +308,29 @@ const ProductsPage = () => {
             </div>
           </section>
 
+          {/* Searchable full catalogue */}
+          <section className="py-12 bg-white border-b border-slate-100">
+            <div className="container-modern">
+              <div className="text-center max-w-2xl mx-auto mb-8">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+                  Search Our Full Product Range
+                </h2>
+                <p className="text-slate-600">
+                  Type what you need and message us directly on WhatsApp for price and availability.
+                </p>
+              </div>
+              <ItemSearch />
+            </div>
+          </section>
+
           {/* Main Content - Unified Product Grid */}
           <section className="py-16 bg-slate-50">
             <div className="container-modern">
+              <div className="text-center max-w-2xl mx-auto mb-10">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+                  Browse by Category
+                </h2>
+              </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {productCategories.map((category) => {
                   const Icon = category.icon;

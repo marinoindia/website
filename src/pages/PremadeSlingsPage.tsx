@@ -2,8 +2,9 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { ArrowRight, ShoppingCart, CheckCircle } from 'lucide-react';
+import { ArrowRight, ShoppingCart, CheckCircle, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { slingPriceList, type SlingPriceRow } from '@/data/slingPriceList';
 import {
   Card,
   CardContent,
@@ -282,6 +283,18 @@ const PremadeSlingsPage = () => {
     window.open(`https://wa.me/919831144669?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
+  // Direct WhatsApp link for a single price-list row (size + length).
+  const priceRowWhatsApp = (size: string, row: SlingPriceRow) => {
+    const rateText = row.rate ? `at the listed rate of ₹${row.rate}/-` : '(please share the current rate)';
+    const text =
+      `Hello, I would like to order a Steel Wire Rope Sling:%0A%0A` +
+      `*Size:* ${size}%0A` +
+      `*Length:* ${row.length}%0A` +
+      `${encodeURIComponent(rateText)}%0A%0A` +
+      `Please confirm availability.`;
+    return `https://wa.me/919831144669?text=${text}`;
+  };
+
   return (
     <>
       <Helmet>
@@ -529,6 +542,65 @@ const PremadeSlingsPage = () => {
                     </CardFooter>
                   </Card>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Price List Section */}
+          <section id="price-list" className="py-12 sm:py-16 bg-white">
+            <div className="container mx-auto px-4 sm:px-6">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-8 sm:mb-10">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0d3d26] mb-3">
+                    Wire Rope Sling Price List
+                  </h2>
+                  <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+                    Steel Wire Rope Slings (H/S), 6×36 construction (GWRC), RHOL lay.
+                    Tap any size to order it directly on WhatsApp.
+                  </p>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                  {slingPriceList.map((group) => (
+                    <div
+                      key={group.size}
+                      className="rounded-2xl border border-border overflow-hidden shadow-sm"
+                    >
+                      <div className="bg-[#0d3d26] text-white px-4 sm:px-5 py-3 font-bold text-lg">
+                        {group.size}
+                      </div>
+                      <div className="divide-y divide-border">
+                        {group.rows.map((row) => (
+                          <div
+                            key={row.length}
+                            className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3"
+                          >
+                            <div className="min-w-0">
+                              <span className="font-medium text-foreground">{row.length}</span>
+                              <span className="ml-3 text-base font-bold text-accent">
+                                {row.rate ? `₹ ${row.rate.toLocaleString('en-IN')}/-` : 'On request'}
+                              </span>
+                            </div>
+                            <a
+                              href={priceRowWhatsApp(group.size, row)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#25D366] text-white rounded-lg text-sm font-medium hover:opacity-90 transition"
+                            >
+                              <MessageCircle className="w-4 h-4" />
+                              <span className="hidden sm:inline">Order</span>
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="text-xs text-muted-foreground mt-6 text-center max-w-3xl mx-auto">
+                  Rates are per piece (P/P) and indicative — transcribed from our price sheet.
+                  Please confirm the current rate on WhatsApp before ordering. GST extra as applicable.
+                </p>
               </div>
             </div>
           </section>
