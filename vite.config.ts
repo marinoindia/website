@@ -22,6 +22,9 @@ export default defineConfig(({ mode }) => ({
       jpeg: { quality: 80 },
       jpg: { quality: 80 },
       webp: { quality: 80 },
+      // Webshop catalogue thumbnails are already optimized by scripts/make-thumbnails.py;
+      // skip them so the build doesn't re-process ~2,000 files on every deploy.
+      exclude: /shop-data\//,
     }),
     // Plugin to copy index.html to 404.html after build for GitHub Pages routing
     {

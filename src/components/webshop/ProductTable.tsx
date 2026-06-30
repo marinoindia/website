@@ -40,7 +40,8 @@ export const ProductTable = ({ products }: Props) => {
     const size = variant ? variant.label : 'Standard';
     const id = variant ? `${product.id}::${variant.label}` : product.id;
     const name = variant ? `${product.name} (${variant.label})` : product.name;
-    addToCart({ id, name, image: '', price: priceInr, size });
+    const image = product.image ? `${import.meta.env.BASE_URL}${product.image}` : '';
+    addToCart({ id, name, image, price: priceInr, size });
     toast({ title: 'Added to cart', description: `${name} — ${formatInr(priceInr)}` });
   };
 

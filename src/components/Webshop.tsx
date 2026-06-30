@@ -138,16 +138,27 @@ const CategoryLanding = ({
   activeTop?: string;
   onNavigate: (topSlug?: string, subSlug?: string) => void;
 }) => {
+  // Representative image per sub-category = first product in that sub that has one.
+  const subImages = useMemo(() => {
+    const m: Record<string, string> = {};
+    for (const p of catalogue?.products ?? []) {
+      const key = `${p.topSlug}/${p.subSlug}`;
+      if (p.image && !m[key]) m[key] = p.image;
+    }
+    return m;
+  }, [catalogue]);
+
   if (!catalogue) return null;
   const tops = activeTop
     ? catalogue.categories.filter((c) => c.slug === activeTop)
     : catalogue.categories;
+
   return (
     <div>
       <p className="text-sm text-muted-foreground mb-5">
         {activeTop ? 'Select a sub-category:' : 'Browse a category to view products and prices.'}
       </p>
-      <div className="space-y-6">
+      <div className="space-y-8">
         {tops.map((cat) => (
           <div key={cat.slug}>
             <button
@@ -158,18 +169,34 @@ const CategoryLanding = ({
               {cat.name}{' '}
               <span className="text-sm font-normal text-muted-foreground">({cat.count})</span>
             </button>
-            <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
-              {cat.subs.map((sub) => (
-                <button
-                  key={sub.slug}
-                  type="button"
-                  onClick={() => onNavigate(cat.slug, sub.slug)}
-                  className="text-left text-sm text-primary hover:underline py-0.5"
-                >
-                  {sub.name}{' '}
-                  <span className="text-xs text-muted-foreground">({sub.count})</span>
-                </button>
-              ))}
+            <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {cat.subs.map((sub) => {
+                const img = subImages[`${cat.slug}/${sub.slug}`];
+                return (
+                  <button
+                    key={sub.slug}
+                    type="button"
+                    onClick={() => onNavigate(cat.slug, sub.slug)}
+                    className="group flex flex-col rounded-lg border bg-card p-2 text-left transition hover:border-primary hover:shadow-md"
+                  >
+                    <div className="aspect-square w-full overflow-hidden rounded bg-white mb-2">
+                      <img
+                        src={img ? `${import.meta.env.BASE_URL}${img}` : '/placeholder.svg'}
+                        alt={sub.name}
+                        loading="lazy"
+                        className="h-full w-full object-contain p-2"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = '/placeholder.svg';
+                        }}
+                      />
+                    </div>
+                    <span className="text-sm font-medium leading-snug group-hover:text-primary">
+                      {sub.name}
+                    </span>
+                    <span className="text-xs text-muted-foreground">{sub.count} products</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
         ))}

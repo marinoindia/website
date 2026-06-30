@@ -28,6 +28,7 @@ export interface CatalogueProduct {
   priceInr: number | null;
   priceFrom: boolean;
   currency: string;
+  image?: string | null;
   sourceUrl?: string;
 }
 
@@ -84,6 +85,7 @@ function buildSlingProducts(): CatalogueProduct[] {
         priceInr: Math.min(...prices),
         priceFrom: variants.length > 1,
         currency: 'INR',
+        image: 'images/slings.jpeg',
       } as CatalogueProduct;
     })
     .filter((p): p is CatalogueProduct => p !== null);

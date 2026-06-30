@@ -31,14 +31,27 @@ export const ProductRow = ({ product, columnKeys, onAdd }: Props) => {
       {/* group header */}
       <TableRow className="bg-muted/60 hover:bg-muted/60">
         <TableCell colSpan={span} className="py-2">
-          <div className="flex flex-wrap items-baseline gap-x-3">
-            <span className="font-semibold text-foreground">{product.name}</span>
-            {product.sku && (
-              <span className="text-xs text-muted-foreground">Part {product.sku}</span>
+          <div className="flex items-center gap-3">
+            {product.image && (
+              <img
+                src={`${import.meta.env.BASE_URL}${product.image}`}
+                alt={product.name}
+                loading="lazy"
+                className="h-40 w-40 flex-shrink-0 rounded border bg-white object-contain p-1"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/placeholder.svg';
+                }}
+              />
             )}
-            {product.priceFrom && product.priceInr != null && (
-              <span className="text-xs text-muted-foreground">from {formatInr(product.priceInr)}</span>
-            )}
+            <div className="flex flex-wrap items-baseline gap-x-3">
+              <span className="font-semibold text-foreground">{product.name}</span>
+              {product.sku && (
+                <span className="text-xs text-muted-foreground">Part {product.sku}</span>
+              )}
+              {product.priceFrom && product.priceInr != null && (
+                <span className="text-xs text-muted-foreground">from {formatInr(product.priceInr)}</span>
+              )}
+            </div>
           </div>
         </TableCell>
       </TableRow>

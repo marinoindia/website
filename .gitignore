@@ -97,3 +97,6 @@ product_images_mapping.json
 bun.lockb
 yarn.lock
 pnpm-lock.yaml
+
+# local-only full-res image symlink (deploy uses the committed thumbnails in img/)
+public/shop-data/express/img-full
