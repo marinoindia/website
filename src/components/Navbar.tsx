@@ -275,6 +275,13 @@ const Navbar = () => {
                   <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </a>
               </div>
+              <Link
+                to="/webshop"
+                className="inline-flex items-center gap-1.5 font-semibold text-primary-foreground hover:text-white whitespace-nowrap border-l border-primary-foreground/30 pl-2 sm:pl-3 transition-colors"
+              >
+                <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                Shop
+              </Link>
             </div>
           </div>
         </div>
@@ -414,6 +421,18 @@ const Navbar = () => {
                   </SheetHeader>
                   
                   <div className="flex-1 overflow-y-auto py-4 pb-20">
+                    {/* Shop Online — primary action, top of menu */}
+                    <div className="px-4 pb-4 mb-2 border-b border-border">
+                      <Link
+                        to="/webshop"
+                        onClick={() => setIsOpen(false)}
+                        className="btn-accent w-full gap-2 inline-flex items-center justify-center"
+                      >
+                        <ShoppingCart className="w-4 h-4" />
+                        Shop Online
+                      </Link>
+                    </div>
+
                     {/* Main Nav Links */}
                     <div className="px-4 mb-4">
                       <Link
@@ -467,16 +486,6 @@ const Navbar = () => {
                     </div>
                   </div>
                   
-                  <div className="flex-shrink-0 p-6 border-t border-border bg-background">
-                    <Link
-                      to="/webshop"
-                      onClick={() => setIsOpen(false)}
-                      className="btn-accent w-full gap-2 inline-flex items-center justify-center"
-                    >
-                      <ShoppingCart className="w-4 h-4" />
-                      Shop Online
-                    </Link>
-                  </div>
                 </SheetContent>
               </Sheet>
             </div>
@@ -521,6 +530,18 @@ const Navbar = () => {
                   </SheetHeader>
                   
                   <div className="flex-1 overflow-y-auto py-4 pb-4">
+                    {/* Shop Online — primary action, top of menu */}
+                    <div className="px-6 pb-4 mb-2 border-b border-border">
+                      <Link
+                        to="/webshop"
+                        onClick={() => setIsOpen(false)}
+                        className="btn-accent w-full gap-2 inline-flex items-center justify-center"
+                      >
+                        <ShoppingCart className="w-4 h-4" />
+                        Shop Online
+                      </Link>
+                    </div>
+
                     {/* Main Navigation */}
                     <Link
                       to="/"
@@ -571,16 +592,6 @@ const Navbar = () => {
                     </div>
                   </div>
                   
-                  <div className="flex-shrink-0 p-6 border-t border-border bg-background">
-                    <Link
-                      to="/webshop"
-                      onClick={() => setIsOpen(false)}
-                      className="btn-accent w-full gap-2 inline-flex items-center justify-center"
-                    >
-                      <ShoppingCart className="w-4 h-4" />
-                      Shop Online
-                    </Link>
-                  </div>
                 </SheetContent>
               </Sheet>
             </div>
