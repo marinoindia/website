@@ -10,7 +10,8 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prerender": "node scripts/prerender.mjs"
+    "prerender": "node scripts/prerender.mjs",
+    "catalogue": "python3 scripts/build-catalogue.py"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
