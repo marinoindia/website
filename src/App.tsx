@@ -56,7 +56,7 @@ const GitHubPagesRedirect = () => {
 // Keeps inbound links from llms.txt, sitemaps and external sites working.
 const ProductsSlugRedirect = () => {
   const { slug } = useParams<{ slug: string }>();
-  return <Navigate to={`/product/${slug}`} replace />;
+  return <Navigate to={`/product/${slug}/`} replace />;
 };
 
 // Scroll to top of page on route change. Skipped when the URL has a hash
@@ -72,15 +72,9 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Strip trailing slashes (except for root "/") so URLs match the canonical
-// no-slash form and GSC stops flagging the slash variants as "alternate page".
-const TrailingSlashRedirect = () => {
-  const { pathname, search, hash } = useLocation();
-  if (pathname.length > 1 && pathname.endsWith("/")) {
-    return <Navigate to={pathname.replace(/\/+$/, "") + search + hash} replace />;
-  }
-  return null;
-};
+// NOTE: URLs use the trailing-slash form site-wide. GitHub Pages serves the
+// prerendered pages as directory indexes and 301s /page -> /page/, so the
+// slash form is the canonical one; do not add client-side slash rewrites.
 
 const App = () => (
   <HelmetProvider>
@@ -92,7 +86,6 @@ const App = () => (
         <BrowserRouter basename={import.meta.env.BASE_URL}>
           <CartProvider>
           <GitHubPagesRedirect />
-          <TrailingSlashRedirect />
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />

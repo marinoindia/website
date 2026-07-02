@@ -16,7 +16,7 @@ const WebshopPage = () => {
           content="Buy steel wire rope slings online with prices — 12mm to 25mm, 3 to 6 metre lengths. 6×36 GWRC construction. Fast delivery across India, secure Razorpay payment."
         />
         <meta name="keywords" content="wire rope sling price, buy wire rope sling online, 12mm wire rope sling price, steel wire rope sling India, lifting sling price list, wire rope sling supplier" />
-        <link rel="canonical" href="https://marinoindia.co.in/webshop" />
+        <link rel="canonical" href="https://marinoindia.co.in/webshop/" />
 
         {/* Product / price structured data for rich results */}
         <script type="application/ld+json">
@@ -25,7 +25,7 @@ const WebshopPage = () => {
             '@type': 'ItemList',
             name: 'Wire Rope Sling Price List',
             description: 'Steel wire rope slings with prices, available to buy online.',
-            url: 'https://marinoindia.co.in/webshop',
+            url: 'https://marinoindia.co.in/webshop/',
             itemListElement: slingProducts.map((product, index) => ({
               '@type': 'ListItem',
               position: index + 1,

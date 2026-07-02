@@ -79,11 +79,11 @@ const Footer = () => {
                 { to: '/', label: 'Home' },
                 { to: '/#about', label: 'About Us' },
                 { to: '/#certifications', label: 'Certifications' },
-                { to: '/products', label: 'Products' },
+                { to: '/products/', label: 'Products' },
                 { to: '/#why-us', label: 'Why Choose Us' },
-                { to: '/our-people', label: 'Our People' },
-                { to: '/clients', label: 'Clients' },
-                { to: '/contact', label: 'Contact' },
+                { to: '/our-people/', label: 'Our People' },
+                { to: '/clients/', label: 'Clients' },
+                { to: '/contact/', label: 'Contact' },
               ].map((link) => (
                 <li key={link.label}>
                   <Link to={link.to} className="text-slate-400 hover:text-emerald-400 transition-colors text-sm">
@@ -98,10 +98,21 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-white text-sm mb-4">Products</h4>
             <ul className="space-y-2">
-              {['Chains', 'Slings', 'Hooks', 'Shackles', 'Lifting Lugs & Pins', 'Pulleys & Blocks', 'Ropes & Mooring', 'Anchors & Marine', 'Lashing Equipment', 'Safety Equipment'].map((product) => (
-                <li key={product}>
-                  <Link to="/products" className="text-slate-400 hover:text-emerald-400 transition-colors text-sm">
-                    {product}
+              {[
+                { label: 'Wire Rope Slings', to: '/product/wire-rope-slings/' },
+                { label: 'Chain Slings', to: '/product/chain-slings/' },
+                { label: 'Industrial Chains', to: '/product/industrial-chains/' },
+                { label: 'Hooks', to: '/product/hooks/' },
+                { label: 'Shackles', to: '/product/shackles/' },
+                { label: 'Pulleys & Blocks', to: '/product/pulleys-blocks/' },
+                { label: 'Turnbuckles', to: '/product/turnbuckles/' },
+                { label: 'Wire Rope Grips', to: '/product/wire-rope-accessories/' },
+                { label: 'Thimbles', to: '/product/thimbles/' },
+                { label: 'Sling Price List', to: '/premade-slings/' },
+              ].map((product) => (
+                <li key={product.label}>
+                  <Link to={product.to} className="text-slate-400 hover:text-emerald-400 transition-colors text-sm">
+                    {product.label}
                   </Link>
                 </li>
               ))}
@@ -118,7 +129,7 @@ const Footer = () => {
               {cities.map((city) => (
                 <Link
                   key={city.slug}
-                  to={`/suppliers/${city.slug}`}
+                  to={`/suppliers/${city.slug}/`}
                   className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded hover:bg-emerald-600 hover:text-white transition-colors"
                 >
                   {city.name}
@@ -190,10 +201,10 @@ const Footer = () => {
           <div className="mt-8 pt-6 border-t border-slate-800">
             <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs">
               {[
-                { to: '/privacy-policy', label: 'Privacy Policy' },
-                { to: '/terms', label: 'Terms & Conditions' },
-                { to: '/refund-policy', label: 'Replacement, Refund & Warranty' },
-                { to: '/shipping-policy', label: 'Shipping & Delivery' },
+                { to: '/privacy-policy/', label: 'Privacy Policy' },
+                { to: '/terms/', label: 'Terms & Conditions' },
+                { to: '/refund-policy/', label: 'Replacement, Refund & Warranty' },
+                { to: '/shipping-policy/', label: 'Shipping & Delivery' },
               ].map((link) => (
                 <li key={link.to}>
                   <Link to={link.to} className="text-slate-400 hover:text-emerald-400 transition-colors">

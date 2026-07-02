@@ -27,11 +27,11 @@ const variantDatabase: Record<string, {
   // Wire Rope Sling Variants
   'single-leg-wire-rope-sling': {
     name: 'Single Leg Wire Rope Sling',
-    title: 'Single Leg Wire Rope Sling | Eye & Eye | Usha Martin Wire | India',
+    title: 'Single Leg Wire Rope Sling – WLL & Sizes | Marino India',
     description: 'Buy single leg wire rope slings with eye & eye configuration. Usha Martin wire rope, mechanical splicing. Working load 0.5T to 12T. All India delivery from Kolkata.',
     fullDescription: 'Single leg wire rope slings are the most basic and widely used configuration for vertical lifting applications. Each sling consists of a single length of wire rope with eye fittings at both ends. Our single leg slings are manufactured using genuine Usha Martin wire rope with mechanical hand-made splicing for maximum strength and durability.',
     parentProduct: 'Wire Rope Slings',
-    parentLink: '/product/wire-rope-slings',
+    parentLink: '/product/wire-rope-slings/',
     config: 'Single Leg (Eye & Eye)',
     features: [
       'Single vertical lifting configuration',
@@ -98,11 +98,11 @@ const variantDatabase: Record<string, {
 
   '2-leg-wire-rope-sling': {
     name: '2-Leg (Two Leg) Wire Rope Sling',
-    title: '2-Leg Wire Rope Sling | Bridle Sling | Basket Hitch | India Supplier',
+    title: '2-Leg Wire Rope Sling – Bridle, WLL & Sizes | Marino India',
     description: 'Buy 2-leg wire rope slings for stable lifting. Bridle configuration for balanced loads. Usha Martin wire, mechanical splicing. 0.5T to 25T capacity. All India delivery.',
     fullDescription: 'Two leg (2-leg) wire rope slings, also known as bridle slings, provide stable lifting for loads that require two attachment points. The legs can be spread at various angles to accommodate different load geometries. Ideal for basket hitch applications and loads that need balanced lifting.',
     parentProduct: 'Wire Rope Slings',
-    parentLink: '/product/wire-rope-slings',
+    parentLink: '/product/wire-rope-slings/',
     config: '2-Leg (Bridle/Basket)',
     features: [
       'Two leg bridle configuration',
@@ -169,11 +169,11 @@ const variantDatabase: Record<string, {
 
   '3-leg-wire-rope-sling': {
     name: '3-Leg (Three Leg) Wire Rope Sling',
-    title: '3-Leg Wire Rpe Sling | Three Point Lift | Uneven Load Distribution | India',
+    title: '3-Leg Wire Rope Sling – WLL & Sizes | Marino India',
     description: 'Buy 3-leg wire rope slings for three-point lifting. Ideal for uneven loads and triangular lifting patterns. Usha Martin wire. 1.5T to 35T capacity. All India delivery.',
     fullDescription: 'Three leg (3-leg) wire rope slings are designed for lifting loads with three attachment points or for providing extra stability in critical lifts. The three-leg configuration naturally distributes load to the two legs under tension, making them ideal for applications where the load center of gravity may shift.',
     parentProduct: 'Wire Rope Slings',
-    parentLink: '/product/wire-rope-slings',
+    parentLink: '/product/wire-rope-slings/',
     config: '3-Leg (Triangular)',
     features: [
       'Three leg configuration',
@@ -236,11 +236,11 @@ const variantDatabase: Record<string, {
 
   '4-leg-wire-rope-sling': {
     name: '4-Leg (Four Leg) Wire Rope Sling',
-    title: '4-Leg Wire Rope Sling | Four Point Lift | Maximum Stability | India',
+    title: '4-Leg Wire Rope Sling – WLL & Sizes | Marino India',
     description: 'Buy 4-leg wire rope slings for maximum lifting stability. Four point attachment for heavy loads. Usha Martin wire. 2T to 50T capacity. All India delivery from Kolkata.',
     fullDescription: 'Four leg (4-leg) wire rope slings provide maximum stability for lifting heavy and bulky loads. The four-point attachment system ensures even weight distribution and prevents load rotation during lifting. Ideal for large containers, machinery, and construction elements.',
     parentProduct: 'Wire Rope Slings',
-    parentLink: '/product/wire-rope-slings',
+    parentLink: '/product/wire-rope-slings/',
     config: '4-Leg (Four Point)',
     features: [
       'Four leg maximum stability configuration',
@@ -304,11 +304,11 @@ const variantDatabase: Record<string, {
   // Chain Sling Variants
   'single-leg-chain-sling': {
     name: 'Single Leg Chain Sling',
-    title: 'Single Leg Chain Sling | G80 G100 | Sling Hook | India Manufacturer',
+    title: 'Single Leg Chain Sling – G80 & G100 WLL | Marino India',
     description: 'Buy single leg chain slings. G80 and G100 alloy steel with sling hook. Working load 1.1T to 32T. Heat treated, test certified. All India delivery from Kolkata.',
     fullDescription: 'Single leg chain slings provide excellent durability and resistance to abrasion for vertical lifting applications. Made from G80 or G100 alloy steel chain with various hook options. The adjustable feature allows length modification for different lifting requirements.',
     parentProduct: 'Chain Slings',
-    parentLink: '/product/chain-slings',
+    parentLink: '/product/chain-slings/',
     config: 'Single Leg with Hook',
     features: [
       'G80 or G100 alloy steel chain',
@@ -368,11 +368,11 @@ const variantDatabase: Record<string, {
 
   '2-leg-chain-sling': {
     name: '2-Leg Chain Sling',
-    title: '2-Leg Chain Sling | G80 G100 Alloy | Master Link | India Supplier',
+    title: '2-Leg Chain Sling – G80 & G100 WLL | Marino India',
     description: 'Buy 2-leg chain slings for stable lifting. G80 G100 alloy steel with master link assembly. Adjustable legs available. 2.2T to 64T capacity. All India delivery.',
     fullDescription: 'Two leg chain slings provide stable lifting with two attachment points. The master link at the top connects to the crane hook, while the two legs spread to attach to the load. Available with adjustable legs for varying load geometries.',
     parentProduct: 'Chain Slings',
-    parentLink: '/product/chain-slings',
+    parentLink: '/product/chain-slings/',
     config: '2-Leg with Master Link',
     features: [
       'Two leg bridle configuration',
@@ -431,11 +431,11 @@ const variantDatabase: Record<string, {
   // Shackle Variants
   'd-shackle': {
     name: 'D-Shackle (Chain Shackle)',
-    title: 'D-Shackle | Screw Pin | Nut Bolt | G80 Alloy Steel | India',
+    title: 'D Shackle – Screw Pin & Nut Bolt Sizes | Marino India',
     description: 'Buy D-shackles (chain shackles) in screw pin and nut bolt types. G80 alloy steel, load rated. 0.5T to 55T capacity. Hot dip galvanized. All India delivery.',
     fullDescription: 'D-Shackles, also known as chain shackles, are designed for in-line loading applications. The straight sides make them ideal for connecting two components in a straight line. Available with screw pin for temporary connections or nut-bolt for permanent installations.',
     parentProduct: 'Shackles',
-    parentLink: '/product/shackles',
+    parentLink: '/product/shackles/',
     config: 'D-Type (Chain)',
     features: [
       'D-shape for in-line loads',
@@ -494,11 +494,11 @@ const variantDatabase: Record<string, {
 
   'bow-shackle': {
     name: 'Bow Shackle (Anchor Shackle)',
-    title: 'Bow Shackle | Anchor Shackle | Wide Opening | G80 | India Supplier',
+    title: 'Bow Shackle – Anchor Shackle Sizes & WLL | Marino India',
     description: 'Buy bow shackles (anchor shackles) with wide opening. G80 alloy steel for multiple sling legs. Screw pin and safety bolt types. All India delivery from Kolkata.',
     fullDescription: 'Bow Shackles, also known as anchor shackles, feature a larger rounded loop that can accommodate multiple sling legs or wider straps. The bow shape allows for side loading better than D-shackles. Essential for complex rigging arrangements.',
     parentProduct: 'Shackles',
-    parentLink: '/product/shackles',
+    parentLink: '/product/shackles/',
     config: 'Bow Type (Anchor)',
     features: [
       'Bow shape for wide loads',
@@ -570,7 +570,7 @@ const ProductVariantPage = () => {
           <Navbar />
           <main className="container-modern py-20 text-center">
             <h1 className="text-3xl font-bold mb-4">Product Variant Not Found</h1>
-            <Link to="/products" className="text-emerald-600 hover:underline inline-flex items-center gap-2">
+            <Link to="/products/" className="text-emerald-600 hover:underline inline-flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
               Back to Products
             </Link>
@@ -601,7 +601,7 @@ const ProductVariantPage = () => {
             "brand": { "@type": "Brand", "name": "Marino Corporation" },
             "offers": {
               "@type": "Offer",
-              "url": `https://marinoindia.co.in/variant/${variantId}`,
+              "url": `https://marinoindia.co.in/variant/${variantId}/`,
               "priceCurrency": "INR",
               "availability": "https://schema.org/InStock",
               "seller": { "@type": "Organization", "name": "Marino Corporation Of India" }
@@ -619,7 +619,7 @@ const ProductVariantPage = () => {
               <nav className="flex items-center gap-2 text-sm text-slate-600">
                 <Link to="/" className="hover:text-emerald-600">Home</Link>
                 <span>/</span>
-                <Link to="/products" className="hover:text-emerald-600">Products</Link>
+                <Link to="/products/" className="hover:text-emerald-600">Products</Link>
                 <span>/</span>
                 <Link to={variant.parentLink} className="hover:text-emerald-600">{variant.parentProduct}</Link>
                 <span>/</span>
@@ -729,7 +729,7 @@ const ProductVariantPage = () => {
                 {variant.relatedVariants.map((related) => (
                   <Link 
                     key={related.id}
-                    to={`/product/${related.id}`}
+                    to={`/product/${related.id}/`}
                     className="bg-white rounded-xl p-4 border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all"
                   >
                     <h3 className="font-semibold text-slate-900">{related.name}</h3>

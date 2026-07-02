@@ -48,7 +48,7 @@ const MediaPreview = () => {
 
         {/* CTA Button */}
         <div className="text-center">
-          <Link to="/media">
+          <Link to="/media/">
             <Button size="lg" className="btn-accent gap-2 text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
               <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5" />
               View Full Gallery

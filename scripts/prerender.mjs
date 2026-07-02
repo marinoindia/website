@@ -75,9 +75,13 @@ async function prerenderRoute(browser, route) {
       throw new Error(`redirected to ${finalPath}`);
     }
 
-    // Inject <!--prerendered--> marker so we can spot snapshots quickly
+    // Inject <!--prerendered--> marker so we can spot snapshots quickly.
+    // Routes after "/" load the already-prerendered home snapshot as their SPA
+    // shell, so guard against stacking a second marker on top of its copy.
     let html = await page.content();
-    html = html.replace(/<head>/, "<head>\n    <!-- prerendered -->");
+    if (!html.includes("<!-- prerendered -->")) {
+      html = html.replace(/<head>/, "<head>\n    <!-- prerendered -->");
+    }
 
     const outPath = routeToFilePath(route);
     await mkdir(path.dirname(outPath), { recursive: true });

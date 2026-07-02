@@ -264,7 +264,7 @@ const Products = () => {
                   <div className="flex flex-col gap-1.5 pt-3 border-t border-slate-100">
                     {product.slug && (
                       <Link
-                        to={`/product/${product.slug}`}
+                        to={`/product/${product.slug}/`}
                         className="inline-flex items-center justify-center gap-1.5 text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors"
                       >
                         View Details

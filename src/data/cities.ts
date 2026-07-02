@@ -9,9 +9,50 @@ export type CityInfo = {
   industryHighlights: string[];
   topProducts: { name: string; note: string }[];
   landmarks: string[];
+  // Optional SEO overrides — used by the home-city (Kolkata) page, where
+  // "manufacturer" is the accurate and stronger claim than "supplier".
+  titleOverride?: string;
+  descriptionOverride?: string;
+  h1Override?: string;
 };
 
 export const cities: CityInfo[] = [
+  {
+    slug: 'kolkata',
+    name: 'Kolkata',
+    region: 'West Bengal',
+    leadTime: 'same-day / next-day',
+    industryContext: 'Kolkata Port (SMP) and dock operations, GRSE shipbuilding, Howrah fabrication, metro and high-rise construction',
+    intro:
+      'Marino Corporation manufactures wire rope slings at its Kidderpore works — minutes from the Kolkata docks — and supplies wire rope, chain slings, shackles and lifting hardware across Kolkata, Howrah and the wider West Bengal industrial belt.',
+    localContext:
+      "Kolkata is our home ground. The works at 28 Orphangunj Road, Kidderpore sits beside the port: stevedores and ship-repair crews at Netaji Subhas and Kidderpore docks collect certified slings the same day, while GRSE and the Howrah structural-fabrication belt order G80/G100 chain slings and heavy wire rope assemblies for next-day site delivery. We also equip metro, flyover and high-rise contractors along the EM Bypass, Salt Lake and New Town corridors.",
+    industryHighlights: [
+      'Stevedoring and cargo gear for Kolkata Port (SMP) — Kidderpore and Netaji Subhas docks',
+      'Ship repair and marine rigging on the Hooghly, including GRSE',
+      'G80/G100 chain slings for Howrah fabrication shops and foundries',
+      'Tower-crane and lifting gear for metro and high-rise projects',
+      'Factory pickup at Kidderpore and same-day delivery across Kolkata & Howrah',
+    ],
+    topProducts: [
+      { name: 'Wire Rope Slings (single to 4-leg)', note: 'Made at our Kidderpore works, test certified' },
+      { name: '6×36 IWRC Wire Rope', note: 'Usha Martin rope, cut to length' },
+      { name: 'G80 / G100 Chain Slings', note: 'Fabrication and erection work' },
+      { name: 'D & Bow Shackles', note: 'Galvanised and high-tensile' },
+      { name: 'Mooring Ropes & Marine Gear', note: 'Port and river craft' },
+    ],
+    landmarks: [
+      'Kolkata Port (SMP) — Kidderpore Dock',
+      'Netaji Subhas Dock',
+      'Garden Reach Shipbuilders (GRSE)',
+      'Howrah fabrication belt',
+      'Taratala–Hide Road industrial area',
+    ],
+    titleOverride: 'Wire Rope Sling Manufacturer in Kolkata | Marino, Kidderpore',
+    descriptionOverride:
+      'Wire rope slings made at our Kidderpore works since 1985. Single to 4-leg, test certified, from ₹450. Same-day Kolkata & Howrah delivery. Call 98311 44669.',
+    h1Override: 'Wire Rope Sling Manufacturer in Kolkata',
+  },
   {
     slug: 'mumbai',
     name: 'Mumbai',

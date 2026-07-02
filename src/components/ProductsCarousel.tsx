@@ -8,32 +8,32 @@ const ProductsCarousel = () => {
     {
       name: 'Brand Stock',
       image: '/images/Brand_stock.png',
-      link: '/products',
+      link: '/products/',
     },
     {
       name: 'Chain Link',
       image: '/images/Chain_link.png',
-      link: '/product/industrial-chains',
+      link: '/product/industrial-chains/',
     },
     {
       name: 'Chain Sling',
       image: '/images/Chain_sling.png',
-      link: '/product/industrial-chains',
+      link: '/product/industrial-chains/',
     },
     {
       name: 'Hooks',
       image: '/images/Hookes.png',
-      link: '/product/hooks',
+      link: '/product/hooks/',
     },
     {
       name: 'Safety and PPE',
       image: '/images/Safety and PPE.png',
-      link: '/products',
+      link: '/products/',
     },
     {
       name: 'Shackles',
       image: '/images/Shackles.png',
-      link: '/product/shackles',
+      link: '/product/shackles/',
     },
   ];
 

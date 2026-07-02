@@ -56,14 +56,14 @@ const Hero = () => {
             <div className="flex flex-wrap gap-3 mb-4">
               <span className="text-sm text-slate-500 flex items-center">Popular:</span>
               <Link 
-                to="/product/wire-rope-slings" 
+                to="/product/wire-rope-slings/" 
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-medium rounded-lg transition-colors border border-blue-200"
               >
                 <Cable className="w-4 h-4" />
                 Wire Rope Slings
               </Link>
               <Link 
-                to="/product/industrial-chains" 
+                to="/product/industrial-chains/" 
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-sm font-medium rounded-lg transition-colors border border-emerald-200"
               >
                 <Link2 className="w-4 h-4" />

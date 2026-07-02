@@ -48,7 +48,7 @@ const TermsPage = () => {
 
       <h2>5. Delivery</h2>
       <p>
-        Delivery timelines and charges are described in our <a href="/shipping-policy">Shipping &amp; Delivery Policy</a>.
+        Delivery timelines and charges are described in our <a href="/shipping-policy/">Shipping &amp; Delivery Policy</a>.
         A minimum order value may apply for delivery; smaller orders may be available for pick-up at our store.
       </p>
 
@@ -56,7 +56,7 @@ const TermsPage = () => {
       <p>
         We follow a <strong>replacement-only policy</strong> (no returns except for defective, damaged, or
         incorrectly supplied items). Cancellations, replacements, refunds, and product warranty are governed
-        by our {' '}<a href="/refund-policy">Replacement, Refund &amp; Warranty Policy</a>.
+        by our {' '}<a href="/refund-policy/">Replacement, Refund &amp; Warranty Policy</a>.
       </p>
 
       <h2>7. Use of Website</h2>

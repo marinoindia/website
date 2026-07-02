@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { slingPriceList } from '@/data/slingPriceList';
 
 // Hook product types with images and dimension tables
 const hookProductData = [
@@ -376,8 +377,8 @@ const productDatabase: Record<string, {
 }> = {
   'wire-rope-slings': {
     name: 'Wire Rope Slings',
-    title: 'Wire Rope Slings Manufacturer & Supplier in India | Usha Martin Wire',
-    description: 'Buy premium wire rope slings online. Manufactured using Usha Martin specialized wire rope with mechanical hand-made splicing. Available with thimbles, eye hooks, and custom end fittings. Pan India delivery from Kolkata.',
+    title: 'Wire Rope Slings – Price List & Capacity Chart | Marino',
+    description: 'Wire rope slings made in Kolkata from Usha Martin rope — single to 4-leg, hand-spliced, IS 2266 test certified, from ₹450. Pan-India delivery in 3–7 days.',
     longDescription: 'Wire rope slings are the most versatile and widely used lifting slings in industrial applications. Our wire rope slings are manufactured using genuine Usha Martin specialized wire rope, ensuring superior strength, flexibility, and durability. Unlike pressed slings, our mechanical hand-made splicing provides better load distribution and longer service life. Available in various configurations including single leg, 2-leg, 3-leg, and 4-leg assemblies.',
     features: [
       'Made with genuine Usha Martin specialized wire rope',
@@ -429,8 +430,8 @@ const productDatabase: Record<string, {
   
   'industrial-chains': {
     name: 'Industrial Chains',
-    title: 'Industrial Chains Supplier India | G80 G100 Alloy Steel | Anchor & Lashing',
-    description: 'High-quality industrial chains including G80, G100 alloy steel chains, anchor chains, and lashing chains. Available in various sizes from 6mm to 32mm. Test certified, IS and EN compliant. Pan India delivery.',
+    title: 'Industrial Chains – G80, Anchor & Lashing | Marino India',
+    description: 'G80/G100 alloy steel chains, anchor and lashing chain, 6–32 mm, WLL 1.1–31.5 t. EN 818-2 & IS 2760 compliant, test certified. Pan-India delivery in 3–7 days.',
     longDescription: 'We supply a comprehensive range of industrial chains for lifting, lashing, and anchoring applications. Our chains are manufactured from high-tensile alloy steel and available in Grade 80 (G80) and Grade 100 (G100) specifications. Each chain is proof tested and certified for safety. Applications include lifting slings, anchor systems, cargo lashing, and industrial machinery.',
     features: [
       'Grade 80 and Grade 100 high-tensile alloy steel',
@@ -483,8 +484,8 @@ const productDatabase: Record<string, {
 
   'chain-slings': {
     name: 'Chain Slings',
-    title: 'Chain Slings Manufacturer | G80 & G100 Alloy Chain | All India Delivery',
-    description: 'High-strength alloy steel chain slings in G80 and G100 grades. 2-leg, 3-leg, and 4-leg configurations available. Test certified and compliant with international standards. Delivery across India.',
+    title: 'Chain Slings – G80 & G100, 1 to 4 Leg | Marino India',
+    description: 'G80/G100 alloy chain slings made to order in Kolkata — single to 4-leg with hooks & master links, load-test certificates. Delivery across India in 3–7 days.',
     longDescription: 'Chain slings are ideal for heavy-duty lifting applications where flexibility, durability, and resistance to abrasion are required. Our chain slings are manufactured using high-tensile alloy steel chain (Grade 80 and Grade 100) with various end fittings including hooks, shackles, and master links. Each sling is individually tested and certified for safety.',
     features: [
       'G80 and G100 high-tensile alloy steel chain',
@@ -537,8 +538,8 @@ const productDatabase: Record<string, {
 
   'shackles': {
     name: 'Shackles',
-    title: 'Shackles Supplier India | D-Shackles, Bow Shackles | G80 Alloy Steel',
-    description: 'High-tensile steel shackles for lifting and rigging. D-shackles, bow shackles, screw pin and nut-bolt types. G80 alloy steel, load rated and certified. Bulk orders with India delivery.',
+    title: 'D Shackles & Bow Shackles – Marine & G80 | Marino India',
+    description: 'D and bow shackles, screw-pin & nut-bolt, G80 alloy and galvanised marine grade. Load rated, test certified. Bulk prices, pan-India delivery in 3–7 days.',
     longDescription: 'Shackles are essential rigging hardware used to connect lifting slings, ropes, and chains to loads. We supply a complete range of shackles including D-type (chain) shackles and bow (anchor) shackles in various pin configurations. Our G80 alloy steel shackles offer superior strength-to-weight ratio and are individually proof tested.',
     features: [
       'G80 high-tensile alloy steel construction',
@@ -591,8 +592,8 @@ const productDatabase: Record<string, {
 
   'hooks': {
     name: 'Lifting Hooks',
-    title: 'Lifting Hooks India | Grade 8 Clevis, Eye, Swivel Hooks | G80 Alloy Steel',
-    description: 'Complete range of industrial lifting hooks: Grade 8 clevis hooks, eye type hooks, swivel hooks, self-locking hooks, grab hooks, sling hooks, carbine hooks, and shank hooks. Forged G80 alloy steel with safety latches. Test certified. Pan India delivery.',
+    title: 'Lifting Hooks – G80 Clevis, Eye & Swivel | Marino India',
+    description: 'Forged G80 lifting hooks with safety latch — clevis, eye, swivel, grab and sling hooks, 20+ types. WLL marked, test certified. Pan-India delivery in 3–7 days.',
     longDescription: 'We supply a comprehensive range of industrial lifting hooks manufactured from high-grade forged alloy steel (Grade 80). Our hook range includes over 20 different types: clevis hooks, eye hooks, swivel hooks, self-locking safety hooks, grab hooks, choker hooks, sling hooks (heavy duty), carbine hooks with various eyelet configurations, and shank hooks for swaging. All hooks feature safety latches or self-locking mechanisms to prevent accidental disengagement. Each hook is individually marked with Working Load Limit (WLL), batch tested, and certified for safety. Suitable for chain slings, wire rope slings, and direct lifting applications.',
     features: [
       'Grade 8 (G80) forged alloy steel construction',
@@ -696,8 +697,8 @@ const productDatabase: Record<string, {
 
   'pulleys-blocks': {
     name: 'Pulleys & Blocks',
-    title: 'Pulley Blocks & Sheaves | Wire Rope Pulleys | Marine & Industrial',
-    description: 'Heavy-duty pulley blocks and sheaves for wire rope and manila rope. Single, double, and triple sheave configurations. Marine grade with bronze bushings. Pan India supply.',
+    title: 'Pulley Blocks & Sheaves for Wire Rope | Marino India',
+    description: 'Heavy-duty pulley blocks & snatch blocks for wire and manila rope — single to triple sheave, bronze bushed, marine grade. Test certified. Pan-India delivery.',
     longDescription: 'Pulley blocks and sheaves are essential components in lifting and rigging systems, providing mechanical advantage and direction change for ropes and cables. Our range includes wire rope pulleys with hardened steel sheaves, bronze bushings, and grease fittings for smooth operation under heavy loads.',
     features: [
       'Hardened steel sheaves for wire rope',
@@ -741,8 +742,8 @@ const productDatabase: Record<string, {
 
   'wire-rope-accessories': {
     name: 'Wire Rope Grips',
-    title: 'Wire Rope Grips & Clips | Galvanized | India Supplier',
-    description: 'Complete range of wire rope grips and clips for secure wire rope terminations. Galvanized and stainless steel options. For 1/4" to 3" wire ropes. All India delivery.',
+    title: 'Wire Rope Grips & Clips – Galvanised | Marino India',
+    description: 'Drop-forged wire rope clips (bulldog grips), grips and wedge sockets, galvanised or stainless, for 1/4" to 3" ropes. Bulk prices, pan-India delivery in 3–7 days.',
     longDescription: 'Wire rope grips (also known as bulldog grips or wire rope clips) are essential for creating secure eyes and terminations in wire rope assemblies. We supply high-quality wire rope grips with color-coded saddles, drop-forged construction, and precise threading for reliable performance. Available in various sizes and materials to meet international safety standards.',
     features: [
       'Drop-forged wire rope clips (bulldog grips)',
@@ -797,8 +798,8 @@ const productDatabase: Record<string, {
 
   'turnbuckles': {
     name: 'Turnbuckles',
-    title: 'Galvanised Turnbuckles India | Eye, Jaw, Hook Types | DIN1480 | Tested & Commercial',
-    description: 'Complete range of galvanised turnbuckles: Eye & Eye, Jaw & Jaw, Hook & Eye, Hook & Hook configurations. DIN1480 commercial and ASTM F1145 tested grades. Hot dip galvanised high tensile steel. Pan India delivery.',
+    title: 'Turnbuckles – Eye, Jaw & Hook, DIN 1480 | Marino India',
+    description: 'Hot-dip galvanised turnbuckles — eye & eye, jaw & jaw and hook types. DIN 1480 commercial and ASTM F1145 tested grades, certified. Pan-India delivery in 3–7 days.',
     longDescription: 'We supply a comprehensive range of galvanised turnbuckles for tensioning, rigging, and structural applications. Our turnbuckles are manufactured from drop-forged high tensile steel (SAE 1035 or 1045) with hot dipped galvanised finish for superior corrosion resistance. Available in both commercial grade (DIN1480) and load-tested grade (ASTM F1145-92) with full certification. We stock over 15 different turnbuckle configurations including standard strainers, tested turnbuckles, and premium fork-type assemblies for wire rope and chain applications.',
     features: [
       'Drop forged high tensile steel SAE 1035 or 1045',
@@ -894,8 +895,8 @@ const productDatabase: Record<string, {
 
   'thimbles': {
     name: 'Wire Rope Thimbles',
-    title: 'Galvanised Wire Rope Thimbles | Commercial & Heavy Duty | India Supplier',
-    description: 'Galvanised wire rope thimbles for protecting rope eyes from crushing and abrasion. Available in commercial and heavy duty types. Mild steel construction with electro-galvanised finish.',
+    title: 'Wire Rope Thimbles – Galvanised & Heavy Duty | Marino',
+    description: 'Galvanised wire rope thimbles in commercial and heavy-duty patterns to protect sling eyes. All rope sizes. Bulk prices, pan-India delivery in 3–7 days.',
     longDescription: 'Wire rope thimbles are essential fittings used to protect the eye of a wire rope sling from crushing and abrasion when connected to hooks, shackles, or other hardware. Our thimbles are manufactured from mild steel with electro-galvanised finish for corrosion resistance. Available in Commercial and Heavy Duty types to match different wire rope sizes and load requirements.',
     features: [
       'Mild steel construction',
@@ -1074,7 +1075,7 @@ const ProductDetailPage = () => {
           <main className="container-modern py-20 text-center">
             <h1 className="text-3xl font-bold mb-4">Product Not Found</h1>
             <p className="text-slate-600 mb-6">The product you're looking for doesn't exist or has been moved.</p>
-            <Link to="/products" className="text-emerald-600 hover:underline inline-flex items-center gap-2">
+            <Link to="/products/" className="text-emerald-600 hover:underline inline-flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
               Back to All Products
             </Link>
@@ -1107,9 +1108,12 @@ const ProductDetailPage = () => {
               "name": "Marino Corporation"
             },
             "offers": {
-              "@type": "Offer",
-              "url": `https://marinoindia.co.in/product/${productId}`,
+              // Wire rope slings have a published price list (src/data/slingPriceList.ts,
+              // premade slings from ₹450); the other categories are quote-only.
+              "@type": productId === 'wire-rope-slings' ? "AggregateOffer" : "Offer",
+              "url": `https://marinoindia.co.in/product/${productId}/`,
               "priceCurrency": "INR",
+              ...(productId === 'wire-rope-slings' ? { "lowPrice": 450, "highPrice": 3800 } : {}),
               "availability": "https://schema.org/InStock",
               "seller": {
                 "@type": "Organization",
@@ -1153,9 +1157,9 @@ const ProductDetailPage = () => {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://marinoindia.co.in" },
-              { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://marinoindia.co.in/products" },
-              { "@type": "ListItem", "position": 3, "name": product.name, "item": `https://marinoindia.co.in/product/${productId}` }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://marinoindia.co.in/" },
+              { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://marinoindia.co.in/products/" },
+              { "@type": "ListItem", "position": 3, "name": product.name, "item": `https://marinoindia.co.in/product/${productId}/` }
             ]
           })}
         </script>
@@ -1182,7 +1186,7 @@ const ProductDetailPage = () => {
         <meta property="og:title" content={product.title} />
         <meta property="og:description" content={product.description} />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content={`https://marinoindia.co.in/product/${productId}`} />
+        <meta property="og:url" content={`https://marinoindia.co.in/product/${productId}/`} />
         <meta property="og:image" content={`https://marinoindia.co.in${product.image}`} />
         <meta property="product:availability" content="in stock" />
         <meta property="product:condition" content="new" />
@@ -1197,7 +1201,7 @@ const ProductDetailPage = () => {
               <nav className="flex items-center gap-2 text-sm text-slate-600">
                 <Link to="/" className="hover:text-emerald-600 transition-colors">Home</Link>
                 <span>/</span>
-                <Link to="/products" className="hover:text-emerald-600 transition-colors">Products</Link>
+                <Link to="/products/" className="hover:text-emerald-600 transition-colors">Products</Link>
                 <span>/</span>
                 <span className="text-slate-900 font-medium">{product.name}</span>
               </nav>
@@ -1272,6 +1276,20 @@ const ProductDetailPage = () => {
                       </Button>
                     </Link>
                   </div>
+
+                  {productId === 'wire-rope-slings' && (
+                    <p className="text-sm text-slate-600 mb-8 -mt-2">
+                      Manufactured at our Kidderpore works —{' '}
+                      <Link to="/suppliers/kolkata/" className="text-emerald-700 font-medium hover:underline">
+                        wire rope sling manufacturer in Kolkata
+                      </Link>
+                      . Standard sizes are ready to buy on the{' '}
+                      <Link to="/premade-slings/" className="text-emerald-700 font-medium hover:underline">
+                        sling price list
+                      </Link>{' '}
+                      from ₹450.
+                    </p>
+                  )}
 
                   {/* Trust badges */}
                   <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-100">
@@ -1638,6 +1656,52 @@ const ProductDetailPage = () => {
                     Never use horizontal angles less than 30°. Formula: Effective WLL = WLL × sin(θ÷2)
                   </p>
                 </div>
+              </div>
+            </section>
+          )}
+
+          {/* Wire Rope Sling Price List (real rates from src/data/slingPriceList.ts) */}
+          {productId === 'wire-rope-slings' && (
+            <section className="py-16 bg-white">
+              <div className="container-modern">
+                <div className="mb-8">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                    Wire Rope Sling Price List
+                  </h2>
+                  <p className="text-slate-600 max-w-3xl">
+                    Rates per piece for 6×36 construction (GWRC), right-hand ordinary lay, hand-spliced
+                    slings with test certificate. Prices are indicative and move with steel rates —
+                    confirm today's rate on WhatsApp. Smaller sizes and multi-leg assemblies are on the{' '}
+                    <Link to="/premade-slings/" className="text-emerald-700 font-medium hover:underline">
+                      premade slings page
+                    </Link>{' '}
+                    from ₹450.
+                  </p>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {slingPriceList.map((group) => (
+                    <div key={group.size} className="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
+                      <div className="px-5 py-3 bg-slate-100 border-b border-slate-200">
+                        <h3 className="font-bold text-slate-900">{group.size} wire rope sling</h3>
+                      </div>
+                      <table className="w-full text-sm">
+                        <tbody>
+                          {group.rows.map((row, i) => (
+                            <tr key={row.length} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                              <td className="px-5 py-2.5 text-slate-700">{row.length}</td>
+                              <td className="px-5 py-2.5 text-right font-semibold text-emerald-700">
+                                {row.rate === null ? 'On request' : `₹${row.rate.toLocaleString('en-IN')}`}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-slate-500 mt-4">
+                  Rates updated July 2026. GST extra. Volume discounts on 10+ pieces — call 98311 44669.
+                </p>
               </div>
             </section>
           )}
@@ -2868,7 +2932,7 @@ const ProductDetailPage = () => {
                   return (
                     <Link 
                       key={relatedId}
-                      to={`/product/${relatedId}`}
+                      to={`/product/${relatedId}/`}
                       className="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group"
                     >
                       <img

@@ -43,61 +43,62 @@
 ## Canonical URLs
 
 - Home: https://marinoindia.co.in
-- Products overview: https://marinoindia.co.in/products
-- Wire rope slings: https://marinoindia.co.in/product/wire-rope-slings
-- Chain slings: https://marinoindia.co.in/product/chain-slings
-- Shackles: https://marinoindia.co.in/product/shackles
-- Hooks: https://marinoindia.co.in/product/hooks
-- Turnbuckles: https://marinoindia.co.in/product/turnbuckles
-- Pulleys & blocks: https://marinoindia.co.in/product/pulleys-blocks
-- Wire rope accessories: https://marinoindia.co.in/product/wire-rope-accessories
-- Thimbles: https://marinoindia.co.in/product/thimbles
-- Premade slings (with thimbles & hooks): https://marinoindia.co.in/premade-slings
-- Clients: https://marinoindia.co.in/clients
-- Our people: https://marinoindia.co.in/our-people
-- Media: https://marinoindia.co.in/media
-- Contact: https://marinoindia.co.in/contact
+- Products overview: https://marinoindia.co.in/products/
+- Wire rope slings: https://marinoindia.co.in/product/wire-rope-slings/
+- Chain slings: https://marinoindia.co.in/product/chain-slings/
+- Shackles: https://marinoindia.co.in/product/shackles/
+- Hooks: https://marinoindia.co.in/product/hooks/
+- Turnbuckles: https://marinoindia.co.in/product/turnbuckles/
+- Pulleys & blocks: https://marinoindia.co.in/product/pulleys-blocks/
+- Wire rope accessories: https://marinoindia.co.in/product/wire-rope-accessories/
+- Thimbles: https://marinoindia.co.in/product/thimbles/
+- Premade slings (with thimbles & hooks): https://marinoindia.co.in/premade-slings/
+- Clients: https://marinoindia.co.in/clients/
+- Our people: https://marinoindia.co.in/our-people/
+- Media: https://marinoindia.co.in/media/
+- Contact: https://marinoindia.co.in/contact/
 
 ## City pages (pan-India supply)
 
 Ports and marine clusters:
-- Mumbai (JNPT, Mumbai Port): https://marinoindia.co.in/suppliers/mumbai
-- Visakhapatnam (Vizag Port, Hindustan Shipyard): https://marinoindia.co.in/suppliers/visakhapatnam
-- Kochi (Cochin Shipyard, Kochi Port): https://marinoindia.co.in/suppliers/kochi
-- Chennai (Chennai Port, Ennore Port): https://marinoindia.co.in/suppliers/chennai
-- Haldia (Haldia Port, IOCL Haldia): https://marinoindia.co.in/suppliers/haldia
-- Paradip (Paradip Port, IOCL Paradip refinery): https://marinoindia.co.in/suppliers/paradip
-- Mangalore (NMPT, MRPL refinery): https://marinoindia.co.in/suppliers/mangalore
-- Mormugao (Mormugao Port, Goa Shipyard): https://marinoindia.co.in/suppliers/mormugao
-- Tuticorin (V.O. Chidambaranar Port): https://marinoindia.co.in/suppliers/tuticorin
-- Thiruvananthapuram (Vizhinjam transhipment port, VSSC): https://marinoindia.co.in/suppliers/thiruvananthapuram
+- Kolkata (home city — Kidderpore works beside Kolkata Port, GRSE, Howrah belt): https://marinoindia.co.in/suppliers/kolkata/
+- Mumbai (JNPT, Mumbai Port): https://marinoindia.co.in/suppliers/mumbai/
+- Visakhapatnam (Vizag Port, Hindustan Shipyard): https://marinoindia.co.in/suppliers/visakhapatnam/
+- Kochi (Cochin Shipyard, Kochi Port): https://marinoindia.co.in/suppliers/kochi/
+- Chennai (Chennai Port, Ennore Port): https://marinoindia.co.in/suppliers/chennai/
+- Haldia (Haldia Port, IOCL Haldia): https://marinoindia.co.in/suppliers/haldia/
+- Paradip (Paradip Port, IOCL Paradip refinery): https://marinoindia.co.in/suppliers/paradip/
+- Mangalore (NMPT, MRPL refinery): https://marinoindia.co.in/suppliers/mangalore/
+- Mormugao (Mormugao Port, Goa Shipyard): https://marinoindia.co.in/suppliers/mormugao/
+- Tuticorin (V.O. Chidambaranar Port): https://marinoindia.co.in/suppliers/tuticorin/
+- Thiruvananthapuram (Vizhinjam transhipment port, VSSC): https://marinoindia.co.in/suppliers/thiruvananthapuram/
 
 Steel and heavy engineering:
-- Jamshedpur (Tata Steel, Tata Motors, Adityapur): https://marinoindia.co.in/suppliers/jamshedpur
-- Rourkela (SAIL Rourkela Steel Plant): https://marinoindia.co.in/suppliers/rourkela
-- Bokaro (SAIL Bokaro Steel Plant): https://marinoindia.co.in/suppliers/bokaro
-- Bhilai (SAIL Bhilai Steel Plant): https://marinoindia.co.in/suppliers/bhilai
-- Durgapur (SAIL DSP, ASP, MAMC): https://marinoindia.co.in/suppliers/durgapur
-- Raipur (Chhattisgarh sponge-iron and rolling-mill belt): https://marinoindia.co.in/suppliers/raipur
+- Jamshedpur (Tata Steel, Tata Motors, Adityapur): https://marinoindia.co.in/suppliers/jamshedpur/
+- Rourkela (SAIL Rourkela Steel Plant): https://marinoindia.co.in/suppliers/rourkela/
+- Bokaro (SAIL Bokaro Steel Plant): https://marinoindia.co.in/suppliers/bokaro/
+- Bhilai (SAIL Bhilai Steel Plant): https://marinoindia.co.in/suppliers/bhilai/
+- Durgapur (SAIL DSP, ASP, MAMC): https://marinoindia.co.in/suppliers/durgapur/
+- Raipur (Chhattisgarh sponge-iron and rolling-mill belt): https://marinoindia.co.in/suppliers/raipur/
 
 Petrochemicals and refining:
-- Vadodara (IOCL Koyali, GACL, GSFC): https://marinoindia.co.in/suppliers/vadodara
-- Surat (Hazira — L&T, AM/NS, ONGC, Reliance): https://marinoindia.co.in/suppliers/surat
-- Ahmedabad (Gujarat refining and port supply): https://marinoindia.co.in/suppliers/ahmedabad
-- Guwahati (Numaligarh refinery, NE oil & gas): https://marinoindia.co.in/suppliers/guwahati
+- Vadodara (IOCL Koyali, GACL, GSFC): https://marinoindia.co.in/suppliers/vadodara/
+- Surat (Hazira — L&T, AM/NS, ONGC, Reliance): https://marinoindia.co.in/suppliers/surat/
+- Ahmedabad (Gujarat refining and port supply): https://marinoindia.co.in/suppliers/ahmedabad/
+- Guwahati (Numaligarh refinery, NE oil & gas): https://marinoindia.co.in/suppliers/guwahati/
 
 Manufacturing and infrastructure:
-- Delhi NCR (metro, expressways, NCR industrial belt): https://marinoindia.co.in/suppliers/delhi
-- Bangalore (aerospace, machinery, commercial construction): https://marinoindia.co.in/suppliers/bangalore
-- Hyderabad (pharma, ORR, Hyderabad Metro): https://marinoindia.co.in/suppliers/hyderabad
-- Pune (Chakan auto belt, Talegaon, Ranjangaon): https://marinoindia.co.in/suppliers/pune
-- Bhubaneswar (mining and metals ancillary base): https://marinoindia.co.in/suppliers/bhubaneswar
-- Nagpur (MIHAN SEZ, Butibori, central India): https://marinoindia.co.in/suppliers/nagpur
-- Indore (Pithampur auto belt, MP pharma): https://marinoindia.co.in/suppliers/indore
-- Jaipur (mining/marble belt, Sitapura, Bhiwadi): https://marinoindia.co.in/suppliers/jaipur
-- Lucknow (UP defence corridor, HAL Korwa): https://marinoindia.co.in/suppliers/lucknow
-- Kanpur (Ordnance Factory, fertiliser, engineering): https://marinoindia.co.in/suppliers/kanpur
-- Coimbatore (textile machinery, pumps, foundries): https://marinoindia.co.in/suppliers/coimbatore
+- Delhi NCR (metro, expressways, NCR industrial belt): https://marinoindia.co.in/suppliers/delhi/
+- Bangalore (aerospace, machinery, commercial construction): https://marinoindia.co.in/suppliers/bangalore/
+- Hyderabad (pharma, ORR, Hyderabad Metro): https://marinoindia.co.in/suppliers/hyderabad/
+- Pune (Chakan auto belt, Talegaon, Ranjangaon): https://marinoindia.co.in/suppliers/pune/
+- Bhubaneswar (mining and metals ancillary base): https://marinoindia.co.in/suppliers/bhubaneswar/
+- Nagpur (MIHAN SEZ, Butibori, central India): https://marinoindia.co.in/suppliers/nagpur/
+- Indore (Pithampur auto belt, MP pharma): https://marinoindia.co.in/suppliers/indore/
+- Jaipur (mining/marble belt, Sitapura, Bhiwadi): https://marinoindia.co.in/suppliers/jaipur/
+- Lucknow (UP defence corridor, HAL Korwa): https://marinoindia.co.in/suppliers/lucknow/
+- Kanpur (Ordnance Factory, fertiliser, engineering): https://marinoindia.co.in/suppliers/kanpur/
+- Coimbatore (textile machinery, pumps, foundries): https://marinoindia.co.in/suppliers/coimbatore/
 
 ## Preferred contact for quotes
 

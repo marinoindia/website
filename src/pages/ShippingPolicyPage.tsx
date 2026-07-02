@@ -45,7 +45,7 @@ const ShippingPolicyPage = () => {
       <h2>5. Order Tracking &amp; Receipt</h2>
       <ul>
         <li>Once dispatched, we will share the courier/transport details or docket number via WhatsApp or phone.</li>
-        <li>Please <strong>inspect the consignment at the time of delivery</strong>. If the packaging is damaged or the seal is broken, note it with the delivery agent and inform us within 48 hours (see our <a href="/refund-policy">Replacement, Refund &amp; Warranty Policy</a>).</li>
+        <li>Please <strong>inspect the consignment at the time of delivery</strong>. If the packaging is damaged or the seal is broken, note it with the delivery agent and inform us within 48 hours (see our <a href="/refund-policy/">Replacement, Refund &amp; Warranty Policy</a>).</li>
       </ul>
 
       <h2>6. Failed or Delayed Delivery</h2>

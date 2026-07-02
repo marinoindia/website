@@ -326,11 +326,11 @@ export const Checkout = ({ open, onOpenChange }: CheckoutProps) => {
             />
             <Label htmlFor="consent" className="text-sm font-normal cursor-pointer leading-relaxed">
               I agree to the{' '}
-              <Link to="/terms" target="_blank" className="text-emerald-700 underline">Terms &amp; Conditions</Link>,{' '}
-              <Link to="/privacy-policy" target="_blank" className="text-emerald-700 underline">Privacy Policy</Link>,{' '}
-              <Link to="/refund-policy" target="_blank" className="text-emerald-700 underline">Replacement &amp; Refund Policy</Link>{' '}
+              <Link to="/terms/" target="_blank" className="text-emerald-700 underline">Terms &amp; Conditions</Link>,{' '}
+              <Link to="/privacy-policy/" target="_blank" className="text-emerald-700 underline">Privacy Policy</Link>,{' '}
+              <Link to="/refund-policy/" target="_blank" className="text-emerald-700 underline">Replacement &amp; Refund Policy</Link>{' '}
               and{' '}
-              <Link to="/shipping-policy" target="_blank" className="text-emerald-700 underline">Shipping Policy</Link>.
+              <Link to="/shipping-policy/" target="_blank" className="text-emerald-700 underline">Shipping Policy</Link>.
             </Label>
           </div>
 

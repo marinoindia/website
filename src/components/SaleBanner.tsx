@@ -29,7 +29,7 @@ const SaleBanner = () => {
       </button>
 
       {/* Content */}
-      <Link to="/premade-slings" className="block py-1.5 px-4 sm:px-6">
+      <Link to="/premade-slings/" className="block py-1.5 px-4 sm:px-6">
         <div className="flex items-center justify-center gap-2 sm:gap-4">
           {/* Shopping bag icon */}
           <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20 flex items-center justify-center animate-bounce">

@@ -20,7 +20,7 @@ const LegalPageLayout = ({ title, description, canonicalPath, lastUpdated, child
       <Helmet>
         <title>{title} | Marino Corporation Of India</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href={`https://marinoindia.co.in${canonicalPath}`} />
+        <link rel="canonical" href={`https://marinoindia.co.in${canonicalPath}/`} />
         <meta name="robots" content="index, follow" />
       </Helmet>
 

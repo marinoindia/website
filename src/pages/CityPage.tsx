@@ -15,8 +15,10 @@ const CityPage = () => {
   if (!city) return <Navigate to="/" replace />;
 
   const canonical = `https://marinoindia.co.in/suppliers/${city.slug}/`;
-  const title = `Wire Rope & Sling Supplier in ${city.name} | Marino Corporation`;
-  const description = `Marino Corporation supplies wire rope, slings, chains and lifting hardware to ${city.name}. ${city.industryContext}. ISO certified, 40+ years experience, delivery in ${city.leadTime} from Kolkata.`;
+  const title = city.titleOverride ?? `Wire Rope & Sling Supplier in ${city.name} | Marino Corporation`;
+  const description =
+    city.descriptionOverride ??
+    `Marino Corporation supplies wire rope, slings, chains and lifting hardware to ${city.name}. ${city.industryContext}. ISO certified, 40+ years experience, delivery in ${city.leadTime} from Kolkata.`;
 
   const whatsappText = encodeURIComponent(
     `Hello, I am enquiring from ${city.name} about wire rope / slings / lifting equipment.`,
@@ -48,9 +50,8 @@ const CityPage = () => {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://marinoindia.co.in' },
-        { '@type': 'ListItem', position: 2, name: 'Suppliers', item: 'https://marinoindia.co.in/suppliers' },
-        { '@type': 'ListItem', position: 3, name: city.name, item: canonical },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://marinoindia.co.in/' },
+        { '@type': 'ListItem', position: 2, name: city.name, item: canonical },
       ],
     },
     {
@@ -95,11 +96,15 @@ const CityPage = () => {
               <div className="max-w-3xl">
                 <Badge className="mb-4 bg-white/20 text-white border-white/30 backdrop-blur-sm">
                   <MapPin className="w-3.5 h-3.5 mr-1.5" />
-                  Pan-India delivery from Kolkata
+                  {city.slug === 'kolkata' ? 'Manufactured in Kidderpore, Kolkata' : 'Pan-India delivery from Kolkata'}
                 </Badge>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
-                  Wire Rope & Sling Supplier in{' '}
-                  <span className="text-emerald-300">{city.name}</span>
+                  {city.h1Override ?? (
+                    <>
+                      Wire Rope & Sling Supplier in{' '}
+                      <span className="text-emerald-300">{city.name}</span>
+                    </>
+                  )}
                 </h1>
                 <p className="text-lg text-emerald-100 leading-relaxed mb-6">
                   {city.intro}
@@ -220,7 +225,7 @@ const CityPage = () => {
                 ))}
               </div>
               <div className="mt-8">
-                <Link to="/products" className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-medium">
+                <Link to="/products/" className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-medium">
                   Browse full product catalogue
                   <ArrowRight className="w-4 h-4" />
                 </Link>
