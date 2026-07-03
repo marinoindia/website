@@ -315,6 +315,8 @@ const PremadeSlingsPage = () => {
               "position": index + 1,
               "name": `${sling.diameter}mm Wire Rope Sling ${sling.length}m - ${sling.workingLoadLimit} Ton WLL`,
               "description": `${sling.description} Construction: ${sling.construction}, Grade: ${sling.grade} MPa, Core: ${sling.core}. Working Load Limit: ${sling.workingLoadLimit} tonnes.`,
+              "image": `https://marinoindia.co.in${sling.image}`,
+              "sku": `WRS-${sling.diameter}MM-${sling.length}M`,
               "brand": {
                 "@type": "Brand",
                 "name": "Marino Corporation"
@@ -324,7 +326,10 @@ const PremadeSlingsPage = () => {
                 "availability": sling.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
                 "price": sling.price.replace(',', ''),
                 "priceCurrency": "INR",
-                "url": "https://marinoindia.co.in/premade-slings",
+                // Bump alongside the monthly price refresh.
+                "priceValidUntil": "2026-09-30",
+                "itemCondition": "https://schema.org/NewCondition",
+                "url": "https://marinoindia.co.in/premade-slings/",
                 "seller": {
                   "@type": "Organization",
                   "name": "Marino Corporation Of India"

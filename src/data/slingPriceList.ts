@@ -101,6 +101,8 @@ export function slingProductSchema() {
           highPrice: Math.max(...prices),
           offerCount: priced.length,
           availability: 'https://schema.org/InStock',
+          itemCondition: 'https://schema.org/NewCondition',
+          url: 'https://marinoindia.co.in/webshop/',
           seller: { '@type': 'Organization', name: 'Marino Corporation Of India' },
         },
       };
