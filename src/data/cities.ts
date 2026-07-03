@@ -7,7 +7,7 @@ export type CityInfo = {
   intro: string;
   localContext: string;
   industryHighlights: string[];
-  topProducts: { name: string; note: string }[];
+  topProducts: { name: string; note: string; to?: string }[];
   landmarks: string[];
   // Optional SEO overrides — used by the home-city (Kolkata) page, where
   // "manufacturer" is the accurate and stronger claim than "supplier".
@@ -35,11 +35,11 @@ export const cities: CityInfo[] = [
       'Factory pickup at Kidderpore and same-day delivery across Kolkata & Howrah',
     ],
     topProducts: [
-      { name: 'Wire Rope Slings (single to 4-leg)', note: 'Made at our Kidderpore works, test certified' },
-      { name: '6×36 IWRC Wire Rope', note: 'Usha Martin rope, cut to length' },
-      { name: 'G80 / G100 Chain Slings', note: 'Fabrication and erection work' },
-      { name: 'D & Bow Shackles', note: 'Galvanised and high-tensile' },
-      { name: 'Mooring Ropes & Marine Gear', note: 'Port and river craft' },
+      { name: 'Wire Rope Slings (single to 4-leg)', note: 'Made at our Kidderpore works, test certified', to: '/product/wire-rope-slings/' },
+      { name: '6×36 IWRC Wire Rope', note: 'Usha Martin rope, cut to length', to: '/products/' },
+      { name: 'G80 / G100 Chain Slings', note: 'Fabrication and erection work', to: '/product/chain-slings/' },
+      { name: 'D & Bow Shackles', note: 'Galvanised and high-tensile', to: '/product/shackles/' },
+      { name: 'Mooring Ropes & Marine Gear', note: 'Port and river craft', to: '/products/' },
     ],
     landmarks: [
       'Kolkata Port (SMP) — Kidderpore Dock',

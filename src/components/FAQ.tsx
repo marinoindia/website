@@ -1,10 +1,3 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-
 export const faqItems: { question: string; answer: string }[] = [
   {
     question: 'Why should I choose wire rope slings over other lifting solutions?',
@@ -44,12 +37,12 @@ export const faqItems: { question: string; answer: string }[] = [
   {
     question: 'How do I get a quote and do you deliver across India?',
     answer:
-      'You can contact us by phone (+919831144669), email (marinocoindia@gmail.com), or through the enquiry form on our website. We deliver across India with reliable logistics and timely dispatch. We serve customers from Kolkata and Calcutta to all major cities in India.',
+      'You can call or WhatsApp us on +91 98311 44669, or email marinocoindia@gmail.com. We deliver across India with reliable logistics and timely dispatch. We serve customers from Kolkata and Calcutta to all major cities in India.',
   },
   {
     question: 'How do I find a reliable wire rope, sling and chain supplier in India?',
     answer:
-      'Look for a supplier with BIS-conformant products (e.g. IS 2266 for wire ropes), relevant certifications (MSME, IEC, ISO where applicable), experience in industrial and marine applications, and strong after-sales support. Marino Corporation Of India has over 40 years of experience as a wire rope, sling and chain supplier in Kolkata/Calcutta and across India, with quality assurance and pan-India delivery.',
+      'Look for a supplier with BIS-conformant products (e.g. IS 2266 for wire ropes), relevant certifications (MSME, IEC), experience in industrial and marine applications, and strong after-sales support. Marino Corporation Of India has over 40 years of experience as a wire rope, sling and chain supplier in Kolkata/Calcutta and across India, with quality assurance and pan-India delivery.',
   },
 ];
 
@@ -68,18 +61,17 @@ const FAQ = () => {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {faqItems.slice(0, 5).map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left text-[#0d3d26] font-semibold text-sm py-3">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-xs leading-snug">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          {/* Native <details> keeps every answer in the prerendered HTML, so the
+              FAQPage JSON-LD on the homepage matches the visible content. */}
+          {faqItems.map((item) => (
+            <details key={item.question} className="group border-b border-border">
+              <summary className="cursor-pointer list-none py-3 flex items-start justify-between gap-4 text-left text-[#0d3d26] font-semibold text-sm">
+                <span>{item.question}</span>
+                <span className="text-[#0d3d26] text-lg leading-none flex-shrink-0 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p className="text-muted-foreground text-xs leading-snug pb-3">{item.answer}</p>
+            </details>
+          ))}
         </div>
       </div>
     </section>

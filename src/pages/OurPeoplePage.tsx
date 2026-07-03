@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { User, Sparkles, Phone, Building2, Calendar, Users, FileText, Globe } from 'lucide-react';
+import { User, Sparkles, Phone, Building2, Calendar, Users, FileText } from 'lucide-react';
 
 const OurPeoplePage = () => {
   return (
@@ -166,14 +166,6 @@ const OurPeoplePage = () => {
                       <p className="text-muted-foreground text-xs sm:text-sm font-semibold">GST: 19ADMPR1740H1ZA</p>
                     </div>
 
-                    {/* Importer-Exporter Code (IEC) */}
-                    <div className="card-industrial p-4 sm:p-6 text-center">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <Globe className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
-                      </div>
-                      <h3 className="font-semibold text-sm sm:text-base text-foreground mb-2">Importer-Exporter Code (IEC)</h3>
-                      <p className="text-muted-foreground text-xs sm:text-sm font-semibold">XXXXXXXXXX <span className="text-muted-foreground/70 italic">(coming soon)</span></p>
-                    </div>
                   </div>
                 </div>
 

@@ -31,9 +31,9 @@ const Index = () => {
         <title>Wire Rope, Sling & Chain Supplier in India | Marino India</title>
         <meta
           name="description"
-          content="ISO-certified wire ropes, slings, chains & lifting gear since 1985. Test certificates, bulk prices, 3–7 day delivery across India. Call +91 98311 44669."
+          content="Test-certified wire ropes, slings, chains & lifting gear since 1985. Bulk prices, GST invoice, 3–7 day delivery across India. Call +91 98311 44669."
         />
-        <meta name="keywords" content="wire rope supplier India, sling supplier India, chain supplier India, best wire rope manufacturer India, industrial chains supplier, wire rope slings India, lifting chains supplier, marine equipment India, pulley blocks India, wire rope Delhi, wire rope Mumbai, wire rope Bangalore, wire rope Chennai, wire rope Hyderabad, wire rope Pune, wire rope Ahmedabad, wire rope Kolkata, industrial lifting equipment, ISO certified wire rope, Usha Martin wire rope distributor" />
+        <meta name="keywords" content="wire rope supplier India, sling supplier India, chain supplier India, best wire rope manufacturer India, industrial chains supplier, wire rope slings India, lifting chains supplier, marine equipment India, pulley blocks India, wire rope Delhi, wire rope Mumbai, wire rope Bangalore, wire rope Chennai, wire rope Hyderabad, wire rope Pune, wire rope Ahmedabad, wire rope Kolkata, industrial lifting equipment, IS 2266 wire rope, Usha Martin wire rope distributor" />
         <link rel="canonical" href="https://marinoindia.co.in/" />
         <script type="application/ld+json">
           {JSON.stringify({

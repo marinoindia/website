@@ -1088,6 +1088,19 @@ const ProductDetailPage = () => {
 
   const whatsappMessage = `Hello, I am interested in ${product.name}. Please provide pricing and availability details.`;
 
+  // WhatsApp link for one price-list row (size + length) — same pattern as
+  // PremadeSlingsPage.priceRowWhatsApp, so the first message is quotable.
+  const priceRowWhatsApp = (size: string, length: string, rate: number | null) => {
+    const rateText = rate ? `at the listed rate of ₹${rate}/-` : '(please share the current rate)';
+    const text =
+      `Hello, I would like a quote for a Steel Wire Rope Sling:%0A%0A` +
+      `*Size:* ${size}%0A` +
+      `*Length:* ${length}%0A` +
+      `${encodeURIComponent(rateText)}%0A%0A` +
+      `Please confirm today's rate and availability.`;
+    return `https://wa.me/919831144669?text=${text}`;
+  };
+
   return (
     <>
       <Helmet>
@@ -1295,7 +1308,7 @@ const ProductDetailPage = () => {
                   <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-100">
                     <div className="flex items-center gap-2 text-sm text-slate-600">
                       <CheckCircle className="w-4 h-4 text-emerald-500" />
-                      ISO Certified
+                      Since 1985
                     </div>
                     <div className="flex items-center gap-2 text-sm text-slate-600">
                       <CheckCircle className="w-4 h-4 text-emerald-500" />
@@ -1306,6 +1319,11 @@ const ProductDetailPage = () => {
                       Test Certified
                     </div>
                   </div>
+
+                  <p className="mt-4 text-sm text-slate-500">
+                    <span className="font-medium text-slate-700">Trusted by:</span>{' '}
+                    DRDO · ISRO · Indian Navy · Tata Steel · SAIL · BHEL · Kolkata Port Trust
+                  </p>
 
                   {/* Contact Info */}
                   <div className="mt-8 p-4 bg-slate-50 rounded-xl border border-slate-100">
@@ -1670,8 +1688,16 @@ const ProductDetailPage = () => {
                   </h2>
                   <p className="text-slate-600 max-w-3xl">
                     Rates per piece for 6×36 construction (GWRC), right-hand ordinary lay, hand-spliced
-                    slings with test certificate. Prices are indicative and move with steel rates —
-                    confirm today's rate on WhatsApp. Smaller sizes and multi-leg assemblies are on the{' '}
+                    slings with test certificate. Prices are indicative and move with steel rates —{' '}
+                    <a
+                      href="https://wa.me/919831144669?text=Hello%2C%20please%20share%20today%27s%20wire%20rope%20sling%20price%20list."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-700 font-medium hover:underline"
+                    >
+                      confirm today's rate on WhatsApp
+                    </a>
+                    . Smaller sizes and multi-leg assemblies are on the{' '}
                     <Link to="/premade-slings/" className="text-emerald-700 font-medium hover:underline">
                       premade slings page
                     </Link>{' '}
@@ -1692,6 +1718,16 @@ const ProductDetailPage = () => {
                               <td className="px-5 py-2.5 text-right font-semibold text-emerald-700">
                                 {row.rate === null ? 'On request' : `₹${row.rate.toLocaleString('en-IN')}`}
                               </td>
+                              <td className="px-4 py-2.5 text-right">
+                                <a
+                                  href={priceRowWhatsApp(group.size, row.length, row.rate)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-xs font-medium text-emerald-600 hover:text-emerald-700 hover:underline whitespace-nowrap"
+                                >
+                                  Get quote
+                                </a>
+                              </td>
                             </tr>
                           ))}
                         </tbody>
@@ -1699,8 +1735,24 @@ const ProductDetailPage = () => {
                     </div>
                   ))}
                 </div>
+                <div className="mt-6">
+                  <a
+                    href="https://wa.me/919831144669?text=Hello%2C%20please%20share%20today%27s%20wire%20rope%20sling%20price%20list."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" className="btn-primary gap-2">
+                      <Phone className="w-5 h-5" />
+                      Get today's rates on WhatsApp
+                    </Button>
+                  </a>
+                </div>
                 <p className="text-xs text-slate-500 mt-4">
-                  Rates updated July 2026. GST extra. Volume discounts on 10+ pieces — call 98311 44669.
+                  Rates updated July 2026. GST extra. Volume discounts on 10+ pieces — call{' '}
+                  <a href="tel:+919831144669" className="font-medium text-slate-700 hover:underline">
+                    98311 44669
+                  </a>
+                  .
                 </p>
               </div>
             </section>

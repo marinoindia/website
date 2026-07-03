@@ -18,7 +18,7 @@ const CityPage = () => {
   const title = city.titleOverride ?? `Wire Rope & Sling Supplier in ${city.name} | Marino Corporation`;
   const description =
     city.descriptionOverride ??
-    `Marino Corporation supplies wire rope, slings, chains and lifting hardware to ${city.name}. ${city.industryContext}. ISO certified, 40+ years experience, delivery in ${city.leadTime} from Kolkata.`;
+    `Marino Corporation supplies wire rope, slings, chains and lifting hardware to ${city.name}. ${city.industryContext}. Test-certified products, 40+ years experience, delivery in ${city.leadTime} from Kolkata.`;
 
   const whatsappText = encodeURIComponent(
     `Hello, I am enquiring from ${city.name} about wire rope / slings / lifting equipment.`,
@@ -41,11 +41,39 @@ const CityPage = () => {
     },
     {
       q: `Are your lifting products certified and traceable?`,
-      a: `Yes. Marino Corporation is ISO certified. All chain slings, wire rope slings and rigging hardware ship with traceable load-test certificates suitable for EPC, port, shipyard and OEM plant audits.`,
+      a: `Yes. All chain slings, wire rope slings and rigging hardware ship with traceable load-test certificates suitable for EPC, port, shipyard and OEM plant audits. We are MSME registered and our steel wire ropes conform to IS 2266.`,
     },
   ];
 
   const jsonLd = [
+    // The physical works is in Kolkata, so only the home-city page carries
+    // LocalBusiness markup; other city pages describe a delivery Service.
+    ...(city.slug === 'kolkata'
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            name: 'Marino Corporation Of India',
+            description:
+              'Wire rope sling manufacturer and lifting equipment supplier at Kidderpore, Kolkata. Test-certified slings, chains, shackles and marine rigging.',
+            url: canonical,
+            telephone: '+919831144669',
+            image: 'https://marinoindia.co.in/logo/logo_marino.jpeg',
+            priceRange: '₹₹',
+            openingHours: 'Mo-Sa 09:00-18:00',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: '28, Orphangunj Road, Kidderpore',
+              addressLocality: 'Kolkata',
+              addressRegion: 'West Bengal',
+              postalCode: '700023',
+              addressCountry: 'IN',
+            },
+            geo: { '@type': 'GeoCoordinates', latitude: '22.5726', longitude: '88.3639' },
+            sameAs: ['https://www.google.com/maps?cid=13184844193591808410'],
+          },
+        ]
+      : []),
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
@@ -154,7 +182,7 @@ const CityPage = () => {
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-wide text-slate-500 font-medium">Certifications</div>
-                    <div className="text-slate-900 font-semibold">ISO certified, load-tested</div>
+                    <div className="text-slate-900 font-semibold">MSME • IS 2266 • load-tested</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -214,15 +242,26 @@ const CityPage = () => {
                 request — call or WhatsApp for specs and quotes.
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {city.topProducts.map((p) => (
-                  <div
-                    key={p.name}
-                    className="bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-sm transition-all"
-                  >
-                    <h3 className="font-semibold text-slate-900 mb-1">{p.name}</h3>
-                    <p className="text-sm text-slate-600">{p.note}</p>
-                  </div>
-                ))}
+                {city.topProducts.map((p) =>
+                  p.to ? (
+                    <Link
+                      key={p.name}
+                      to={p.to}
+                      className="block bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-sm transition-all"
+                    >
+                      <h3 className="font-semibold text-slate-900 mb-1">{p.name}</h3>
+                      <p className="text-sm text-slate-600">{p.note}</p>
+                    </Link>
+                  ) : (
+                    <div
+                      key={p.name}
+                      className="bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-sm transition-all"
+                    >
+                      <h3 className="font-semibold text-slate-900 mb-1">{p.name}</h3>
+                      <p className="text-sm text-slate-600">{p.note}</p>
+                    </div>
+                  ),
+                )}
               </div>
               <div className="mt-8">
                 <Link to="/products/" className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-800 font-medium">

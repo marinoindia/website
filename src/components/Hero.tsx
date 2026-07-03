@@ -119,7 +119,7 @@ const Hero = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span>ISO Certified</span>
+                <span>Test Certificates Provided</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center">
@@ -138,6 +138,15 @@ const Hero = () => {
                 <span>Usha Martin Wire</span>
               </div>
             </div>
+
+            {/* Client roster — text strip (logos live on /clients/) */}
+            <p className="mt-6 text-sm text-slate-500">
+              <span className="font-medium text-slate-700">Trusted by:</span>{' '}
+              DRDO · ISRO · Indian Navy · Tata Steel · SAIL · BHEL · Kolkata Port Trust{' '}
+              <Link to="/clients/" className="text-emerald-700 hover:underline whitespace-nowrap">
+                — see all clients
+              </Link>
+            </p>
           </motion.div>
 
           {/* Right content - Image */}
@@ -168,10 +177,10 @@ const Hero = () => {
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-white font-bold text-lg">
-                    25+
+                    40+
                   </div>
                   <div>
-                    <p className="text-sm text-slate-500">Years of</p>
+                    <p className="text-sm text-slate-500">Years — since 1985</p>
                     <p className="font-semibold text-slate-900">Excellence</p>
                   </div>
                 </div>

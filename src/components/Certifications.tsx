@@ -1,4 +1,3 @@
-import { Badge } from '@/components/ui/badge';
 import msmeImg from '@/assets/logo/accreditation/msme.png';
 import iecImg from '@/assets/logo/accreditation/IEC.png';
 import is2266Img from '@/assets/logo/accreditation/IS2266.png';
@@ -19,11 +18,6 @@ const certifications = [
     alt: 'IS 2266',
     label: 'IS 2266 Conformity',
   },
-  {
-    comingSoon: true,
-    label: 'ISO 9001:2015',
-    sublabel: 'Coming Soon',
-  },
 ];
 
 const Certifications = () => {
@@ -41,34 +35,21 @@ const Certifications = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             {certifications.map((item, index) => (
               <div
                 key={index}
                 className="card-industrial p-3 sm:p-4 bg-muted/50 rounded-xl border border-border/50 flex flex-col items-center justify-center text-center min-h-[120px] sm:min-h-[140px]"
               >
-                {'comingSoon' in item && item.comingSoon ? (
-                  <>
-                    <div className="text-[#0d3d26] font-semibold text-sm sm:text-base mb-1">
-                      {item.label}
-                    </div>
-                    <Badge variant="secondary" className="text-xs">
-                      {item.sublabel}
-                    </Badge>
-                  </>
-                ) : (
-                  <>
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      className="h-12 sm:h-14 md:h-16 w-auto object-contain mb-2"
-                      loading="lazy"
-                    />
-                    <span className="text-muted-foreground text-xs sm:text-sm font-medium">
-                      {item.label}
-                    </span>
-                  </>
-                )}
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain mb-2"
+                  loading="lazy"
+                />
+                <span className="text-muted-foreground text-xs sm:text-sm font-medium">
+                  {item.label}
+                </span>
               </div>
             ))}
           </div>
