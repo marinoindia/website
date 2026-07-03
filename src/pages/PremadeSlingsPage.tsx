@@ -295,6 +295,29 @@ const PremadeSlingsPage = () => {
     return `https://wa.me/919831144669?text=${text}`;
   };
 
+  // Real terms from /shipping-policy/ and /refund-policy/ — keep in sync with
+  // those pages. Shipping charges vary by weight and destination, so no rate
+  // is declared; the delivery estimate mirrors the "within 7 business days"
+  // standard-delivery commitment.
+  const offerShippingDetails = {
+    '@type': 'OfferShippingDetails',
+    shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'IN' },
+    deliveryTime: {
+      '@type': 'ShippingDeliveryTime',
+      handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 2, unitCode: 'DAY' },
+      transitTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 7, unitCode: 'DAY' },
+    },
+  };
+  // Replacement-only policy: returns/exchanges are not accepted; defective,
+  // transit-damaged or wrongly supplied items are replaced free (report
+  // within 48 hours) — see /refund-policy/.
+  const merchantReturnPolicy = {
+    '@type': 'MerchantReturnPolicy',
+    applicableCountry: 'IN',
+    returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+    merchantReturnLink: 'https://marinoindia.co.in/refund-policy/',
+  };
+
   return (
     <>
       <Helmet>
@@ -329,6 +352,8 @@ const PremadeSlingsPage = () => {
                 // Bump alongside the monthly price refresh.
                 "priceValidUntil": "2026-09-30",
                 "itemCondition": "https://schema.org/NewCondition",
+                "shippingDetails": offerShippingDetails,
+                "hasMerchantReturnPolicy": merchantReturnPolicy,
                 "url": "https://marinoindia.co.in/premade-slings/",
                 "seller": {
                   "@type": "Organization",
