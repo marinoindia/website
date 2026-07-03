@@ -404,7 +404,7 @@ const PremadeSlingsPage = () => {
           <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-accent/10 to-background">
             <div className="container mx-auto px-4 sm:px-6">
               <div className="text-center max-w-3xl mx-auto">
-                <Badge className="mb-4 bg-accent/20 text-accent hover:bg-accent/30">Ready Stock</Badge>
+                <Badge className="mb-4 bg-accent/20 text-accent-foreground hover:bg-accent/30">Ready Stock</Badge>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0d3d26] mb-4 sm:mb-6">
                   Wire Rope Slings Price List
                 </h1>
@@ -440,28 +440,28 @@ const PremadeSlingsPage = () => {
             <div className="container mx-auto px-4 sm:px-6">
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <div className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-accent-foreground flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-foreground">Premium Quality</h3>
                     <p className="text-sm text-muted-foreground">Made with Usha Martin wire rope</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-accent-foreground flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-foreground">Ready Stock</h3>
                     <p className="text-sm text-muted-foreground">Immediate delivery available</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-accent-foreground flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-foreground">Tested & Certified</h3>
                     <p className="text-sm text-muted-foreground">All slings load tested</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-accent-foreground flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-semibold text-foreground">Custom Orders</h3>
                     <p className="text-sm text-muted-foreground">Specific requirements accepted</p>
@@ -556,7 +556,7 @@ const PremadeSlingsPage = () => {
                         </div>
                         <div className="flex items-center justify-between mt-2">
                           <span className="text-sm text-muted-foreground">Price:</span>
-                          <span className="text-xl font-bold text-accent">₹ {sling.price}</span>
+                          <span className="text-xl font-bold text-accent-foreground">₹ {sling.price}</span>
                         </div>
                       </div>
                     </CardContent>
@@ -607,7 +607,7 @@ const PremadeSlingsPage = () => {
                           >
                             <div className="min-w-0">
                               <span className="font-medium text-foreground">{row.length}</span>
-                              <span className="ml-3 text-base font-bold text-accent">
+                              <span className="ml-3 text-base font-bold text-accent-foreground">
                                 {row.rate ? `₹ ${row.rate.toLocaleString('en-IN')}/-` : 'On request'}
                               </span>
                             </div>

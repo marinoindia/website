@@ -307,13 +307,13 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
-              <Link to="/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent transition-colors px-3 py-2">
+              <Link to="/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent-foreground transition-colors px-3 py-2">
                 Home
               </Link>
 
               {/* Products Mega Dropdown */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="nav-link text-sm font-medium text-foreground/80 hover:text-accent transition-colors px-3 py-2 flex items-center gap-1">
+                <DropdownMenuTrigger className="nav-link text-sm font-medium text-foreground/80 hover:text-accent-foreground transition-colors px-3 py-2 flex items-center gap-1">
                   Products <ChevronDown className="w-4 h-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="start">
@@ -377,19 +377,19 @@ const Navbar = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <Link to="/our-people/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent transition-colors px-3 py-2">
+              <Link to="/our-people/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent-foreground transition-colors px-3 py-2">
                 Our People
               </Link>
 
-              <Link to="/clients/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent transition-colors px-3 py-2">
+              <Link to="/clients/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent-foreground transition-colors px-3 py-2">
                 Clients
               </Link>
 
-              <Link to="/media/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent transition-colors px-3 py-2">
+              <Link to="/media/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent-foreground transition-colors px-3 py-2">
                 Media
               </Link>
 
-              <Link to="/contact/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent transition-colors px-3 py-2">
+              <Link to="/contact/" className="nav-link text-sm font-medium text-foreground/80 hover:text-accent-foreground transition-colors px-3 py-2">
                 Contact
               </Link>
 

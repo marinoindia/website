@@ -35,7 +35,7 @@ const OurPeoplePage = () => {
           <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-primary/5">
             <div className="container mx-auto px-4">
               <div className="text-center max-w-3xl mx-auto mb-12">
-                <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our People</span>
+                <span className="text-accent-foreground font-semibold text-sm uppercase tracking-wider">Our People</span>
                 <h1 className="section-title text-[#0d3d26] mt-2">
                   Meet Our
                   <span className="text-[#0d3d26]"> People</span>
@@ -56,7 +56,7 @@ const OurPeoplePage = () => {
                   <div className="card-industrial p-6 sm:p-8 text-center">
                     <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6 bg-accent/10 rounded-full flex items-center justify-center border-2 border-accent/30">
                       {/* Placeholder for image - will be replaced when image is provided */}
-                      <Sparkles className="w-12 h-12 sm:w-16 sm:h-16 text-accent" />
+                      <Sparkles className="w-12 h-12 sm:w-16 sm:h-16 text-accent-foreground" />
                       {/* Uncomment and update src when image is available */}
                       {/* <img 
                         src="/path/to/govardhan-rout.jpg" 
@@ -85,15 +85,15 @@ const OurPeoplePage = () => {
                     <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground mb-2">
                       Pradeep Kumar Rout
                     </h3>
-                    <p className="text-accent font-semibold text-sm sm:text-base mb-3">(Binny)</p>
+                    <p className="text-accent-foreground font-semibold text-sm sm:text-base mb-3">(Binny)</p>
                     <p className="text-muted-foreground text-sm sm:text-base font-medium mb-4">
                       Founder & Proprietor
                     </p>
                     <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                      <Phone className="w-4 h-4 text-accent" />
-                      <a href="tel:9831144669" className="hover:text-accent hover:underline">9831144669</a>
+                      <Phone className="w-4 h-4 text-accent-foreground" />
+                      <a href="tel:9831144669" className="hover:text-accent-foreground hover:underline">9831144669</a>
                       <span className="text-muted-foreground/50">,</span>
-                      <a href="tel:8100052948" className="hover:text-accent hover:underline">81000 52948</a>
+                      <a href="tel:8100052948" className="hover:text-accent-foreground hover:underline">81000 52948</a>
                     </div>
                   </div>
 
@@ -101,7 +101,7 @@ const OurPeoplePage = () => {
                   <div className="card-industrial p-6 sm:p-8 text-center">
                     <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6 bg-accent/10 rounded-full flex items-center justify-center border-2 border-accent/30">
                       {/* Placeholder for image - will be replaced when image is provided */}
-                      <User className="w-12 h-12 sm:w-16 sm:h-16 text-accent" />
+                      <User className="w-12 h-12 sm:w-16 sm:h-16 text-accent-foreground" />
                       {/* Uncomment and update src when image is available */}
                       {/* <img 
                         src="/path/to/vikram-keshari-rout.jpg" 
@@ -112,10 +112,10 @@ const OurPeoplePage = () => {
                     <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground mb-2">
                       Vikram Keshari Rout
                     </h3>
-                    <p className="text-accent font-semibold text-sm sm:text-base mb-4">(Bikku)</p>
+                    <p className="text-accent-foreground font-semibold text-sm sm:text-base mb-4">(Bikku)</p>
                     <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                      <Phone className="w-4 h-4 text-accent" />
-                      <a href="tel:9831327279" className="hover:text-accent hover:underline">9831327279</a>
+                      <Phone className="w-4 h-4 text-accent-foreground" />
+                      <a href="tel:9831327279" className="hover:text-accent-foreground hover:underline">9831327279</a>
                     </div>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const OurPeoplePage = () => {
                     {/* Business Type */}
                     <div className="card-industrial p-4 sm:p-6 text-center">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <Building2 className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
+                        <Building2 className="w-6 h-6 sm:w-7 sm:h-7 text-accent-foreground" />
                       </div>
                       <h3 className="font-semibold text-sm sm:text-base text-foreground mb-2">Business Type</h3>
                       <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
@@ -142,7 +142,7 @@ const OurPeoplePage = () => {
                     {/* Year of Establishment */}
                     <div className="card-industrial p-4 sm:p-6 text-center">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <Calendar className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
+                        <Calendar className="w-6 h-6 sm:w-7 sm:h-7 text-accent-foreground" />
                       </div>
                       <h3 className="font-semibold text-sm sm:text-base text-foreground mb-2">Year of Establishment</h3>
                       <p className="text-muted-foreground text-xs sm:text-sm font-semibold text-lg sm:text-xl">1985</p>
@@ -151,7 +151,7 @@ const OurPeoplePage = () => {
                     {/* No. of Employees */}
                     <div className="card-industrial p-4 sm:p-6 text-center">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <Users className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
+                        <Users className="w-6 h-6 sm:w-7 sm:h-7 text-accent-foreground" />
                       </div>
                       <h3 className="font-semibold text-sm sm:text-base text-foreground mb-2">No. of Employees</h3>
                       <p className="text-muted-foreground text-xs sm:text-sm font-semibold text-lg sm:text-xl">15</p>
@@ -160,7 +160,7 @@ const OurPeoplePage = () => {
                     {/* GST No. */}
                     <div className="card-industrial p-4 sm:p-6 text-center">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <FileText className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
+                        <FileText className="w-6 h-6 sm:w-7 sm:h-7 text-accent-foreground" />
                       </div>
                       <h3 className="font-semibold text-sm sm:text-base text-foreground mb-2">GST No.</h3>
                       <p className="text-muted-foreground text-xs sm:text-sm font-semibold">GST: 19ADMPR1740H1ZA</p>

@@ -12,7 +12,7 @@ const MapSection = () => {
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-1.5 sm:mb-2">
-          <span className="text-accent font-semibold text-xs uppercase tracking-wider">Location</span>
+          <span className="text-accent-foreground font-semibold text-xs uppercase tracking-wider">Location</span>
           <h2 className="section-title text-[#0d3d26] mt-1 text-lg sm:text-xl md:text-2xl">
             Find <span className="text-[#0d3d26]">Us</span>
           </h2>
@@ -25,7 +25,7 @@ const MapSection = () => {
             {/* Office Location */}
             <div className="flex items-start gap-2 mb-3">
               <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent-foreground" />
               </div>
               <div className="flex-1">
                 <h3 className="font-display text-base sm:text-lg font-bold text-foreground mb-1">Head Office</h3>

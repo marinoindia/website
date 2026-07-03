@@ -35,7 +35,7 @@ const ClientsPage = () => {
           <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-primary/5">
             <div className="container mx-auto px-4">
               <div className="text-center max-w-3xl mx-auto mb-12">
-                <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Clients</span>
+                <span className="text-accent-foreground font-semibold text-sm uppercase tracking-wider">Our Clients</span>
                 <h1 className="section-title text-[#0d3d26] mt-2">
                   Trusted by
                   <span className="text-[#0d3d26]"> Leading Organizations</span>

@@ -68,7 +68,7 @@ const ProductsCarousel = () => {
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-2 sm:mb-3">
-          <span className="text-accent font-semibold text-xs sm:text-sm uppercase tracking-wider">Our Products</span>
+          <span className="text-accent-foreground font-semibold text-xs sm:text-sm uppercase tracking-wider">Our Products</span>
           <h2 className="section-title text-[#0d3d26] mt-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             Our <span className="text-[#0d3d26]">Product Range</span>
           </h2>
