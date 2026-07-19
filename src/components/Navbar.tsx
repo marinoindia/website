@@ -20,6 +20,7 @@ import {
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import logoImage from '@/assets/logo/logo_updated.png';
+import WhatsAppQR from '@/components/WhatsAppQR';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -598,6 +599,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <WhatsAppQR />
     </>
   );
 };
