@@ -60,6 +60,13 @@
 
 ## City pages (pan-India supply)
 
+Bihar and Jharkhand delivery enquiries (supplied from Kolkata; delivery confirmed by quotation):
+- Patna (workshop, construction and trade enquiries): https://marinoindia.co.in/suppliers/patna/
+- Muzaffarpur (Bela industrial area and North Bihar supply enquiries): https://marinoindia.co.in/suppliers/muzaffarpur/
+- Begusarai and Barauni (plant maintenance and contractor enquiries): https://marinoindia.co.in/suppliers/begusarai/
+- Ranchi (engineering and equipment maintenance enquiries): https://marinoindia.co.in/suppliers/ranchi/
+- Dhanbad (equipment specifications and coalfield-area delivery enquiries): https://marinoindia.co.in/suppliers/dhanbad/
+
 Ports and marine clusters:
 - Kolkata (home city — Kidderpore works beside Kolkata Port, GRSE, Howrah belt): https://marinoindia.co.in/suppliers/kolkata/
 - Mumbai (JNPT, Mumbai Port): https://marinoindia.co.in/suppliers/mumbai/

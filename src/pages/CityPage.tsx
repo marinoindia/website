@@ -26,7 +26,7 @@ const CityPage = () => {
 
   const topProductNames = city.topProducts.slice(0, 3).map((p) => p.name).join(', ');
 
-  const faqs = [
+  const faqs = city.faqs ?? [
     {
       q: `Do you deliver wire rope and slings to ${city.name}?`,
       a: `Yes. Marino Corporation ships wire rope, slings, chains, shackles and lifting hardware to ${city.name} and the wider ${city.region} region from our Kolkata works. Standard lead time is ${city.leadTime}.`,
@@ -36,8 +36,8 @@ const CityPage = () => {
       a: `Standard delivery to ${city.name} is ${city.leadTime} from order confirmation for stocked items. Custom-fabricated slings and certified assemblies may take an additional 2–3 days. Same-day quotes via WhatsApp on +91 98311 44669.`,
     },
     {
-      q: `Which products are most in demand around ${city.name}?`,
-      a: `Around ${city.name}, customers most frequently order ${topProductNames}. The full range — including marine-grade rigging, G80/G100 chain slings and certified lifting hardware — is available on request.`,
+      q: `Which products can I enquire about for ${city.name}?`,
+      a: `You can enquire about ${topProductNames}. Contact us with the required specifications and quantities to confirm availability and delivery to ${city.name}.`,
     },
     {
       q: `Are your lifting products certified and traceable?`,
@@ -181,8 +181,8 @@ const CityPage = () => {
                     <CheckCircle2 className="w-5 h-5 text-emerald-700" />
                   </div>
                   <div>
-                    <div className="text-xs uppercase tracking-wide text-slate-500 font-medium">Certifications</div>
-                    <div className="text-slate-900 font-semibold">MSME • IS 2266 • load-tested</div>
+                    <div className="text-xs uppercase tracking-wide text-slate-500 font-medium">Product documentation</div>
+                    <div className="text-slate-900 font-semibold">Confirm certificates with your quote</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -203,7 +203,7 @@ const CityPage = () => {
             <div className="container-modern grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2">
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
-                  Industrial demand in {city.name}
+                  Supply enquiries for {city.name}
                 </h2>
                 <p className="text-slate-700 leading-relaxed mb-6">{city.localContext}</p>
                 <ul className="space-y-2.5">
@@ -235,11 +235,11 @@ const CityPage = () => {
           <section className="py-12 sm:py-14 bg-slate-50 border-y border-slate-200">
             <div className="container-modern">
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                Products in demand around {city.name}
+                Products for supply to {city.name}
               </h2>
               <p className="text-slate-600 mb-8 max-w-2xl">
-                A snapshot of what we ship most frequently into {city.region}. Full range available on
-                request — call or WhatsApp for specs and quotes.
+                Explore product options for your enquiry. Call or WhatsApp to confirm specifications,
+                availability and delivery to {city.region}.
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {city.topProducts.map((p) =>
@@ -253,13 +253,17 @@ const CityPage = () => {
                       <p className="text-sm text-slate-600">{p.note}</p>
                     </Link>
                   ) : (
-                    <div
+                    <a
                       key={p.name}
-                      className="bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-sm transition-all"
+                      href={`https://wa.me/919831144669?text=${encodeURIComponent(`Hello, I need ${p.name} supplied to ${city.name}. Please confirm specifications, availability and delivery.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-white border border-slate-200 rounded-xl p-5 hover:border-emerald-300 hover:shadow-sm transition-all"
                     >
                       <h3 className="font-semibold text-slate-900 mb-1">{p.name}</h3>
                       <p className="text-sm text-slate-600">{p.note}</p>
-                    </div>
+                      <span className="mt-3 inline-block text-sm font-medium text-emerald-700">Enquire about this item</span>
+                    </a>
                   ),
                 )}
               </div>
@@ -306,7 +310,7 @@ const CityPage = () => {
                 </h2>
                 <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
                   Share your specs by WhatsApp or phone — we'll confirm price, lead time and shipping
-                  arrangements to {city.name} the same day.
+                  arrangements to {city.name}.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
                   <a

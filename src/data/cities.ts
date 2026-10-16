@@ -9,6 +9,7 @@ export type CityInfo = {
   industryHighlights: string[];
   topProducts: { name: string; note: string; to?: string }[];
   landmarks: string[];
+  faqs?: { q: string; a: string }[];
   // Optional SEO overrides — used by the home-city (Kolkata) page, where
   // "manufacturer" is the accurate and stronger claim than "supplier".
   titleOverride?: string;
@@ -52,6 +53,159 @@ export const cities: CityInfo[] = [
     descriptionOverride:
       'Wire rope slings made at our Kidderpore works since 1985. Single to 4-leg, test certified, from ₹450. Same-day Kolkata & Howrah delivery. Call 98311 44669.',
     h1Override: 'Wire Rope Sling Manufacturer in Kolkata',
+  },
+  // Regional context: patna.nic.in/economy/, begusarai.nic.in/economy/,
+  // biada1.bihar.gov.in/KeyOfficer.aspx, ranchi.nic.in/economy/, dhanbad.nic.in/.
+  // These are delivery areas, not branch locations or claims of named customers.
+  {
+    slug: 'patna',
+    name: 'Patna',
+    region: 'Bihar',
+    leadTime: 'Confirmed with your quotation',
+    titleOverride: 'Wire Rope, Slings & Lashing Belts for Patna | Marino',
+    descriptionOverride: 'Order wire rope, slings, stainless steel rope and lashing belts for Patna from Marino in Kolkata. Share sizes, quantities and delivery PIN for a quote.',
+    h1Override: 'Wire Rope & Lifting Equipment Supply to Patna',
+    industryContext: 'Trade, engineering workshops and construction purchasing in Bihar',
+    intro: 'Marino Corporation supplies wire rope, lifting slings, stainless steel wire rope and lashing belts from Kolkata to buyers in Patna. Send your item list and delivery PIN code to confirm availability, freight and dispatch timing.',
+    localContext: 'A Patna purchasing address and a project delivery address may be different. Include both when requesting a quote so material can be priced for the intended destination. For a workshop or construction order, list each rope or sling separately with its size, length and end fittings; for transport restraints, specify the belt assembly and fittings required.',
+    industryHighlights: [
+      'Workshop purchases: identify the equipment and replacement part specification',
+      'Construction orders: provide the required assembly rating and end fittings',
+      'Transport restraints: state belt width, length, label specification and quantity',
+      'Delivery planning: include the consignee, PIN code and unloading arrangements',
+    ],
+    topProducts: [
+      { name: 'Wire Rope Slings', note: 'Specify length, number of legs and end fittings', to: '/product/wire-rope-slings/' },
+      { name: 'Stainless Steel Wire Rope', note: 'Ask for available grades, diameters and constructions' },
+      { name: 'Lashing / Ratchet Belts', note: 'Specify the complete restraint assembly required' },
+      { name: 'Shackles', note: 'Match pin type, dimensions and rating to your requirement', to: '/product/shackles/' },
+    ],
+    landmarks: ['Patna city', 'Danapur', 'Bihta', 'Fatuha'],
+    faqs: [
+      { q: 'Do you have a shop or branch in Patna?', a: 'Our business is based in Kidderpore, Kolkata. This page covers supply to Patna; it is not a local branch listing. Contact us to confirm delivery to your PIN code.' },
+      { q: 'Can the billing address be in Patna and delivery be at a project site?', a: 'Include the billing details and the full site address in your enquiry. We will confirm the applicable freight and delivery arrangements before you place the order.' },
+      { q: 'What should I send for a stainless steel rope or belt quotation?', a: 'For rope, include the required grade, construction, diameter and length. For belts, include width, length, end fittings and the rating shown on your required specification. A product label or drawing helps identify the correct item.' },
+    ],
+  },
+  {
+    slug: 'muzaffarpur',
+    name: 'Muzaffarpur',
+    region: 'Bihar',
+    leadTime: 'Confirmed with your quotation',
+    titleOverride: 'Wire Rope & Lashing Belt Supply to Muzaffarpur | Marino',
+    descriptionOverride: 'Wire rope, slings, stainless steel rope and ratchet belts supplied from Kolkata to Muzaffarpur. Enquire with product specifications and your delivery PIN.',
+    h1Override: 'Wire Rope & Lashing Belt Supply to Muzaffarpur',
+    industryContext: 'Bela industrial area, workshop maintenance and North Bihar trade',
+    intro: 'Buyers in Muzaffarpur can enquire with Marino in Kolkata for wire rope, lifting accessories and lashing belts. We quote against the required specification and confirm transport arrangements for the delivery address.',
+    localContext: 'Muzaffarpur includes the Bela industrial area as well as a wider trading market. For maintenance purchases, a machine reference or a photograph of the existing item label helps distinguish a replacement from a general-purpose rope or fitting. If goods will be forwarded elsewhere in North Bihar, tell us whether the quotation is for delivery to your Muzaffarpur premises or to the final destination.',
+    industryHighlights: [
+      'Bela workshop enquiries: include the machine model or existing component details',
+      'Repeat stock orders: list sizes and quantities individually',
+      'Transport belts: identify fittings and the required label specification',
+      'Onward supply: confirm the final destination before freight is quoted',
+    ],
+    topProducts: [
+      { name: 'Lashing / Ratchet Belts', note: 'For cargo restraint enquiries; specify width and fittings' },
+      { name: 'Stainless Steel Wire Rope', note: 'Provide grade, construction, diameter and length' },
+      { name: 'Wire Rope Slings', note: 'Quote against the required assembly specification', to: '/product/wire-rope-slings/' },
+      { name: 'Wire Rope Grips & Clips', note: 'Identify the rope size and required clip type', to: '/product/wire-rope-accessories/' },
+    ],
+    landmarks: ['Muzaffarpur city', 'Bela industrial area'],
+    faqs: [
+      { q: 'Where are Muzaffarpur orders supplied from?', a: 'Marino is based in Kolkata. Share your Muzaffarpur delivery address and PIN code so we can confirm the available transport arrangement and freight.' },
+      { q: 'Can I request several sizes for my workshop or trading stock?', a: 'Yes. Send a list with the specification and quantity for each line. Availability, packing and dispatch timing will be confirmed in the quotation.' },
+      { q: 'What details are needed for a replacement rope or fitting?', a: 'Send the equipment reference, dimensions and any readable product markings. A similar-looking item may have a different specification, so the replacement must be checked against the equipment requirements.' },
+    ],
+  },
+  {
+    slug: 'begusarai',
+    name: 'Begusarai & Barauni',
+    region: 'Bihar',
+    leadTime: 'Confirmed with your quotation',
+    titleOverride: 'Wire Rope & Rigging Supply to Begusarai, Barauni | Marino',
+    descriptionOverride: 'Enquire for wire rope, slings, shackles and lashing belts for Begusarai and Barauni. Kolkata-based supply with specifications and delivery confirmed by quote.',
+    h1Override: 'Wire Rope & Rigging Supply to Begusarai and Barauni',
+    industryContext: 'Barauni industrial belt, plant maintenance and contractor procurement',
+    intro: 'Marino supplies wire rope, slings and rigging hardware from Kolkata for enquiries in Begusarai and Barauni. Send the purchase specification, required documentation and delivery address for an itemised quotation.',
+    localContext: 'The Begusarai–Barauni area includes refining, power and dairy industries. Plant and contractor enquiries should identify the intended equipment, required material or assembly rating, and any inspection documents requested by the purchaser. Naming these industries describes the area; it does not imply that Marino is an approved vendor to a particular plant.',
+    industryHighlights: [
+      'Maintenance enquiries: include the purchase specification or drawing reference',
+      'Planned shutdown work: state the required-on-site date before ordering',
+      'Documentation: specify the test report or traceability requirements per item',
+      'Site delivery: include consignee details and any receiving restrictions',
+    ],
+    topProducts: [
+      { name: 'Wire Rope Slings', note: 'Specify the rated assembly and end fittings', to: '/product/wire-rope-slings/' },
+      { name: 'Chain Slings', note: 'Provide grade, leg count, length and fittings', to: '/product/chain-slings/' },
+      { name: 'Shackles', note: 'Quote against the required dimensions and rating', to: '/product/shackles/' },
+      { name: 'Lashing / Ratchet Belts', note: 'For load restraint; provide the required belt specification' },
+    ],
+    landmarks: ['Begusarai', 'Barauni industrial belt'],
+    faqs: [
+      { q: 'Does this page cover both Begusarai and Barauni?', a: 'Yes. They share this supply page. Include the exact destination and PIN code; freight and dispatch timing are confirmed for your order from Kolkata.' },
+      { q: 'Can you quote for a maintenance or shutdown requirement?', a: 'Send the complete bill of materials, quantities, documentation requirements and required-on-site date. Ask us to confirm availability before relying on a delivery date.' },
+      { q: 'Are certificates included for every item?', a: 'Documentation depends on the product and supply specification. State the required certificates or inspection reports in the enquiry so their availability can be confirmed in the quotation.' },
+    ],
+  },
+  {
+    slug: 'ranchi',
+    name: 'Ranchi',
+    region: 'Jharkhand',
+    leadTime: 'Confirmed with your quotation',
+    titleOverride: 'Wire Rope, Slings & Lifting Hardware for Ranchi | Marino',
+    descriptionOverride: 'Get a quote for wire rope, chain slings, stainless steel rope and lifting hardware delivered from Kolkata to Ranchi. Send specifications and delivery details.',
+    h1Override: 'Wire Rope & Lifting Hardware Supply to Ranchi',
+    industryContext: 'Engineering, fabrication and equipment maintenance in Jharkhand',
+    intro: 'Marino Corporation supplies wire rope, slings and lifting hardware from Kolkata to Ranchi. Enquire with the equipment or assembly specification, quantity and delivery PIN code for confirmed pricing and dispatch arrangements.',
+    localContext: 'Ranchi is a centre for engineering and industrial procurement in Jharkhand. Workshop replacement enquiries and new fabrication requirements need different information: for an existing machine, provide its rope specification and equipment reference; for an assembly, include the drawing, end connections and required rating. If a Ranchi office is purchasing for another location, identify the receiving site separately.',
+    industryHighlights: [
+      'Equipment maintenance: provide the original rope or component specification',
+      'Fabricated assemblies: include length, end connections and drawing references',
+      'Stainless steel rope: specify the required grade and operating environment',
+      'Project procurement: distinguish the purchasing office from the delivery site',
+    ],
+    topProducts: [
+      { name: 'Wire Rope Slings', note: 'Supply the assembly length, fittings and required rating', to: '/product/wire-rope-slings/' },
+      { name: 'Chain Slings', note: 'Specify grade and configuration for your enquiry', to: '/product/chain-slings/' },
+      { name: 'Stainless Steel Wire Rope', note: 'Ask about available grades and constructions' },
+      { name: 'Lifting Hooks', note: 'Identify the connection type and required rating', to: '/product/hooks/' },
+    ],
+    landmarks: ['Ranchi city', 'Hatia', 'Tupudana'],
+    faqs: [
+      { q: 'Is Marino based in Ranchi?', a: 'Marino is based in Kidderpore, Kolkata. We handle supply enquiries for Ranchi and confirm delivery arrangements against the destination PIN code.' },
+      { q: 'Can you identify a replacement from a photograph?', a: 'A photograph of markings or a drawing is a useful starting point. Include the machine model, dimensions and original specification so the required rope or fitting can be checked before a quotation is finalised.' },
+      { q: 'Can an order placed from Ranchi go to another Jharkhand site?', a: 'State the full consignee address and receiving requirements in your enquiry. We will quote for the specified destination, subject to product availability and transport confirmation.' },
+    ],
+  },
+  {
+    slug: 'dhanbad',
+    name: 'Dhanbad',
+    region: 'Jharkhand',
+    leadTime: 'Confirmed with your quotation',
+    titleOverride: 'Wire Rope & Lifting Equipment Supply to Dhanbad | Marino',
+    descriptionOverride: 'Wire rope, slings, shackles, pulley blocks and lashing belts for Dhanbad enquiries. Supplied from Kolkata; confirm equipment specifications and delivery by quote.',
+    h1Override: 'Wire Rope & Lifting Equipment Supply to Dhanbad',
+    industryContext: 'Coalfield equipment, workshop maintenance and material handling',
+    intro: 'Marino supplies wire rope, lifting assemblies and related hardware from Kolkata for buyers in Dhanbad. Share the equipment specification and intended use so the correct product can be quoted with delivery details.',
+    localContext: 'Dhanbad and the Jharia coalfield have a substantial mining and industrial base. An equipment replacement rope, a general lifting sling and a cargo restraint have different specifications and should be listed separately. For mine or hoist equipment, include the manufacturer requirements and required approvals; a general-purpose product listing is not confirmation of suitability for that equipment.',
+    industryHighlights: [
+      'Equipment ropes: include construction, diameter, length and manufacturer requirements',
+      'Workshop lifting: state the complete sling assembly and fitting specification',
+      'Pulley enquiries: identify the rope size, mounting and existing equipment reference',
+      'Site orders: supply the receiving location, PIN code and required documents',
+    ],
+    topProducts: [
+      { name: 'Wire Rope Slings', note: 'Quote against the specified lifting assembly', to: '/product/wire-rope-slings/' },
+      { name: 'Pulleys & Blocks', note: 'Provide equipment reference and rope dimensions', to: '/product/pulleys-blocks/' },
+      { name: 'Shackles', note: 'Identify pin arrangement, dimensions and required rating', to: '/product/shackles/' },
+      { name: 'Lashing / Ratchet Belts', note: 'For transport restraint enquiries, separate from lifting gear' },
+    ],
+    landmarks: ['Dhanbad', 'Jharia', 'Sindri'],
+    faqs: [
+      { q: 'Do you supply to Dhanbad and nearby coalfield locations?', a: 'Enquire with the exact delivery address and PIN code. Marino supplies from Kolkata and confirms freight, product availability and dispatch timing in the quotation.' },
+      { q: 'Can any wire rope be used as a mine or hoist replacement?', a: 'No. The equipment manufacturer specification and applicable approval requirements must determine the replacement. Send those requirements with your enquiry; the general products on this website are not a blanket approval for mining or hoisting equipment.' },
+      { q: 'What information helps with a pulley or block enquiry?', a: 'Provide the equipment reference, rope diameter, sheave dimensions, mounting arrangement and required rating. Include a drawing or readable markings where available.' },
+    ],
   },
   {
     slug: 'mumbai',

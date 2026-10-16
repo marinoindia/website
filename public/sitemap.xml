@@ -172,194 +172,224 @@
 
   <!-- City / Supplier Landing Pages -->
   <url>
+    <loc>https://marinoindia.co.in/suppliers/dhanbad/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/suppliers/ranchi/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/suppliers/begusarai/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/suppliers/muzaffarpur/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marinoindia.co.in/suppliers/patna/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://marinoindia.co.in/suppliers/kolkata/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/mumbai/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/delhi/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/chennai/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/bangalore/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/hyderabad/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/pune/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/ahmedabad/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/visakhapatnam/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/kochi/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/haldia/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/durgapur/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/paradip/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/bhubaneswar/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/rourkela/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/jamshedpur/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/bokaro/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/guwahati/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/raipur/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/bhilai/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/nagpur/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/indore/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/jaipur/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/lucknow/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/kanpur/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/surat/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/vadodara/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/coimbatore/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/mangalore/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/mormugao/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/tuticorin/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marinoindia.co.in/suppliers/thiruvananthapuram/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
