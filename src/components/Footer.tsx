@@ -101,6 +101,7 @@ const Footer = () => {
               {[
                 { label: 'Wire Rope Slings', to: '/product/wire-rope-slings/' },
                 { label: 'Chain Slings', to: '/product/chain-slings/' },
+                { label: 'Polyester Slings', to: '/product/polyester-slings/' },
                 { label: 'Industrial Chains', to: '/product/industrial-chains/' },
                 { label: 'Hooks', to: '/product/hooks/' },
                 { label: 'Shackles', to: '/product/shackles/' },

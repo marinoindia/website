@@ -29,7 +29,7 @@ export const catalogItems: CatalogItem[] = [
   { name: 'Safety Plitts', keywords: ['safety plitts', 'safety net', 'safety split'] },
   { name: "D' Shackles (Nut & Bolt type)", keywords: ['d shackle', 'dee shackle', 'nut and bolt shackle', 'bolt type shackle'], productPath: '/product/shackles/' },
   { name: 'Rachet Belt', keywords: ['ratchet belt', 'rachet belt', 'ratchet strap', 'lashing belt', 'tie down'] },
-  { name: 'Lifting Belt / Webbing Slings', keywords: ['lifting belt', 'webbing sling', 'web sling', 'flat sling', 'polyester sling'] },
+  { name: 'Lifting Belt / Webbing Slings', keywords: ['lifting belt', 'webbing sling', 'web sling', 'flat sling', 'polyester sling', 'round sling'], productPath: '/product/polyester-slings/' },
   { name: 'Pulley Block (for Wire Rope)', keywords: ['pulley block', 'wire rope pulley', 'snatch block', 'sheave block'], productPath: '/product/pulleys-blocks/' },
   { name: 'Chain Pulley Blocks', keywords: ['chain pulley block', 'chain block', 'chain hoist', 'manual hoist'], productPath: '/product/pulleys-blocks/' },
   { name: 'Turn Buckles', keywords: ['turnbuckle', 'turn buckle', 'rigging screw', 'eye jaw turnbuckle'], productPath: '/product/turnbuckles/' },

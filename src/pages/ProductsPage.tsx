@@ -25,6 +25,13 @@ import { Button } from '@/components/ui/button';
 // Product categories for sidebar
 const productCategories = [
   {
+    label: 'Polyester Slings',
+    path: '/product/polyester-slings/',
+    icon: Layers,
+    description: 'Webbing Slings & Lifting Belts',
+    color: 'bg-teal-50 text-teal-700 border-teal-200',
+  },
+  {
     label: 'Slings',
     path: '/product/wire-rope-slings/',
     icon: Cable,

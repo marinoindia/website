@@ -30,7 +30,7 @@ for (const url of urls) {
   assert(!/<h1[^>]*>\s*(?:404|Product Not Found)/i.test(html), `${url}: error page rendered`);
   const schemas = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
   schemas.forEach(schema => inspect(schema, url));
-  if (['/product/turnbuckles/', '/product/pulleys-blocks/'].includes(pathname)) {
+  if (['/product/turnbuckles/', '/product/pulleys-blocks/', '/product/polyester-slings/'].includes(pathname)) {
     assert(schemas.some(schema => schema['@type'] === 'CollectionPage'), `${url}: quote-only category missing`);
     assert(!schemas.some(schema => schema['@type'] === 'Product'), `${url}: quote-only Product remains`);
   }

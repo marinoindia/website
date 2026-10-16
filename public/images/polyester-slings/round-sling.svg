@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="260" viewBox="0 0 640 260" fill="none">
+  <title>Endless round sling construction illustration</title>
+  <defs><linearGradient id="sleeve" x1="320" y1="66" x2="320" y2="194" gradientUnits="userSpaceOnUse"><stop stop-color="#475569"/><stop offset=".5" stop-color="#94a3b8"/><stop offset="1" stop-color="#475569"/></linearGradient></defs>
+  <rect x="76" y="66" width="488" height="128" rx="64" stroke="#334155" stroke-width="30"/>
+  <rect x="76" y="66" width="488" height="128" rx="64" stroke="url(#sleeve)" stroke-width="26"/>
+  <rect x="76" y="66" width="488" height="128" rx="64" stroke="#cbd5e1" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <path d="M235 180v44h34v-44" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+  <path d="M243 203h18m-18 6h18m-18 6h12" stroke="#64748b" stroke-width="2"/>
+</svg>

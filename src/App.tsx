@@ -14,6 +14,7 @@ import ContactPage from "./pages/ContactPage";
 import ClientsPage from "./pages/ClientsPage";
 import OurPeoplePage from "./pages/OurPeoplePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import PolyesterSlingsPage from "./pages/PolyesterSlingsPage";
 import ProductVariantPage from "./pages/ProductVariantPage";
 import CityPage from "./pages/CityPage";
 import PremadeSlingsPage from "./pages/PremadeSlingsPage";
@@ -96,6 +97,7 @@ const App = () => (
             <Route path="/contact-us" element={<Navigate to="/contact/" replace />} />
             <Route path="/clients" element={<ClientsPage />} />
             <Route path="/our-people" element={<OurPeoplePage />} />
+            <Route path="/product/polyester-slings" element={<PolyesterSlingsPage />} />
             <Route path="/product/:productId" element={<ProductDetailPage />} />
             <Route path="/variant/:variantId" element={<ProductVariantPage />} />
             <Route path="/products/:slug" element={<ProductsSlugRedirect />} />
