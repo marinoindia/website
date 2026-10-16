@@ -32,6 +32,13 @@ const productCategories = [
     color: 'bg-teal-50 text-teal-700 border-teal-200',
   },
   {
+    label: 'Stainless Wire Rope',
+    path: '/product/stainless-steel-wire-rope/',
+    icon: Cable,
+    description: 'SS 304 & SS 316 Wire Rope',
+    color: 'bg-slate-100 text-slate-700 border-slate-200',
+  },
+  {
     label: 'Slings',
     path: '/product/wire-rope-slings/',
     icon: Cable,

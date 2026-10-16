@@ -15,6 +15,7 @@ import ClientsPage from "./pages/ClientsPage";
 import OurPeoplePage from "./pages/OurPeoplePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import PolyesterSlingsPage from "./pages/PolyesterSlingsPage";
+import StainlessSteelWireRopePage from "./pages/StainlessSteelWireRopePage";
 import ProductVariantPage from "./pages/ProductVariantPage";
 import CityPage from "./pages/CityPage";
 import PremadeSlingsPage from "./pages/PremadeSlingsPage";
@@ -98,6 +99,7 @@ const App = () => (
             <Route path="/clients" element={<ClientsPage />} />
             <Route path="/our-people" element={<OurPeoplePage />} />
             <Route path="/product/polyester-slings" element={<PolyesterSlingsPage />} />
+            <Route path="/product/stainless-steel-wire-rope" element={<StainlessSteelWireRopePage />} />
             <Route path="/product/:productId" element={<ProductDetailPage />} />
             <Route path="/variant/:variantId" element={<ProductVariantPage />} />
             <Route path="/products/:slug" element={<ProductsSlugRedirect />} />

@@ -12,6 +12,7 @@ export interface CatalogItem {
 
 export const catalogItems: CatalogItem[] = [
   { name: 'Steel Wire Rope', keywords: ['wire rope', 'steel rope', 'gwrc', 'usha martin', '6x36', '6x19', 'iwrc'] },
+  { name: 'Stainless Steel Wire Rope', keywords: ['stainless steel wire rope', 'ss wire rope', 'ss rope', 'ss 304', 'ss 316', 'marine wire rope', 'balustrade cable', '1x19', '7x7', '7x19'], productPath: '/product/stainless-steel-wire-rope/' },
   { name: 'Steel Wire Rope Slings (H/S)', keywords: ['wire rope sling', 'hand spliced', 'cmafs', 'lifting sling', 'rope sling'], productPath: '/product/wire-rope-slings/' },
   { name: 'Chain (Short Link / Long Link / Stud Links)', keywords: ['short link chain', 'long link chain', 'stud link chain', 'lifting chain', 'industrial chain'], productPath: '/product/industrial-chains/' },
   { name: 'Chain Slings (1 to 6 Legged)', keywords: ['chain sling', 'single leg', 'double leg', 'four leg', 'multi leg', 'g80 chain sling'], productPath: '/product/industrial-chains/' },
