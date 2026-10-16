@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle, Phone, Download, Mail, MapPin, ChevronDown, ChevronUp, Info } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle, Phone, Download, Mail, MapPin, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { slingLoadCharts, slingLoadColumns } from '@/data/slingLoadChart';
 import { slingPriceList } from '@/data/slingPriceList';
+import { din1480BodySizes } from '@/data/turnbuckleSizes';
 
 // Hook product types with images and dimension tables
 const hookProductData = [
@@ -380,8 +382,8 @@ const productDatabase: Record<string, {
 }> = {
   'wire-rope-slings': {
     name: 'Wire Rope Slings',
-    title: 'Wire Rope Slings – Price List & Capacity Chart | Marino',
-    description: 'Wire rope slings made in Kolkata from Usha Martin rope — single to 4-leg, hand-spliced, IS 2266 test certified, from ₹450. Pan-India delivery in 3–7 days.',
+    title: 'Wire Rope Sling Capacity Chart in mm & Price List | Marino',
+    description: 'Wire rope sling capacity chart in mm: WLL for 8–60 mm single, 2- and 4-leg slings (EN 13414-1), plus price list from ₹450. Usha Martin rope, Kolkata.',
     longDescription: 'Wire rope slings are the most versatile and widely used lifting slings in industrial applications. Our wire rope slings are manufactured using genuine Usha Martin specialized wire rope, ensuring superior strength, flexibility, and durability. Unlike pressed slings, our mechanical hand-made splicing provides better load distribution and longer service life. Available in various configurations including single leg, 2-leg, 3-leg, and 4-leg assemblies.',
     features: [
       'Made with genuine Usha Martin specialized wire rope',
@@ -801,8 +803,8 @@ const productDatabase: Record<string, {
 
   'turnbuckles': {
     name: 'Turnbuckles',
-    title: 'Turnbuckles – Eye, Jaw & Hook, DIN 1480 | Marino India',
-    description: 'Hot-dip galvanised turnbuckles — eye & eye, jaw & jaw and hook types. DIN 1480 commercial and ASTM F1145 tested grades, certified. Pan-India delivery in 3–7 days.',
+    title: 'Turnbuckles – DIN 1480 Size Chart, Eye, Jaw & Hook | Marino',
+    description: 'Turnbuckle size chart (DIN 1480, M6–M56) and galvanised eye & eye, jaw & jaw and hook turnbuckles in commercial and ASTM F1145 tested grades. Kolkata.',
     longDescription: 'We supply a comprehensive range of galvanised turnbuckles for tensioning, rigging, and structural applications. Our turnbuckles are manufactured from drop-forged high tensile steel (SAE 1035 or 1045) with hot dipped galvanised finish for superior corrosion resistance. Available in both commercial grade (DIN1480) and load-tested grade (ASTM F1145-92) with full certification. We stock over 15 different turnbuckle configurations including standard strainers, tested turnbuckles, and premium fork-type assemblies for wire rope and chain applications.',
     features: [
       'Drop forged high tensile steel SAE 1035 or 1045',
@@ -962,110 +964,10 @@ const productDatabase: Record<string, {
 };
 
 // Wire Rope Sling Capacity Data (Steel Core 6x19, 6x36 & 8x36)
-const slingCapacityData = {
-  oneLeg: [
-    { diameter: 8, wll: 0.75 },
-    { diameter: 9, wll: 0.95 },
-    { diameter: 10, wll: 1.15 },
-    { diameter: 11, wll: 1.40 },
-    { diameter: 12, wll: 1.70 },
-    { diameter: 13, wll: 2.00 },
-    { diameter: 14, wll: 2.25 },
-    { diameter: 16, wll: 3.00 },
-    { diameter: 18, wll: 3.70 },
-    { diameter: 20, wll: 4.60 },
-    { diameter: 22, wll: 5.65 },
-    { diameter: 24, wll: 6.70 },
-    { diameter: 26, wll: 7.80 },
-    { diameter: 28, wll: 8.40 },
-    { diameter: 32, wll: 11.8 },
-    { diameter: 36, wll: 15.0 },
-    { diameter: 40, wll: 18.5 },
-    { diameter: 44, wll: 22.5 },
-    { diameter: 48, wll: 26.0 },
-    { diameter: 52, wll: 31.5 },
-    { diameter: 56, wll: 36.0 },
-    { diameter: 60, wll: 42.0 },
-  ],
-  twoLeg: [
-    { diameter: 8, wll_0_45: 1.05, wll_45_60: 0.75 },
-    { diameter: 9, wll_0_45: 1.30, wll_45_60: 0.95 },
-    { diameter: 10, wll_0_45: 1.60, wll_45_60: 1.15 },
-    { diameter: 11, wll_0_45: 2.00, wll_45_60: 1.40 },
-    { diameter: 12, wll_0_45: 2.30, wll_45_60: 1.70 },
-    { diameter: 13, wll_0_45: 2.80, wll_45_60: 2.00 },
-    { diameter: 14, wll_0_45: 3.15, wll_45_60: 2.25 },
-    { diameter: 16, wll_0_45: 4.20, wll_45_60: 3.00 },
-    { diameter: 18, wll_0_45: 5.20, wll_45_60: 3.70 },
-    { diameter: 20, wll_0_45: 6.50, wll_45_60: 4.60 },
-    { diameter: 22, wll_0_45: 7.80, wll_45_60: 5.65 },
-    { diameter: 24, wll_0_45: 9.40, wll_45_60: 6.70 },
-    { diameter: 26, wll_0_45: 11.0, wll_45_60: 7.80 },
-    { diameter: 28, wll_0_45: 12.5, wll_45_60: 9.00 },
-    { diameter: 32, wll_0_45: 16.5, wll_45_60: 11.8 },
-    { diameter: 36, wll_0_45: 21.0, wll_45_60: 15.0 },
-    { diameter: 40, wll_0_45: 26.0, wll_45_60: 18.5 },
-    { diameter: 44, wll_0_45: 31.5, wll_45_60: 22.5 },
-    { diameter: 48, wll_0_45: 37.0, wll_45_60: 26.0 },
-    { diameter: 52, wll_0_45: 44.0, wll_45_60: 31.5 },
-    { diameter: 56, wll_0_45: 50.0, wll_45_60: 36.0 },
-    { diameter: 60, wll_0_45: 58.0, wll_45_60: 42.0 },
-  ],
-  threeFourLeg: [
-    { diameter: 8, wll_0_45: 1.55, wll_45_60: 1.10 },
-    { diameter: 9, wll_0_45: 2.00, wll_45_60: 1.40 },
-    { diameter: 10, wll_0_45: 2.40, wll_45_60: 1.70 },
-    { diameter: 11, wll_0_45: 3.00, wll_45_60: 2.12 },
-    { diameter: 12, wll_0_45: 3.55, wll_45_60: 2.50 },
-    { diameter: 13, wll_0_45: 4.15, wll_45_60: 3.00 },
-    { diameter: 14, wll_0_45: 4.80, wll_45_60: 3.40 },
-    { diameter: 16, wll_0_45: 6.30, wll_45_60: 4.50 },
-    { diameter: 18, wll_0_45: 7.80, wll_45_60: 5.65 },
-    { diameter: 20, wll_0_45: 9.80, wll_45_60: 6.90 },
-    { diameter: 22, wll_0_45: 11.8, wll_45_60: 8.40 },
-    { diameter: 24, wll_0_45: 14.0, wll_45_60: 10.00 },
-    { diameter: 26, wll_0_45: 16.5, wll_45_60: 11.5 },
-    { diameter: 28, wll_0_45: 19.0, wll_45_60: 13.5 },
-    { diameter: 32, wll_0_45: 25.0, wll_45_60: 17.5 },
-    { diameter: 36, wll_0_45: 31.5, wll_45_60: 22.5 },
-    { diameter: 40, wll_0_45: 39.0, wll_45_60: 28.0 },
-    { diameter: 44, wll_0_45: 47.0, wll_45_60: 33.5 },
-    { diameter: 48, wll_0_45: 55.0, wll_45_60: 40.0 },
-    { diameter: 52, wll_0_45: 66.0, wll_45_60: 47.0 },
-    { diameter: 56, wll_0_45: 76.0, wll_45_60: 54.0 },
-    { diameter: 60, wll_0_45: 88.0, wll_45_60: 63.0 },
-  ],
-  endless: [
-    { diameter: 8, wll: 1.20 },
-    { diameter: 9, wll: 1.50 },
-    { diameter: 10, wll: 1.85 },
-    { diameter: 11, wll: 2.25 },
-    { diameter: 12, wll: 2.70 },
-    { diameter: 13, wll: 3.15 },
-    { diameter: 14, wll: 3.70 },
-    { diameter: 16, wll: 4.80 },
-    { diameter: 18, wll: 6.00 },
-    { diameter: 20, wll: 7.35 },
-    { diameter: 22, wll: 9.00 },
-    { diameter: 24, wll: 10.6 },
-    { diameter: 26, wll: 12.5 },
-    { diameter: 28, wll: 14.5 },
-    { diameter: 32, wll: 19.0 },
-    { diameter: 36, wll: 23.5 },
-    { diameter: 40, wll: 30.0 },
-    { diameter: 44, wll: 36.0 },
-    { diameter: 48, wll: 42.0 },
-    { diameter: 52, wll: 50.0 },
-    { diameter: 56, wll: 58.0 },
-    { diameter: 60, wll: 67.0 },
-  ],
-};
-
 const ProductDetailPage = () => {
   const { productId } = useParams<{ productId: string }>();
   const product = productId ? productDatabase[productId] : null;
   const [expandedHook, setExpandedHook] = useState<string | null>(null);
-  const [activeSlingTab, setActiveSlingTab] = useState<'one' | 'two' | 'three' | 'endless'>('one');
 
   if (!product) {
     return (
@@ -1526,171 +1428,87 @@ const ProductDetailPage = () => {
             </section>
           )}
 
-          {/* IS 2266:2024 Loading Capacity Tables - Only for Wire Rope Slings */}
+          {/* Wire rope sling capacity chart: EN 13414-1 working load limits (src/data/slingLoadChart.ts) */}
           {productId === 'wire-rope-slings' && (
-            <section className="py-16 bg-white">
+            <section id="load-chart" className="py-16 bg-white scroll-mt-24">
               <div className="container-modern">
-                <div className="mb-8">
+                <div className="mb-6">
                   <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
-                    Wire Rope Loading Capacity Tables
+                    Wire Rope Sling Capacity Chart (mm)
                   </h2>
-                  <p className="text-slate-600">
-                    Minimum Breaking Force (MBF) and Working Load Limit (WLL) as per <strong>IS 2266:2024</strong> standard. 
-                    WLL calculated with 5:1 safety factor. All values in kilonewtons (kN).
+                  <p className="text-slate-600 max-w-3xl">
+                    Working load limits in <strong>tonnes</strong> for single-leg, 2-leg and 3- and 4-leg wire rope slings and endless slings,
+                    by rope diameter in mm. Values are from <strong>EN 13414-1</strong> for grade 1770 rope with ferrule-secured eyes.
+                    Leg angles are measured from the vertical.
                   </p>
                 </div>
-
-                {/* 6×19 Construction Table */}
-                <div className="mb-12">
-                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">1</span>
-                    6×19 Construction (6×19M 12/6-1)
-                  </h3>
-                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead className="bg-slate-100">
+                <div className="mb-8 max-w-4xl rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+                  <strong>Hand-spliced slings are rated lower.</strong> EN 13414-1 applies a lower termination factor to spliced eyes
+                  (0.8, against 0.9 for ferrule-secured eyes), so a hand-spliced sling has a lower working load limit than the values
+                  below for the same rope. Always use the working load limit marked on the sling&apos;s tag and test certificate.
+                </div>
+                {slingLoadCharts.map((chart) => (
+                  <div key={chart.id} id={chart.id} className="mb-10 scroll-mt-24">
+                    <h3 className="text-xl font-bold text-slate-900">{chart.title}</h3>
+                    <p className="mb-4 text-sm text-slate-600">{chart.ropes} · working load limit in tonnes</p>
+                    <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+                      <table className="w-full min-w-[720px] border-collapse text-sm">
+                        <caption className="sr-only">{chart.title}: working load limit in tonnes by rope diameter and sling configuration</caption>
+                        <thead className="bg-slate-100 text-slate-900">
                           <tr>
-                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b">Diameter (mm)</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1570 Grade</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1770 Grade</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1960 Grade</th>
-                          </tr>
-                          <tr className="bg-slate-50">
-                            <th className="px-4 py-2 text-left text-xs text-slate-500 border-b"></th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
+                            <th scope="col" className="sticky left-0 border-b border-slate-200 bg-slate-100 px-4 py-3 text-left font-semibold">Rope dia. (mm)</th>
+                            {slingLoadColumns.map((column) => (
+                              <th key={`${column.label}-${column.detail}`} scope="col" className="border-b border-l border-slate-200 px-4 py-3 text-right font-semibold">
+                                {column.label}
+                                <span className="block text-xs font-normal text-slate-500">{column.detail} · K<sub>L</sub> {column.factor}</span>
+                              </th>
+                            ))}
                           </tr>
                         </thead>
                         <tbody>
-                          {[
-                            { d: 6, fc1570: 17.4, iwrc1570: 18.8, fc1770: 19.6, iwrc1770: 21, fc1960: 22, iwrc1960: 23 },
-                            { d: 8, fc1570: 31, iwrc1570: 33, fc1770: 35, iwrc1770: 38, fc1960: 39, iwrc1960: 42 },
-                            { d: 10, fc1570: 48, iwrc1570: 52, fc1770: 54, iwrc1770: 59, fc1960: 60, iwrc1960: 65 },
-                            { d: 12, fc1570: 69, iwrc1570: 75, fc1770: 78, iwrc1770: 85, fc1960: 87, iwrc1960: 94 },
-                            { d: 14, fc1570: 95, iwrc1570: 102, fc1770: 107, iwrc1770: 115, fc1960: 118, iwrc1960: 128 },
-                            { d: 16, fc1570: 124, iwrc1570: 133, fc1770: 139, iwrc1770: 150, fc1960: 154, iwrc1960: 167 },
-                            { d: 20, fc1570: 193, iwrc1570: 208, fc1770: 218, iwrc1770: 235, fc1960: 241, iwrc1960: 260 },
-                            { d: 24, fc1570: 278, iwrc1570: 300, fc1770: 313, iwrc1770: 338, fc1960: 347, iwrc1960: 375 },
-                            { d: 32, fc1570: 494, iwrc1570: 534, fc1770: 557, iwrc1770: 602, fc1960: 617, iwrc1960: 666 },
-                          ].map((row, i) => (
-                            <tr key={row.d} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.d} mm</td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1570} <span className="text-xs text-slate-400">({Math.round(row.fc1570/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1570} <span className="text-xs text-slate-400">({Math.round(row.iwrc1570/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1770} <span className="text-xs text-slate-400">({Math.round(row.fc1770/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1770} <span className="text-xs text-slate-400">({Math.round(row.iwrc1770/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1960} <span className="text-xs text-slate-400">({Math.round(row.fc1960/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1960} <span className="text-xs text-slate-400">({Math.round(row.iwrc1960/5)}T)</span></td>
+                          {chart.rows.map(([diameter, ...wll]) => (
+                            <tr key={diameter} className="border-b border-slate-200 last:border-0 even:bg-slate-50/60">
+                              <th scope="row" className="sticky left-0 bg-white px-4 py-2.5 text-left font-semibold text-slate-900">{diameter}</th>
+                              {wll.map((value, i) => (
+                                <td key={i} className="border-l border-slate-200 px-4 py-2.5 text-right tabular-nums text-slate-700">{value}</td>
+                              ))}
                             </tr>
                           ))}
                         </tbody>
                       </table>
                     </div>
-                    <div className="px-4 py-3 bg-slate-50 text-xs text-slate-500">
-                      Values shown: Minimum Breaking Force (MBF) in kN. Values in brackets: Approximate Working Load Limit (WLL) in tonnes at 5:1 safety factor.
-                    </div>
                   </div>
-                </div>
-
-                {/* 6×36 Construction Table */}
-                <div className="mb-12">
-                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">2</span>
-                    6×36 Construction (6×36SW 14-7+7-7-1)
-                  </h3>
-                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead className="bg-slate-100">
-                          <tr>
-                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b">Diameter (mm)</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1570 Grade</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1770 Grade</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1960 Grade</th>
-                          </tr>
-                          <tr className="bg-slate-50">
-                            <th className="px-4 py-2 text-left text-xs text-slate-500 border-b"></th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
-                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {[
-                            { d: 8, fc1570: 33, iwrc1570: 36, fc1770: 37, iwrc1770: 40, fc1960: 41, iwrc1960: 45 },
-                            { d: 10, fc1570: 52, iwrc1570: 56, fc1770: 58, iwrc1770: 63, fc1960: 65, iwrc1960: 70 },
-                            { d: 12, fc1570: 75, iwrc1570: 81, fc1770: 84, iwrc1770: 91, fc1960: 93, iwrc1960: 101 },
-                            { d: 14, fc1570: 102, iwrc1570: 110, fc1770: 115, iwrc1770: 124, fc1960: 127, iwrc1960: 137 },
-                            { d: 16, fc1570: 133, iwrc1570: 143, fc1770: 150, iwrc1770: 162, fc1960: 166, iwrc1960: 179 },
-                            { d: 20, fc1570: 207, iwrc1570: 224, fc1770: 234, iwrc1770: 252, fc1960: 259, iwrc1960: 279 },
-                            { d: 24, fc1570: 298, iwrc1570: 322, fc1770: 336, iwrc1770: 363, fc1960: 372, iwrc1960: 402 },
-                            { d: 32, fc1570: 530, iwrc1570: 573, fc1770: 598, iwrc1770: 646, fc1960: 662, iwrc1960: 715 },
-                            { d: 40, fc1570: 829, iwrc1570: 895, fc1770: 934, iwrc1770: 1009, fc1960: 1035, iwrc1960: 1117 },
-                          ].map((row, i) => (
-                            <tr key={row.d} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.d} mm</td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1570} <span className="text-xs text-slate-400">({Math.round(row.fc1570/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1570} <span className="text-xs text-slate-400">({Math.round(row.iwrc1570/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1770} <span className="text-xs text-slate-400">({Math.round(row.fc1770/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1770} <span className="text-xs text-slate-400">({Math.round(row.iwrc1770/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1960} <span className="text-xs text-slate-400">({Math.round(row.fc1960/5)}T)</span></td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1960} <span className="text-xs text-slate-400">({Math.round(row.iwrc1960/5)}T)</span></td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                    <div className="px-4 py-3 bg-slate-50 text-xs text-slate-500">
-                      6×36 construction offers better flexibility than 6×19 but with slightly less abrasion resistance.
-                    </div>
-                  </div>
-                </div>
-
-                {/* Quick Reference Card */}
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
-                    <h4 className="font-bold text-emerald-900 mb-3">Safety Factor</h4>
-                    <p className="text-emerald-800 text-sm mb-2">
-                      Standard safety factor for wire rope slings is <strong>5:1</strong>
-                    </p>
-                    <p className="text-emerald-700 text-xs">
-                      WLL = Minimum Breaking Force ÷ 5
-                    </p>
-                  </div>
+                ))}
+                <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-                    <h4 className="font-bold text-blue-900 mb-3">Grade Selection</h4>
-                    <ul className="text-blue-800 text-sm space-y-1">
-                      <li>• <strong>1570 MPa</strong>: Standard duty</li>
-                      <li>• <strong>1770 MPa</strong>: Most common (EIPS)</li>
-                      <li>• <strong>1960 MPa</strong>: High strength</li>
+                    <h3 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
+                      <Info className="w-5 h-5" />
+                      How to read the chart
+                    </h3>
+                    <ul className="text-blue-800 text-sm space-y-2">
+                      <li>• Angles are between each leg and the vertical: 0–45° is an included angle of up to 90° between legs, 45–60° is 90–120°.</li>
+                      <li>• K<sub>L</sub> is the leg factor applied to the single-leg rating for each configuration.</li>
+                      <li>• 3- and 4-leg values assume equal leg angles with legs spaced evenly around the load. A 4-leg sling has the same rating as a 3-leg sling, because one leg may carry no load.</li>
+                      <li>• Endless sling values are for a choke hitch.</li>
+                      <li>• Steel core and fibre core ropes of the same diameter have different ratings, so check which rope the sling is made from.</li>
                     </ul>
                   </div>
                   <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
-                    <h4 className="font-bold text-amber-900 mb-3">Core Types</h4>
-                    <ul className="text-amber-800 text-sm space-y-1">
-                      <li>• <strong>FC</strong>: Fiber Core - More flexible</li>
-                      <li>• <strong>IWRC</strong>: Steel Core - 7.5% stronger</li>
+                    <h3 className="font-bold text-amber-900 mb-3">Before you lift</h3>
+                    <ul className="text-amber-800 text-sm space-y-2">
+                      <li>• Never exceed the working load limit marked on the sling, and never use a multi-leg sling at more than 60° to the vertical.</li>
+                      <li>• These values apply to grade 1770 rope of the constructions listed; they are not valid for other rope grades or constructions.</li>
+                      <li>• Reduce the load for high temperatures, unequal leg loading, sharp edges or shock loading, as the manufacturer advises.</li>
+                      <li>• The master link and other fittings must be rated for at least the sling&apos;s working load limit.</li>
+                      <li>• Inspect slings before use and remove damaged slings from service.</li>
                     </ul>
                   </div>
                 </div>
-
-                {/* Sling Angle Warning */}
-                <div className="mt-8 p-6 bg-amber-50 rounded-xl border border-amber-200">
-                  <h4 className="font-bold text-amber-900 mb-2">⚠️ Sling Angle Effect on Capacity</h4>
-                  <p className="text-amber-800 text-sm">
-                    The Working Load Limit decreases as the sling angle from horizontal decreases. 
-                    At a 60° included angle between sling legs, the capacity is reduced by 50%. 
-                    Never use horizontal angles less than 30°. Formula: Effective WLL = WLL × sin(θ÷2)
-                  </p>
-                </div>
+                <p className="mt-6 max-w-4xl text-xs leading-relaxed text-slate-500">
+                  Source: EN 13414-1:2003+A2:2008, Tables 3 and 4 (working coefficient 5), cross-checked against the pewag wire rope
+                  fittings catalogue (2026). The standard does not tabulate 6 mm and 7 mm slings; enquire for the rating of these sizes.{' '}
+                  <Link to="/wire-rope-sling-price-list/" className="font-medium text-emerald-700 hover:underline">See the full wire rope sling price list</Link>.
+                </p>
               </div>
             </section>
           )}
@@ -1763,6 +1581,10 @@ const ProductDetailPage = () => {
                       Get today's rates on WhatsApp
                     </Button>
                   </a>
+                  <Link to="/wire-rope-sling-price-list/" className="ml-4 inline-flex items-center gap-2 font-semibold text-emerald-700 hover:underline">
+                    Full price list by size and length
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
                 <p className="text-xs text-slate-500 mt-4">
                   Rates updated July 2026. GST extra. Volume discounts on 10+ pieces — call{' '}
@@ -1775,224 +1597,152 @@ const ProductDetailPage = () => {
             </section>
           )}
 
-          {/* Wire Rope Sling Working Load Limit Tables - Steel Core 6x19, 6x36 & 8x36 */}
+          {/* Rope breaking force is not a finished sling working load rating. */}
           {productId === 'wire-rope-slings' && (
-            <section className="py-16 bg-slate-50">
+            <section className="py-16 bg-white">
               <div className="container-modern">
                 <div className="mb-8">
                   <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
-                    Wire Rope Sling Working Load Limits
+                    Wire Rope Breaking Force Reference
                   </h2>
                   <p className="text-slate-600">
-                    Working Load Limits (WLL) in tonnes for <strong>Steel Core (6×19, 6×36 & 8×36)</strong> wire rope slings. 
-                    Values shown are for Direct attachment (choke hitch for endless). Meets EN 13414-1 standard.
+                    Reference minimum breaking force (MBF) values for wire rope, in <strong>kilonewtons (kN)</strong>.
+                    These are not working load limits for a finished sling. Confirm the rope specification
+                    and rated assembly capacity on the supplied test certificate.
                   </p>
                 </div>
 
-                {/* Popular Wire Rope Slings Image */}
-                <div className="mb-8">
-                  <img
-                    src="/images/popular_wire_rope_slings.png"
-                    alt="Popular Wire Rope Slings - Working Load Limits Chart"
-                    className="w-full max-w-4xl mx-auto rounded-xl shadow-md border border-slate-200"
-                    loading="lazy"
-                  />
+                {/* 6×19 Construction Table */}
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">1</span>
+                    6×19 Construction (6×19M 12/6-1)
+                  </h3>
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-slate-100">
+                          <tr>
+                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b">Diameter (mm)</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1570 Grade</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1770 Grade</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1960 Grade</th>
+                          </tr>
+                          <tr className="bg-slate-50">
+                            <th className="px-4 py-2 text-left text-xs text-slate-500 border-b"></th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { d: 6, fc1570: 17.4, iwrc1570: 18.8, fc1770: 19.6, iwrc1770: 21, fc1960: 22, iwrc1960: 23 },
+                            { d: 8, fc1570: 31, iwrc1570: 33, fc1770: 35, iwrc1770: 38, fc1960: 39, iwrc1960: 42 },
+                            { d: 10, fc1570: 48, iwrc1570: 52, fc1770: 54, iwrc1770: 59, fc1960: 60, iwrc1960: 65 },
+                            { d: 12, fc1570: 69, iwrc1570: 75, fc1770: 78, iwrc1770: 85, fc1960: 87, iwrc1960: 94 },
+                            { d: 14, fc1570: 95, iwrc1570: 102, fc1770: 107, iwrc1770: 115, fc1960: 118, iwrc1960: 128 },
+                            { d: 16, fc1570: 124, iwrc1570: 133, fc1770: 139, iwrc1770: 150, fc1960: 154, iwrc1960: 167 },
+                            { d: 20, fc1570: 193, iwrc1570: 208, fc1770: 218, iwrc1770: 235, fc1960: 241, iwrc1960: 260 },
+                            { d: 24, fc1570: 278, iwrc1570: 300, fc1770: 313, iwrc1770: 338, fc1960: 347, iwrc1960: 375 },
+                            { d: 32, fc1570: 494, iwrc1570: 534, fc1770: 557, iwrc1770: 602, fc1960: 617, iwrc1960: 666 },
+                          ].map((row, i) => (
+                            <tr key={row.d} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.d} mm</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1570}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1570}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1770}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1770}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1960}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1960}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="px-4 py-3 bg-slate-50 text-xs text-slate-500">
+                      All values are rope minimum breaking force in kN, not tonnes or a sling lifting capacity.
+                    </div>
+                  </div>
                 </div>
 
-                {/* Tab Navigation */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {[
-                    { id: 'one', label: 'One Leg Sling', icon: '1' },
-                    { id: 'two', label: 'Two Leg Sling', icon: '2' },
-                    { id: 'three', label: 'Three & Four Leg', icon: '3/4' },
-                    { id: 'endless', label: 'Endless Sling', icon: '∞' },
-                  ].map((tab) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => setActiveSlingTab(tab.id as typeof activeSlingTab)}
-                      className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all ${
-                        activeSlingTab === tab.id
-                          ? 'bg-emerald-600 text-white shadow-md'
-                          : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-                      }`}
-                    >
-                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs ${
-                        activeSlingTab === tab.id ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-600'
-                      }`}>
-                        {tab.icon}
-                      </span>
-                      {tab.label}
-                    </button>
-                  ))}
+                {/* 6×36 Construction Table */}
+                <div className="mb-12">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span className="w-8 h-8 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm">2</span>
+                    6×36 Construction (6×36SW 14-7+7-7-1)
+                  </h3>
+                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-slate-100">
+                          <tr>
+                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b">Diameter (mm)</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1570 Grade</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1770 Grade</th>
+                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>1960 Grade</th>
+                          </tr>
+                          <tr className="bg-slate-50">
+                            <th className="px-4 py-2 text-left text-xs text-slate-500 border-b"></th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">FC Core</th>
+                            <th className="px-4 py-2 text-center text-xs text-slate-500 border-b">IWRC</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { d: 8, fc1570: 33, iwrc1570: 36, fc1770: 37, iwrc1770: 40, fc1960: 41, iwrc1960: 45 },
+                            { d: 10, fc1570: 52, iwrc1570: 56, fc1770: 58, iwrc1770: 63, fc1960: 65, iwrc1960: 70 },
+                            { d: 12, fc1570: 75, iwrc1570: 81, fc1770: 84, iwrc1770: 91, fc1960: 93, iwrc1960: 101 },
+                            { d: 14, fc1570: 102, iwrc1570: 110, fc1770: 115, iwrc1770: 124, fc1960: 127, iwrc1960: 137 },
+                            { d: 16, fc1570: 133, iwrc1570: 143, fc1770: 150, iwrc1770: 162, fc1960: 166, iwrc1960: 179 },
+                            { d: 20, fc1570: 207, iwrc1570: 224, fc1770: 234, iwrc1770: 252, fc1960: 259, iwrc1960: 279 },
+                            { d: 24, fc1570: 298, iwrc1570: 322, fc1770: 336, iwrc1770: 363, fc1960: 372, iwrc1960: 402 },
+                            { d: 32, fc1570: 530, iwrc1570: 573, fc1770: 598, iwrc1770: 646, fc1960: 662, iwrc1960: 715 },
+                            { d: 40, fc1570: 829, iwrc1570: 895, fc1770: 934, iwrc1770: 1009, fc1960: 1035, iwrc1960: 1117 },
+                          ].map((row, i) => (
+                            <tr key={row.d} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.d} mm</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1570}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1570}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1770}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1770}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.fc1960}</td>
+                              <td className="px-4 py-3 text-center text-slate-600 border-b">{row.iwrc1960}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="px-4 py-3 bg-slate-50 text-xs text-slate-500">
+                      All values are rope minimum breaking force in kN, not tonnes or a sling lifting capacity.
+                    </div>
+                  </div>
                 </div>
 
-                {/* One Leg Sling Table */}
-                {activeSlingTab === 'one' && (
-                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div className="px-6 py-4 bg-slate-100 border-b border-slate-200">
-                      <h3 className="text-lg font-bold text-slate-900">One Leg Sling (Direct)</h3>
-                      <p className="text-sm text-slate-600">Angle to Vertical: 0° | Leg Factor (K<sub>L</sub>): 1.0</p>
-                    </div>
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead className="bg-slate-50">
-                          <tr>
-                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b">Rope Diameter</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b">Working Load Limit (Tonnes)</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {slingCapacityData.oneLeg.map((row, i) => (
-                            <tr key={row.diameter} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.diameter} mm</td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll.toFixed(2)}</td>
-                            </tr>
-                          ))}
-                          <tr className="bg-emerald-50">
-                            <td className="px-4 py-3 font-medium text-slate-900 border-b">Leg Factor <em>K</em><sub><em>L</em></sub></td>
-                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.0</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                )}
-
-                {/* Two Leg Sling Table */}
-                {activeSlingTab === 'two' && (
-                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div className="px-6 py-4 bg-slate-100 border-b border-slate-200">
-                      <h3 className="text-lg font-bold text-slate-900">Two Leg Sling (Direct)</h3>
-                      <p className="text-sm text-slate-600">Working Load Limits vary by angle to vertical</p>
-                    </div>
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead className="bg-slate-50">
-                          <tr>
-                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b" rowSpan={2}>Rope Diameter</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>Working Load Limits (Tonnes)</th>
-                          </tr>
-                          <tr>
-                            <th className="px-4 py-2 text-center text-xs font-semibold text-slate-600 border-b bg-slate-100">Angle to Vertical<br/>0° - 45°</th>
-                            <th className="px-4 py-2 text-center text-xs font-semibold text-slate-600 border-b bg-slate-100">Angle to Vertical<br/>45° - 60°</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {slingCapacityData.twoLeg.map((row, i) => (
-                            <tr key={row.diameter} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.diameter} mm</td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll_0_45.toFixed(2)}</td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll_45_60.toFixed(2)}</td>
-                            </tr>
-                          ))}
-                          <tr className="bg-emerald-50">
-                            <td className="px-4 py-3 font-medium text-slate-900 border-b">Leg Factor <em>K</em><sub><em>L</em></sub></td>
-                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.4</td>
-                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.0</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                )}
-
-                {/* Three & Four Leg Sling Table */}
-                {activeSlingTab === 'three' && (
-                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div className="px-6 py-4 bg-slate-100 border-b border-slate-200">
-                      <h3 className="text-lg font-bold text-slate-900">Three & Four Leg Sling (Direct)</h3>
-                      <p className="text-sm text-slate-600">Working Load Limits vary by angle to vertical. Note: 3 & 4 leg slings have same WLL ratings.</p>
-                    </div>
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead className="bg-slate-50">
-                          <tr>
-                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b" rowSpan={2}>Rope Diameter</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b" colSpan={2}>Working Load Limits (Tonnes)</th>
-                          </tr>
-                          <tr>
-                            <th className="px-4 py-2 text-center text-xs font-semibold text-slate-600 border-b bg-slate-100">Angle to Vertical<br/>0° - 45°</th>
-                            <th className="px-4 py-2 text-center text-xs font-semibold text-slate-600 border-b bg-slate-100">Angle to Vertical<br/>45° - 60°</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {slingCapacityData.threeFourLeg.map((row, i) => (
-                            <tr key={row.diameter} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.diameter} mm</td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll_0_45.toFixed(2)}</td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll_45_60.toFixed(2)}</td>
-                            </tr>
-                          ))}
-                          <tr className="bg-emerald-50">
-                            <td className="px-4 py-3 font-medium text-slate-900 border-b">Leg Factor <em>K</em><sub><em>L</em></sub></td>
-                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">2.1</td>
-                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.5</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                )}
-
-                {/* Endless Sling Table */}
-                {activeSlingTab === 'endless' && (
-                  <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div className="px-6 py-4 bg-slate-100 border-b border-slate-200">
-                      <h3 className="text-lg font-bold text-slate-900">Endless Sling (Choke Hitch)</h3>
-                      <p className="text-sm text-slate-600">Angle to Vertical: 0° | Leg Factor (K<sub>L</sub>): 1.6</p>
-                    </div>
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead className="bg-slate-50">
-                          <tr>
-                            <th className="px-4 py-3 text-left font-semibold text-slate-700 border-b">Rope Diameter</th>
-                            <th className="px-4 py-3 text-center font-semibold text-slate-700 border-b">Working Load Limit (Tonnes)</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {slingCapacityData.endless.map((row, i) => (
-                            <tr key={row.diameter} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                              <td className="px-4 py-3 font-medium text-slate-900 border-b">{row.diameter} mm</td>
-                              <td className="px-4 py-3 text-center text-slate-600 border-b font-semibold text-emerald-700">{row.wll.toFixed(2)}</td>
-                            </tr>
-                          ))}
-                          <tr className="bg-emerald-50">
-                            <td className="px-4 py-3 font-medium text-slate-900 border-b">Leg Factor <em>K</em><sub><em>L</em></sub></td>
-                            <td className="px-4 py-3 text-center font-bold text-emerald-700 border-b">1.6</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                )}
-
-                {/* Leg Factor Explanation */}
-                <div className="mt-8 grid md:grid-cols-2 gap-6">
-                  <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-                    <h4 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
-                      <Info className="w-5 h-5" />
-                      Leg Factor (K<sub>L</sub>) Explained
-                    </h4>
-                    <p className="text-blue-800 text-sm mb-3">
-                      The Leg Factor is a multiplier used to calculate the total sling capacity based on the number of legs and their angle.
-                    </p>
-                    <ul className="text-blue-700 text-sm space-y-1">
-                      <li>• <strong>1.0</strong> = Single leg (direct)</li>
-                      <li>• <strong>1.4</strong> = Two legs at 0°-45° angle</li>
-                      <li>• <strong>2.1</strong> = Three legs at 0°-45° angle</li>
-                      <li>• <strong>1.6</strong> = Endless/choke hitch</li>
-                    </ul>
-                  </div>
-                  <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
-                    <h4 className="font-bold text-amber-900 mb-3">⚠️ Important Safety Notes</h4>
-                    <ul className="text-amber-800 text-sm space-y-2">
-                      <li>• Never exceed the Working Load Limit</li>
-                      <li>• Capacity decreases as sling angle increases</li>
-                      <li>• For 3-leg slings, if one leg is not loaded, use 2-leg WLL</li>
-                      <li>• For 4-leg slings, typically only 2 legs carry the load</li>
-                      <li>• Always inspect slings before use</li>
-                    </ul>
-                  </div>
+                <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
+                  <h3 className="font-bold text-emerald-900 mb-2">Confirm the capacity for your lift</h3>
+                  <p className="text-emerald-900 text-sm mb-4">
+                    A finished sling's working load limit depends on its rope construction, end fittings,
+                    number of legs and lifting configuration. Use the rated capacity on its tag and test
+                    certificate for the specified hitch and angle. Share your load, lifting arrangement
+                    and required length so we can help identify the appropriate assembly.
+                  </p>
+                  <a
+                    href={`https://wa.me/919831144669?text=${encodeURIComponent('Hello, please help me select a wire rope sling and confirm its rated working load limit and test certificate for my lifting arrangement.')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-semibold text-sm text-emerald-800 underline underline-offset-4"
+                  >
+                    Request sling specifications and test certificate
+                    <ArrowRight className="h-4 w-4 shrink-0" />
+                  </a>
                 </div>
               </div>
             </section>
@@ -2437,6 +2187,64 @@ const ProductDetailPage = () => {
                     </p>
                   </div>
                 </div>
+              </div>
+            </section>
+          )}
+
+          {/* DIN 1480 turnbuckle size chart (src/data/turnbuckleSizes.ts) */}
+          {productId === 'turnbuckles' && (
+            <section id="size-chart" className="py-16 bg-white scroll-mt-24">
+              <div className="container-modern">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">DIN 1480 Turnbuckle Size Chart</h2>
+                <p className="text-slate-600 mb-8 max-w-3xl">
+                  Standard thread sizes and nominal body dimensions of forged open-body turnbuckles to DIN 1480, in millimetres.
+                  The body has a right-hand thread at one end and a left-hand thread at the other, so turning it draws the end fittings together or apart.
+                </p>
+                <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+                  <table className="w-full min-w-[720px] border-collapse text-sm">
+                    <caption className="sr-only">DIN 1480 turnbuckle body dimensions in millimetres by thread size</caption>
+                    <thead className="bg-slate-100 text-slate-900">
+                      <tr>
+                        {[['Thread size', 'd1'], ['Body length', 'l1'], ['Take-up', 'approx.'], ['Thread length', 'm1, min.'], ['Body width', 'e'], ['Window width', 'f'], ['End boss dia.', 'd2']].map(([label, symbol], i) => (
+                          <th key={label} scope="col" className={`border-b border-slate-200 px-4 py-3 font-semibold ${i === 0 ? 'sticky left-0 bg-slate-100 text-left' : 'border-l text-right'}`}>
+                            {label}
+                            <span className="block text-xs font-normal text-slate-500">{symbol}</span>
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {din1480BodySizes.map((size) => (
+                        <tr key={size.thread} className="border-b border-slate-200 last:border-0 even:bg-slate-50/60">
+                          <th scope="row" className="sticky left-0 bg-white px-4 py-2.5 text-left font-semibold text-slate-900">{size.thread}</th>
+                          {[size.bodyLength, size.takeUp, size.threadLength, size.bodyWidth, size.windowWidth, size.bossDiameter].map((value, i) => (
+                            <td key={i} className="border-l border-slate-200 px-4 py-2.5 text-right tabular-nums text-slate-700">{value}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="mt-8 grid md:grid-cols-2 gap-6">
+                  <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                    <h3 className="font-bold text-blue-900 mb-3">Reading the chart</h3>
+                    <ul className="text-blue-800 text-sm space-y-2">
+                      <li>• DIN 1480 standardises the forged body only. Overall closed and open lengths, eye and hook sizes and weights depend on the end fittings, so check them on the product datasheet.</li>
+                      <li>• Take-up is the approximate adjustment available from the body.</li>
+                      <li>• Threads are ISO metric coarse. Inch (UNC) turnbuckles are a separate series and do not interchange with metric sizes.</li>
+                      <li>• Galvanised turnbuckles are stocked from M6 to M24; larger sizes on request.</li>
+                    </ul>
+                  </div>
+                  <div className="bg-amber-50 rounded-xl p-6 border border-amber-100">
+                    <h3 className="font-bold text-amber-900 mb-3">Not for lifting</h3>
+                    <p className="text-amber-800 text-sm">
+                      DIN 1480 gives no working load limit. DIN 1480 turnbuckles are commercial tensioning fittings for bracing, fencing and guy wires,
+                      and must not be used for lifting or overhead loads. Where a load rating is needed, use tested turnbuckles with a stated working
+                      load limit and test certificate.
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-6 text-xs text-slate-500">Source: DIN 1480:2005-09, Table 1 (nominal dimensions), cross-checked against manufacturer catalogues.</p>
               </div>
             </section>
           )}

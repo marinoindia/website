@@ -16,6 +16,9 @@ import OurPeoplePage from "./pages/OurPeoplePage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import PolyesterSlingsPage from "./pages/PolyesterSlingsPage";
 import StainlessSteelWireRopePage from "./pages/StainlessSteelWireRopePage";
+import EnquiryProductPage from "./pages/EnquiryProductPage";
+import SlingPriceListPage from "./pages/SlingPriceListPage";
+import { enquiryProducts } from "./data/enquiryProducts";
 import ProductVariantPage from "./pages/ProductVariantPage";
 import CityPage from "./pages/CityPage";
 import PremadeSlingsPage from "./pages/PremadeSlingsPage";
@@ -100,10 +103,14 @@ const App = () => (
             <Route path="/our-people" element={<OurPeoplePage />} />
             <Route path="/product/polyester-slings" element={<PolyesterSlingsPage />} />
             <Route path="/product/stainless-steel-wire-rope" element={<StainlessSteelWireRopePage />} />
+            {enquiryProducts.map((product) => (
+              <Route key={product.slug} path={`/product/${product.slug}`} element={<EnquiryProductPage product={product} />} />
+            ))}
             <Route path="/product/:productId" element={<ProductDetailPage />} />
             <Route path="/variant/:variantId" element={<ProductVariantPage />} />
             <Route path="/products/:slug" element={<ProductsSlugRedirect />} />
             <Route path="/premade-slings" element={<PremadeSlingsPage />} />
+            <Route path="/wire-rope-sling-price-list" element={<SlingPriceListPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/refund-policy" element={<RefundPolicyPage />} />

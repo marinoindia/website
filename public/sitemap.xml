@@ -23,7 +23,7 @@
   <!-- Main Product Category Pages -->
   <url>
     <loc>https://marinoindia.co.in/product/wire-rope-slings/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -65,7 +65,7 @@
   </url>
   <url>
     <loc>https://marinoindia.co.in/product/turnbuckles/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -85,6 +85,48 @@
 
   <url>
     <loc>https://marinoindia.co.in/product/stainless-steel-wire-rope/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://marinoindia.co.in/product/chain-pulley-blocks/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://marinoindia.co.in/product/ratchet-belts/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://marinoindia.co.in/product/fibre-ropes/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://marinoindia.co.in/product/twist-locks/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://marinoindia.co.in/product/master-links-rings/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://marinoindia.co.in/product/swivels/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -144,6 +186,14 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Wire Rope Sling Price List -->
+  <url>
+    <loc>https://marinoindia.co.in/wire-rope-sling-price-list/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Premade Slings Page -->
   <url>
     <loc>https://marinoindia.co.in/premade-slings/</loc>
