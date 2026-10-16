@@ -34,6 +34,76 @@ const types = [
   },
 ];
 
+// Cell colours sampled from the manufacturer's charts; text colour picked for contrast.
+const swatches: Record<string, { bg: string; text: string }> = {
+  Violet: { bg: '#ab6ba0', text: '#0f172a' }, Green: { bg: '#008800', text: '#ffffff' },
+  Yellow: { bg: '#ffe400', text: '#0f172a' }, Orange: { bg: '#fe8300', text: '#0f172a' },
+  Red: { bg: '#f10100', text: '#0f172a' }, Brown: { bg: '#b25d00', text: '#ffffff' },
+  Blue: { bg: '#17247d', text: '#ffffff' }, White: { bg: '#ffffff', text: '#0f172a' },
+  Grey: { bg: '#afbfb5', text: '#0f172a' },
+};
+
+const hitchColumns = ['Straight lift', 'Choked lift', '45° lift', '90° lift'];
+const hitchFactors = ['M = 1', 'M = 0.8', 'M = 1.8', 'M = 1.4'];
+
+type LoadChart = { id: string; title: string; specs: string; extraHeaders: string[]; rows: [string, string, ...(number | null)[]][] };
+
+const loadCharts: LoadChart[] = [
+  {
+    id: 'flat-webbing-chart',
+    title: 'Duplex, flat webbing slings with loops at both ends',
+    specs: 'Straight-lift WLL 1,000–16,000 kg',
+    extraHeaders: ['Width (mm)', 'Standard eye length (mm)', "'D' & 'DP' terminal hole size (mm)"],
+    rows: [
+      ['B 25', 'Violet', 6000, 1000, 800, 1800, 1400, 25, 300, 58],
+      ['B 50', 'Green', 12000, 2000, 1600, 3600, 2800, 50, 300, 75],
+      ['B 75', 'Yellow', 18000, 3000, 2400, 5400, 4200, 75, 400, 75],
+      ['B 100', 'Orange', 24000, 4000, 3200, 7200, 5600, 100, 400, 90],
+      ['B 125', 'Red', 30000, 5000, 4000, 9000, 7000, 125, 450, 105],
+      ['B 150', 'Brown', 36000, 6000, 4800, 10800, 8400, 150, 600, 105],
+      ['B 200', 'Blue', 48000, 8000, 6400, 14400, 11200, 200, 600, 133],
+      ['B 250', 'White', 60000, 10000, 8000, 18000, 14000, 250, null, null],
+      ['B 300', 'Brown', 72000, 12000, 9600, 21600, 16800, 300, 900, 165],
+      ['B 400', 'Blue', 96000, 16000, 12800, 28800, 22400, 400, null, null],
+    ],
+  },
+  {
+    id: 'round-sling-chart',
+    title: 'Round slings, endless',
+    specs: 'Straight-lift WLL 1,000–30,000 kg',
+    extraHeaders: ['Approx. dia. (mm)'],
+    rows: [
+      ['E 30', 'Violet', 7000, 1000, 800, 1800, 1400, 18],
+      ['E 60', 'Green', 14000, 2000, 1600, 3600, 2800, 20],
+      ['E 90', 'Yellow', 26000, 3000, 2400, 5400, 4200, 22],
+      ['E 150', 'Red', 35000, 5000, 4000, 9000, 7000, 27],
+      ['E 240', 'Blue', 56000, 8000, 6400, 14400, 11200, 38],
+      ['E 360', 'Grey', 72000, 12000, 9600, 21600, 16800, 49],
+      ['E 600', 'Brown', 120000, 20000, 16000, 36000, 28000, 64],
+      ['E 900', 'Orange', 180000, 30000, 24000, 54000, 42000, 78],
+    ],
+  },
+];
+
+const slingProperties = [
+  '100% polyester construction.',
+  'Confirm the permitted working temperature with the sling manufacturer.',
+  'About 3% extension at the working load limit and 10–13% at breaking load.',
+  'Much lighter to handle than chain or wire rope slings of a similar rating.',
+  'Colour coded for quick identification.',
+  'Does not corrode and needs no lubrication.',
+];
+
+const chartNotes = [
+  ['Round sling length', 'Effective working length is approximately half the loop circumference; confirm the measurement method when ordering.'],
+  ['Non-standard lengths', 'Available to special order.'],
+  ['MBS', 'Minimum breaking strength.'],
+  ['M', 'Mode factor for the lifting arrangement; limits are given in kilograms.'],
+  ['SWL', 'Safe working load.'],
+];
+
+const formatValue = (value: number | null) => (value === null ? '—' : value.toLocaleString('en-IN'));
+
 const orderingDetails = [
   ['Sling type', 'Flat webbing, eye-and-eye or round sling; include a drawing or existing label if available.'],
   ['Working load limit (WLL)', 'The required rating for the planned lifting arrangement, plus the load weight and dimensions.'],
@@ -120,6 +190,67 @@ export default function PolyesterSlingsPage() {
                   </article>
                 ))}
               </div>
+            </div>
+          </section>
+
+          <section id="load-charts" className="scroll-mt-28 pb-12 sm:pb-16" aria-labelledby="load-charts-heading">
+            <div className="container-modern">
+              <h2 id="load-charts-heading" className="text-3xl font-bold text-slate-900">Load charts</h2>
+              <p className="mt-3 max-w-3xl leading-relaxed text-slate-600">Guaranteed minimum breaking strength (MBS) and working load limits in kilograms for each sling code. M is the mode factor applied to the straight-lift rating for each lifting arrangement.</p>
+              <div className="mt-8 space-y-10">
+                {loadCharts.map((chart) => (
+                  <div key={chart.id} id={chart.id} className="scroll-mt-28">
+                    <h3 className="mb-4 text-xl font-bold text-slate-900">{chart.title}<span className="mt-1 block text-base font-semibold text-emerald-800">{chart.specs}</span></h3>
+                    <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+                      <table className="w-full min-w-[760px] border-collapse text-sm">
+                        <caption className="sr-only">{chart.title} load chart, values in kilograms unless stated</caption>
+                        <thead className="bg-slate-100 text-slate-900">
+                          <tr>
+                            <th rowSpan={2} scope="col" className="border-b border-slate-200 px-4 py-3 text-left font-semibold">Code</th>
+                            <th rowSpan={2} scope="col" className="border-b border-slate-200 px-4 py-3 text-left font-semibold">Colour</th>
+                            <th rowSpan={2} scope="col" className="border-b border-slate-200 px-4 py-3 text-right font-semibold">Guaranteed MBS (kg)</th>
+                            <th colSpan={4} scope="colgroup" className="border-x border-slate-200 bg-emerald-50 px-4 pt-3 pb-1 text-center font-semibold text-emerald-900">Working load limit (kg)</th>
+                            {chart.extraHeaders.map((header) => <th key={header} rowSpan={2} scope="col" className="border-b border-slate-200 px-4 py-3 text-right font-semibold">{header}</th>)}
+                          </tr>
+                          <tr>
+                            {hitchColumns.map((label, i) => (
+                              <th key={label} scope="col" className={`border-b border-slate-200 bg-emerald-50 px-4 pt-1 pb-3 text-right font-semibold text-emerald-900 ${i === 0 ? 'border-l' : ''} ${i === hitchColumns.length - 1 ? 'border-r' : ''}`}>
+                                {label}<span className="block text-xs font-normal text-emerald-700">{hitchFactors[i]}</span>
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {chart.rows.map(([code, colour, ...values]) => (
+                            <tr key={code} className="border-b border-slate-200 last:border-0 even:bg-slate-50/60">
+                              <th scope="row" className="whitespace-nowrap px-4 py-2.5 text-left font-semibold text-slate-900">{code}</th>
+                              <td className="whitespace-nowrap px-4 py-2.5 text-center font-medium" style={{ backgroundColor: swatches[colour].bg, color: swatches[colour].text }}>{colour}</td>
+                              {values.map((value, i) => (
+                                <td key={i} className={`whitespace-nowrap px-4 py-2.5 text-right tabular-nums text-slate-700 ${i >= 1 && i <= 4 ? 'bg-emerald-50/40' : ''} ${i === 1 ? 'border-l border-slate-200' : ''} ${i === 4 ? 'border-r border-slate-200' : ''}`}>{formatValue(value)}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-10 grid gap-6 lg:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-7">
+                  <h3 className="text-lg font-bold text-slate-900">Properties</h3>
+                  <ul className="mt-4 space-y-3">
+                    {slingProperties.map((item) => <li key={item} className="flex gap-3 text-sm leading-relaxed text-slate-700"><CheckCircle2 aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-emerald-700" />{item}</li>)}
+                  </ul>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-7">
+                  <h3 className="text-lg font-bold text-slate-900">Notes</h3>
+                  <dl className="mt-4 space-y-3 text-sm">
+                    {chartNotes.map(([term, note]) => <div key={term} className="grid grid-cols-[140px_1fr] gap-3"><dt className="font-semibold text-slate-900">{term}</dt><dd className="leading-relaxed text-slate-700">{note}</dd></div>)}
+                  </dl>
+                </div>
+              </div>
+              <p className="mt-6 max-w-3xl text-sm leading-relaxed text-slate-500">Chart values are for reference when preparing an enquiry. Always use the rating marked on the sling label for the actual hitch and angle, and do not identify capacity by colour alone.</p>
             </div>
           </section>
 
