@@ -11,6 +11,7 @@ import { ShieldCheck, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { RAZORPAY_KEY_ID, openRazorpay } from '@/lib/razorpay';
 import { business } from '@/data/business';
+import { trackContactAction } from '@/lib/ga4';
 
 interface CheckoutProps {
   open: boolean;
@@ -85,6 +86,7 @@ export const Checkout = ({ open, onOpenChange }: CheckoutProps) => {
     const orderType = isEligibleForDelivery ? 'Delivery' : 'Pick-up at Store';
     // Send full order details to the business via WhatsApp.
     window.open(buildWhatsAppOrder(paymentId), '_blank', 'noopener,noreferrer');
+    trackContactAction('enquiry_handoff', 'checkout');
     toast({
       title: paymentId ? 'Payment Successful!' : 'Order Sent!',
       description: paymentId

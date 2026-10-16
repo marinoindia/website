@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { trackContactAction } from '@/lib/ga4';
 
 interface EnquiryFormProps {
   open: boolean;
@@ -69,6 +70,7 @@ _This message was sent from the Marino Corporation website enquiry form._`;
       
       // Open WhatsApp in a new tab
       window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      trackContactAction('enquiry_handoff', 'enquiry_form');
       
       toast({
         title: "Opening WhatsApp",

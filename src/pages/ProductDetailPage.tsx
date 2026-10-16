@@ -367,7 +367,10 @@ const productDatabase: Record<string, {
   description: string;
   longDescription: string;
   features: string[];
-  specifications: Record<string, string>;
+  specifications?: Record<string, string>;
+  gallery?: string[];
+  turnbuckleTypes?: { name: string; description: string; capacity: string }[];
+  thimbleTypes?: { name: string; description: string; sizeRange: string }[];
   applications: string[];
   image: string;
   category: string;
@@ -1108,9 +1111,10 @@ const ProductDetailPage = () => {
         <meta name="description" content={product.description} />
         <link rel="canonical" href={`https://marinoindia.co.in/product/${productId}/`} />
         
-        {/* Product Schema */}
+        {/* These pages describe ranges, not a single purchasable SKU.
+            Quote-only ranges must not advertise incomplete Product offers. */}
         <script type="application/ld+json">
-          {JSON.stringify({
+          {JSON.stringify(productId === 'wire-rope-slings' ? {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": product.name,
@@ -1123,10 +1127,11 @@ const ProductDetailPage = () => {
             "offers": {
               // Wire rope slings have a published price list (src/data/slingPriceList.ts,
               // premade slings from ₹450); the other categories are quote-only.
-              "@type": productId === 'wire-rope-slings' ? "AggregateOffer" : "Offer",
+              "@type": "AggregateOffer",
               "url": `https://marinoindia.co.in/product/${productId}/`,
               "priceCurrency": "INR",
-              ...(productId === 'wire-rope-slings' ? { "lowPrice": 450, "highPrice": 3800 } : {}),
+              "lowPrice": 450,
+              "highPrice": 3800,
               "availability": "https://schema.org/InStock",
               "seller": {
                 "@type": "Organization",
@@ -1144,6 +1149,18 @@ const ProductDetailPage = () => {
             "manufacturer": {
               "@type": "Organization",
               "name": "Marino Corporation Of India"
+            }
+          } : {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": product.name,
+            "url": `https://marinoindia.co.in/product/${productId}/`,
+            "image": `https://marinoindia.co.in${product.image}`,
+            "description": product.description,
+            "publisher": {
+              "@type": "Organization",
+              "name": "Marino Corporation Of India",
+              "url": "https://marinoindia.co.in"
             }
           })}
         </script>
@@ -1495,7 +1512,7 @@ const ProductDetailPage = () => {
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <tbody>
-                        {Object.entries(product.specifications).map(([key, value], i) => (
+                        {Object.entries(product.specifications ?? {}).map(([key, value], i) => (
                           <tr key={key} className={i % 2 === 0 ? 'bg-slate-50/50' : ''}>
                             <td className="px-6 py-4 font-medium text-slate-700 w-1/3 border-b border-slate-100">{key}</td>
                             <td className="px-6 py-4 text-slate-600 border-b border-slate-100">{value}</td>

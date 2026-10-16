@@ -93,6 +93,7 @@ const App = () => (
             <Route path="/webshop" element={<WebshopPage />} />
             <Route path="/media" element={<MediaPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/contact-us" element={<Navigate to="/contact/" replace />} />
             <Route path="/clients" element={<ClientsPage />} />
             <Route path="/our-people" element={<OurPeoplePage />} />
             <Route path="/product/:productId" element={<ProductDetailPage />} />

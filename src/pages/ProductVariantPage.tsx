@@ -590,22 +590,16 @@ const ProductVariantPage = () => {
         <meta name="description" content={variant.description} />
         <link rel="canonical" href={`https://marinoindia.co.in/variant/${variantId}/`} />
         
-        {/* Product Schema */}
+        {/* Quote-only information page: no price or stock claim is inferred. */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Product",
+            "@type": "WebPage",
             "name": variant.name,
+            "url": `https://marinoindia.co.in/variant/${variantId}/`,
             "image": `https://marinoindia.co.in${variant.image}`,
             "description": variant.description,
-            "brand": { "@type": "Brand", "name": "Marino Corporation" },
-            "offers": {
-              "@type": "Offer",
-              "url": `https://marinoindia.co.in/variant/${variantId}/`,
-              "priceCurrency": "INR",
-              "availability": "https://schema.org/InStock",
-              "seller": { "@type": "Organization", "name": "Marino Corporation Of India" }
-            }
+            "publisher": { "@type": "Organization", "name": "Marino Corporation Of India" }
           })}
         </script>
       </Helmet>

@@ -117,72 +117,13 @@ const productCategories = [
   },
 ];
 
-const productsData = [
-  {
-    "@type": "Product",
-    "name": "Wire Rope Slings",
-    "description": "Premium steel wire rope slings with thimbles and eye hooks. Usha Martin wire with mechanical hand-made construction.",
-    "image": "https://marinoindia.co.in/images/premade_slings_hero.png",
-    "brand": {
-      "@type": "Brand",
-      "name": "Usha Martin"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://marinoindia.co.in/premade-slings",
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "Marino Corporation Of India"
-      }
-    }
-  },
-  {
-    "@type": "Product",
-    "name": "Industrial Chains",
-    "description": "High-strength alloy steel chains for heavy lifting, anchoring, and load securing. G80 and G100 grades available.",
-    "image": "https://marinoindia.co.in/images/chains.jpeg",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock"
-    }
-  },
-  {
-    "@type": "Product",
-    "name": "Turnbuckles",
-    "description": "Complete range of galvanised and stainless steel turnbuckles for tensioning and rigging. Eye & Eye, Jaw & Jaw, Hook & Eye configurations.",
-    "image": "https://marinoindia.co.in/images/Turn_buckles.png",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock"
-    }
-  },
-  {
-    "@type": "Product",
-    "name": "Lifting Hooks",
-    "description": "Forged alloy steel hooks for lifting and material handling. ASME B30.10 compliant with safety latches.",
-    "image": "https://marinoindia.co.in/images/hooks.jpeg",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock"
-    }
-  },
-  {
-    "@type": "Product",
-    "name": "Shackles",
-    "description": "High-tensile steel shackles for connecting lifting equipment, chains, and ropes. Load rated and certified.",
-    "image": "https://marinoindia.co.in/images/shackles.jpeg",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock"
-    }
-  }
-];
+// Describe the visible category directory; it is not a list of priced offers.
+const productsData = productCategories.map((category) => ({
+  '@type': 'CollectionPage',
+  name: category.label,
+  description: category.description,
+  url: new URL(category.path, 'https://marinoindia.co.in').href,
+}));
 
 const ProductsPage = () => {
   return (

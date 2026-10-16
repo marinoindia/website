@@ -2,12 +2,19 @@
 <html lang="en-IN">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ7QD95NVC"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-VQ7QD95NVC');
+      // Exclude development, preview and build-time visits from production GA4.
+      if (['marinoindia.co.in', 'www.marinoindia.co.in'].includes(location.hostname)) {
+        gtag('js', new Date());
+        // React owns page views; also disable Enhanced Measurement history views.
+        gtag('config', 'G-VQ7QD95NVC', { send_page_view: false });
+        const googleTag = document.createElement('script');
+        googleTag.async = true;
+        googleTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-VQ7QD95NVC';
+        document.head.appendChild(googleTag);
+      }
     </script>
     
     <meta charset="UTF-8" />
@@ -67,12 +74,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Marino Corporation Of India",
-      "url": "https://marinoindia.co.in",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://marinoindia.co.in/products?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "url": "https://marinoindia.co.in"
     }
     </script>
   </head>
