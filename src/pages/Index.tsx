@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import HomeSlingConfigurator from '@/components/HomeSlingConfigurator';
 import About from '@/components/About';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import FAQ, { faqItems } from '@/components/FAQ';
@@ -179,6 +180,7 @@ const Index = () => {
           <Hero />
           <About />
           <MediaPreview />
+          <HomeSlingConfigurator />
           <WhyChooseUs />
           <FAQ />
         </main>
