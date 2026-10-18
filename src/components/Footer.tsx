@@ -111,6 +111,7 @@ const Footer = () => {
                 { label: 'Wire Rope Grips', to: '/product/wire-rope-accessories/' },
                 { label: 'Thimbles', to: '/product/thimbles/' },
                 { label: 'Sling Price List', to: '/wire-rope-sling-price-list/' },
+                { label: 'Sling Configurator', to: '/wire-rope-sling-configurator/' },
               ].map((product) => (
                 <li key={product.label}>
                   <Link to={product.to} className="text-slate-400 hover:text-emerald-400 transition-colors text-sm">

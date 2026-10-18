@@ -18,6 +18,7 @@ import PolyesterSlingsPage from "./pages/PolyesterSlingsPage";
 import StainlessSteelWireRopePage from "./pages/StainlessSteelWireRopePage";
 import EnquiryProductPage from "./pages/EnquiryProductPage";
 import SlingPriceListPage from "./pages/SlingPriceListPage";
+import SlingConfiguratorPage from "./pages/SlingConfiguratorPage";
 import { enquiryProducts } from "./data/enquiryProducts";
 import ProductVariantPage from "./pages/ProductVariantPage";
 import CityPage from "./pages/CityPage";
@@ -111,6 +112,7 @@ const App = () => (
             <Route path="/products/:slug" element={<ProductsSlugRedirect />} />
             <Route path="/premade-slings" element={<PremadeSlingsPage />} />
             <Route path="/wire-rope-sling-price-list" element={<SlingPriceListPage />} />
+            <Route path="/wire-rope-sling-configurator" element={<SlingConfiguratorPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/refund-policy" element={<RefundPolicyPage />} />

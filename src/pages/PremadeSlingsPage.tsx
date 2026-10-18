@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -586,7 +587,8 @@ const PremadeSlingsPage = () => {
                   </h2>
                   <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
                     Steel Wire Rope Slings (H/S), 6×36 construction (GWRC), RHOL lay.
-                    Tap any size to order it directly on WhatsApp.
+                    Tap any size to order it directly on WhatsApp, or{' '}
+                    <Link to="/wire-rope-sling-configurator/" className="font-medium text-emerald-700 underline underline-offset-4">build a custom sling in the configurator</Link>.
                   </p>
                 </div>
 

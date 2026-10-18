@@ -1585,6 +1585,10 @@ const ProductDetailPage = () => {
                     Full price list by size and length
                     <ArrowRight className="h-4 w-4" />
                   </Link>
+                  <Link to="/wire-rope-sling-configurator/" className="ml-4 inline-flex items-center gap-2 font-semibold text-emerald-700 hover:underline">
+                    Build a sling in the configurator
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
                 <p className="text-xs text-slate-500 mt-4">
                   Rates updated July 2026. GST extra. Volume discounts on 10+ pieces — call{' '}

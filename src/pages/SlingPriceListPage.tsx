@@ -119,7 +119,7 @@ export default function SlingPriceListPage() {
               <div className="space-y-5 text-slate-700">
                 <h2 className="text-2xl font-bold text-slate-900">Other sizes and assemblies</h2>
                 <p><strong className="text-slate-900">Ready-made slings.</strong> Smaller sizes, slings with hooks or master links and 2- and 4-leg assemblies are listed with prices on the <Link to="/premade-slings/" className="font-medium text-emerald-700 underline underline-offset-4">premade slings page</Link>.</p>
-                <p><strong className="text-slate-900">Custom sizes.</strong> Other diameters, lengths and end fittings are made to order. Send the size, length, number of legs, end fittings, quantity and delivery PIN code for a quotation.</p>
+                <p><strong className="text-slate-900">Custom sizes.</strong> Other diameters, lengths and end fittings are made to order. Build the sling in the <Link to="/wire-rope-sling-configurator/" className="font-medium text-emerald-700 underline underline-offset-4">sling configurator</Link> or send the size, length, number of legs, end fittings, quantity and delivery PIN code for a quotation.</p>
                 <p><strong className="text-slate-900">Choosing a size.</strong> Check the working load limit for your number of legs and sling angle on the <Link to="/product/wire-rope-slings/#load-chart" className="font-medium text-emerald-700 underline underline-offset-4">wire rope sling load chart</Link>.</p>
               </div>
             </div>
@@ -142,6 +142,7 @@ export default function SlingPriceListPage() {
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-emerald-100">
                 <Link className="underline underline-offset-4 hover:text-white" to="/product/wire-rope-slings/">Wire rope slings</Link>
                 <Link className="underline underline-offset-4 hover:text-white" to="/premade-slings/">Premade slings</Link>
+                <Link className="underline underline-offset-4 hover:text-white" to="/wire-rope-sling-configurator/">Sling configurator</Link>
                 <Link className="underline underline-offset-4 hover:text-white" to="/product/shackles/">Shackles</Link>
                 <Link className="underline underline-offset-4 hover:text-white" to="/product/thimbles/">Thimbles</Link>
                 <Link className="underline underline-offset-4 hover:text-white" to="/products/">All products</Link>
